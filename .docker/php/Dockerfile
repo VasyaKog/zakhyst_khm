@@ -34,7 +34,7 @@ RUN apt-get update && apt-get install -y \
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # Install node with nm
-RUN curl -sL https://deb.nodesource.com/setup_18.x | bash - \
+RUN curl -sL https://deb.nodesource.com/setup_22.x | bash - \
   && apt-get install -y nodejs
 # Add Yarn
 RUN npm install -g yarn

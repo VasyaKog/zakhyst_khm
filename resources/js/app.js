@@ -1,10 +1,19 @@
-import '../../css/app.css';
+import '../css/app.css';
 import './bootstrap';
 
 import { createApp, h } from 'vue'
 import { createInertiaApp } from '@inertiajs/vue3'
 import { ZiggyVue } from 'ziggy-js'
-import '../../scss/admin.scss'
+import '../scss/admin.scss'
+
+function resolvePageComponent(name, pages) {
+    for (const path in pages) {
+        if (path.endsWith(`${name}.vue`)) {
+            return typeof pages[path] === 'function' ? pages[path] : () => pages[path]
+        }
+    }
+    throw new Error(`Page component "${name}" not found.`)
+}
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 

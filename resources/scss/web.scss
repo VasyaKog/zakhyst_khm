@@ -1,2 +1,33 @@
-body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
-nav { display:flex; gap:.75rem; padding:1rem; }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// Import Montserrat font
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+// Apply Montserrat as default font
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+// Custom header styles
+.header-logo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+// Dark mode toggle animation
+.dark-mode-toggle {
+    transition: transform 0.3s ease;
+}
+
+// Support button hover effect
+.support-button {
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.support-button:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transform: translateY(-1px);
+}

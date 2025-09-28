@@ -13,8 +13,12 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                'montserrat': ['Montserrat', ...defaultTheme.fontFamily.sans],
+                'sans': ['Montserrat', ...defaultTheme.fontFamily.sans],
             },
+            colors: {
+                'veteran-blue': '#3971E2', // Blue color from your design
+            }
         },
     },
 

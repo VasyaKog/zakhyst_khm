@@ -12,12 +12,18 @@ export default {
 
     theme: {
         extend: {
-            fontFamily: {
-                'montserrat': ['Montserrat', ...defaultTheme.fontFamily.sans],
-                'sans': ['Montserrat', ...defaultTheme.fontFamily.sans],
-            },
+                fontFamily: {
+                    'montserrat': ['Montserrat', ...defaultTheme.fontFamily.sans],
+                    'unbounded': ['Unbounded', ...defaultTheme.fontFamily.sans],
+                    'sans': ['Montserrat', ...defaultTheme.fontFamily.sans],
+                },
             colors: {
                 'veteran-blue': '#3971E2', // Blue color from your design
+            },
+            spacing: {
+                '50': '50px',
+                '120': '120px',
+                '375': '375px',
             }
         },
     },

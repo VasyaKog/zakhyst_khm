@@ -3,7 +3,10 @@
 @tailwind utilities;
 
 // Import Montserrat font
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+
+// Import Unbounded font
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800;900&display=swap');
 
 // Apply Montserrat as default font
 body {
@@ -30,4 +33,9 @@ body {
 .support-button:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     transform: translateY(-1px);
+}
+
+// Force font-black to work
+.font-black {
+    font-weight: 900 !important;
 }

@@ -151,23 +151,108 @@
 </div>
 </div>
 
-<!-- Footer Section -->
-<div class="flex items-center justify-between py-4">
-    <!-- Contact Info -->
-    <div class="flex items-center">
-        <img src="{{ asset('images/icons/watsapnp.svg') }}" alt="WhatsApp" class="w-6 h-6">
-        <img src="{{ asset('images/icons/signal.svg') }}" alt="Signal" class="w-6 h-6 ml-2">
-        <img src="{{ asset('images/icons/viber.svg') }}" alt="Viber" class="w-6 h-6 ml-2">
-        <span class="text-black text-base font-bold font-montserrat" style="margin-left: 20px; margin-right: 56px;">+38 067 563 0090</span>
-        <img src="{{ asset('images/icons/facebook.svg') }}" alt="Facebook" class="w-6 h-6">
-        <img src="{{ asset('images/icons/instagram.svg') }}" alt="Instagram" class="w-6 h-6 ml-2">
-    </div>
-    
-    <!-- Search Bar -->
-    <div class="w-[995px] h-12 rounded-[300px] border border-black flex items-center px-5">
-        <span class="text-black text-base font-normal font-montserrat">Не можеш знайти? Пошукай тут...</span>
-        <div class="ml-auto w-8 h-8 bg-black rounded-full flex items-center justify-center">
-            <img class="w-6 h-6" src="{{ asset('images/icons/icon-search.svg') }}" alt="Search">
+<!-- Services Section -->
+<div class="flex justify-center mt-[152px] mb-[300px]">
+    <div class="relative w-[1215px] h-[765px]">
+        <!-- Title Section -->
+        <div class="absolute left-0 top-0">
+            <h2 class="text-black text-[72px] font-extrabold font-montserrat uppercase leading-[85.36px] m-0">
+                Види<br/>послуг
+            </h2>
+        </div>
+        
+        <!-- All Services Button -->
+        <div class="absolute right-0 top-5">
+            <button class="w-64 h-16 border-2 border-veteran-blue bg-white text-black text-xl font-black font-montserrat uppercase tracking-wide cursor-pointer transition-all duration-300 ease-in-out rounded-[412px]">
+                всі послуги
+            </button>
+        </div>
+        
+        <!-- Service Cards -->
+        <div class="absolute left-0 top-[269px] flex gap-8">
+            <!-- Card 1: Veteran Support -->
+            <div class="relative w-96 h-[496px]" style="background-image: url('{{ asset('images/backgrounds/service-bg.svg') }}'); background-size: fit; background-repeat: no-repeat; background-position: center;">
+                <!-- Icon -->
+                <div class="absolute left-[39px] top-[41px] w-14 h-14 rounded-full flex items-center justify-center">
+                    <img src="{{ asset('images/icons/support.svg') }}" alt="Support" class="w-[59px] h-[59px]">
+                </div>
+                
+                <!-- Arrow -->
+                <div class="absolute right-[5px] w-[30px] h-[30px]">
+                    <img src="{{ asset('images/icons/arrow.svg') }}" alt="Arrow" class="w-[30px] h-[30px]">
+                </div>
+                
+                <!-- Title -->
+                <div class="absolute left-[39px] top-[143px] w-72">
+                    <h3 class="text-white text-[30px] font-extrabold font-montserrat leading-10 m-0">
+                        Супровід ветеранів
+                    </h3>
+                </div>
+                
+                <!-- Description -->
+                <div class="absolute left-[39px] top-[253px] w-72">
+                    <ul class="text-white text-xl font-normal font-montserrat leading-7 m-0 pl-5 list-disc">
+                        <li class="mb-7">Розробка індивідуального плану підтримки.</li>
+                        <li>Допомога в оформленні пільг, соціальних виплат, житла. ...</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Card 2: Legal Consultations -->
+            <div class="relative w-96 h-[496px]" style="background-image: url('{{ asset('images/backgrounds/service-bg.svg') }}'); background-size: fit; background-repeat: no-repeat; background-position: center;">
+                <!-- Icon -->
+                <div class="absolute left-[39px] top-[41px] w-[59px] h-[59px] rounded-full flex items-center justify-center">
+                    <img src="{{ asset('images/icons/legal.svg') }}" alt="Legal" class="w-[59px] h-[59px]">
+                </div>
+                
+                <!-- Arrow -->
+                <div class="absolute right-[5px] w-[30px] h-[30px]">
+                    <img src="{{ asset('images/icons/arrow.svg') }}" alt="Arrow" class="w-[30px] h-[30px]">
+                </div>
+                                
+                <!-- Title -->
+                <div class="absolute left-[39px] top-[143px] w-72">
+                    <h3 class="text-white text-[30px] font-extrabold font-montserrat leading-10 m-0">
+                        Юридичні консультації
+                    </h3>
+                </div>
+                
+                <!-- Description -->
+                <div class="absolute left-[39px] top-[253px] w-72">
+                    <ul class="text-white text-xl font-normal font-montserrat leading-7 m-0 pl-5 list-disc">
+                        <li class="mb-7">Правова інформація, консультації та роз'яснення з правових питань;</li>
+                        <li>Допомога у складенні рапортів, заяв, скарг ...</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Card 3: Psychological Assistance -->
+            <div class="relative w-96 h-[496px]" style="background-image: url('{{ asset('images/backgrounds/service-bg.svg') }}'); background-size: fit; background-repeat: no-repeat; background-position: center;">
+                <!-- Icon -->
+                <div class="absolute left-[39px] top-[41px] w-14 h-14 rounded-full flex items-center justify-center">
+                    <img src="{{ asset('images/icons/head.svg') }}" alt="Psychology" class="w-[59px] h-[59px]">
+                </div>
+                
+                <!-- Arrow -->
+                <div class="absolute right-[5px] w-[30px] h-[30px]">
+                    <img src="{{ asset('images/icons/arrow.svg') }}" alt="Arrow" class="w-[30px] h-[30px]">
+                </div>
+
+                <!-- Title -->
+                <div class="absolute left-[39px] top-[143px] w-72">
+                    <h3 class="text-white text-[30px] font-extrabold font-montserrat leading-10 m-0">
+                        Психологічна допомога
+                    </h3>
+                </div>
+                
+                <!-- Description -->
+                <div class="absolute left-[39px] top-[253px] w-[260px]">
+                    <ul class="text-white text-xl font-normal font-montserrat leading-7 m-0 pl-5 list-disc">
+                        <li class="mb-7">Індивідуальні психологічні консультації для дорослих.</li>
+                        <li>Психоедукаційні групи для дорослих. ...</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </div>

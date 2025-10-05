@@ -8,31 +8,46 @@ export default {
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
         './resources/js/**/*.vue',
+        './resources/js/**/*.js',
+        './resources/scss/**/*.scss',
+        './resources/css/**/*.css',
+    ],
+
+    safelist: [
+        'w-[1215px]',
+        'h-[765px]',
+        'w-[496px]',
+        'h-[496px]',
+        'w-[200px]',
+        'h-[200px]',
+        'text-[72px]',
+        'leading-[85.36px]',
+        'mt-[152px]',
+        'mb-[300px]',
+        'top-[269px]',
+        'left-[39px]',
+        'top-[41px]',
+        'w-[59px]',
+        'h-[59px]',
+        'right-[5px]',
+        'w-[30px]',
+        'h-[30px]',
+        'top-[143px]',
+        'w-72',
+        'top-[253px]',
+        'w-[260px]',
     ],
 
     theme: {
         extend: {
-                fontFamily: {
-                    'montserrat': ['Montserrat', ...defaultTheme.fontFamily.sans],
-                    'unbounded': ['Unbounded', ...defaultTheme.fontFamily.sans],
-                    'sans': ['Montserrat', ...defaultTheme.fontFamily.sans],
-                },
+            fontFamily: {
+                'montserrat': ['Montserrat', ...defaultTheme.fontFamily.sans],
+                'unbounded': ['Unbounded', ...defaultTheme.fontFamily.sans],
+                'sans': ['Montserrat', ...defaultTheme.fontFamily.sans],
+            },
             colors: {
                 'veteran-blue': '#3971E2', // Blue color from your design
             },
-            spacing: {
-                '50': '50px',
-                '90': '90px',
-                '120': '120px',
-                '200': '200px',
-                '260': '260px',
-                '320': '320px',
-                '325': '325px',
-                '375': '375px',
-                '519': '519px',
-                '669': '669px',
-                '700': '700px',
-            }
         },
     },
 

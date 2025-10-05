@@ -85,14 +85,14 @@
     <div class="absolute inset-0 bg-neutral-400 opacity-20 mix-blend-multiply"></div>
     
     <!-- Blue Text Overlay -->
-    <div class="absolute left-325 top-200 w-700 h-96 bg-blue-600" style="border-top-left-radius: 150px; border-top-right-radius: 50px; border-bottom-left-radius: 150px; border-bottom-right-radius: 150px;">
+    <div class="absolute left-[325px] top-[200px] w-[700px] h-96 bg-blue-600" style="border-top-left-radius: 150px; border-top-right-radius: 50px; border-bottom-left-radius: 150px; border-bottom-right-radius: 150px;">
         <!-- Main Heading -->
-        <div class="absolute left-90 w-519 h-36 text-white text-6xl font-bold font-unbounded leading-[74.08px] tracking-wide" style="top: 74px;">
+        <div class="absolute left-[90px] top-[74px] w-[519px] h-36 text-white text-6xl font-bold font-unbounded leading-[74.08px] tracking-wide">
             Бізнес - ветеранам!
         </div>
         
         <!-- Subtitle -->
-        <div class="absolute left-90 w-519 h-16 text-white text-2xl font-medium font-unbounded uppercase leading-9 tracking-tight" style="top: 260px;">
+        <div class="absolute left-[90px] top-[260px] w-[519px] h-16 text-white text-2xl font-medium font-unbounded uppercase leading-9 tracking-tight">
             Дізнайся більше про цінні пропозиції 
             <span class="underline">тут</span>
         </div>
@@ -120,19 +120,19 @@
     <div class="absolute inset-0 bg-neutral-400 opacity-20 mix-blend-multiply"></div>
     
     <!-- Memorial Content -->
-    <div class="absolute left-325 top-200 w-669 h-96" style="border-radius: 412px;">
+    <div class="absolute left-[325px] top-[200px] w-[669px] h-96 rounded-[412px]">
         <!-- Main Heading -->
-        <div class="absolute left-0 w-669 h-36 text-white text-6xl font-bold font-unbounded leading-[74.08px] tracking-wide" style="top: 0;">
+        <div class="absolute left-0 top-0 w-[669px] h-36 text-white text-6xl font-bold font-unbounded leading-[74.08px] tracking-wide">
             Вони загинули за Україну!
         </div>
         
         <!-- Subtitle -->
-        <div class="absolute left-0 w-669 h-16 text-white text-2xl font-medium font-unbounded uppercase leading-9 tracking-tight" style="top: 186px;">
+        <div class="absolute left-0 top-[186px] w-[669px] h-16 text-white text-2xl font-medium font-unbounded uppercase leading-9 tracking-tight">
             Віртуальний меморіал полеглим захисникам та захисницям
         </div>
         
         <!-- Button -->
-        <div class="absolute left-0 w-320 h-16 border-2 border-white flex items-center justify-center" style="top: 317px; border-radius: 412px;">
+        <div class="absolute left-0 top-[317px] w-[320px] h-16 border-2 border-white flex items-center justify-center rounded-[412px]">
             <span class="text-white text-xl font-black font-montserrat uppercase tracking-wide">
                 відвідати меморіал
             </span>
@@ -150,6 +150,27 @@
     </div>
 </div>
 </div>
+
+<!-- Hero Footer Section -->
+<footer class="flex items-center justify-between py-4">
+    <!-- Contact Info -->
+    <div class="flex items-center">
+        <img src="{{ asset('images/icons/watsapnp.svg') }}" alt="WhatsApp" class="w-6 h-6">
+        <img src="{{ asset('images/icons/signal.svg') }}" alt="Signal" class="w-6 h-6 ml-2">
+        <img src="{{ asset('images/icons/viber.svg') }}" alt="Viber" class="w-6 h-6 ml-2">
+        <span class="text-black text-base font-bold font-montserrat" style="margin-left: 20px; margin-right: 56px;">+38 067 563 0090</span>
+        <img src="{{ asset('images/icons/facebook.svg') }}" alt="Facebook" class="w-6 h-6">
+        <img src="{{ asset('images/icons/instagram.svg') }}" alt="Instagram" class="w-6 h-6 ml-2">
+    </div>
+    
+    <!-- Search Bar -->
+    <div class="w-[995px] h-12 rounded-[300px] border border-black flex items-center px-5">
+        <span class="text-black text-base font-normal font-montserrat">Не можеш знайти? Пошукай тут...</span>
+        <div class="ml-auto w-8 h-8 bg-black rounded-full flex items-center justify-center">
+            <img class="w-6 h-6" src="{{ asset('images/icons/icon-search.svg') }}" alt="Search">
+        </div>
+    </div>
+</footer>
 
 <!-- Services Section -->
 <div class="flex justify-center mt-[152px] mb-[300px]">

@@ -36,6 +36,19 @@ export default {
         'w-72',
         'top-[253px]',
         'w-[260px]',
+        // Hero content positioning
+        'left-[325px]',
+        'top-[200px]',
+        'w-[700px]',
+        'left-[90px]',
+        'top-[74px]',
+        'w-[519px]',
+        'top-[260px]',
+        'w-[669px]',
+        'top-[186px]',
+        'top-[317px]',
+        'w-[320px]',
+        'rounded-[412px]',
     ],
 
     theme: {

@@ -1,15 +1,17 @@
 @extends('layouts.web')
 @section('title','Головна')
 @section('content')
-<!-- Hero Section -->
-<div class="relative w-full h-[820px] rounded-[100px] overflow-hidden mb-8">
+<!-- Hero Carousel -->
+<div id="hero-carousel" class="relative overflow-hidden h-[820px] mb-8 rounded-[100px]">
+    <!-- Hero Section 1 -->
+<div class="carousel-slide absolute inset-0 w-full h-[820px] overflow-hidden active transition-all duration-1500 ease-in-out" style="transform: translateX(0%);">
     <!-- Background Image -->
     <img src="{{ asset('images/backgrounds/bg1.png') }}" 
          alt="Family Background" 
          class="w-full h-full object-cover">
     
     <!-- Overlay -->
-    <div class="absolute inset-0 bg-neutral-400 opacity-20 mix-blend-multiply rounded-[100px]"></div>
+    <div class="absolute inset-0 bg-neutral-400 opacity-20 mix-blend-multiply"></div>
     
     <!-- Main Heading -->
     <div class="absolute left-[326px] top-[243px]">
@@ -72,6 +74,83 @@
     </div>
 </div>
 
+<!-- Hero Section 2 -->
+<div class="carousel-slide absolute inset-0 w-full h-[820px] overflow-hidden transition-all duration-1500 ease-in-out" style="transform: translateX(100%);">
+    <!-- Background Image -->
+    <img src="{{ asset('images/backgrounds/bg2.png') }}" 
+         alt="Family Background" 
+         class="w-full h-full object-cover">
+    
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-neutral-400 opacity-20 mix-blend-multiply"></div>
+    
+    <!-- Blue Text Overlay -->
+    <div class="absolute left-325 top-200 w-700 h-96 bg-blue-600" style="border-top-left-radius: 150px; border-top-right-radius: 50px; border-bottom-left-radius: 150px; border-bottom-right-radius: 150px;">
+        <!-- Main Heading -->
+        <div class="absolute left-90 w-519 h-36 text-white text-6xl font-bold font-unbounded leading-[74.08px] tracking-wide" style="top: 74px;">
+            Бізнес - ветеранам!
+        </div>
+        
+        <!-- Subtitle -->
+        <div class="absolute left-90 w-519 h-16 text-white text-2xl font-medium font-unbounded uppercase leading-9 tracking-tight" style="top: 260px;">
+            Дізнайся більше про цінні пропозиції 
+            <span class="underline">тут</span>
+        </div>
+    </div>
+    
+    <!-- Navigation Arrows -->
+    <div class="absolute flex space-x-4 z-10" style="right: 375px; bottom: 120px;">
+        <button class="w-14 h-14 bg-white bg-opacity-50 rounded-full flex items-center justify-center hover:bg-opacity-100 transition-all">
+            <img src="{{ asset('images/icons/left-arrow.svg') }}" alt="Arrow Left" class="w-6 h-6 mr-1.5">
+        </button>
+        <button class="w-20 h-14 bg-white bg-opacity-50 rounded-[200px] flex items-center justify-center hover:bg-opacity-100 transition-all">
+            <img src="{{ asset('images/icons/right-arrow.svg') }}" alt="Arrow Right" class="w-12 h-12">
+        </button>
+    </div>
+</div>
+
+<!-- Hero Section 3 -->
+<div class="carousel-slide absolute inset-0 w-full h-[820px] overflow-hidden transition-all duration-1500 ease-in-out" style="transform: translateX(100%);">
+    <!-- Background Image -->
+    <img src="{{ asset('images/backgrounds/bg3.png') }}" 
+         alt="Family Background" 
+         class="w-full h-full object-cover">
+    
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-neutral-400 opacity-20 mix-blend-multiply"></div>
+    
+    <!-- Memorial Content -->
+    <div class="absolute left-325 top-200 w-669 h-96" style="border-radius: 412px;">
+        <!-- Main Heading -->
+        <div class="absolute left-0 w-669 h-36 text-white text-6xl font-bold font-unbounded leading-[74.08px] tracking-wide" style="top: 0;">
+            Вони загинули за Україну!
+        </div>
+        
+        <!-- Subtitle -->
+        <div class="absolute left-0 w-669 h-16 text-white text-2xl font-medium font-unbounded uppercase leading-9 tracking-tight" style="top: 186px;">
+            Віртуальний меморіал полеглим захисникам та захисницям
+        </div>
+        
+        <!-- Button -->
+        <div class="absolute left-0 w-320 h-16 border-2 border-white flex items-center justify-center" style="top: 317px; border-radius: 412px;">
+            <span class="text-white text-xl font-black font-montserrat uppercase tracking-wide">
+                відвідати меморіал
+            </span>
+        </div>
+    </div>
+    
+    <!-- Navigation Arrows -->
+    <div class="absolute flex space-x-4 z-10" style="right: 375px; bottom: 120px;">
+        <button class="w-14 h-14 bg-white bg-opacity-50 rounded-full flex items-center justify-center hover:bg-opacity-100 transition-all">
+            <img src="{{ asset('images/icons/left-arrow.svg') }}" alt="Arrow Left" class="w-6 h-6 mr-1.5">
+        </button>
+        <button class="w-20 h-14 bg-white bg-opacity-50 rounded-[200px] flex items-center justify-center hover:bg-opacity-100 transition-all">
+            <img src="{{ asset('images/icons/right-arrow.svg') }}" alt="Arrow Right" class="w-12 h-12">
+        </button>
+    </div>
+</div>
+</div>
+
 <!-- Footer Section -->
 <div class="flex items-center justify-between py-4">
     <!-- Contact Info -->
@@ -92,4 +171,114 @@
         </div>
     </div>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const carousel = document.getElementById('hero-carousel');
+    const slides = document.querySelectorAll('.carousel-slide');
+    
+    let currentSlide = 0;
+    const totalSlides = slides.length;
+    let isAnimating = false; 
+    
+    const slideOrder = [0, 1, 2]; 
+    let currentPosition = 0; 
+    
+    function showSlideByPosition(position) {
+        const targetIndex = slideOrder[position];
+        console.log('Showing slide at position:', position, 'which is slide:', targetIndex, 'from current:', currentSlide); // Debug
+        
+        if (targetIndex === currentSlide || isAnimating) return; 
+        
+        isAnimating = true; 
+        
+        const allArrows = document.querySelectorAll('.carousel-slide .absolute button');
+        allArrows.forEach(arrow => {
+            arrow.disabled = true;
+            arrow.style.opacity = '0.5';
+        });
+        
+        slides.forEach((slide, i) => {
+            slide.classList.remove('active');
+            slide.style.transform = 'translateX(100%)';
+        });
+        
+        const currentSlideElement = slides[currentSlide];
+        const targetSlide = slides[targetIndex];
+        
+        currentSlideElement.classList.add('active');
+        currentSlideElement.style.transform = 'translateX(0%)';
+        
+        targetSlide.style.transform = 'translateX(100%)';
+        targetSlide.classList.add('active');
+        
+        setTimeout(() => {
+            targetSlide.style.transform = 'translateX(0%)';
+        }, 10);
+        
+        setTimeout(() => {
+            currentSlideElement.classList.remove('active');
+            currentSlideElement.style.transform = 'translateX(100%)';
+            isAnimating = false; 
+            
+            const allArrows = document.querySelectorAll('.carousel-slide .absolute button');
+            allArrows.forEach(arrow => {
+                arrow.disabled = false;
+                arrow.style.opacity = '1';
+                arrow.style.cursor = 'pointer';
+            });
+        }, 800); 
+        
+        currentSlide = targetIndex;
+        currentPosition = position;
+        console.log('Slide', targetIndex, 'shown from right - CLEAN STATE animation'); // Debug
+    }
+    
+   
+    function nextSlide() {
+        console.log('Next slide clicked, current position:', currentPosition); // Debug
+        const nextPosition = (currentPosition + 1) % slideOrder.length;
+        showSlideByPosition(nextPosition);
+    }
+    
+    
+    function prevSlide() {
+        console.log('Previous slide clicked, current position:', currentPosition); // Debug
+        const prevPosition = (currentPosition - 1 + slideOrder.length) % slideOrder.length;
+        showSlideByPosition(prevPosition);
+    }
+    
+    
+    const allLeftArrows = document.querySelectorAll('.carousel-slide .absolute button:first-child');
+    const allRightArrows = document.querySelectorAll('.carousel-slide .absolute button:last-child');
+    
+    console.log('Found left arrows:', allLeftArrows.length); // Debug
+    console.log('Found right arrows:', allRightArrows.length); // Debug
+    
+    allLeftArrows.forEach((arrow, i) => {
+        arrow.addEventListener('click', (e) => {
+            if (isAnimating) {
+                console.log('Left arrow', i, 'clicked but animation in progress - IGNORED'); // Debug
+                return; 
+            }
+            console.log('Left arrow', i, 'clicked'); // Debug
+            prevSlide();
+        });
+    });
+    
+    allRightArrows.forEach((arrow, i) => {
+        arrow.addEventListener('click', (e) => {
+            if (isAnimating) {
+                console.log('Right arrow', i, 'clicked but animation in progress - IGNORED'); // Debug
+                return; 
+            }
+            console.log('Right arrow', i, 'clicked'); // Debug
+            nextSlide();
+        });
+    });
+    
+    console.log('Initializing carousel with', totalSlides, 'slides'); // Debug
+    showSlideByPosition(0);
+});
+</script>
 @endsection

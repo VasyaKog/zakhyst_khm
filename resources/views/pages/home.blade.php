@@ -278,6 +278,167 @@
     </div>
 </div>
 
+<!-- News Section -->
+<div class="w-full">
+    <!-- More News Link -->
+    <div class="flex justify-end mb-8">
+        <a href="#" class="text-base font-bold text-black uppercase border-b border-black hover:text-veteran-blue hover:border-veteran-blue transition-colors">
+            БІЛЬШЕ НОВИН ТУТ
+        </a>
+    </div>
+
+    <!-- News Grid -->
+    <div class="flex gap-[55px]">
+        <!-- News Card 1 -->
+        <div class="flex-1 min-w-0 flex flex-col">
+            <!-- Image -->
+            <img class="w-full h-[285px] rounded-[20px] object-cover" src="{{ asset('images/backgrounds/news-1.jpg') }}" alt="News 1">
+            
+            <!-- Title: 40px below image, fixed height -->
+            <div class="w-full mt-10 text-black text-3xl font-bold leading-10 h-20">
+                Український ветеранський фонд: звіт роботи за 2024 рік
+            </div>
+            
+            <!-- Description: 80px from title -->
+            <div class="w-full mt-20 text-black text-base font-normal leading-snug">
+                Громадська організація «Ветеранс ХАБ ОДЕСА» створює умови для розвитку ветеранського бізнесу. Якщо у тебе є ідея, але ти не знаєш, як її реалізувати, наша команда експертів готова допомогти...
+            </div>
+            
+            <!-- Date & Button row: pushed to bottom -->
+            <div class="w-full mt-auto pt-20 flex justify-between items-center">
+                <!-- Date: left -->
+                <div class="text-black text-sm font-bold uppercase leading-tight tracking-wide">
+                    10 ГРУДНЯ, 2024
+                </div>
+                
+                <!-- Button: right -->
+                <div class="w-44 h-12 rounded-[200px] border-2 border-veteran-blue flex items-center justify-center hover:bg-veteran-blue hover:text-white transition-colors cursor-pointer">
+                    <span class="text-black text-xs font-bold uppercase leading-none tracking-wide">ЧИТАТИ ДАЛІ</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- News Card 2 -->
+        <div class="flex-1 min-w-0 flex flex-col">
+            <!-- Image -->
+            <img class="w-full h-[285px] rounded-[20px] object-cover" src="{{ asset('images/backgrounds/news-2.jpg') }}" alt="News 2">
+            
+            <!-- Title: 40px below image, fixed height -->
+            <div class="w-full mt-10 text-black text-3xl font-bold leading-10 h-20">
+                Оголошення переможців грантової програми "Варто 11.0": у Києві пройшла пресконференція
+            </div>
+            
+            <!-- Description: 80px from title -->
+            <div class="w-full mt-20 text-black text-base font-normal leading-snug">
+                Громадська організація «Ветеранс ХАБ ОДЕСА» створює умови для розвитку ветеранського бізнесу. Якщо у тебе є ідея, але ти не знаєш, як її реалізувати, наша команда експертів готова допомогти...
+            </div>
+            
+            <!-- Date & Button row: pushed to bottom -->
+            <div class="w-full mt-auto pt-20 flex justify-between items-center">
+                <!-- Date: left -->
+                <div class="text-black text-sm font-bold uppercase leading-tight tracking-wide">
+                    10 ГРУДНЯ, 2024
+                </div>
+                
+                <!-- Button: right -->
+                <div class="w-44 h-12 rounded-[200px] border-2 border-veteran-blue flex items-center justify-center hover:bg-veteran-blue hover:text-white transition-colors cursor-pointer">
+                    <span class="text-black text-xs font-bold uppercase leading-none tracking-wide">ЧИТАТИ ДАЛІ</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- News Card 3 -->
+        <div class="flex-1 min-w-0 flex flex-col">
+            <!-- Image -->
+            <img class="w-full h-[285px] rounded-[20px] object-cover" src="{{ asset('images/backgrounds/news-3.jpg') }}" alt="News 3">
+            
+            <!-- Title: 40px below image, fixed height -->
+            <div class="w-full mt-10 text-black text-3xl font-bold leading-10 h-20">
+                Підтримка ветеранського бізнесу та допомога в його розвиткові
+            </div>
+            
+            <!-- Description: 80px from title -->
+            <div class="w-full mt-20 text-black text-base font-normal leading-snug">
+                Громадська організація «Ветеранс ХАБ ОДЕСА» створює умови для розвитку ветеранського бізнесу. Якщо у тебе є ідея, але ти не знаєш, як її реалізувати, наша команда експертів готова допомогти...
+            </div>
+            
+            <!-- Date & Button row: pushed to bottom -->
+            <div class="w-full mt-auto pt-20 flex justify-between items-center">
+                <!-- Date: left -->
+                <div class="text-black text-sm font-bold uppercase leading-tight tracking-wide">
+                    10 ГРУДНЯ, 2024
+                </div>
+                
+                <!-- Button: right -->
+                <div class="w-44 h-12 rounded-[200px] border-2 border-veteran-blue flex items-center justify-center hover:bg-veteran-blue hover:text-white transition-colors cursor-pointer">
+                    <span class="text-black text-xs font-bold uppercase leading-none tracking-wide">ЧИТАТИ ДАЛІ</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Team Section -->
+<div class="flex justify-center mt-[152px] mb-[300px]">
+    <div class="relative w-[1170px]">
+        <!-- Title Section -->
+        <div class="absolute left-0 top-0">
+            <h2 class="text-black text-[72px] font-extrabold font-montserrat uppercase leading-[85.36px] m-0">
+                Наша<br/>команда
+            </h2>
+        </div>
+        
+        <!-- Team Button -->
+        <div class="absolute right-0 top-5">
+            <button class="w-64 h-16 border-2 border-veteran-blue bg-white text-black text-xl font-black font-montserrat uppercase tracking-wide cursor-pointer transition-all duration-300 ease-in-out rounded-[412px]">
+                команда
+            </button>
+        </div>
+        
+        <!-- Team Members -->
+        <div class="absolute left-0 top-64 flex gap-[30px]">
+            <!-- Team Member 1: Директор -->
+            <div class="relative">
+                <div class="w-[370px] h-[440px] bg-zinc-300 rounded-[20px] overflow-hidden">
+                    <img class="w-full h-full object-cover object-top" style="object-position: center 5%;" src="{{ asset('images/backgrounds/team-1.jpg') }}" alt="Катерина Луцик">
+                </div>
+                <div class="mt-10 text-black text-3xl font-extrabold font-montserrat leading-10">
+                    Катерина Луцик
+                </div>
+                <div class="mt-6 text-black text-xl font-normal font-montserrat leading-7">
+                    Директор
+                </div>
+            </div>
+            
+            <!-- Team Member 2: Заступник директора -->
+            <div class="relative">
+                <div class="w-[370px] h-[440px] bg-zinc-300 rounded-[20px] overflow-hidden">
+                    <img class="w-full h-full object-cover" src="{{ asset('images/backgrounds/team-2.png') }}" alt="Анастасія Ярова">
+                </div>
+                <div class="mt-10 text-black text-3xl font-extrabold font-montserrat leading-10">
+                    Анастасія Ярова
+                </div>
+                <div class="mt-6 text-black text-xl font-normal font-montserrat leading-7">
+                    Заступник директора
+                </div>
+            </div>
+            
+            <!-- Team Member 3: Адміністратор -->
+            <div class="relative">
+                <div class="w-[370px] h-[440px] bg-zinc-300 rounded-[20px] overflow-hidden">
+                    <img class="w-full h-full object-cover" src="{{ asset('images/backgrounds/team-3.jpg') }}" alt="Ольга Свіжа">
+                </div>
+                <div class="mt-10 text-black text-3xl font-extrabold font-montserrat leading-10">
+                    Ольга Свіжа
+                </div>
+                <div class="mt-6 text-black text-xl font-normal font-montserrat leading-7">
+                    Адміністратор
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const carousel = document.getElementById('hero-carousel');
@@ -388,3 +549,4 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 @endsection
+

@@ -380,7 +380,7 @@
 
 <!-- Team Section -->
 <div class="flex justify-center mt-[152px] mb-[300px]">
-    <div class="relative w-[1170px]">
+    <div class="relative w-[1170px] h-[600px]">
         <!-- Title Section -->
         <div class="absolute left-0 top-0">
             <h2 class="text-black text-[72px] font-extrabold font-montserrat uppercase leading-[85.36px] m-0">
@@ -433,6 +433,29 @@
                 </div>
                 <div class="mt-6 text-black text-xl font-normal font-montserrat leading-7">
                     Адміністратор
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Map Section -->
+<div class="pt-[300px] flex justify-center">
+    <div class="relative w-[1815px]">
+        <!-- Title Section -->
+        <div class="absolute left-[325px] top-0">
+            <h2 class="text-black text-[72px] font-extrabold font-montserrat uppercase leading-[85.36px] m-0">
+                Хмельницький<br/>вдячний
+            </h2>
+        </div>
+        
+        <!-- Map -->
+        <div class="mt-40 pt-20">
+            <div class="rounded-[100px] overflow-hidden border-2 border-black">
+                <div class="relative h-[750px]">
+                    <img src="{{ asset('images/backgrounds/map.png') }}" 
+                         alt="Хмельницький Вдячний Map" 
+                         class="w-full h-full object-cover">
                 </div>
             </div>
         </div>

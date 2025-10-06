@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title','ВЕТЕРАНСЬКИЙ ПРОСТІР')</title>
-    <link rel="stylesheet" href="{{ asset('build/assets/web-06-Q642I.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/assets/web-7ma0qUIp.css') }}">
 </head>
 <body class="bg-white">
     @include('partials.header')

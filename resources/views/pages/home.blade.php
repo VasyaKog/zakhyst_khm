@@ -462,6 +462,81 @@
     </div>
 </div>
 
+<!-- Partners Section -->
+<div class="flex justify-center pt-[130px] mb-[300px]">
+    <div class="relative w-[1170px]">
+        <!-- Title Section -->
+        <div class="absolute left-0 top-0">
+            <h2 class="text-black text-[72px] font-extrabold font-montserrat uppercase leading-[85.36px] m-0">
+                Наші партнери
+            </h2>
+        </div>
+
+        <!-- Partners Carousel -->
+        <div class="pt-[200px] flex items-center justify-between">
+            <!-- Left Arrow -->
+            <button id="partners-prev" class="w-16 h-16 flex items-center justify-center transition-all hover:opacity-80">
+                <x-partners-arrow direction="left" />
+            </button>
+            
+            <!-- Partners Container -->
+            <div class="w-[1100px] mx-[35px] overflow-hidden">
+                <div id="partners-track" class="flex gap-[30px] transition-transform duration-500 ease-in-out">
+                    <!-- Partner 1 -->
+                    <div class="w-[225px] h-32 flex items-center justify-center flex-shrink-0">
+                        <img src="{{ asset('images/logos/khm.png') }}" alt="Khmelnytskyi" class="max-w-full max-h-full object-contain">
+                    </div>
+                    
+                    <!-- Partner 2 -->
+                    <div class="w-[225px] h-32 flex items-center justify-center flex-shrink-0">
+                        <img src="{{ asset('images/logos/veterans-fond.png') }}" alt="Veterans Fond" class="max-w-full max-h-full object-contain">
+                    </div>
+                    
+                    <!-- Partner 3 -->
+                    <div class="w-[225px] h-32 flex items-center justify-center flex-shrink-0">
+                        <img src="{{ asset('images/logos/veterans-space.png') }}" alt="Veterans Space" class="max-w-full max-h-full object-contain">
+                    </div>
+                    
+                    <!-- Partner 4 -->
+                    <div class="w-[225px] h-32 flex items-center justify-center flex-shrink-0">
+                        <img src="{{ asset('images/logos/irex.png') }}" alt="IREX" class="max-w-full max-h-full object-contain">
+                    </div>
+                    
+                    <!-- Partner 5 -->
+                    <div class="w-[225px] h-32 flex items-center justify-center flex-shrink-0">
+                        <img src="{{ asset('images/logos/ukrnafta.png') }}" alt="URKNAFTA" class="max-w-full max-h-full object-contain">
+                    </div>
+                    
+                    <!-- Partner 6 -->
+                    <div class="w-[225px] h-32 flex items-center justify-center flex-shrink-0">
+                        <img src="{{ asset('images/logos/uwf.png') }}" alt="UWF" class="max-w-full max-h-full object-contain">
+                    </div>
+                    
+                    <!-- Partner 7 -->
+                    <div class="w-[225px] h-32 flex items-center justify-center flex-shrink-0">
+                        <img src="{{ asset('images/logos/pumb.png') }}" alt="PUMB" class="max-w-full max-h-full object-contain">
+                    </div>
+                    
+                    <!-- Partner 8 -->
+                    <div class="w-[225px] h-32 flex items-center justify-center flex-shrink-0">
+                        <img src="{{ asset('images/logos/vidro.png') }}" alt="Vidrodzhennya" class="max-w-full max-h-full object-contain">
+                    </div>
+
+                    <!-- Partner 9 -->
+                    <div class="w-[225px] h-32 flex items-center justify-center flex-shrink-0">
+                        <img src="{{ asset('images/logos/razom.png') }}" alt="Razom" class="max-w-full max-h-full object-contain">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Arrow (mirrored) -->
+            <button id="partners-next" class="w-16 h-16 flex items-center justify-center transition-all">
+                <x-partners-arrow direction="right" />
+            </button>
+        </div>
+    </div>
+</div>
+
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const carousel = document.getElementById('hero-carousel');
@@ -569,6 +644,44 @@ document.addEventListener('DOMContentLoaded', function() {
     
     console.log('Initializing carousel with', totalSlides, 'slides'); // Debug
     showSlideByPosition(0);
+    
+    // Partners Carousel
+    const partnersTrack = document.getElementById('partners-track');
+    const partnersPrev = document.getElementById('partners-prev');
+    const partnersNext = document.getElementById('partners-next');
+    
+    // Check if elements exist
+    if (!partnersTrack || !partnersPrev || !partnersNext) {
+        console.error('Partners carousel elements not found');
+        return;
+    }
+    
+    let partnersPosition = 0;
+    const partnerItemWidth = 225; // Width of one partner logo
+    const partnerGap = 30; // Gap between items
+    const partnerStep = partnerItemWidth + partnerGap; // Total step distance (255px)
+    const totalItems = 9; // Total number of partner items
+    const visibleItems = 4; // Number of items visible at once
+    const maxPosition = totalItems - visibleItems; // 9 - 4 = 5 positions (0,1,2,3,4)
+    
+    function updatePartnersCarousel() {
+        const offset = -(partnersPosition * partnerStep);
+        partnersTrack.style.transform = `translateX(${offset}px)`;
+    }
+    
+    partnersNext.addEventListener('click', () => {
+        if (partnersPosition < maxPosition) {
+            partnersPosition++;
+            updatePartnersCarousel();
+        }
+    });
+    
+    partnersPrev.addEventListener('click', () => {
+        if (partnersPosition > 0) {
+            partnersPosition--;
+            updatePartnersCarousel();
+        }
+    });
 });
 </script>
 @endsection

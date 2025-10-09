@@ -39,3 +39,25 @@ body {
 .font-black {
     font-weight: 900 !important;
 }
+
+#partners-prev:hover .partners-arrow-path,
+#partners-next:hover .partners-arrow-path {
+    fill: #3971E2 !important;
+    stroke: #3971E2 !important;
+}
+
+#partners-prev:hover path,
+#partners-next:hover path {
+    fill: #3971E2 !important;
+    stroke: #3971E2 !important;
+}
+
+#partners-prev:hover g,
+#partners-next:hover g {
+    opacity: 1 !important;
+}
+
+// Partners carousel container - ensure exact 4 items visible
+#partners-track {
+    width: 1100px; /* Width to show exactly 4 items with gaps */
+}

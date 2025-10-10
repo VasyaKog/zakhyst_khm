@@ -686,3 +686,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 @endsection
 
+@section('footer')
+    @include('partials.footer-extended')
+@endsection
+

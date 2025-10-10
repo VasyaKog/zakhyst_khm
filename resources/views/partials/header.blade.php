@@ -1,11 +1,10 @@
 <header>
-    <div class="mx-auto" style="padding-left: 50px; padding-right: 50px;">
+    <div class="mx-auto my-10" style="padding-left: 50px; padding-right: 50px;">
         <div class="relative flex items-center justify-between h-24">
             
             <div class="flex items-center space-x-3">
                 <img src="{{ asset('images/logos/logo-text.svg') }}" 
-                     alt="ВЕТЕРАНСЬКИЙ ПРОСТІР" 
-                     class="h-12 w-auto">
+                     alt="ВЕТЕРАНСЬКИЙ ПРОСТІР">
             </div>
             
             <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
@@ -25,29 +24,26 @@
                 </div>
             </div>
             
-            <div class="flex items-center gap-8"> <button class="flex items-center space-x-1 text-black hover:text-veteran-blue transition-colors">
+            <div class="flex items-center gap-8"> <button class="flex items-center space-x-1 text-black">
                     <span class="font-bold text-base">UA</span>
-                    <img src="{{ asset('images/icons/arrow-down.svg') }}" 
-                         alt="Dropdown" 
-                         class="h-3 w-3">
+                    <img class="pb-1"src="{{ asset('images/icons/arrow-down.svg') }}" 
+                         alt="Dropdown">
                 </button>
                 
                 <button type="button" 
                         class="text-black hover:text-veteran-blue focus:outline-none focus:text-gray-900"
                         onclick="toggleMobileMenu()">
                     <img src="{{ asset('images/icons/burger.svg') }}" 
-                         alt="Menu" 
-                         class="h-[19px] w-[30px]">
+                         alt="Menu">
                 </button>
                 
-                <button class="transition-colors"
+                <button class="mr-[65px] transition-colors"
                         onclick="toggleDarkMode()">
                     <img src="{{ asset('images/icons/switch.svg') }}" 
-                         alt="Dark Mode Toggle" 
-                         class="h-6 w-auto">
+                         alt="Dark Mode Toggle">
                 </button>
                 
-                <button class="bg-veteran-blue hover:bg-blue-700 w-[260px] h-[70px] text-white font-black px-6 py-2 rounded-full transition-colors">
+                <button class="bg-veteran-blue hover:bg-blue-700 w-[260px] h-[70px] text-white text-xl font-black px-12 py-6 rounded-full transition-colors">
                     ПІДТРИМАТИ
                 </button>
             </div>

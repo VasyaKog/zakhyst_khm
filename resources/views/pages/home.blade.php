@@ -23,41 +23,41 @@
     <!-- Cards Grid -->
     <div class="absolute left-[326px] top-[367px] grid grid-cols-2 gap-8">
         <!-- Card 1: Veterans -->
-        <div class="w-80 h-24 bg-white rounded-[10px] flex items-center px-4 space-x-4" style="width: 300px; height: 90px;">
+        <div class="w-[300px] h-[90px] bg-white rounded-[10px] flex items-center px-4 space-x-4">
             <div class="w-11 h-11 flex items-center justify-center">
                 <img src="{{ asset('images/icons/family.svg') }}" alt="Family" class="w-11 h-11">
             </div>
-            <span class="text-black text-xs font-bold font-montserrat uppercase leading-none tracking-tight">
+            <span class="text-black text-xs font-bold font-montserrat uppercase leading-tight tracking-wide">
                 ВЕТЕРАНИ ТА ЧЛЕНИ ЇХ РОДИН
             </span>
         </div>
         
         <!-- Card 2: Fallen Families -->
-        <div class="w-80 h-24 bg-white rounded-[10px] flex items-center px-4 space-x-4" style="width: 300px; height: 90px;">
+        <div class="w-[300px] h-[90px] bg-white rounded-[10px] flex items-center px-4 space-x-4">
             <div class="w-11 h-11 flex items-center justify-center">
                 <img src="{{ asset('images/icons/heart.svg') }}" alt="Heart" class="w-11 h-11">
             </div>
-            <span class="text-black text-xs font-bold font-montserrat uppercase leading-none tracking-tight">
+            <span class="text-black text-xs font-bold font-montserrat uppercase leading-tight tracking-wide">
                 ЧЛЕНИ СІМЕЙ ЗАГИБЛИХ
             </span>
         </div>
         
         <!-- Card 3: Military -->
-        <div class="w-80 h-24 bg-white rounded-[10px] flex items-center px-4 space-x-4" style="width: 300px; height: 90px;">
+        <div class="w-[300px] h-[90px] bg-white rounded-[10px] flex items-center px-4 space-x-4">
             <div class="w-11 h-11 flex items-center justify-center">
                 <img src="{{ asset('images/icons/army.svg') }}" alt="Army" class="w-11 h-11">
             </div>
-            <span class="text-black text-xs font-bold font-montserrat uppercase leading-none tracking-tight">
+            <span class="text-black text-xs font-bold font-montserrat uppercase leading-tight tracking-wide">
                 ВІЙСЬКОВІ ТА ЧЛЕНИ ЇХ РОДИН
             </span>
         </div>
         
         <!-- Card 4: POW Families -->
-        <div class="w-80 h-24 bg-white rounded-[10px] flex items-center px-4 space-x-4" style="width: 300px; height: 90px;">
+        <div class="w-[300px] h-[90px] bg-white rounded-[10px] flex items-center px-4 space-x-4">
             <div class="w-11 h-11 flex items-center justify-center">
                 <img src="{{ asset('images/icons/people.svg') }}" alt="People" class="w-11 h-11">
             </div>
-            <span class="text-black text-xs font-bold font-montserrat uppercase leading-none tracking-tight">
+            <span class="text-black text-xs font-bold font-montserrat uppercase leading-tight tracking-wide">
                 ЧЛЕНИ СІМЕЙ ВІЙСЬКОВОПОЛОНЕННИХ<br/>ТА ЗНИКЛИХ БЕЗВІСТИ
             </span>
         </div>
@@ -152,7 +152,7 @@
 </div>
 
 <!-- Hero Footer Section -->
-<footer class="flex items-center justify-between py-4">
+<footer class="flex items-center justify-between py-4 pb-[124px]">
     <!-- Contact Info -->
     <div class="flex items-center">
         <img src="{{ asset('images/icons/watsapnp.svg') }}" alt="WhatsApp" class="w-6 h-6">
@@ -279,7 +279,7 @@
 </div>
 
 <!-- News Section -->
-<div class="w-full">
+<div class="w-full mb-[300px]">
     <!-- More News Link -->
     <div class="flex justify-end mb-8">
         <a href="#" class="text-base font-bold text-black uppercase border-b border-black hover:text-veteran-blue hover:border-veteran-blue transition-colors">
@@ -463,7 +463,7 @@
 </div>
 
 <!-- Partners Section -->
-<div class="flex justify-center pt-[130px] mb-[300px]">
+<div class="flex justify-center pt-[130px] mb-[180px]">
     <div class="relative w-[1170px]">
         <!-- Title Section -->
         <div class="absolute left-0 top-0">

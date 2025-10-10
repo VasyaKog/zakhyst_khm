@@ -1,5 +1,5 @@
 <footer class="flex mt-[40px] mb-[50px] px-[50px]">
-    <!-- Organization Logo and Name -->>
+    <!-- Organization Logo and Name -->
     <img src="{{ asset('images/logos/logo-text.svg') }}" alt="Logo" class="mr-[100px] filter brightness-0">
     
     <!-- Social Media Icons -->

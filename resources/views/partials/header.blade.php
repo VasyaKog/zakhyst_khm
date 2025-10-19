@@ -76,7 +76,7 @@
                          alt="Dark Mode Toggle">
                 </button>
                 
-                <button class="bg-veteran-blue hover:bg-blue-700 w-[260px] h-[70px] text-white text-xl font-black px-12 py-6 rounded-full transition-colors">
+                <button onclick="openDonationModal()" class="bg-veteran-blue hover:bg-blue-700 w-[260px] h-[70px] text-white text-xl font-black px-12 py-6 rounded-full transition-colors">
                     ПІДТРИМАТИ
                 </button>
             </div>

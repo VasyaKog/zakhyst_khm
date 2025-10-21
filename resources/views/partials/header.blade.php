@@ -10,7 +10,7 @@
             <!-- Desktop Navigation -->
             <div id="desktop-nav" class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
                 <div class="flex items-center space-x-8">
-                    <a href="{{ route('about') }}" 
+                    <a href="{{ route('home') }}" 
                        class="text-black hover:text-veteran-blue font-bold text-base uppercase leading-tight tracking-wide transition-colors">
                         ПРО НАС
                     </a>
@@ -76,7 +76,7 @@
                          alt="Dark Mode Toggle">
                 </button>
                 
-                <button onclick="openDonationModal()" class="bg-veteran-blue hover:bg-blue-700 w-[260px] h-[70px] text-white text-xl font-black px-12 py-6 rounded-full transition-colors">
+                <button onclick="openDonationModal()" class="bg-veteran-blue hover:bg-blue-700 w-[260px] h-[70px] text-white text-xl font-black px-12 py-6 rounded-full transition-colors flex items-center justify-center">
                     ПІДТРИМАТИ
                 </button>
             </div>

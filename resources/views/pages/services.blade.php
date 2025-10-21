@@ -1,50 +1,174 @@
 @extends('layouts.web')
-@section('title','Послуги')
+
+@section('title', 'Послуги - ВЕТЕРАНСЬКИЙ ПРОСТІР')
+
 @section('content')
-<div class="bg-white py-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center">
-            <h1 class="text-4xl font-bold text-gray-900 mb-4">Наші послуги</h1>
-            <p class="text-xl text-gray-600 mb-12">Тут буде інформація про послуги, які ми надаємо</p>
+<div class="bg-white">
+    <!-- Main Services Section -->
+    <div class="pt-[120px] pb-[100px]">
+        <!-- Page Title -->
+        <div class="ml-[375px] mb-[120px]">
+            <h1 class="text-[80px] font-extrabold font-['Montserrat'] text-black uppercase leading-[0.92]">
+                Послуги
+            </h1>
         </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Послуга 1</h3>
-                    <p class="text-gray-600">Опис першої послуги з детальною інформацією</p>
-                </div>
-            </div>
+
+        <!-- Services Container -->
+        <div class="max-w-[1170px] mx-auto px-[50px]">
             
-            <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Послуга 2</h3>
-                    <p class="text-gray-600">Опис другої послуги з детальною інформацією</p>
-                </div>
-            </div>
-            
-            <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Послуга 3</h3>
-                    <p class="text-gray-600">Опис третьої послуги з детальною інформацією</p>
-                </div>
-            </div>
+            <!-- Service 1: Супровід ветеранів -->
+            <x-service-card 
+                number="01" 
+                title="Супровід ветеранів">
+                <x-slot:leftContent>
+                    <ul class="list-disc ms-[30px] space-y-[10px]">
+                        <li>Розробка індивідуального плану підтримки.</li>
+                        <li>Допомога в оформленні пільг, соціальних виплат, житла.</li>
+                        <li>Підтримка у випадках складних життєвих обставин.</li>
+                        <li>Інформація про доступ до медичних послуг, реабілітаційних центрів.</li>
+                        <li>Залучення ветеранів до соціально-культурних заходів.</li>
+                    </ul>
+                </x-slot:leftContent>
+                <x-slot:rightContent>
+                    <ul class="list-disc ms-[30px] space-y-[10px]">
+                        <li>Сприяння у створенні ветеранських спільнот.</li>
+                        <li>Допомога родинам ветеранів.</li>
+                    </ul>
+                </x-slot:rightContent>
+            </x-service-card>
+
+            <!-- Service 2: Психологічна підтримка -->
+            <x-service-card 
+                number="02" 
+                title="Психологічна підтримка">
+                <x-slot:leftContent>
+                    <ul class="list-disc ms-[30px] space-y-[10px]">
+                        <li>Індивідуальні психологічні консультації для дорослих.</li>
+                        <li>Психоедукаційні групи для дорослих.</li>
+                        <li>Групи підтримки, «кола своїх».</li>
+                        <li>Індивідуальні психологічні консультації для дітей.</li>
+                        <li>Психологічні групи для дітей.</li>
+                    </ul>
+                </x-slot:leftContent>
+                <x-slot:rightContent>
+                    <ul class="list-disc ms-[30px] space-y-[10px]">
+                        <li>Арт-терапевтичні групи для дорослих та дітей.</li>
+                        <li>Кризове консультування.</li>
+                        <li>Психологічне консультування сімейних пар.</li>
+                    </ul>
+                </x-slot:rightContent>
+            </x-service-card>
+
+            <!-- Service 3: Юридичні консультації -->
+            <x-service-card 
+                number="03" 
+                title="Юридичні консультації">
+                <x-slot:leftContent>
+                    <ul class="list-disc ms-[30px] space-y-[10px]">
+                        <li>Правова інформація, консультації та роз'яснення з правових питань;</li>
+                        <li>Допомога у складенні рапортів, заяв, скарг та інших документів правового характеру (крім документів процесуального характеру);</li>
+                        <li>Проведення заходів правопросвітництва для підвищення правової освіти для відвідувачів Ветеранського простору на актуальні теми.</li>
+                    </ul>
+                </x-slot:leftContent>
+            </x-service-card>
+
+            <!-- Service 4: Кар'єрне консультування -->
+            <x-service-card 
+                number="04" 
+                title="Кар'єрне консультування:">
+                <x-slot:leftContent>
+                    <ul class="list-disc ms-[30px] space-y-[10px]">
+                        <li>Допомога в реєстрації на освітні програми.</li>
+                        <li>Сприяння у перекваліфікації або підвищенні кваліфікації.</li>
+                        <li>Консультації щодо відкриття бізнесу.</li>
+                        <li>Допомога у складанні бізнес-плану.</li>
+                        <li>Інформація про програми підтримки підприємництва для ветеранів.</li>
+                        <li>Складання та редагування резюме й мотиваційного листа з урахуванням специфіки ринку праці.</li>
+                        <li>Консультації щодо заповнення заявок на вакансії.</li>
+                    </ul>
+                </x-slot:leftContent>
+                <x-slot:rightContent>
+                    <ul class="list-disc ms-[30px] space-y-[10px]">
+                        <li>Тренінги з підготовки до співбесіди.</li>
+                        <li>Сприяння участі у державних або місцевих програмах підтримки ветеранів.</li>
+                        <li>Допомога у використанні платформ для пошуку роботи.</li>
+                        <li>Мотиваційна підтримка для розвитку кар'єри.</li>
+                        <li>Допомога в комунікації з роботодавцями, які готові наймати ветеранів.</li>
+                    </ul>
+                </x-slot:rightContent>
+            </x-service-card>
+
+            <!-- Service 5: Реабілітація -->
+            <x-service-card 
+                number="05" 
+                title="Реабілітація">
+                <x-slot:leftContent>
+                    <ul class="list-disc ms-[30px] space-y-[10px]">
+                        <li>Оцінка фізичного стану</li>
+                        <li>Кінезіотейпування та відновлення рухливості через м'які мануальні техніки.</li>
+                        <li>Розробка індивідуальних реабілітаційних програм.</li>
+                        <li>Консультації з профілактики травм.</li>
+                        <li>Рекомендації з фізичної активності для загального зміцнення організму.</li>
+                        <li>Рекомендації з раціонального підходу до навантажень у повсякденному житті.</li>
+                        <li>Консультації щодо зв'язку між фізичним і психологічним станом.</li>
+                    </ul>
+                </x-slot:leftContent>
+                <x-slot:rightContent>
+                    <ul class="list-disc ms-[30px] space-y-[10px]">
+                        <li>Проведення освітніх заходів для ветеранів та їхніх сімей з питань фізичної реабілітації.</li>
+                        <li>Проведення тематичних занять щодо покращення фізичного стану організму.</li>
+                        <li>Інструкції з використання ходунків, милиць, крісел колісних і т.д.</li>
+                        <li>Проведення лекцій для ветеранів та їхніх родин з теми паліативного догляду.</li>
+                    </ul>
+                </x-slot:rightContent>
+            </x-service-card>
+
+            <!-- Service 6: Робота в громадах -->
+            <x-service-card 
+                number="06" 
+                title="Робота в громадах:">
+                <x-slot:leftContent>
+                    <p class="mb-[20px]">
+                        Ветеранський простір активно працює в громадах, забезпечуючи підтримку ветеранам та їхнім родинам у найвіддаленіших куточках області. Одним з ключових напрямків є виїзди мобільної бригади спеціалістів, які надають юридичні консультації, психологічну підтримку та допомогу у вирішенні нагальних питань.
+                    </p>
+                    <p>
+                        Ми також активно займаємося навчанням команд, які працюють з ветеранською спільнотою, підвищуючи їх кваліфікацію та забезпечуючи ефективну взаємодію з ветеранами та їх родинами. Важливим елементом роботи є менторство громад щодо створення та розвитку власних ветеранських просторів, щоб кожна громада могла забезпечити належну підтримку своїм захисникам.
+                    </p>
+                </x-slot:leftContent>
+                <x-slot:rightContent>
+                    <p>
+                        Крім того, Ветеранський простір активно підтримує розвиток місцевих ветеранських програм та ініціатив, сприяючи їх впровадженню та ефективному функціонуванню. Ми прагнемо створити мережу, де кожен ветеран має можливість отримати допомогу, а громада — ресурси для підтримки та розвитку.
+                    </p>
+                </x-slot:rightContent>
+            </x-service-card>
+
+            <!-- Service 7: Тренінговий центр -->
+            <x-service-card 
+                number="07" 
+                title="Тренінговий центр:">
+                <x-slot:leftContent>
+                    <p class="mb-[20px]">
+                        Тренінговий центр Ветеранського простору є важливою частиною нашої діяльності, спрямованої на просвітництво та інтеграцію ветеранської спільноти у громади.
+                    </p>
+                    <p class="mb-[20px]">
+                        Ми займаємося навчанням і підвищенням кваліфікації спеціалістів, які працюють з військовими та ветеранами, щоб забезпечити ефективну підтримку та допомогу.
+                    </p>
+                    <p>
+                        Центр також активно працює з родинами військовослужбовців та ветеранів, організовуючи тренінги та семінари, які допомагають розв'язувати соціальні та психологічні питання, що виникають у зв'язку з військовим досвідом.
+                    </p>
+                </x-slot:leftContent>
+                <x-slot:rightContent>
+                    <p>
+                        Крім того, ми проводимо різноманітні групові заняття для широких верств населення, де ознайомлюємо з ветеранськими політиками та специфікою потреб цієї категорії. Це сприяє кращій комунікації між цивільним населенням та ветеранами, допомагаючи створювати атмосферу розуміння та підтримки в громадах. Ми прагнемо, щоб кожен мав можливість отримати знання про ветеранські ініціативи, що, в свою чергу, сприяє побудові гармонійних відносин між різними соціальними групами.
+                    </p>
+                </x-slot:rightContent>
+            </x-service-card>
+
         </div>
     </div>
 </div>
+@endsection
+
+@section('footer')
+    @include('partials.footer-basic')
 @endsection

@@ -184,15 +184,15 @@
         
         <!-- All Services Button -->
         <div class="absolute right-0 top-5">
-            <button class="w-64 h-16 border-2 border-veteran-blue bg-white text-black text-xl font-black font-montserrat uppercase tracking-wide cursor-pointer transition-all duration-300 ease-in-out rounded-[412px]">
+            <a href="{{ route('services') }}" class="w-64 h-16 border-2 border-veteran-blue bg-white text-black text-xl font-black font-montserrat uppercase tracking-wide cursor-pointer transition-all duration-300 ease-in-out rounded-[412px] flex items-center justify-center hover:bg-veteran-blue hover:text-white">
                 всі послуги
-            </button>
+            </a>
         </div>
         
         <!-- Service Cards -->
         <div class="absolute left-0 top-[269px] flex gap-8">
             <!-- Card 1: Veteran Support -->
-            <div class="relative w-96 h-[496px]" style="background-image: url('{{ asset('images/backgrounds/service-bg.svg') }}'); background-size: fit; background-repeat: no-repeat; background-position: center;">
+            <a href="{{ route('services') }}" class="relative w-96 h-[496px] cursor-pointer transition-transform duration-300 hover:scale-105" style="background-image: url('{{ asset('images/backgrounds/service-bg.svg') }}'); background-size: fit; background-repeat: no-repeat; background-position: center;">
                 <!-- Icon -->
                 <div class="absolute left-[39px] top-[41px] w-14 h-14 rounded-full flex items-center justify-center">
                     <img src="{{ asset('images/icons/support.svg') }}" alt="Support" class="w-[59px] h-[59px]">
@@ -217,10 +217,10 @@
                         <li>Допомога в оформленні пільг, соціальних виплат, житла. ...</li>
                     </ul>
                 </div>
-            </div>
+            </a>
             
             <!-- Card 2: Legal Consultations -->
-            <div class="relative w-96 h-[496px]" style="background-image: url('{{ asset('images/backgrounds/service-bg.svg') }}'); background-size: fit; background-repeat: no-repeat; background-position: center;">
+            <a href="{{ route('services') }}" class="relative w-96 h-[496px] cursor-pointer transition-transform duration-300 hover:scale-105" style="background-image: url('{{ asset('images/backgrounds/service-bg.svg') }}'); background-size: fit; background-repeat: no-repeat; background-position: center;">
                 <!-- Icon -->
                 <div class="absolute left-[39px] top-[41px] w-[59px] h-[59px] rounded-full flex items-center justify-center">
                     <img src="{{ asset('images/icons/legal.svg') }}" alt="Legal" class="w-[59px] h-[59px]">
@@ -245,10 +245,10 @@
                         <li>Допомога у складенні рапортів, заяв, скарг ...</li>
                     </ul>
                 </div>
-            </div>
+            </a>
             
             <!-- Card 3: Psychological Assistance -->
-            <div class="relative w-96 h-[496px]" style="background-image: url('{{ asset('images/backgrounds/service-bg.svg') }}'); background-size: fit; background-repeat: no-repeat; background-position: center;">
+            <a href="{{ route('services') }}" class="relative w-96 h-[496px] cursor-pointer transition-transform duration-300 hover:scale-105" style="background-image: url('{{ asset('images/backgrounds/service-bg.svg') }}'); background-size: fit; background-repeat: no-repeat; background-position: center;">
                 <!-- Icon -->
                 <div class="absolute left-[39px] top-[41px] w-14 h-14 rounded-full flex items-center justify-center">
                     <img src="{{ asset('images/icons/head.svg') }}" alt="Psychology" class="w-[59px] h-[59px]">
@@ -273,7 +273,7 @@
                         <li>Психоедукаційні групи для дорослих. ...</li>
                     </ul>
                 </div>
-            </div>
+            </a>
         </div>
     </div>
 </div>
@@ -312,8 +312,8 @@
                 </div>
                 
                 <!-- Button: right -->
-                <div class="w-44 h-12 rounded-[200px] border-2 border-veteran-blue flex items-center justify-center hover:bg-veteran-blue hover:text-white transition-colors cursor-pointer">
-                    <span class="text-black text-xs font-bold uppercase leading-none tracking-wide">ЧИТАТИ ДАЛІ</span>
+                <div class="w-44 h-12 rounded-[200px] border-2 border-veteran-blue flex items-center justify-center hover:bg-veteran-blue transition-colors cursor-pointer group">
+                    <span class="text-black group-hover:text-white text-xs font-bold uppercase leading-none tracking-wide transition-colors">ЧИТАТИ ДАЛІ</span>
                 </div>
             </div>
         </div>
@@ -341,8 +341,8 @@
                 </div>
                 
                 <!-- Button: right -->
-                <div class="w-44 h-12 rounded-[200px] border-2 border-veteran-blue flex items-center justify-center hover:bg-veteran-blue hover:text-white transition-colors cursor-pointer">
-                    <span class="text-black text-xs font-bold uppercase leading-none tracking-wide">ЧИТАТИ ДАЛІ</span>
+                <div class="w-44 h-12 rounded-[200px] border-2 border-veteran-blue flex items-center justify-center hover:bg-veteran-blue transition-colors cursor-pointer group">
+                    <span class="text-black group-hover:text-white text-xs font-bold uppercase leading-none tracking-wide transition-colors">ЧИТАТИ ДАЛІ</span>
                 </div>
             </div>
         </div>
@@ -370,8 +370,8 @@
                 </div>
                 
                 <!-- Button: right -->
-                <div class="w-44 h-12 rounded-[200px] border-2 border-veteran-blue flex items-center justify-center hover:bg-veteran-blue hover:text-white transition-colors cursor-pointer">
-                    <span class="text-black text-xs font-bold uppercase leading-none tracking-wide">ЧИТАТИ ДАЛІ</span>
+                <div class="w-44 h-12 rounded-[200px] border-2 border-veteran-blue flex items-center justify-center hover:bg-veteran-blue transition-colors cursor-pointer group">
+                    <span class="text-black group-hover:text-white text-xs font-bold uppercase leading-none tracking-wide transition-colors">ЧИТАТИ ДАЛІ</span>
                 </div>
             </div>
         </div>
@@ -390,9 +390,9 @@
         
         <!-- Team Button -->
         <div class="absolute right-0 top-5">
-            <button class="w-64 h-16 border-2 border-veteran-blue bg-white text-black text-xl font-black font-montserrat uppercase tracking-wide cursor-pointer transition-all duration-300 ease-in-out rounded-[412px]">
+            <a href="{{ route('team') }}" class="w-64 h-16 border-2 border-veteran-blue bg-white text-black text-xl font-black font-montserrat uppercase tracking-wide cursor-pointer transition-all duration-300 ease-in-out rounded-[412px] flex items-center justify-center hover:bg-veteran-blue hover:text-white">
                 команда
-            </button>
+            </a>
         </div>
         
         <!-- Team Members -->

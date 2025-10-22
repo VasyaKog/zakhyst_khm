@@ -3,14 +3,16 @@
         <div class="relative flex items-center justify-between h-24">
             
             <div class="flex items-center space-x-3">
-                <img src="{{ asset('images/logos/logo-text.svg') }}" 
-                     alt="ВЕТЕРАНСЬКИЙ ПРОСТІР">
+                <a href="{{ route('home') }}">
+                    <img src="{{ asset('images/logos/logo-text.svg') }}" 
+                         alt="ВЕТЕРАНСЬКИЙ ПРОСТІР">
+                </a>
             </div>
             
             <!-- Desktop Navigation -->
             <div id="desktop-nav" class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
                 <div class="flex items-center space-x-8">
-                    <a href="{{ route('home') }}" 
+                    <a href="{{ route('about') }}" 
                        class="text-black hover:text-veteran-blue font-bold text-base uppercase leading-tight tracking-wide transition-colors">
                         ПРО НАС
                     </a>

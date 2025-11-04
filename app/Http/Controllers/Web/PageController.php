@@ -6,9 +6,11 @@ use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
-    public function home()     { return view('pages.home'); }
-    public function about()   { return view('pages.about'); }
+    public function home() { return view('pages.home'); }
+    public function about() { return view('pages.about'); }
+    public function team() { return view('pages.team'); }
     public function services() { return view('pages.services'); }
+    public function news() { return view('pages.news'); }
     public function contact() { return view('pages.contact'); }
     
     public function contactSubmit(Request $request)
@@ -28,5 +30,4 @@ class PageController extends Controller
             'message' => 'Повідомлення успішно відправлено!'
         ]);
     }
-    public function team()    { return view('pages.team'); }
 }

@@ -2,20 +2,25 @@
 @section('title','Новини')
 @section('content')
 
-<div class="mb-16">
-    <h1 class="text-[158px] font-extrabold font-['Montserrat'] text-black uppercase leading-[0.92] mb-8">
-        НОВИНИ:
-    </h1>
-    
-    <div class="max-w-[869px] text-[20px] font-normal font-['Montserrat'] text-black leading-[1.43] mb-16">
-        <p class="mb-0">Найсвіжіші новини для спільноти ветеранів, діючих військових, їхніх родин<br/>та близьких, а також спільнот, які цікавляться ветеранською тематику.</p>
+<div class="flex flex-row justify-between mb-16 mt-32">
+    <div>
+        <h1 class="text-[158px] font-extrabold font-['Montserrat'] text-black uppercase leading-[0.92]">
+            НОВИНИ:
+        </h1>
+        
+        <div class="max-w-[869px] text-[20px] font-normal font-['Montserrat'] text-black leading-[1.43] mb-16 mt-20">
+            <p class="mb-0">Найсвіжіші новини для спільноти ветеранів, діючих військових, їхніх родин<br/>та близьких, а також спільнот, які цікавляться ветеранською тематику.</p>
+        </div>
+    </div>
+
+    <div>            
+        <img src="{{ asset('images/icons/instagram.svg') }}" alt="Insta" class="max-w-[30px] max-h-[30px] mb-4 cursor-pointer"> 
+        <img src="{{ asset('images/icons/facebook.svg') }}" alt="Facebook" class="max-w-[30px] max-h-[30px] cursor-pointer">
     </div>
 </div>
 
 <!-- Divider -->
-<div class="mb-16">
-    <div class="w-full h-px bg-black"></div>
-</div>
+<div class="w-full h-px bg-black mb-32"></div>
 
 <!-- Main container with both grids side by side -->
 <div class="grid grid-cols-[1fr_930px] gap-x-[70px] max-w-[1920px]">

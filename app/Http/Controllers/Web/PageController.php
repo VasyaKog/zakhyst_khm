@@ -11,6 +11,7 @@ class PageController extends Controller
     public function team() { return view('pages.team'); }
     public function services() { return view('pages.services'); }
     public function news() { return view('pages.news'); }
+    public function newsPage() { return view('pages.news-page'); }
     public function contact() { return view('pages.contact'); }
     
     public function contactSubmit(Request $request)

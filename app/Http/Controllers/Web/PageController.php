@@ -13,7 +13,8 @@ class PageController extends Controller
     public function news() { return view('pages.news'); }
     public function newsPage() { return view('pages.news-page'); }
     public function contact() { return view('pages.contact'); }
-    
+    public function indifferent() { return view('pages.indifferent'); }
+     
     public function contactSubmit(Request $request)
     {
         $request->validate([

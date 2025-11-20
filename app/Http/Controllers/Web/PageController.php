@@ -14,6 +14,7 @@ class PageController extends Controller
     public function newsPage() { return view('pages.news-page'); }
     public function contact() { return view('pages.contact'); }
     public function indifferent() { return view('pages.indifferent'); }
+    public function path() { return view('pages.path'); }
      
     public function contactSubmit(Request $request)
     {

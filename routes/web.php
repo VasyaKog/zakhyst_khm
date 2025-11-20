@@ -15,5 +15,6 @@ Route::post('/contact', [PageController::class, 'contactSubmit'])->name('contact
 Route::get('/team', [PageController::class, 'team'])->name('team');
 Route::get('/news-page', [PageController::class, 'newsPage'])->name('news.page');
 Route::get('/indifferent', [PageController::class, 'indifferent'])->name('indifferent');
+Route::get('/path', [PageController::class, 'path'])->name('path');
 
 require __DIR__.'/auth.php';

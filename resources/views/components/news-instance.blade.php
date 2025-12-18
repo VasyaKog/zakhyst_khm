@@ -82,44 +82,5 @@
         @endforeach
     </div>
 
-    <p class="text-[48px] font-bold font-['Montserrat'] text-black leading-[1.33]">
-        Тобі може бути цікаво
-    </p>
-</div>
-
-<!-- You may be interested -->
-<div class="flex flex-row gap-12 my-24">
-     <x-news-card
-            variant="large"
-            :show-button="true"
-            class="!max-w-none"
-            title="Український ветеранський фонд: звіт роботи за 2024 рік"
-            summary="Громадська організація «Ветеранс ХАБ ОДЕСА» створює умови для розвитку ветеранського бізнесу. Якщо у тебе є ідея, але ти не знаєш, як її реалізувати, наша команда експертів готова допомогти..."
-            date="10 ГРУДНЯ, 2025"
-            image-url="{{ asset('images/backgrounds/news-bg-1.png') }}"
-            url="#"
-        />
-
-         <x-news-card
-            variant="large"
-            :show-button="true"
-            class="!max-w-none"
-            title="Український ветеранський фонд: звіт роботи за 2024 рік"
-            summary="Громадська організація «Ветеранс ХАБ ОДЕСА» створює умови для розвитку ветеранського бізнесу. Якщо у тебе є ідея, але ти не знаєш, як її реалізувати, наша команда експертів готова допомогти..."
-            date="10 ГРУДНЯ, 2025"
-            image-url="{{ asset('images/backgrounds/news-bg-1.png') }}"
-            url="#"
-        />
-
-         <x-news-card
-            variant="large"
-            :show-button="true"
-            class="!max-w-none"
-            title="Український ветеранський фонд: звіт роботи за 2024 рік"
-            summary="Громадська організація «Ветеранс ХАБ ОДЕСА» створює умови для розвитку ветеранського бізнесу. Якщо у тебе є ідея, але ти не знаєш, як її реалізувати, наша команда експертів готова допомогти..."
-            date="10 ГРУДНЯ, 2025"
-            image-url="{{ asset('images/backgrounds/news-bg-1.png') }}"
-            url="#"
-        />
 </div>
 

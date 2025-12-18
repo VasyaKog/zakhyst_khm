@@ -55,27 +55,29 @@ $bottomContainerMarginClass = [
 @endphp
 
 <div class="{{ $widthClasses }} w-full {{ $class }}">
-    <img src="{{ $imageUrl }}" alt="News Preview" class="rounded-[20px] w-full h-auto {{ $imageMarginClasses }}">
-    
-    <h2 class="{{ $titleSizeClasses }} font-bold font-['Montserrat'] text-black leading-[1.43] {{ $titleMarginClasses }}">
-        {{ $title }}
-    </h2>
-    
-    <p class="{{ $summarySizeClasses }} font-normal font-['Montserrat'] text-black leading-[1.43] {{ $summaryMarginClasses }}">
-        {{ $summary }}
-    </p>
-
-    <div class="w-full flex justify-between items-center @if($showButton) {{ $bottomContainerMarginClass }} @endif">
-        <span class="text-[14px] font-bold font-['Montserrat'] text-black leading-[1.43]">
-            {{ $date }}
-        </span>
+    <a href="{{ $url }}" class="block group">
+        <img src="{{ $imageUrl }}" alt="News Preview" class="rounded-[20px] w-full h-auto {{ $imageMarginClasses }}">
         
-        @if($showButton)
-        <a href="{{ $url }}" class="w-44 h-12 rounded-full border-2 border-veteran-blue flex items-center justify-center hover:bg-veteran-blue transition-colors group">
-            <span class="text-black group-hover:text-white text-xs font-bold uppercase leading-none tracking-wide transition-colors">
-                ЧИТАТИ ДАЛІ
+        <h2 class="{{ $titleSizeClasses }} font-bold font-['Montserrat'] text-black leading-[1.43] {{ $titleMarginClasses }}">
+            {{ $title }}
+        </h2>
+        
+        <p class="{{ $summarySizeClasses }} font-normal font-['Montserrat'] text-black leading-[1.43] {{ $summaryMarginClasses }}">
+            {{ $summary }}
+        </p>
+
+        <div class="w-full flex justify-between items-center @if($showButton) {{ $bottomContainerMarginClass }} @endif">
+            <span class="text-[14px] font-bold font-['Montserrat'] text-black leading-[1.43]">
+                {{ $date }}
             </span>
-        </a>
-        @endif
-    </div>
+            
+            @if($showButton)
+            <div class="w-44 h-12 rounded-full border-2 border-veteran-blue flex items-center justify-center group-hover:bg-veteran-blue transition-colors">
+                <span class="text-black group-hover:text-white text-xs font-bold uppercase leading-none tracking-wide transition-colors">
+                    ЧИТАТИ ДАЛІ
+                </span>
+            </div>
+            @endif
+        </div>
+    </a>
 </div>

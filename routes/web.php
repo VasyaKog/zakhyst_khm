@@ -13,8 +13,9 @@ Route::get('/news', [PageController::class, 'news'])->name('news');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 Route::post('/contact', [PageController::class, 'contactSubmit'])->name('contact.submit');
 Route::get('/team', [PageController::class, 'team'])->name('team');
-Route::get('/news-page', [PageController::class, 'newsPage'])->name('news.page');
+Route::get('/news/{newsArticle}', [PageController::class, 'newsPage'])->name('news.show');
 Route::get('/indifferent', [PageController::class, 'indifferent'])->name('indifferent');
 Route::get('/path', [PageController::class, 'path'])->name('path');
+Route::get('/404', [PageController::class, 'notFound'])->name('404');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

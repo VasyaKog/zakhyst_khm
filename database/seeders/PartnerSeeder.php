@@ -27,7 +27,7 @@ class PartnerSeeder extends Seeder
         foreach ($partners as $index => $partner) {
             Partner::create([
                 'name' => $partner['name'],
-                'logo_path' => $partner['logo_path'],
+                'logo_path' => 'images/logos/' . $partner['logo_path'],
                 'sort_order' => $index,
                 'is_active' => true,
             ]);

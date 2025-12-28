@@ -25,4 +25,6 @@ Thumbs.db
 
 .npm
 .cache
+.composer
+.config
 

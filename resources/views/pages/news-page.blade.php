@@ -5,10 +5,10 @@
     @php
         $images = [];
         if ($newsArticle->image_url)
-            $images[] = asset('images/backgrounds/' . $newsArticle->image_url);
+            $images[] = asset('storage/' . $newsArticle->image_url);
         if ($newsArticle->gallery_images) {
             foreach ($newsArticle->gallery_images as $img) {
-                $images[] = asset('images/backgrounds/' . $img);
+                $images[] = asset('storage/' . $img);
             }
         }
     @endphp
@@ -28,7 +28,8 @@
         @foreach($relatedNews as $related)
             <x-news-card variant="large" :show-button="true" class="!max-w-none w-full" :title="$related->title"
                 :summary="$related->summary" :date="$related->published_at->isoFormat('D MMMM, YYYY')"
-                :image-url="asset('images/backgrounds/' . $related->image_url)" :url="route('news.show', $related)" />
+                :summary="$related->summary" :date="$related->published_at->isoFormat('D MMMM, YYYY')"
+                :image-url="asset('storage/' . $related->image_url)" :url="route('news.show', $related)" />
         @endforeach
     </div>
 

@@ -1,6 +1,9 @@
 services:
   php:
-    image: '${PHP_IMAGE}'
+    build:
+      context: .
+      dockerfile: .docker/php/Dockerfile
+    # image: '${PHP_IMAGE}'
     restart: always
     tty: true
     ports:

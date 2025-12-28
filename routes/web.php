@@ -18,4 +18,4 @@ Route::get('/indifferent', [PageController::class, 'indifferent'])->name('indiff
 Route::get('/path', [PageController::class, 'path'])->name('path');
 Route::get('/404', [PageController::class, 'notFound'])->name('404');
 
-require __DIR__ . '/auth.php';
+// require __DIR__ . '/auth.php';

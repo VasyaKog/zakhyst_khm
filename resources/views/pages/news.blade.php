@@ -32,7 +32,8 @@
             @foreach($news->take(3) as $article)
                 <x-news-card variant="large" :show-button="true" class="!max-w-none" :title="$article->title"
                     :summary="$article->summary" :date="$article->published_at->isoFormat('D MMMM, YYYY')"
-                    :image-url="asset('images/backgrounds/' . $article->image_url)" :url="route('news.show', $article)" />
+                    :summary="$article->summary" :date="$article->published_at->isoFormat('D MMMM, YYYY')"
+                    :image-url="asset('storage/' . $article->image_url)" :url="route('news.show', $article)" />
             @endforeach
 
             <!-- Pagination -->
@@ -46,7 +47,8 @@
             @foreach($news->skip(3) as $article)
                 <x-news-card variant="small" :show-button="false" class="!max-w-none" :title="$article->title"
                     :summary="$article->summary" :date="$article->published_at->isoFormat('D MMMM, YYYY')"
-                    :image-url="asset('images/backgrounds/' . $article->image_url)" :url="route('news.show', $article)" />
+                    :summary="$article->summary" :date="$article->published_at->isoFormat('D MMMM, YYYY')"
+                    :image-url="asset('storage/' . $article->image_url)" :url="route('news.show', $article)" />
             @endforeach
         </div>
 

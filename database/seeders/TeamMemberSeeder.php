@@ -28,6 +28,7 @@ class TeamMemberSeeder extends Seeder
         ];
 
         foreach ($mainTeam as $member) {
+            $member['photo'] = 'images/team/' . $member['photo'];
             TeamMember::create(array_merge($member, ['is_partner' => false]));
         }
 
@@ -49,6 +50,7 @@ class TeamMemberSeeder extends Seeder
         ];
 
         foreach ($partnerTeam as $member) {
+            $member['photo'] = 'images/team/' . $member['photo'];
             TeamMember::create(array_merge($member, ['is_partner' => true]));
         }
     }

@@ -1,62 +1,48 @@
-FROM php:8.3-fpm
+FROM php:8.2-fpm
 
-ARG UID
-ARG GID
-
-# Set working directory
 WORKDIR /var/www
 
-# Add docker php ext repo
-ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
-
-# Install php extensions
-RUN chmod +x /usr/local/bin/install-php-extensions && sync && \
-    install-php-extensions mbstring pdo_mysql pdo_pgsql zip exif pcntl gd memcached redis
-
-# Install dependencies
+# Install system dependencies
 RUN apt-get update && apt-get install -y \
-    build-essential \
-    libpng-dev \
-    libjpeg62-turbo-dev \
-    libfreetype6-dev \
-    locales \
-    zip \
-    jpegoptim optipng pngquant gifsicle \
-    unzip \
     git \
     curl \
-    lua-zlib-dev \
-    libmemcached-dev \
-    nginx \
-    cron
+    libpng-dev \
+    libonig-dev \
+    libxml2-dev \
+    zip \
+    unzip \
+    libicu-dev \
+    libzip-dev
 
-# Install composer
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-
-# Install node with nm
-RUN curl -sL https://deb.nodesource.com/setup_22.x | bash - \
-  && apt-get install -y nodejs
-# Add Yarn
-RUN npm install -g yarn
+# Install Node.js
+RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
+    apt-get install -y nodejs
 
 # Clear cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
-WORKDIR /var/www
+# Install PHP extensions
+RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd intl zip
 
+# Install Redis
+RUN pecl install redis && docker-php-ext-enable redis
 
-# PHP Error Log Files
-RUN mkdir /var/log/php
-RUN touch /var/log/php/errors.log && chmod 777 /var/log/php/errors.log
+# Install Composer
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-COPY ./start.sh /usr/local/bin/start
+# Add user for laravel application
+RUN groupadd -g 1000 www-data || true
+RUN useradd -u 1000 -ms /bin/bash -g www-data www-data || true
 
-RUN usermod -u $UID www-data
+# Copy existing application directory contents
+COPY . /var/www
 
-RUN chmod u+x /usr/local/bin/start
-RUN chown www-data:www-data /usr/local/bin/start
+# Copy existing application directory permissions
+COPY --chown=www-data:www-data . /var/www
 
-
+# Change current user to www-data
 USER www-data
 
-CMD ["/usr/local/bin/start"]
+# Expose port 9000 and start php-fpm server
+EXPOSE 9000
+CMD ["php-fpm"]

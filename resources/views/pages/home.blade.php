@@ -220,7 +220,7 @@
                         <!-- Icon -->
                         <div
                             class="absolute left-[39px] top-[41px] w-[59px] h-[59px] rounded-full flex items-center justify-center">
-                            <img src="{{ asset('images/icons/' . ($icons[$service->number] ?? 'support.svg')) }}" alt="Icon"
+                            <img src="{{ $service->icon_path ? asset('storage/' . $service->icon_path) : asset('storage/images/icons/' . ($icons[$service->number] ?? 'support.svg')) }}" alt="Icon"
                                 class="w-[59px] h-[59px]">
                         </div>
 
@@ -263,7 +263,7 @@
                 <a href="{{ route('news.show', $article) }}" class="flex-1 min-w-0 flex flex-col group block">
                     <!-- Image -->
                     <img class="w-full h-[285px] rounded-[20px] object-cover"
-                        src="{{ asset('images/backgrounds/' . $article->image_url) }}" alt="{{ $article->title }}">
+                        src="{{ asset('storage/' . $article->image_url) }}" alt="{{ $article->title }}">
 
                     <!-- Title -->
                     <div class="w-full mt-10 text-black text-3xl font-bold leading-10 h-20 line-clamp-2">
@@ -319,7 +319,7 @@
                     <div class="relative">
                         <div class="w-[370px] h-[440px] bg-zinc-300 rounded-[20px] overflow-hidden">
                             <img class="w-full h-full object-cover" style="object-position: center 5%;"
-                                src="{{ asset('images/team/' . $member->photo) }}" alt="{{ $member->full_name }}">
+                                src="{{ asset('storage/' . $member->photo) }}" alt="{{ $member->full_name }}">
                         </div>
                         <div class="mt-10 text-black text-3xl font-extrabold font-montserrat leading-10">
                             {{ $member->full_name }}
@@ -378,7 +378,7 @@
                     <div id="partners-track" class="flex gap-[30px] transition-transform duration-500 ease-in-out">
                         @foreach($partners as $partner)
                             <div class="w-[225px] h-32 flex items-center justify-center flex-shrink-0">
-                                <img src="{{ asset('images/logos/' . $partner->logo_path) }}" alt="{{ $partner->name }}"
+                                <img src="{{ asset('storage/' . $partner->logo_path) }}" alt="{{ $partner->name }}"
                                     class="max-w-full max-h-full object-contain">
                             </div>
                         @endforeach

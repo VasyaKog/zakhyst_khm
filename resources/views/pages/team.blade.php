@@ -31,7 +31,7 @@
                         <div class="w-full max-w-[270px] mx-auto">
                             <div
                                 class="w-full h-[325px] lg:h-[325px] md:h-[280px] sm:h-[250px] mx-0 mb-[30px] lg:mb-[30px] md:mb-[25px] sm:mb-[20px] rounded-[20px] overflow-hidden bg-gray-100">
-                                <img src="{{ asset('images/team/' . $member->photo) }}" alt="{{ $member->full_name }}"
+                                <img src="{{ asset('storage/' . $member->photo) }}" alt="{{ $member->full_name }}"
                                     class="w-full h-full object-cover">
                             </div>
                             <h3
@@ -65,7 +65,7 @@
                     <div class="w-full max-w-[270px] mx-auto">
                         <div
                             class="w-full h-[325px] lg:h-[325px] md:h-[280px] sm:h-[250px] mx-0 mb-[30px] lg:mb-[30px] md:mb-[25px] sm:mb-[20px] rounded-[20px] overflow-hidden bg-gray-100">
-                            <img src="{{ asset('images/team/' . $member->photo) }}" alt="{{ $member->full_name }}"
+                            <img src="{{ asset('storage/' . $member->photo) }}" alt="{{ $member->full_name }}"
                                 class="w-full h-full object-cover">
                         </div>
                         <h3

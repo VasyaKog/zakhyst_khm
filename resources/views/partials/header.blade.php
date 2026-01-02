@@ -9,7 +9,8 @@
             </div>
 
             <!-- Desktop Navigation -->
-            <div id="desktop-nav" class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+            <div id="desktop-nav"
+                class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 max-[1399px]:hidden">
                 <div class="flex items-center space-x-8 whitespace-nowrap">
                     <a href="{{ route('about') }}"
                         class="text-black hover:text-veteran-blue font-bold text-base uppercase leading-tight tracking-wide transition-colors whitespace-nowrap">
@@ -26,39 +27,43 @@
                 </div>
             </div>
 
-            <!-- Mobile Navigation (Hidden by default) -->
-            <div id="mobile-nav" class="relative ml-[90px] hidden">
-                <div class="flex items-center space-x-8 whitespace-nowrap">
+            <div id="mobile-nav" class="hidden min-[1400px]:flex-1 min-w-0 mx-5">
+                <!-- Use min-[1700px] breakpoint: 
+                     - At 1728px (MacBook): Shows text-base/gap-8 (Large) 
+                     - Below 1700px: Shrinks to text-sm/gap-5 (Compact) to prevent overlap -->
+                <div class="flex items-center justify-center gap-3 xl:gap-5 min-[1700px]:gap-8 whitespace-nowrap px-4">
                     <a href="#"
-                        class="text-black hover:text-veteran-blue font-bold text-base uppercase leading-tight tracking-wide transition-colors whitespace-nowrap">
+                        class="text-black hover:text-veteran-blue font-bold text-sm min-[1700px]:text-base uppercase leading-tight tracking-wide transition-colors whitespace-nowrap">
                         МИ ПАМ'ЯТАЄМО
                     </a>
                     <a href="#"
-                        class="text-black hover:text-veteran-blue font-bold text-base uppercase leading-tight tracking-wide transition-colors whitespace-nowrap">
+                        class="text-black hover:text-veteran-blue font-bold text-sm min-[1700px]:text-base uppercase leading-tight tracking-wide transition-colors whitespace-nowrap">
                         НОВИНИ
                     </a>
                     <a href="#"
-                        class="text-black hover:text-veteran-blue font-bold text-base uppercase leading-tight tracking-wide transition-colors whitespace-nowrap">
+                        class="text-black hover:text-veteran-blue font-bold text-sm min-[1700px]:text-base uppercase leading-tight tracking-wide transition-colors whitespace-nowrap">
                         ГРОМАДА - ВЕТЕРАНУ
                     </a>
                     <a href="#"
-                        class="text-black hover:text-veteran-blue font-bold text-base uppercase leading-tight tracking-wide transition-colors whitespace-nowrap">
+                        class="text-black hover:text-veteran-blue font-bold text-sm min-[1700px]:text-base uppercase leading-tight tracking-wide transition-colors whitespace-nowrap">
                         НЕБАЙДУЖИМ
                     </a>
                     <a href="#"
-                        class="text-black hover:text-veteran-blue font-bold text-base uppercase leading-tight tracking-wide transition-colors whitespace-nowrap">
+                        class="text-black hover:text-veteran-blue font-bold text-sm min-[1700px]:text-base uppercase leading-tight tracking-wide transition-colors whitespace-nowrap">
                         ВІДГУКИ
                     </a>
                 </div>
             </div>
 
             <div class="flex items-center gap-8 flex-shrink-0">
-                <button id="language-toggle" class="flex items-center space-x-1 text-black">
+                <!-- Language toggle: Hidden on mobile (moved to burger menu), Visible > 1400px -->
+                <button id="language-toggle" class="hidden min-[1400px]:flex items-center space-x-1 text-black">
                     <span class="font-bold text-base">UA</span>
                     <img class="pb-1" src="{{ asset('images/icons/arrow-down.svg') }}" alt="Dropdown">
                 </button>
 
-                <!-- Burger/Cross Button -->
+                <!-- Burger/Cross Button: Visible on Mobile (<1400), Hidden on Desktop (>1400) UNLESS extended nav is open -->
+                <!-- Note: Logic handled by JS, but base class setup here -->
                 <div class="relative w-[30px] h-[19px]">
                     <button type="button" id="menu-toggle"
                         class="text-black hover:text-veteran-blue focus:outline-none focus:text-gray-900 transition-colors"
@@ -77,12 +82,15 @@
                     </button>
                 </div>
 
-                <button class="mr-[65px] transition-colors" onclick="toggleDarkMode()">
-                    <img src="{{ asset('images/icons/switch.svg') }}" alt="Dark Mode Toggle">
+                <!-- Dark Mode Switch: Hidden on mobile, Visible > 1400px -->
+                <!-- Default gap is 32px. Large screens add 33px margin. -->
+                <button class="transition-colors hidden min-[1400px]:block min-[1800px]:mr-[33px]"
+                    onclick="toggleDarkMode()">
+                    <img class="h-[30px]" src="{{ asset('images/icons/switch.svg') }}" alt="Dark Mode Toggle">
                 </button>
 
                 <button onclick="openDonationModal()"
-                    class="bg-veteran-blue hover:bg-blue-700 w-[260px] h-[70px] text-white text-xl font-black px-12 py-6 rounded-full transition-colors flex items-center justify-center">
+                    class="hidden min-[1400px]:flex bg-veteran-blue hover:bg-blue-700 w-[260px] h-[70px] text-white text-xl font-black px-12 py-6 rounded-full transition-colors items-center justify-center">
                     ПІДТРИМАТИ
                 </button>
             </div>
@@ -90,34 +98,59 @@
     </div>
 </header>
 
+@include('partials.mobile-menu')
+
 <script>
     function toggleMobileMenu() {
         const desktopNav = document.getElementById('desktop-nav');
-        const mobileNav = document.getElementById('mobile-nav');
+        const mobileNav = document.getElementById('mobile-nav'); // Extended inline nav
+        const mobileMenu = document.getElementById('mobile-menu'); // Full screen overlay
         const burgerIcon = document.getElementById('burger-icon');
         const crossIcon = document.getElementById('cross-icon');
         const languageToggle = document.getElementById('language-toggle');
 
-        // Toggle navigation visibility
-        if (desktopNav.classList.contains('hidden')) {
-            // Show desktop nav, hide mobile nav
-            desktopNav.classList.remove('hidden');
-            mobileNav.classList.add('hidden');
+        const isDesktop = window.innerWidth >= 1400;
 
-            // Show burger icon, hide cross icon
-            burgerIcon.classList.remove('hidden');
-            crossIcon.classList.add('hidden');
-            languageToggle.classList.remove('hidden');
+        if (isDesktop) {
+            // Desktop Logic: Toggle Extended Nav
+            if (desktopNav.classList.contains('hidden')) {
+                // Show desktop nav, hide extended nav
+                desktopNav.classList.remove('hidden');
+                mobileNav.classList.add('hidden');
+                mobileNav.classList.remove('flex'); // Remove flex when hidden
+
+                // Show burger icon, hide cross icon
+                burgerIcon.classList.remove('hidden');
+                crossIcon.classList.add('hidden');
+
+                // Show language toggle (reset inline style to let CSS classes work)
+                languageToggle.style.display = '';
+            } else {
+                // Hide desktop nav, show extended nav
+                desktopNav.classList.add('hidden');
+                mobileNav.classList.remove('hidden');
+                mobileNav.classList.add('flex'); // Add flex to show properly
+
+                // Hide burger icon, show cross icon
+                burgerIcon.classList.add('hidden');
+                crossIcon.classList.remove('hidden');
+
+                // Hide language toggle (force hide with inline style)
+                languageToggle.style.display = 'none';
+            }
         } else {
-            // Hide desktop nav, show mobile nav
-            desktopNav.classList.add('hidden');
-            mobileNav.classList.remove('hidden');
-
-            // Hide burger icon, show cross icon
-            burgerIcon.classList.add('hidden');
-            crossIcon.classList.remove('hidden');
-            languageToggle.classList.add('hidden');
-
+            // Mobile Logic: Toggle Full Screen Menu
+            if (mobileMenu.classList.contains('hidden')) {
+                // Open Menu
+                mobileMenu.classList.remove('hidden');
+                // Lock body scroll
+                document.body.style.overflow = 'hidden';
+            } else {
+                // Close Menu
+                mobileMenu.classList.add('hidden');
+                // Unlock body scroll
+                document.body.style.overflow = 'auto';
+            }
         }
     }
 

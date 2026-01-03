@@ -1,10 +1,11 @@
 <header id="header">
-    <div class="mx-auto my-10" style="padding-left: 50px; padding-right: 50px;">
+    <div class="mx-auto my-10 px-4 min-[1250px]:px-[50px]">
         <div class="relative flex items-center justify-between h-24">
 
             <div class="flex items-center space-x-3 flex-shrink-0">
                 <a href="{{ route('home') }}">
-                    <img src="{{ asset('images/logos/logo-text.svg') }}" alt="ВЕТЕРАНСЬКИЙ ПРОСТІР">
+                    <img src="{{ asset('images/logos/logo-text.svg') }}" class="h-[40px] min-[1250px]:h-full"
+                        alt="ВЕТЕРАНСЬКИЙ ПРОСТІР">
                 </a>
             </div>
 
@@ -27,7 +28,7 @@
                 </div>
             </div>
 
-            <div id="mobile-nav" class="hidden min-[1400px]:flex-1 min-w-0 mx-5">
+            <div id="mobile-nav" class="hidden min-[1400px]:flex-1 justify-center min-w-0 mx-5">
                 <!-- Use min-[1700px] breakpoint: 
                      - At 1728px (MacBook): Shows text-base/gap-8 (Large) 
                      - Below 1700px: Shrinks to text-sm/gap-5 (Compact) to prevent overlap -->
@@ -64,12 +65,13 @@
 
                 <!-- Burger/Cross Button: Visible on Mobile (<1400), Hidden on Desktop (>1400) UNLESS extended nav is open -->
                 <!-- Note: Logic handled by JS, but base class setup here -->
-                <div class="relative w-[30px] h-[19px]">
+                <div class="relative w-[30px] h-[19px] max-[768px]:w-[45px] max-[768px]:h-[30px]">
                     <button type="button" id="menu-toggle"
                         class="text-black hover:text-veteran-blue focus:outline-none focus:text-gray-900 transition-colors"
                         onclick="toggleMobileMenu()">
                         <!-- Burger Icon -->
-                        <img id="burger-icon" src="{{ asset('images/icons/burger.svg') }}" alt="Menu">
+                        <img id="burger-icon" src="{{ asset('images/icons/burger.svg') }}"
+                            class="max-[768px]:w-[45px] max-[768px]:h-[30px]" alt="Menu">
                         <!-- Cross Icon (Hidden by default) -->
                         <div id="cross-icon" class="w-6 h-6 hidden">
                             <div
@@ -113,29 +115,32 @@
 
         if (isDesktop) {
             // Desktop Logic: Toggle Extended Nav
-            if (desktopNav.classList.contains('hidden')) {
-                // Show desktop nav, hide extended nav
-                desktopNav.classList.remove('hidden');
-                mobileNav.classList.add('hidden');
-                mobileNav.classList.remove('flex'); // Remove flex when hidden
+            // Check visibility using style or class. Since we switched to responsive flex, use inline styles for safety.
+            // Default state: desktopNav visible, mobileNav hidden.
 
-                // Show burger icon, hide cross icon
+            const isExtendedOpen = desktopNav.style.display === 'none';
+
+            if (isExtendedOpen) {
+                // CLOSE Extended Nav -> SHOW Desktop Nav
+                desktopNav.style.display = ''; // Reset to default (block/absolute)
+                mobileNav.style.display = 'none';  // Force hide
+
+                // Button State
                 burgerIcon.classList.remove('hidden');
                 crossIcon.classList.add('hidden');
 
-                // Show language toggle (reset inline style to let CSS classes work)
+                // Language Toggle
                 languageToggle.style.display = '';
             } else {
-                // Hide desktop nav, show extended nav
-                desktopNav.classList.add('hidden');
-                mobileNav.classList.remove('hidden');
-                mobileNav.classList.add('flex'); // Add flex to show properly
+                // OPEN Extended Nav -> HIDE Desktop Nav
+                desktopNav.style.display = 'none'; // Force hide
+                mobileNav.style.display = 'flex';  // Force flex
 
-                // Hide burger icon, show cross icon
+                // Button State
                 burgerIcon.classList.add('hidden');
                 crossIcon.classList.remove('hidden');
 
-                // Hide language toggle (force hide with inline style)
+                // Language Toggle
                 languageToggle.style.display = 'none';
             }
         } else {

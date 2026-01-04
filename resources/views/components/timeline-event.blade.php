@@ -1,41 +1,48 @@
 <!-- Timeline Event Component -->
 @props(['date', 'year', 'description', 'active' => false])
 
-<div class="flex items-start mb-[155px] {{ $active ? '' : 'opacity-20' }} transition-opacity duration-300 hover:opacity-100">
+<div {{ $attributes->merge(['class' => 'timeline-event group flex items-start mb-[60px] lg:mb-[155px] opacity-20 [&.is-active]:opacity-100 transition-opacity duration-300 hover:opacity-100']) }}
+    data-active="{{ $active ? 'true' : 'false' }}">
     <!-- Dot (circle) -->
-    <div class="w-10 h-10 flex-shrink-0 pt-[51px]">
-        @if($active)
-            <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="20" cy="20" r="19" fill="#3971E2" stroke="none"/>
-            </svg>
-        @else
-            <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="20" cy="20" r="19" fill="#BEBEBE" stroke="none"/>
-            </svg>
-        @endif
+    <div class="w-10 h-10 flex-shrink-0 pt-[10px] lg:pt-[51px] relative flex items-center justify-center">
+        <!-- Active Dot (Blue) - Visible when .is-active -->
+        <svg class="hidden group-[.is-active]:block w-[30px] h-[30px] lg:w-[40px] lg:h-[40px]" viewBox="0 0 40 40"
+            xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="20" r="19" fill="#3971E2" stroke="none" />
+        </svg>
+        <!-- Inactive Dot (Grey) - Visible when NOT .is-active -->
+        <svg class="block group-[.is-active]:hidden w-[30px] h-[30px] lg:w-[40px] lg:h-[40px]" viewBox="0 0 40 40"
+            xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="20" r="19" fill="#BEBEBE" stroke="none" />
+        </svg>
     </div>
-    
-    <!-- Date Section -->
-    <div class="ml-[30px] w-[200px] flex-shrink-0">
-        <!-- Date (small text) -->
-        <p class="text-[20px] font-extrabold font-['Montserrat'] text-black tracking-[4.8px] uppercase leading-[0.92] mb-[18px]">
-            {{ $date }}
-        </p>
-        
-        <!-- Year (large text) -->
-        <p class="text-[80px] font-extrabold font-['Montserrat'] text-black uppercase leading-[0.92] mb-[28px]">
-            {{ $year }}
-        </p>
-        
-        <!-- Horizontal line (198px wide, 12px high) -->
-        <div class="w-[198px] h-[12px] bg-black"></div>
-    </div>
-    
-    <!-- Description (flex-1 to take remaining space, aligned with top of year) -->
-    <div class="ml-[50px] flex-1 pt-[38px]">
-        <p class="text-[32px] font-normal font-['Montserrat'] text-black leading-[1.25]">
-            {{ $description }}
-        </p>
+
+    <!-- Content Wrapper -->
+    <div class="flex flex-col lg:flex-row flex-1 ml-[20px] lg:ml-[30px]">
+        <!-- Date Section -->
+        <div class="w-full lg:w-[200px] flex-shrink-0 mb-[20px] lg:mb-0">
+            <!-- Date (small text) -->
+            <p
+                class="text-[14px] lg:text-[20px] font-extrabold font-['Montserrat'] text-black tracking-[3px] lg:tracking-[4.8px] uppercase leading-[0.92] mb-[10px] lg:mb-[18px]">
+                {{ $date }}
+            </p>
+
+            <!-- Year (large text) -->
+            <p
+                class="text-[48px] lg:text-[80px] font-extrabold font-['Montserrat'] text-black uppercase leading-[0.92] mb-[15px] lg:mb-[28px]">
+                {{ $year }}
+            </p>
+
+            <!-- Horizontal line -->
+            <div class="w-[full] max-w-[150px] lg:w-[198px] lg:max-w-none h-[6px] lg:h-[12px] bg-black"></div>
+        </div>
+
+        <!-- Description -->
+        <div class="lg:ml-[50px] flex-1 pt-0 lg:pt-[38px]">
+            <p
+                class="text-[18px] lg:text-[32px] font-normal font-['Montserrat'] text-black leading-[1.35] lg:leading-[1.25]">
+                {{ $description }}
+            </p>
+        </div>
     </div>
 </div>
-

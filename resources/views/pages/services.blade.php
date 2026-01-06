@@ -5,16 +5,17 @@
 @section('content')
     <div class="bg-white">
         <!-- Main Services Section -->
-        <div class="pt-[120px] pb-[100px]">
+        <div class="pt-[40px] lg:pt-[120px] pb-[60px] lg:pb-[100px]">
             <!-- Page Title -->
-            <div class="ml-[375px] mb-[120px]">
-                <h1 class="text-[80px] font-extrabold font-['Montserrat'] text-black uppercase leading-[0.92]">
+            <div class="px-4 lg:px-0 lg:max-w-[1200px] lg:mx-auto mb-[60px] lg:mb-[120px]">
+                <h1
+                    class="text-[40px] lg:text-[80px] font-extrabold font-['Montserrat'] text-black uppercase leading-[0.92]">
                     Послуги
                 </h1>
             </div>
 
             <!-- Services Container -->
-            <div class="max-w-[1170px] mx-auto px-[50px]">
+            <div class="px-4 lg:px-0 lg:max-w-[1170px] lg:mx-auto">
 
                 @foreach($services as $service)
                     <x-service-card :number="$service->number" :title="$service->title">

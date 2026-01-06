@@ -1,89 +1,126 @@
 @props(['cards' => []])
 
 <div class="relative w-full" style="perspective: 1000px;">
-    <div class="service-cards-container relative w-full" style="height: 695px; overflow: visible;">
+    <div class="service-cards-container relative w-full" style="overflow: visible;">
         {{ $slot }}
     </div>
 </div>
 
 <style>
+    /* Mobile Styles (Default) */
     .service-cards-container {
         position: relative;
         width: 100%;
-        height: 695px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
     }
 
     .service-card-wrapper {
-        position: absolute;
-        width: 695px;
-        height: 100%;
-        transition: left 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
-        cursor: pointer;
+        position: relative;
+        width: 100%;
+        height: auto;
     }
 
-    .service-card-wrapper:nth-child(1) {
-        z-index: 40;
-    }
+    /* Desktop Styles */
+    @media (min-width: 1024px) {
+        .service-cards-container {
+            display: block;
+            height: 695px;
+        }
 
-    .service-card-wrapper:nth-child(2) {
-        z-index: 30;
-    }
+        .service-card-wrapper {
+            position: absolute;
+            width: 695px;
+            height: 100%;
+            transition: left 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+            cursor: pointer;
+        }
 
-    .service-card-wrapper:nth-child(3) {
-        z-index: 20;
-    }
+        .service-card-wrapper:nth-child(1) {
+            z-index: 40;
+        }
 
-    .service-card-wrapper:nth-child(4) {
-        z-index: 10;
+        .service-card-wrapper:nth-child(2) {
+            z-index: 30;
+        }
+
+        .service-card-wrapper:nth-child(3) {
+            z-index: 20;
+        }
+
+        .service-card-wrapper:nth-child(4) {
+            z-index: 10;
+        }
     }
 </style>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
         const container = document.querySelector('.service-cards-container');
         if (!container) return;
 
-        const wrappers = container.querySelectorAll('.service-card-wrapper');
+        let isDesktop = window.innerWidth >= 1024;
+        let wrappers = container.querySelectorAll('.service-card-wrapper');
         const cardCount = wrappers.length;
         const cardWidth = 695;
-        let cardOrder = Array.from({length: cardCount}, (_, i) => i);
+        let cardOrder = Array.from({ length: cardCount }, (_, i) => i);
+        let positions = [];
+
+        function initDesktop() {
+            if (!isDesktop) return;
+            positions = calculatePositions();
+            updatePositions();
+
+            wrappers.forEach((wrapper, index) => {
+                wrapper.style.position = 'absolute';
+            });
+        }
+
+        function resetMobile() {
+            if (isDesktop) return;
+            wrappers.forEach(wrapper => {
+                wrapper.style.left = '';
+                wrapper.style.transform = '';
+                wrapper.style.zIndex = '';
+                wrapper.style.position = '';
+            });
+        }
 
         // Calculate spacing to fill available width
         function calculatePositions() {
             const containerWidth = container.offsetWidth;
             const spacing = (containerWidth - cardWidth) / (cardCount - 1);
-            const positions = Array.from({length: cardCount}, (_, i) => i * spacing);
-            return positions;
+            return Array.from({ length: cardCount }, (_, i) => i * spacing);
         }
 
-        let positions = calculatePositions();
-
         wrappers.forEach((wrapper, index) => {
-            wrapper.addEventListener('click', function(e) {
+            wrapper.addEventListener('click', function (e) {
+                if (!isDesktop) return;
+
                 const posInOrder = cardOrder.indexOf(index);
-                if (posInOrder === 0) return; // Already at front
+                if (posInOrder === 0) return;
 
                 // Move clicked card to front
                 cardOrder = [index, ...cardOrder.filter(i => i !== index)];
 
-                // Update z-index instantly
+                // Update z-index
                 wrappers.forEach((w, idx) => {
                     const newPos = cardOrder.indexOf(idx);
                     const zIndex = 40 - (newPos * 10);
                     w.style.zIndex = zIndex;
                 });
 
-                // Animate position and lift
+                // Animate
                 updatePositions(true);
-
-                // Remove lift after animation completes
-                setTimeout(() => {
-                    updatePositions(false);
-                }, 250);
+                setTimeout(() => updatePositions(false), 250);
             });
         });
 
         function updatePositions(isAnimating) {
+            if (!isDesktop) return;
+
             cardOrder.forEach((cardIdx, position) => {
                 const wrapper = wrappers[cardIdx];
                 const leftValue = positions[position];
@@ -95,13 +132,25 @@
             });
         }
 
-        // Initial positioning
-        updatePositions();
+        // Init
+        if (isDesktop) initDesktop();
 
-        // Recalculate on window resize
-        window.addEventListener('resize', function() {
-            positions = calculatePositions();
-            updatePositions();
+        // Resize Handler
+        window.addEventListener('resize', function () {
+            const newIsDesktop = window.innerWidth >= 1024;
+
+            if (newIsDesktop !== isDesktop) {
+                isDesktop = newIsDesktop;
+                if (isDesktop) {
+                    initDesktop();
+                } else {
+                    resetMobile();
+                }
+            } else if (isDesktop) {
+                // Just update positions if resizing within desktop
+                positions = calculatePositions();
+                updatePositions();
+            }
         });
     });
 </script>

@@ -62,7 +62,7 @@ class PageController extends Controller
     }
     public function notFound()
     {
-        return view('pages.404');
+        return view('errors.404');
     }
 
     public function contactSubmit(Request $request)
@@ -73,9 +73,6 @@ class PageController extends Controller
             'subject' => 'nullable|string|max:255',
             'message' => 'required|string|max:2000',
         ]);
-
-        // Here you would typically save to database or send email
-        // For now, we'll just return a success response
 
         return response()->json([
             'success' => true,

@@ -52,20 +52,20 @@
 
             <!-- Group 2 -->
             <div class="flex flex-col gap-4 items-center">
-                <a href="#" class="flex items-center justify-center gap-1 group">
+                <a href="{{ route('indifferent') }}" class="flex items-center justify-center gap-1 group">
                     <span
                         class="text-black font-semibold text-lg uppercase tracking-wide group-hover:text-veteran-blue transition-colors">НЕБАЙДУЖИМ</span>
                     <span
                         class="text-black font-semibold text-lg group-hover:text-veteran-blue transition-colors">&gt;</span>
                 </a>
-                <a href="#" class="flex items-center justify-center gap-1 group">
+                <a href="{{ route('path') }}" class="flex items-center justify-center gap-1 group">
                     <span
                         class="text-black font-semibold text-lg uppercase tracking-wide group-hover:text-veteran-blue transition-colors">ГРОМАДА
                         - ВЕТЕРАНУ</span>
                     <span
                         class="text-black font-semibold text-lg group-hover:text-veteran-blue transition-colors">&gt;</span>
                 </a>
-                <a href="#" class="flex items-center justify-center gap-1 group">
+                <a href="{{ route('news') }}" class="flex items-center justify-center gap-1 group">
                     <span
                         class="text-black font-semibold text-lg uppercase tracking-wide group-hover:text-veteran-blue transition-colors">НОВИНИ</span>
                     <span

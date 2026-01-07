@@ -28,23 +28,28 @@ $summarySizeClasses = [
     'small' => 'text-[16px]',
 ][$variant] ?? 'text-[20px]';
 
-// New margin classes based on variant
 $imageMarginClasses = [
-    'large' => 'mb-16',
-    'medium' => 'mb-12',
-    'small' => 'mb-8', // 32px, close to 30px
-][$variant] ?? 'mb-16';
+    'large' => 'mb-8',
+    'medium' => 'mb-6',
+    'small' => 'mb-4', 
+][$variant] ?? 'mb-8';
+
+$imageHeightClasses = [
+    'large' => 'h-[260px]',
+    'medium' => 'h-[220px]',
+    'small' => 'h-[200px]',
+][$variant] ?? 'h-[260px]';
 
 $titleMarginClasses = [
     'large' => 'mb-8',
     'medium' => 'mb-7',
-    'small' => 'mb-9', // 36px, close to 35px
+    'small' => 'mb-9', 
 ][$variant] ?? 'mb-8';
 
 $summaryMarginClasses = [
     'large' => 'mb-12',
     'medium' => 'mb-10',
-    'small' => 'mb-8', // 32px, close to 30px
+    'small' => 'mb-8', 
 ][$variant] ?? 'mb-12';
 
 $bottomContainerMarginClass = [
@@ -55,18 +60,18 @@ $bottomContainerMarginClass = [
 @endphp
 
 <div class="{{ $widthClasses }} w-full {{ $class }}">
-    <a href="{{ $url }}" class="block group">
-        <img src="{{ $imageUrl }}" alt="News Preview" class="rounded-[20px] w-full h-auto {{ $imageMarginClasses }}">
+    <a href="{{ $url }}" class="group h-full flex flex-col">
+        <img src="{{ $imageUrl }}" alt="News Preview" class="rounded-[20px] w-full object-cover {{ $imageHeightClasses }} {{ $imageMarginClasses }}">
         
         <h2 class="{{ $titleSizeClasses }} font-bold font-['Montserrat'] text-black leading-[1.43] {{ $titleMarginClasses }}">
             {{ $title }}
         </h2>
         
-        <p class="{{ $summarySizeClasses }} font-normal font-['Montserrat'] text-black leading-[1.43] {{ $summaryMarginClasses }}">
+        <p class="{{ $summarySizeClasses }} font-normal font-['Montserrat'] text-black leading-[1.43] {{ $summaryMarginClasses }} flex-grow">
             {{ $summary }}
         </p>
 
-        <div class="w-full flex justify-between items-center @if($showButton) {{ $bottomContainerMarginClass }} @endif">
+        <div class="w-full flex justify-between items-center mt-auto @if($showButton) {{ $bottomContainerMarginClass }} @endif">
             <span class="text-[14px] font-bold font-['Montserrat'] text-black leading-[1.43]">
                 {{ $date }}
             </span>

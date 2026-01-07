@@ -29,23 +29,22 @@
             </div>
 
             <div id="mobile-nav" class="hidden min-[1400px]:flex-1 justify-center min-w-0 mx-5">
-                <!-- Use min-[1700px] breakpoint: 
-                     - At 1728px (MacBook): Shows text-base/gap-8 (Large) 
-                     - Below 1700px: Shrinks to text-sm/gap-5 (Compact) to prevent overlap -->
+                - At 1728px: Shows text-base/gap-8 (Large)
+                - Below 1700px: Shrinks to text-sm/gap-5 (Compact) to prevent overlap -->
                 <div class="flex items-center justify-center gap-3 xl:gap-5 min-[1700px]:gap-8 whitespace-nowrap px-4">
                     <a href="#"
                         class="text-black hover:text-veteran-blue font-bold text-sm min-[1700px]:text-base uppercase leading-tight tracking-wide transition-colors whitespace-nowrap">
                         МИ ПАМ'ЯТАЄМО
                     </a>
-                    <a href="#"
+                    <a href="{{ route('news') }}"
                         class="text-black hover:text-veteran-blue font-bold text-sm min-[1700px]:text-base uppercase leading-tight tracking-wide transition-colors whitespace-nowrap">
                         НОВИНИ
                     </a>
-                    <a href="#"
+                    <a href="{{ route('path') }}"
                         class="text-black hover:text-veteran-blue font-bold text-sm min-[1700px]:text-base uppercase leading-tight tracking-wide transition-colors whitespace-nowrap">
                         ГРОМАДА - ВЕТЕРАНУ
                     </a>
-                    <a href="#"
+                    <a href="{{ route('indifferent') }}"
                         class="text-black hover:text-veteran-blue font-bold text-sm min-[1700px]:text-base uppercase leading-tight tracking-wide transition-colors whitespace-nowrap">
                         НЕБАЙДУЖИМ
                     </a>
@@ -115,7 +114,6 @@
 
         if (isDesktop) {
             // Desktop Logic: Toggle Extended Nav
-            // Check visibility using style or class. Since we switched to responsive flex, use inline styles for safety.
             // Default state: desktopNav visible, mobileNav hidden.
 
             const isExtendedOpen = desktopNav.style.display === 'none';

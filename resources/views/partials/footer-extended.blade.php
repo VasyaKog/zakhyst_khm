@@ -22,7 +22,7 @@
             </p>
 
             <!-- Call to Action Button -->
-            <button
+            <button onclick="openDonationModal()"
                 class="w-fit px-[60px] py-6 border-2 border-white text-white text-xl font-extrabold rounded-full hover:bg-white hover:text-veteran-blue transition-all duration-300">
                 ПІДТРИМАТИ ЗСУ
             </button>
@@ -52,7 +52,7 @@
             </p>
 
             <!-- Call to Action Button -->
-            <button
+            <button onclick="openDonationModal()"
                 class="w-[330px] h-[70px] border-2 border-white rounded-[412px] flex items-center justify-center active:bg-white active:text-veteran-blue transition-colors">
                 <span class="text-white text-[20px] font-black font-montserrat uppercase tracking-[1px]">
                     підтримати Зсу

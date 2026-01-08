@@ -29,8 +29,6 @@
             </div>
 
             <div id="mobile-nav" class="hidden min-[1400px]:flex-1 justify-center min-w-0 mx-5">
-                - At 1728px: Shows text-base/gap-8 (Large)
-                - Below 1700px: Shrinks to text-sm/gap-5 (Compact) to prevent overlap -->
                 <div class="flex items-center justify-center gap-3 xl:gap-5 min-[1700px]:gap-8 whitespace-nowrap px-4">
                     <a href="#"
                         class="text-black hover:text-veteran-blue font-bold text-sm min-[1700px]:text-base uppercase leading-tight tracking-wide transition-colors whitespace-nowrap">

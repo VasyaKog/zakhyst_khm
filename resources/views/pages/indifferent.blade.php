@@ -2,10 +2,14 @@
 @section('title', 'Небайдужим')
 @section('content')
 
-    <div class="px-5 lg:pl-[375px] lg:pr-0 mb-[60px] lg:mb-[120px] mt-[40px] lg:mt-[140px]">
+    <div
+        class="px-5 lg:pl-[375px] lg:pr-0 mb-[60px] lg:mb-[120px] mt-[40px] lg:mt-[140px] flex justify-between items-start pr-12">
         <h1 class="text-[40px] lg:text-[80px] font-extrabold font-['Montserrat'] text-black uppercase leading-[0.92]">
             Небайдужим
         </h1>
+        <img src="{{ asset('images/icons/button-support.svg') }}" alt="Support"
+            class="w-[70px] h-[70px] cursor-pointer hover:opacity-80 transition-opacity ml-4 shrink-0"
+            onclick="openContactModal()">
     </div>
 
     <div class="pb-[160px] lg:pb-48 px-4 lg:px-0">

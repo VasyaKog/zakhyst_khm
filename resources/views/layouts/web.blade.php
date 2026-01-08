@@ -25,6 +25,7 @@
 
     <!-- Donation Modal -->
     @include('components.donation-modal')
+    @include('components.contact-modal')
 </body>
 
 </html>

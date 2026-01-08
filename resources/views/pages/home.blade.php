@@ -338,13 +338,15 @@
 
 
     <!-- Mobile Services Section (<768px) -->
-    <div class="block md:hidden mt-16 mb-16">
+    <div class="block md:hidden mt-16 mb-16 relative">
+        <img src="{{ asset('images/icons/button-support.svg') }}" alt="Support"
+            class="absolute right-0 top-4 w-[70px] h-[70px] cursor-pointer hover:opacity-80 transition-opacity z-20"
+            onclick="openContactModal()">
         <h2 class="text-black text-[40px] font-extrabold font-montserrat uppercase leading-tight px-4 mb-8">
             Види послуг
         </h2>
 
         <!-- Swipe Carousel Container -->
-        <!-- Added [&::-webkit-scrollbar]:hidden to force hide scrollbar -->
         <div id="mobile-services-carousel" class="overflow-x-auto pb-6 [&::-webkit-scrollbar]:hidden"
             style="scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none;">
             <div class="flex gap-4 px-4" style="width: max-content;">
@@ -416,6 +418,9 @@
     <!-- Desktop Services Section (>=768px) -->
     <div class="hidden md:flex justify-center mt-[152px] mb-[300px]">
         <div class="relative w-[1215px] h-[765px]">
+            <img src="{{ asset('images/icons/button-support.svg') }}" alt="Support"
+                class="absolute right-0 top-0 w-[70px] h-[70px] cursor-pointer hover:opacity-80 transition-opacity z-20"
+                onclick="openContactModal()">
             <!-- Title Section -->
             <div class="absolute left-0 top-0">
                 <h2 class="text-black text-[72px] font-extrabold font-montserrat uppercase leading-[85.36px] m-0">
@@ -424,7 +429,7 @@
             </div>
 
             <!-- All Services Button -->
-            <div class="absolute right-0 top-5">
+            <div class="absolute right-0 top-[90px]">
                 <a href="{{ route('services') }}"
                     class="w-64 h-16 border-2 border-veteran-blue bg-white text-black text-xl font-black font-montserrat uppercase tracking-wide cursor-pointer transition-all duration-300 ease-in-out rounded-[412px] flex items-center justify-center hover:bg-veteran-blue hover:text-white">
                     всі послуги
@@ -469,7 +474,7 @@
 
                         <!-- Description -->
                         <div
-                            class="absolute left-[39px] top-[253px] w-72 text-white text-xl font-normal font-montserrat leading-7 m-0 pl-5 [&>ul]:list-disc [&>ul>li]:mb-7">
+                            class="absolute left-[39px] top-[253px] w-72 text-white text-xl font-normal font-montserrat leading-7 m-0 overflow-hidden line-clamp-6 [&>ul]:list-disc [&>ul]:pl-2 [&>ul>li]:mb-7">
                             {!! $service->left_content !!}
                         </div>
                     </a>
@@ -527,7 +532,7 @@
     </div>
 
     <div class="md:hidden flex justify-end">
-        <a href="#"
+        <a href="{{ route('news') }}"
             class="text-base font-bold text-black uppercase border-b border-black hover:text-veteran-blue hover:border-veteran-blue transition-colors">
             БІЛЬШЕ НОВИН ТУТ
         </a>
@@ -537,7 +542,7 @@
     <div class="hidden md:block w-full mb-[300px]">
         <!-- More News Link -->
         <div class="flex justify-end mb-8">
-            <a href="#"
+            <a href="{{ route('news') }}"
                 class="text-base font-bold text-black uppercase border-b border-black hover:text-veteran-blue hover:border-veteran-blue transition-colors">
                 БІЛЬШЕ НОВИН ТУТ
             </a>
@@ -767,111 +772,100 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+            // ========== Desktop Hero Carousel ==========
             const carousel = document.getElementById('hero-carousel');
             const slides = document.querySelectorAll('.carousel-slide');
 
-            let currentSlide = 0;
-            const totalSlides = slides.length;
-            let isAnimating = false;
+            if (carousel && slides.length > 0) {
+                let currentSlide = 0;
+                const totalSlides = slides.length;
+                let isAnimating = false;
 
-            const slideOrder = [0, 1, 2];
-            let currentPosition = 0;
-
-            function showSlideByPosition(position) {
-                const targetIndex = slideOrder[position];
-                console.log('Showing slide at position:', position, 'which is slide:', targetIndex, 'from current:', currentSlide); // Debug
-
-                if (targetIndex === currentSlide || isAnimating) return;
-
-                isAnimating = true;
-
-                const allArrows = document.querySelectorAll('.carousel-slide .absolute button');
-                allArrows.forEach(arrow => {
-                    arrow.disabled = true;
-                    arrow.style.opacity = '0.5';
-                });
-
+                // Initialize styles
                 slides.forEach((slide, i) => {
-                    slide.classList.remove('active');
-                    slide.style.transform = 'translateX(100%)';
+                    if (i === 0) {
+                        slide.style.transform = 'translateX(0%)';
+                        slide.style.zIndex = '2';
+                        slide.classList.add('active');
+                    } else {
+                        slide.style.transform = 'translateX(100%)';
+                        slide.style.zIndex = '1';
+                        slide.classList.remove('active');
+                    }
                 });
 
-                const currentSlideElement = slides[currentSlide];
-                const targetSlide = slides[targetIndex];
+                function transitionSlide(targetIndex, direction) {
+                    if (isAnimating || targetIndex === currentSlide) return;
+                    isAnimating = true;
 
-                currentSlideElement.classList.add('active');
-                currentSlideElement.style.transform = 'translateX(0%)';
+                    const currentSlideEl = slides[currentSlide];
+                    const targetSlideEl = slides[targetIndex];
 
-                targetSlide.style.transform = 'translateX(100%)';
-                targetSlide.classList.add('active');
+                    // Determine start and end positions
+                    const startPos = direction === 'next' ? '100%' : '-100%';
+                    const exitPos = direction === 'next' ? '-100%' : '100%';
 
-                setTimeout(() => {
-                    targetSlide.style.transform = 'translateX(0%)';
-                }, 10);
+                    // 1. Setup Target Slide (Instant, no transition)
+                    targetSlideEl.style.transition = 'none';
+                    targetSlideEl.style.transform = `translateX(${startPos})`;
+                    targetSlideEl.style.zIndex = '2';
+                    currentSlideEl.style.zIndex = '1';
 
-                setTimeout(() => {
-                    currentSlideElement.classList.remove('active');
-                    currentSlideElement.style.transform = 'translateX(100%)';
-                    isAnimating = false;
+                    // Force Reflow
+                    targetSlideEl.offsetHeight;
 
-                    const allArrows = document.querySelectorAll('.carousel-slide .absolute button');
-                    allArrows.forEach(arrow => {
-                        arrow.disabled = false;
-                        arrow.style.opacity = '1';
-                        arrow.style.cursor = 'pointer';
+                    // 2. Enable Transistions
+                    targetSlideEl.style.transition = 'transform 1.5s ease-in-out';
+                    currentSlideEl.style.transition = 'transform 1.5s ease-in-out';
+
+                    // 3. Animate
+                    requestAnimationFrame(() => {
+                        currentSlideEl.style.transform = `translateX(${exitPos})`;
+                        targetSlideEl.style.transform = 'translateX(0%)';
+                        targetSlideEl.classList.add('active');
                     });
-                }, 800);
 
-                currentSlide = targetIndex;
-                currentPosition = position;
-                console.log('Slide', targetIndex, 'shown from right - CLEAN STATE animation'); // Debug
-            }
+                    // 4. Cleanup after animation
+                    setTimeout(() => {
+                        currentSlideEl.classList.remove('active');
+                        // Reset current slide to be off-screen and ready
+                        // We don't strictly need to move it, but keeping it clean helps
+                        // currentSlideEl.style.transform = 'translateX(100%)'; 
 
+                        isAnimating = false;
+                    }, 1500);
 
-            function nextSlide() {
-                console.log('Next slide clicked, current position:', currentPosition); // Debug
-                const nextPosition = (currentPosition + 1) % slideOrder.length;
-                showSlideByPosition(nextPosition);
-            }
+                    currentSlide = targetIndex;
+                }
 
+                function nextSlide() {
+                    const nextIndex = (currentSlide + 1) % totalSlides;
+                    transitionSlide(nextIndex, 'next');
+                }
 
-            function prevSlide() {
-                console.log('Previous slide clicked, current position:', currentPosition); // Debug
-                const prevPosition = (currentPosition - 1 + slideOrder.length) % slideOrder.length;
-                showSlideByPosition(prevPosition);
-            }
+                function prevSlide() {
+                    const prevIndex = (currentSlide - 1 + totalSlides) % totalSlides;
+                    transitionSlide(prevIndex, 'prev');
+                }
 
+                // Attach Listeners
+                const allLeftArrows = document.querySelectorAll('.carousel-slide .absolute button:first-child');
+                const allRightArrows = document.querySelectorAll('.carousel-slide .absolute button:last-child');
 
-            const allLeftArrows = document.querySelectorAll('.carousel-slide .absolute button:first-child');
-            const allRightArrows = document.querySelectorAll('.carousel-slide .absolute button:last-child');
-
-            console.log('Found left arrows:', allLeftArrows.length); // Debug
-            console.log('Found right arrows:', allRightArrows.length); // Debug
-
-            allLeftArrows.forEach((arrow, i) => {
-                arrow.addEventListener('click', (e) => {
-                    if (isAnimating) {
-                        console.log('Left arrow', i, 'clicked but animation in progress - IGNORED'); // Debug
-                        return;
-                    }
-                    console.log('Left arrow', i, 'clicked'); // Debug
-                    prevSlide();
+                allLeftArrows.forEach(arrow => {
+                    arrow.addEventListener('click', (e) => {
+                        e.stopPropagation(); // Prevent bubbling if needed
+                        prevSlide();
+                    });
                 });
-            });
 
-            allRightArrows.forEach((arrow, i) => {
-                arrow.addEventListener('click', (e) => {
-                    if (isAnimating) {
-                        console.log('Right arrow', i, 'clicked but animation in progress - IGNORED'); // Debug
-                        return;
-                    }
-                    console.log('Right arrow', i, 'clicked'); // Debug
-                    nextSlide();
+                allRightArrows.forEach(arrow => {
+                    arrow.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        nextSlide();
+                    });
                 });
-            });
-
-            console.log('Initializing carousel with', totalSlides, 'slides'); // Debug
-            showSlideByPosition(0);
+            }
 
             // ========== Mobile Hero Carousel ==========
             const mobileCarousel = document.getElementById('mobile-hero-carousel');
@@ -884,15 +878,46 @@
                 const mobileTotalSlides = mobileSlides.length;
                 let mobileIsAnimating = false;
 
-                function showMobileSlide(targetIndex) {
-                    if (targetIndex === mobileCurrentSlide || mobileIsAnimating) return;
+                // Init slides logic
+                mobileSlides.forEach((slide, i) => {
+                    slide.style.transition = 'transform 0.7s ease-in-out';
+                    if (i === 0) {
+                        slide.style.transform = 'translateX(0%)';
+                        slide.style.zIndex = '2';
+                    } else {
+                        slide.style.transform = 'translateX(100%)';
+                        slide.style.zIndex = '1';
+                    }
+                });
+
+                function mobileTransition(targetIndex, direction) {
+                    if (mobileIsAnimating || targetIndex === mobileCurrentSlide) return;
                     mobileIsAnimating = true;
 
-                    // Hide current slide
-                    mobileSlides[mobileCurrentSlide].style.transform = 'translateX(-100%)';
+                    const currentSlideEl = mobileSlides[mobileCurrentSlide];
+                    const targetSlideEl = mobileSlides[targetIndex];
 
-                    // Show target slide
-                    mobileSlides[targetIndex].style.transform = 'translateX(0%)';
+                    const startPos = direction === 'next' ? '100%' : '-100%';
+                    const exitPos = direction === 'next' ? '-100%' : '100%';
+
+                    // Setup Target
+                    targetSlideEl.style.transition = 'none'; // Disable transition for setup
+                    targetSlideEl.style.transform = `translateX(${startPos})`;
+                    targetSlideEl.style.zIndex = '2';
+                    currentSlideEl.style.zIndex = '1';
+
+                    // Force Reflow
+                    targetSlideEl.offsetHeight;
+
+                    // Enable Transitions
+                    targetSlideEl.style.transition = 'transform 0.7s ease-in-out';
+                    currentSlideEl.style.transition = 'transform 0.7s ease-in-out';
+
+                    // Animate
+                    requestAnimationFrame(() => {
+                        currentSlideEl.style.transform = `translateX(${exitPos})`;
+                        targetSlideEl.style.transform = 'translateX(0%)';
+                    });
 
                     setTimeout(() => {
                         mobileIsAnimating = false;
@@ -903,29 +928,26 @@
 
                 function mobileNextSlide() {
                     const nextIndex = (mobileCurrentSlide + 1) % mobileTotalSlides;
-                    showMobileSlide(nextIndex);
+                    mobileTransition(nextIndex, 'next');
                 }
 
                 function mobilePrevSlide() {
                     const prevIndex = (mobileCurrentSlide - 1 + mobileTotalSlides) % mobileTotalSlides;
-                    showMobileSlide(prevIndex);
+                    mobileTransition(prevIndex, 'prev');
                 }
 
                 mobilePrevButtons.forEach(btn => {
-                    btn.addEventListener('click', () => {
-                        if (!mobileIsAnimating) mobilePrevSlide();
+                    btn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        mobilePrevSlide();
                     });
                 });
 
                 mobileNextButtons.forEach(btn => {
-                    btn.addEventListener('click', () => {
-                        if (!mobileIsAnimating) mobileNextSlide();
+                    btn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        mobileNextSlide();
                     });
-                });
-
-                // Init first slide
-                mobileSlides.forEach((slide, i) => {
-                    slide.style.transform = i === 0 ? 'translateX(0%)' : 'translateX(100%)';
                 });
             }
 

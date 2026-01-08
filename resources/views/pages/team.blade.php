@@ -6,20 +6,25 @@
     <div class="bg-white">
         <!-- Main Team Section -->
         <div class="pt-[40px] lg:pt-[120px] pb-[60px] lg:pb-[100px]">
-            <!-- Main Title -->
+            <!-- Main Title Area -->
             <div
-                class="lg:px-0 lg:max-w-[1200px] lg:mx-auto md:ml-[50px] mb-[60px] lg:mb-[119px]">
-                <h1
-                    class="text-[40px] lg:text-[80px] md:text-[60px] font-extrabold text-black uppercase leading-[1.1] lg:leading-[1.02] mb-[40px] lg:mb-[77px]">
-                    Команда<br />
-                    ветеранського<br />
-                    простору
-                </h1>
-                <p
-                    class="text-[16px] lg:text-[20px] md:text-[18px] font-normal text-black text-left lg:text-justify max-w-full lg:max-w-[869px] leading-[1.43]">
-                    Знайомся!<br />
-                    Це команда веретанського простору та партнерська команда, що допомагає втілити задумані нами ідеї.
-                </p>
+                class="lg:px-0 lg:max-w-[1200px] lg:mx-auto md:ml-[50px] mb-[60px] lg:mb-[119px] flex justify-between items-start">
+                <div>
+                    <h1
+                        class="text-[40px] lg:text-[80px] md:text-[60px] font-extrabold text-black uppercase leading-[1.1] lg:leading-[1.02] mb-[40px] lg:mb-[77px]">
+                        Команда<br />
+                        ветеранського<br />
+                        простору
+                    </h1>
+                    <p
+                        class="text-[16px] lg:text-[20px] md:text-[18px] font-normal text-black text-left lg:text-justify max-w-full lg:max-w-[869px] leading-[1.43]">
+                        Знайомся!<br />
+                        Це команда веретанського простору та партнерська команда, що допомагає втілити задумані нами ідеї.
+                    </p>
+                </div>
+                <img src="{{ asset('images/icons/button-support.svg') }}" alt="Support"
+                    class="w-[70px] h-[70px] cursor-pointer hover:opacity-80 transition-opacity ml-4 shrink-0"
+                    onclick="openContactModal()">
             </div>
 
             <!-- Team Grid -->
@@ -81,13 +86,7 @@
             </div>
         </div>
 
-        <!-- Contact Section -->
-        <div class="text-center py-16">
-            <button onclick="openContactModal()"
-                class="bg-veteran-blue hover:bg-blue-700 text-white text-xl font-bold px-12 py-4 rounded-full transition-colors duration-300">
-                ЗВ'ЯЗАТИСЯ З НАМИ
-            </button>
-        </div>
+
     </div>
 
     <script>
@@ -101,5 +100,3 @@
 @section('footer')
     @include('partials.footer-extended')
 @endsection
-
-@include('components.contact-modal')

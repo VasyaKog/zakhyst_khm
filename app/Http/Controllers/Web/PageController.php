@@ -2,26 +2,31 @@
 namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
+use App\Models\HeroBanner;
 use App\Models\NewsArticle;
 use App\Models\Partner;
 use App\Models\Service;
 use App\Models\TeamMember;
+use App\Models\TimelineEvent;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
     public function home()
     {
+        $heroBanners = HeroBanner::active()->get();
         $services = Service::active()->take(3)->get();
         $news = NewsArticle::published()->take(3)->get();
         $team = TeamMember::mainTeam()->take(3)->get();
         $partners = Partner::active()->get();
 
-        return view('pages.home', compact('services', 'news', 'team', 'partners'));
+        return view('pages.home', compact('heroBanners', 'services', 'news', 'team', 'partners'));
     }
     public function about()
     {
-        return view('pages.about');
+        $timelineEvents = TimelineEvent::active()->get();
+
+        return view('pages.about', compact('timelineEvents'));
     }
     public function team()
     {

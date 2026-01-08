@@ -25,6 +25,8 @@ class DatabaseSeeder extends Seeder
             TeamMemberSeeder::class,
             NewsArticleSeeder::class,
             PartnerSeeder::class,
+            HeroBannerSeeder::class,
+            TimelineEventSeeder::class,
         ]);
     }
 }

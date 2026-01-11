@@ -8,7 +8,7 @@
     @vite(['resources/js/web.js'])
 </head>
 
-<body class="bg-white dark:bg-zinc-900 transition-colors duration-300">
+<body class="bg-white dark:bg-zinc-900">
     <!-- Content wrapper for saturation filter (fixed elements outside this div) -->
     <div id="page-content">
         @include('partials.header')

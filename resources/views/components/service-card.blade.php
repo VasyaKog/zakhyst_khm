@@ -38,7 +38,7 @@
                           fill="none" stroke="black" stroke-width="1" vector-effect="non-scaling-stroke"/>
                 </svg>
             </div>
-            <div class="flex-1 w-full -mt-[1px] border-x border-b border-black dark:border-zinc-600 rounded-b-[20px] relative z-20 transition-colors dark:bg-zinc-800"
+            <div class="flex-1 w-full -mt-[1px] border-x border-b border-black dark:border-zinc-600 rounded-b-[20px] relative z-20 transition-colors dark:!bg-zinc-800"
                  style="background-color: {{ $color }};"></div>
         </div>
     @elseif($variant === 'compact')

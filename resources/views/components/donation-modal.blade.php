@@ -7,10 +7,10 @@
 <!-- Donation Modal -->
 <div id="donation-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center p-4">
     <div
-        class="bg-white w-[95%] sm:w-full sm:max-w-[776px] h-auto max-h-[90vh] overflow-y-auto rounded-[30px] relative scrollbar-hide">
+        class="bg-white dark:bg-zinc-900 w-[95%] sm:w-full sm:max-w-[776px] h-auto max-h-[90vh] overflow-y-auto rounded-[30px] relative scrollbar-hide transition-colors">
         <!-- Close Button -->
         <button id="close-modal"
-            class="absolute top-6 right-6 z-10 w-8 h-8 flex items-center justify-center text-black hover:text-veteran-blue transition-colors">
+            class="absolute top-6 right-6 z-10 w-8 h-8 flex items-center justify-center text-black dark:text-white hover:text-veteran-blue transition-colors">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
             </svg>
@@ -19,13 +19,17 @@
         <!-- Tab Navigation -->
         <div class="pt-12 md:pt-[70px] px-6 md:px-[70px]">
             <div class="flex gap-4 md:gap-8">
-                <button id="monobank-tab" class="flex-1 pb-4 pl-4 md:pl-[25px] text-left bg-white relative"
+                <button id="monobank-tab" class="flex-1 pb-4 pl-4 md:pl-[25px] text-left bg-transparent relative"
                     style="border: none; border-bottom: 4px solid #3971E2; outline: none;">
-                    <div class="text-lg md:text-2xl font-bold font-['Montserrat'] text-black">monobank</div>
+                    <div
+                        class="text-lg md:text-2xl font-bold font-['Montserrat'] text-black dark:text-white transition-colors">
+                        monobank</div>
                 </button>
-                <button id="privat-tab" class="flex-1 pb-4 pl-4 md:pl-[25px] text-left bg-white relative"
+                <button id="privat-tab" class="flex-1 pb-4 pl-4 md:pl-[25px] text-left bg-transparent relative"
                     style="border: none; border-bottom: 1px solid #9CA3AF; outline: none;">
-                    <div class="text-lg md:text-2xl font-bold font-['Montserrat'] text-black">Приват Банк</div>
+                    <div
+                        class="text-lg md:text-2xl font-bold font-['Montserrat'] text-black dark:text-white transition-colors">
+                        Приват Банк</div>
                 </button>
             </div>
         </div>
@@ -37,14 +41,14 @@
                 <div class="pt-8 md:pt-[60px] px-6 md:px-[70px] pb-8 md:pb-[50px]">
                     <!-- Title -->
                     <h2
-                        class="text-2xl md:text-[2.25rem] font-bold font-['Montserrat'] text-black uppercase text-center leading-[1.2] mb-6 md:mb-[30px]">
+                        class="text-2xl md:text-[2.25rem] font-bold font-['Montserrat'] text-black dark:text-white uppercase text-center leading-[1.2] mb-6 md:mb-[30px] transition-colors">
                         ПІДТРИМАЙ СПІЛЬНІ БЛАГОДІЙНІ<br />
                         ІНІЦІАТИВИ
                     </h2>
 
                     <!-- Description -->
                     <p
-                        class="text-base md:text-[1.25rem] font-bold font-['Montserrat'] text-black text-center leading-[1.33] mb-6 md:mb-[20px]">
+                        class="text-base md:text-[1.25rem] font-bold font-['Montserrat'] text-black dark:text-white text-center leading-[1.33] mb-6 md:mb-[20px] transition-colors">
                         Ветеранського простору та ГО "Захист - об'єднання волонтерів"
                     </p>
 
@@ -57,14 +61,14 @@
                     <!-- Donate Button -->
                     <div class="flex justify-center mb-8 md:mb-[35px]">
                         <button
-                            class="h-[50px] px-6 md:px-10 border-2 border-veteran-blue bg-transparent text-black text-sm md:text-[1.125rem] font-black font-['Montserrat'] uppercase rounded-full hover:bg-veteran-blue hover:text-white transition-all duration-300 flex items-center justify-center">
+                            class="h-[50px] px-6 md:px-10 border-2 border-veteran-blue bg-transparent text-black dark:text-white text-sm md:text-[1.125rem] font-black font-['Montserrat'] uppercase rounded-full hover:bg-veteran-blue hover:text-white transition-all duration-300 flex items-center justify-center">
                             ДОНАТИТИ ЗА ПОСИЛАННЯМ
                         </button>
                     </div>
 
                     <!-- Thank You Message -->
                     <p
-                        class="text-center text-base md:text-[1.25rem] font-bold font-['Montserrat'] text-black leading-relaxed">
+                        class="text-center text-base md:text-[1.25rem] font-bold font-['Montserrat'] text-black dark:text-white leading-relaxed transition-colors">
                         Дякуємо за твою підтримку! ;
                     </p>
                 </div>
@@ -75,14 +79,14 @@
                 <div class="pt-8 md:pt-[60px] px-6 md:px-[70px] pb-8 md:pb-[50px]">
                     <!-- Title -->
                     <h2
-                        class="text-2xl md:text-[2.25rem] font-bold font-['Montserrat'] text-black uppercase text-center leading-[1.2] mb-6 md:mb-[30px]">
+                        class="text-2xl md:text-[2.25rem] font-bold font-['Montserrat'] text-black dark:text-white uppercase text-center leading-[1.2] mb-6 md:mb-[30px] transition-colors">
                         ПІДТРИМАЙ СПІЛЬНІ БЛАГОДІЙНІ<br />
                         ІНІЦІАТИВИ
                     </h2>
 
                     <!-- Description -->
                     <p
-                        class="text-base md:text-[1.25rem] font-bold font-['Montserrat'] text-black text-center leading-[1.33] mb-8 md:mb-[50px]">
+                        class="text-base md:text-[1.25rem] font-bold font-['Montserrat'] text-black dark:text-white text-center leading-[1.33] mb-8 md:mb-[50px] transition-colors">
                         Ветеранського простору та ГО "Захист - об'єднання волонтерів"
                     </p>
 
@@ -95,10 +99,10 @@
                     <!-- IBAN Section -->
                     <div class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 mb-8 md:mb-[35px]">
                         <span
-                            class="text-sm md:text-[1.125rem] font-bold font-['Montserrat'] text-black tracking-wide text-center break-all">IBAN
+                            class="text-sm md:text-[1.125rem] font-bold font-['Montserrat'] text-black dark:text-white tracking-wide text-center break-all transition-colors">IBAN
                             UA69305299000002600902600282</span>
                         <button onclick="copyIBAN('UA69305299000002600902600282')"
-                            class="w-6 h-6 flex items-center justify-center hover:opacity-70 transition-opacity">
+                            class="w-6 h-6 flex items-center justify-center hover:opacity-70 transition-opacity text-black dark:text-white">
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z">
@@ -109,7 +113,7 @@
 
                     <!-- Thank You Message -->
                     <p
-                        class="text-center text-base md:text-[1.25rem] font-bold font-['Montserrat'] text-black leading-relaxed">
+                        class="text-center text-base md:text-[1.25rem] font-bold font-['Montserrat'] text-black dark:text-white leading-relaxed transition-colors">
                         Дякуємо за твою підтримку! ;
                     </p>
                 </div>

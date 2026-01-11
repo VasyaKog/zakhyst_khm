@@ -18,14 +18,14 @@
         <footer class="flex items-center justify-between py-4 pb-[124px]">
             <!-- Contact Info -->
             <div class="flex items-center">
-                <img src="{{ asset('images/icons/watsapnp.svg') }}" alt="WhatsApp" class="w-6 h-6">
-                <img src="{{ asset('images/icons/signal.svg') }}" alt="Signal" class="w-6 h-6 ml-2">
-                <img src="{{ asset('images/icons/viber.svg') }}" alt="Viber" class="w-6 h-6 ml-2">
-                <span class="text-black text-base font-bold font-montserrat"
+                <img src="{{ asset('images/icons/watsapnp.svg') }}" alt="WhatsApp" class="w-6 h-6 dark:invert transition-all">
+                <img src="{{ asset('images/icons/signal.svg') }}" alt="Signal" class="w-6 h-6 ml-2 dark:invert transition-all">
+                <img src="{{ asset('images/icons/viber.svg') }}" alt="Viber" class="w-6 h-6 ml-2 dark:invert transition-all">
+                <span class="text-black dark:text-white text-base font-bold font-montserrat transition-colors"
                     style="margin-left: 20px; margin-right: 56px;">+38
                     067 563 0090</span>
-                <img src="{{ asset('images/icons/facebook.svg') }}" alt="Facebook" class="w-6 h-6">
-                <img src="{{ asset('images/icons/instagram.svg') }}" alt="Instagram" class="w-6 h-6 ml-2">
+                <img src="{{ asset('images/icons/facebook.svg') }}" alt="Facebook" class="w-6 h-6 dark:invert transition-all">
+                <img src="{{ asset('images/icons/instagram.svg') }}" alt="Instagram" class="w-6 h-6 ml-2 dark:invert transition-all">
             </div>
 
             <!-- Search Bar -->
@@ -118,7 +118,7 @@
 
                         <!-- Arrow -->
                         <div class="absolute right-2 top-2 w-7 h-7">
-                            <img src="{{ asset('images/icons/arrow.svg') }}" alt="Arrow" class="w-7 h-7">
+                            <img src="{{ asset('images/icons/arrow.svg') }}" alt="Arrow" class="w-7 h-7 dark:invert transition-all">
                         </div>
 
                         <!-- Title -->
@@ -207,7 +207,7 @@
 
                         <!-- Arrow (Fixed Position) -->
                         <div class="absolute right-2 top-2 w-7 h-7">
-                            <img src="{{ asset('images/icons/arrow.svg') }}" alt="Arrow" class="w-7 h-7">
+                            <img src="{{ asset('images/icons/arrow.svg') }}" alt="Arrow" class="w-7 h-7 dark:invert transition-all">
                         </div>
 
                         <!-- Content Flow Wrapper -->
@@ -261,11 +261,10 @@
                 // Note: Container height is handled by CSS (h-auto)
             }
 
-            // Run iteratively
             adjustServiceCards();
             window.addEventListener('resize', adjustServiceCards);
             
-            @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/accessibility.js', 'resources/js/search.js'])
+
             setInterval(adjustServiceCards, 1000);
         });
     </script>
@@ -506,7 +505,7 @@
                     <div
                         class="w-full {{ $isLastOdd ? 'max-w-[160px]' : '' }} h-24 flex items-center justify-center rounded-lg p-2 bg-transparent">
                         <img src="{{ asset('storage/' . $partner->logo_path) }}" alt="{{ $partner->name }}"
-                            class="max-w-full max-h-full object-contain dark:brightness-0 dark:invert transition-all duration-300">
+                            class="max-w-full max-h-full object-contain">
                     </div>
                 </div>
             @endforeach
@@ -798,24 +797,22 @@
                     clearTimeout(servicesScrollTimeout);
                     servicesScrollTimeout = setTimeout(() => {
                         const scrollLeft = servicesCarousel.scrollLeft;
-                        const cardWidth = 396;
+                        const cardWidth = 396; // 396px card width
                         const gap = 16;
-                        const totalCardWidth = cardWidth + gap;
-
-                        // Calculate active index based on scroll position + half wrapper width to find center
-                        // But simpler approach for snap-scroll: round(scrollLeft / itemWidth)
-                        const activeIndex = Math.round(scrollLeft / totalCardWidth);
-
-                        servicesDots.forEach((dot, index) => {
-                            if (index === activeIndex) {
+                        // Calculate index
+                        // We add half width to center threshold
+                        const index = Math.round(scrollLeft / (cardWidth + gap));
+                        
+                        servicesDots.forEach((dot, i) => {
+                            if (i === index) {
                                 dot.classList.remove('bg-gray-300');
                                 dot.classList.add('bg-veteran-blue');
                             } else {
-                                dot.classList.remove('bg-veteran-blue');
                                 dot.classList.add('bg-gray-300');
+                                dot.classList.remove('bg-veteran-blue');
                             }
                         });
-                    }, 50); // Debounce slightly
+                    }, 50);
                 });
             }
 
@@ -824,10 +821,10 @@
             const teamDots = document.querySelectorAll('#mobile-team-dots button');
 
             if (teamCarousel && teamDots.length > 0) {
-                // Scroll to specific member
+                 // Scroll to specific member
                 window.scrollToTeamMember = (index) => {
-                    const cardWidth = 394; // 394px card width
-                    const gap = 16; // 16px gap (rem-4)
+                    const cardWidth = 394; 
+                    const gap = 16; 
                     const scrollLeft = index * (cardWidth + gap);
                     teamCarousel.scrollTo({
                         left: scrollLeft,
@@ -843,22 +840,22 @@
                         const scrollLeft = teamCarousel.scrollLeft;
                         const cardWidth = 394;
                         const gap = 16;
-                        const totalCardWidth = cardWidth + gap;
-
-                        const activeIndex = Math.round(scrollLeft / totalCardWidth);
-
-                        teamDots.forEach((dot, index) => {
-                            if (index === activeIndex) {
+                        const index = Math.round(scrollLeft / (cardWidth + gap));
+                        
+                        teamDots.forEach((dot, i) => {
+                            if (i === index) {
+                                dot.classList.remove('bg-gray-300', 'dark:bg-zinc-600');
                                 dot.classList.add('bg-veteran-blue');
-                                dot.classList.remove('bg-gray-300');
                             } else {
+                                dot.classList.add('bg-gray-300', 'dark:bg-zinc-600');
                                 dot.classList.remove('bg-veteran-blue');
-                                dot.classList.add('bg-gray-300');
                             }
                         });
-                    }, 50); // Debounce slightly
+                    }, 50);
                 });
             }
+
+
         });
     </script>
 

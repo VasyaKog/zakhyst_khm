@@ -4,7 +4,8 @@
 
             <div class="flex items-center space-x-3 flex-shrink-0">
                 <a href="{{ route('home') }}">
-                    <img src="{{ asset('images/logos/logo-text.svg') }}" class="h-[40px] min-[1250px]:h-full"
+                    <img src="{{ asset('images/logos/logo-text.svg') }}"
+                        class="h-[40px] min-[1250px]:h-full dark:brightness-0 dark:invert transition-all"
                         alt="ВЕТЕРАНСЬКИЙ ПРОСТІР">
                 </a>
             </div>
@@ -31,23 +32,23 @@
             <div id="mobile-nav" class="hidden min-[1400px]:flex-1 justify-center min-w-0 mx-5">
                 <div class="flex items-center justify-center gap-3 xl:gap-5 min-[1700px]:gap-8 flex-wrap">
                     <a href="#"
-                        class="text-black hover:text-veteran-blue font-bold text-sm min-[1700px]:text-base uppercase leading-tight tracking-wide transition-colors whitespace-nowrap">
+                        class="text-black dark:text-white hover:text-veteran-blue font-bold text-sm min-[1700px]:text-base uppercase leading-tight tracking-wide transition-colors whitespace-nowrap">
                         МИ ПАМ'ЯТАЄМО
                     </a>
                     <a href="{{ route('news') }}"
-                        class="text-black hover:text-veteran-blue font-bold text-sm min-[1700px]:text-base uppercase leading-tight tracking-wide transition-colors whitespace-nowrap">
+                        class="text-black dark:text-white hover:text-veteran-blue font-bold text-sm min-[1700px]:text-base uppercase leading-tight tracking-wide transition-colors whitespace-nowrap">
                         НОВИНИ
                     </a>
                     <a href="{{ route('path') }}"
-                        class="text-black hover:text-veteran-blue font-bold text-sm min-[1700px]:text-base uppercase leading-tight tracking-wide transition-colors whitespace-nowrap">
+                        class="text-black dark:text-white hover:text-veteran-blue font-bold text-sm min-[1700px]:text-base uppercase leading-tight tracking-wide transition-colors whitespace-nowrap">
                         ГРОМАДА - ВЕТЕРАНУ
                     </a>
                     <a href="{{ route('indifferent') }}"
-                        class="text-black hover:text-veteran-blue font-bold text-sm min-[1700px]:text-base uppercase leading-tight tracking-wide transition-colors whitespace-nowrap">
+                        class="text-black dark:text-white hover:text-veteran-blue font-bold text-sm min-[1700px]:text-base uppercase leading-tight tracking-wide transition-colors whitespace-nowrap">
                         НЕБАЙДУЖИМ
                     </a>
                     <a href="#"
-                        class="text-black hover:text-veteran-blue font-bold text-sm min-[1700px]:text-base uppercase leading-tight tracking-wide transition-colors whitespace-nowrap">
+                        class="text-black dark:text-white hover:text-veteran-blue font-bold text-sm min-[1700px]:text-base uppercase leading-tight tracking-wide transition-colors whitespace-nowrap">
                         ВІДГУКИ
                     </a>
                 </div>
@@ -55,9 +56,11 @@
 
             <div class="flex items-center gap-8 flex-shrink-0">
                 <!-- Language toggle: Hidden on mobile (moved to burger menu), Visible > 1400px -->
-                <button id="language-toggle" class="hidden min-[1400px]:flex items-center space-x-1 text-black">
+                <button id="language-toggle"
+                    class="hidden min-[1400px]:flex items-center space-x-1 text-black dark:text-white transition-colors">
                     <span class="font-bold text-base">UA</span>
-                    <img class="pb-1" src="{{ asset('images/icons/arrow-down.svg') }}" alt="Dropdown">
+                    <img class="pb-1 dark:invert transition-all" src="{{ asset('images/icons/arrow-down.svg') }}"
+                        alt="Dropdown">
                 </button>
 
                 <!-- Burger/Cross Button: Visible on Mobile (<1400), Hidden on Desktop (>1400) UNLESS extended nav is open -->
@@ -68,14 +71,14 @@
                         onclick="toggleMobileMenu()">
                         <!-- Burger Icon -->
                         <img id="burger-icon" src="{{ asset('images/icons/burger.svg') }}"
-                            class="max-[768px]:w-[45px] max-[768px]:h-[30px]" alt="Menu">
+                            class="max-[768px]:w-[45px] max-[768px]:h-[30px] dark:invert transition-all" alt="Menu">
                         <!-- Cross Icon (Hidden by default) -->
                         <div id="cross-icon" class="w-6 h-6 hidden">
                             <div
-                                class="w-full h-[3px] bg-black transform rotate-45 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                                class="w-full h-[3px] bg-black dark:bg-white transform rotate-45 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-colors">
                             </div>
                             <div
-                                class="w-full h-[3px] bg-black transform -rotate-45 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                                class="w-full h-[3px] bg-black dark:bg-white transform -rotate-45 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-colors">
                             </div>
                         </div>
                     </button>
@@ -85,8 +88,8 @@
                 <!-- Default gap is 32px. Large screens add 33px margin. -->
                 <button class="transition-colors hidden min-[1400px]:block min-[1800px]:mr-[33px]"
                     onclick="accessibility.toggleTheme()">
-                    <img class="h-[30px] theme-toggle-icon" src="{{ asset('images/icons/switch.svg') }}"
-                        alt="Dark Mode Toggle">
+                    <img class="h-[30px] theme-toggle-icon dark:invert transition-all"
+                        src="{{ asset('images/icons/switch.svg') }}" alt="Dark Mode Toggle">
                 </button>
 
                 <button onclick="openDonationModal()"

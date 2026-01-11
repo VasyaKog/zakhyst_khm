@@ -1,6 +1,6 @@
 {{-- Accessibility Panel - Desktop: Floating bottom-left --}}
 <div id="accessibility-panel"
-    class="fixed bottom-4 left-4 z-[100] w-[320px] bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden hidden"
+    class="fixed bottom-4 left-4 z-[100] w-[320px] bg-white dark:bg-zinc-900 rounded-2xl shadow-2xl border border-gray-200 dark:border-zinc-700 overflow-hidden hidden transition-colors"
     style="display: none;">
     {{-- Header --}}
     <div class="bg-veteran-blue text-white px-5 py-4 flex items-center justify-between">
@@ -23,13 +23,13 @@
         {{-- Font Size --}}
         <div class="space-y-2">
             <div class="flex justify-between items-center">
-                <label class="font-semibold text-sm text-black">Розмір тексту</label>
+                <label class="font-semibold text-sm text-black dark:text-white">Розмір тексту</label>
                 <span id="a11y-font-value" class="text-sm font-bold text-veteran-blue">100%</span>
             </div>
             <input type="range" id="a11y-font-slider" min="100" max="120" value="100" step="5"
-                class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-veteran-blue"
+                class="w-full h-2 bg-gray-200 dark:bg-zinc-600 rounded-lg appearance-none cursor-pointer accent-veteran-blue"
                 oninput="accessibility.setFontScale(this.value)">
-            <div class="flex justify-between text-xs text-gray-500">
+            <div class="flex justify-between text-xs text-gray-500 dark:text-gray-400">
                 <span>100%</span>
                 <span>120%</span>
             </div>
@@ -38,32 +38,34 @@
         {{-- Saturation --}}
         <div class="space-y-2">
             <div class="flex justify-between items-center">
-                <label class="font-semibold text-sm text-black">Насиченість кольорів</label>
+                <label class="font-semibold text-sm text-black dark:text-white">Насиченість кольорів</label>
                 <span id="a11y-saturation-value" class="text-sm font-bold text-veteran-blue">100%</span>
             </div>
             <input type="range" id="a11y-saturation-slider" min="0" max="100" value="100" step="10"
-                class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-veteran-blue"
+                class="w-full h-2 bg-gray-200 dark:bg-zinc-600 rounded-lg appearance-none cursor-pointer accent-veteran-blue"
                 oninput="accessibility.setSaturation(this.value)">
-            <div class="flex justify-between text-xs text-gray-500">
+            <div class="flex justify-between text-xs text-gray-500 dark:text-gray-400">
                 <span>0%</span>
                 <span>100%</span>
             </div>
         </div>
 
         {{-- Divider --}}
-        <div class="border-t border-gray-200"></div>
+        <div class="border-t border-gray-200 dark:border-zinc-700"></div>
 
         {{-- Toggle Options --}}
         <div class="space-y-4">
             {{-- Reduce Motion --}}
             <label class="flex items-center justify-between cursor-pointer group">
-                <span class="font-semibold text-sm text-black group-hover:text-veteran-blue transition-colors">
+                <span
+                    class="font-semibold text-sm text-black dark:text-white group-hover:text-veteran-blue transition-colors">
                     Вимкнути анімації
                 </span>
                 <div class="relative">
                     <input type="checkbox" id="a11y-motion-toggle" class="sr-only peer"
                         onchange="accessibility.toggleReduceMotion()">
-                    <div class="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:bg-veteran-blue transition-colors">
+                    <div
+                        class="w-11 h-6 bg-gray-200 dark:bg-zinc-600 rounded-full peer peer-checked:bg-veteran-blue transition-colors">
                     </div>
                     <div
                         class="absolute left-1 top-1 w-4 h-4 bg-white rounded-full transition-transform peer-checked:translate-x-5">
@@ -73,13 +75,15 @@
 
             {{-- High Contrast --}}
             <label class="flex items-center justify-between cursor-pointer group">
-                <span class="font-semibold text-sm text-black group-hover:text-veteran-blue transition-colors">
+                <span
+                    class="font-semibold text-sm text-black dark:text-white group-hover:text-veteran-blue transition-colors">
                     Високий контраст
                 </span>
                 <div class="relative">
                     <input type="checkbox" id="a11y-contrast-toggle" class="sr-only peer"
                         onchange="accessibility.toggleHighContrast()">
-                    <div class="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:bg-veteran-blue transition-colors">
+                    <div
+                        class="w-11 h-6 bg-gray-200 dark:bg-zinc-600 rounded-full peer peer-checked:bg-veteran-blue transition-colors">
                     </div>
                     <div
                         class="absolute left-1 top-1 w-4 h-4 bg-white rounded-full transition-transform peer-checked:translate-x-5">
@@ -89,13 +93,15 @@
 
             {{-- Large Cursor --}}
             <label class="flex items-center justify-between cursor-pointer group">
-                <span class="font-semibold text-sm text-black group-hover:text-veteran-blue transition-colors">
+                <span
+                    class="font-semibold text-sm text-black dark:text-white group-hover:text-veteran-blue transition-colors">
                     Збільшений курсор
                 </span>
                 <div class="relative">
                     <input type="checkbox" id="a11y-cursor-toggle" class="sr-only peer"
                         onchange="accessibility.toggleLargeCursor()">
-                    <div class="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:bg-veteran-blue transition-colors">
+                    <div
+                        class="w-11 h-6 bg-gray-200 dark:bg-zinc-600 rounded-full peer peer-checked:bg-veteran-blue transition-colors">
                     </div>
                     <div
                         class="absolute left-1 top-1 w-4 h-4 bg-white rounded-full transition-transform peer-checked:translate-x-5">
@@ -105,13 +111,15 @@
 
             {{-- Highlight Links --}}
             <label class="flex items-center justify-between cursor-pointer group">
-                <span class="font-semibold text-sm text-black group-hover:text-veteran-blue transition-colors">
+                <span
+                    class="font-semibold text-sm text-black dark:text-white group-hover:text-veteran-blue transition-colors">
                     Виділити посилання
                 </span>
                 <div class="relative">
                     <input type="checkbox" id="a11y-links-toggle" class="sr-only peer"
                         onchange="accessibility.toggleHighlightLinks()">
-                    <div class="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:bg-veteran-blue transition-colors">
+                    <div
+                        class="w-11 h-6 bg-gray-200 dark:bg-zinc-600 rounded-full peer peer-checked:bg-veteran-blue transition-colors">
                     </div>
                     <div
                         class="absolute left-1 top-1 w-4 h-4 bg-white rounded-full transition-transform peer-checked:translate-x-5">
@@ -122,7 +130,7 @@
 
         {{-- Reset Button --}}
         <button onclick="accessibility.resetAccessibility()"
-            class="w-full py-3 border-2 border-gray-300 text-gray-700 font-bold text-sm rounded-full hover:border-veteran-blue hover:text-veteran-blue transition-colors">
+            class="w-full py-3 border-2 border-gray-300 dark:border-zinc-600 text-gray-700 dark:text-white font-bold text-sm rounded-full hover:border-veteran-blue hover:text-veteran-blue dark:hover:text-veteran-blue transition-colors">
             Скинути налаштування
         </button>
     </div>

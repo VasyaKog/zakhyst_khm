@@ -13,7 +13,7 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 COPY composer.json composer.lock ./
 
-RUN composer install --no-dev --no-scripts --prefer-dist --optimize-autoloader
+RUN composer update --no-dev --no-scripts --prefer-dist --optimize-autoloader
 
 FROM node:22 as node_build
 

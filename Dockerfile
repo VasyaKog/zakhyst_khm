@@ -15,7 +15,7 @@ COPY composer.json composer.lock ./
 
 RUN composer install --no-dev --no-scripts --prefer-dist --optimize-autoloader
 
-FROM node:18 as node_build
+FROM node:22 as node_build
 
 WORKDIR /app
 

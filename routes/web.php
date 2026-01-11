@@ -18,4 +18,6 @@ Route::get('/indifferent', [PageController::class, 'indifferent'])->name('indiff
 Route::get('/path', [PageController::class, 'path'])->name('path');
 Route::get('/404', [PageController::class, 'notFound'])->name('404');
 
+Route::get('/api/search', [\App\Http\Controllers\Web\SearchController::class, 'search'])->name('api.search');
+
 // require __DIR__ . '/auth.php';

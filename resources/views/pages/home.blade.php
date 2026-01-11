@@ -29,10 +29,20 @@
             </div>
 
             <!-- Search Bar -->
-            <div class="flex-1 max-w-[995px] h-12 rounded-[300px] border border-black flex items-center px-5">
-                <span class="text-black text-base font-normal font-montserrat">Не можеш знайти? Пошукай тут...</span>
-                <div class="ml-auto w-8 h-8 bg-black rounded-full flex items-center justify-center">
-                    <img class="w-6 h-6" src="{{ asset('images/icons/icon-search.svg') }}" alt="Search">
+            <div class="flex-1 max-w-[995px] relative">
+                <div class="w-full h-12 rounded-[300px] border border-black flex items-center px-5 bg-white dark:bg-zinc-800 transition-colors">
+                    <input type="text" 
+                        id="desktop-search-input"
+                        class="w-full bg-transparent border-none text-black dark:text-white text-base font-normal font-montserrat placeholder-black dark:placeholder-gray-400 focus:ring-0 p-0"
+                        placeholder="Не можеш знайти? Пошукай тут..."
+                        autocomplete="off">
+                    <div class="ml-auto w-8 h-8 bg-black dark:bg-white rounded-full flex items-center justify-center cursor-pointer">
+                        <img class="w-6 h-6 dark:invert" src="{{ asset('images/icons/icon-search.svg') }}" alt="Search">
+                    </div>
+                </div>
+                <!-- Dropdown Results -->
+                <div id="desktop-search-results" class="hidden absolute top-full left-0 w-full mt-2 bg-white dark:bg-zinc-900 rounded-xl shadow-xl z-50 overflow-hidden border border-gray-100 dark:border-zinc-700 max-h-[400px] overflow-y-auto">
+                    <!-- Results injected by JS -->
                 </div>
             </div>
         </footer>
@@ -52,11 +62,20 @@
         </div>
 
         <!-- Mobile Search Bar -->
-        <div class="w-full h-11 rounded-full border border-black flex items-center px-4">
-            <span class="text-black text-sm font-normal font-montserrat truncate flex-1">Не можеш знайти? Пошукай
-                тут...</span>
-            <div class="w-7 h-7 bg-black rounded-full flex-shrink-0 flex items-center justify-center ml-2">
-                <img class="w-4 h-4" src="{{ asset('images/icons/icon-search.svg') }}" alt="Search">
+        <div class="w-full relative z-30">
+            <div class="w-full h-11 rounded-full border border-black flex items-center px-4 bg-white dark:bg-zinc-800 transition-colors">
+                <input type="text"
+                    id="mobile-search-input"
+                    class="flex-1 bg-transparent border-none text-black dark:text-white text-sm font-normal font-montserrat placeholder-black dark:placeholder-gray-400 focus:ring-0 p-0 truncate"
+                    placeholder="Не можеш знайти? Пошукай тут..."
+                    autocomplete="off">
+                <div class="w-7 h-7 bg-black dark:bg-white rounded-full flex-shrink-0 flex items-center justify-center ml-2">
+                    <img class="w-4 h-4 dark:invert" src="{{ asset('images/icons/icon-search.svg') }}" alt="Search">
+                </div>
+            </div>
+             <!-- Dropdown Results -->
+            <div id="mobile-search-results" class="hidden absolute top-full left-0 w-full mt-2 bg-white dark:bg-zinc-900 rounded-xl shadow-xl z-50 overflow-hidden border border-gray-100 dark:border-zinc-700 max-h-[300px] overflow-y-auto">
+                <!-- Results injected by JS -->
             </div>
         </div>
     </div>
@@ -187,8 +206,8 @@
                         </div>
 
                         <!-- Arrow (Fixed Position) -->
-                        <div class="absolute top-0 right-0 w-[30px] h-[30px] mt-[41px] mr-[5px]">
-                            <img src="{{ asset('images/icons/arrow.svg') }}" alt="Arrow" class="w-[30px] h-[30px]">
+                        <div class="absolute right-2 top-2 w-7 h-7">
+                            <img src="{{ asset('images/icons/arrow.svg') }}" alt="Arrow" class="w-7 h-7">
                         </div>
 
                         <!-- Content Flow Wrapper -->
@@ -246,7 +265,7 @@
             adjustServiceCards();
             window.addEventListener('resize', adjustServiceCards);
             
-            // Poll for font changes (Alternative to window.accessibility listener if not broadcasting event)
+            @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/accessibility.js', 'resources/js/search.js'])
             setInterval(adjustServiceCards, 1000);
         });
     </script>

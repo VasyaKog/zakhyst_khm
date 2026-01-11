@@ -3,13 +3,14 @@
 @section('title', 'Послуги - ВЕТЕРАНСЬКИЙ ПРОСТІР')
 
 @section('content')
-    <div class="bg-white">
+    <div class="bg-white dark:bg-zinc-900 transition-colors duration-300">
         <!-- Main Services Section -->
         <div class="pt-[40px] lg:pt-[120px] pb-[60px] lg:pb-[100px]">
             <!-- Page Title -->
-            <div class="px-4 lg:px-0 lg:max-w-[1200px] lg:mx-auto mb-[60px] lg:mb-[120px] flex justify-between items-start">
+            <div
+                class="px-4 lg:px-8 xl:px-4 2xl:px-0 lg:max-w-[900px] xl:max-w-[1100px] 2xl:max-w-[1200px] lg:mx-auto mb-[60px] lg:mb-[120px] flex justify-between items-start">
                 <h1
-                    class="text-[40px] lg:text-[80px] font-extrabold font-['Montserrat'] text-black uppercase leading-[0.92]">
+                    class="text-[2.5rem] lg:text-[5rem] font-extrabold font-['Montserrat'] text-black dark:text-white uppercase leading-[0.92] transition-colors">
                     Послуги
                 </h1>
                 <img src="{{ asset('images/icons/button-support.svg') }}" alt="Support"
@@ -18,7 +19,7 @@
             </div>
 
             <!-- Services Container -->
-            <div class="px-4 lg:px-0 lg:max-w-[1170px] lg:mx-auto">
+            <div class="px-4 lg:px-8 xl:px-4 2xl:px-0 lg:max-w-[900px] xl:max-w-[1100px] 2xl:max-w-[1170px] lg:mx-auto">
 
                 @foreach($services as $service)
                     <x-service-card :number="$service->number" :title="$service->title">
@@ -37,6 +38,38 @@
         </div>
     </div>
 @endsection
+
+@push('scripts')
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            function equalizeServiceCards() {
+                if (window.innerWidth < 1024) return; // Desktop only
+
+                const cards = document.querySelectorAll('.js-service-card');
+                if (cards.length === 0) return;
+
+                // Reset heights
+                cards.forEach(card => card.style.minHeight = 'auto');
+
+                // Find Max Height
+                let maxHeight = 0;
+                cards.forEach(card => {
+                    const h = card.offsetHeight;
+                    if (h > maxHeight) maxHeight = h;
+                });
+
+                // Apply
+                cards.forEach(card => card.style.minHeight = `${maxHeight}px`);
+            }
+
+            // Run on load and resize
+            window.addEventListener('load', equalizeServiceCards);
+            window.addEventListener('resize', equalizeServiceCards);
+            // Run immediately in case
+            equalizeServiceCards();
+        });
+    </script>
+@endpush
 
 @section('footer')
     @include('partials.footer-basic')

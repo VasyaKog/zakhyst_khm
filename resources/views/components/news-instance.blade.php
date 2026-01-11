@@ -12,32 +12,32 @@
     
     <!-- Mobile Header Meta Row  -->
     <div class="flex lg:hidden justify-between items-center mb-6">
-        <span class="text-[12px] font-bold font-['Montserrat'] text-black uppercase leading-[1.43] tracking-wider">
+        <span class="text-[0.75rem] font-bold font-['Montserrat'] text-black dark:text-gray-300 uppercase leading-[1.43] tracking-wider transition-colors">
             {{ $date }}
         </span>
         <div class="flex gap-4">
-            <img src="{{ asset('images/icons/instagram.svg') }}" alt="Insta" class="w-[30px] h-[30px] cursor-pointer"> 
-            <img src="{{ asset('images/icons/facebook.svg') }}" alt="Facebook" class="w-[30px] h-[30px] cursor-pointer">
+            <img src="{{ asset('images/icons/instagram.svg') }}" alt="Insta" class="w-[30px] h-[30px] cursor-pointer dark:invert transition-all"> 
+            <img src="{{ asset('images/icons/facebook.svg') }}" alt="Facebook" class="w-[30px] h-[30px] cursor-pointer dark:invert transition-all">
         </div>
     </div>
 
     <!-- Desktop Date -->
     <div class="hidden lg:block">
-        <span class="text-[14px] font-bold font-['Montserrat'] text-black leading-[1.43]">
+        <span class="text-[0.875rem] font-bold font-['Montserrat'] text-black dark:text-gray-300 leading-[1.43] transition-colors">
                 {{ $date }}
         </span>
     </div>
 
     <!-- Title -->
     <div class="flex flex-row justify-between items-center mb-8 lg:mb-24 mt-4 lg:mt-8">
-        <h1 class="text-[24px] lg:text-[48px] font-bold font-['Montserrat'] text-black leading-[1.2] lg:leading-[1.33]">
+        <h1 class="text-[1.5rem] lg:text-[3rem] font-bold font-['Montserrat'] text-black dark:text-white leading-[1.2] lg:leading-[1.33] transition-colors">
                 {{ $title }}
         </h1>
 
         <!-- Desktop Socials -->
         <div class="hidden lg:block shrink-0 ml-8">
-            <img src="{{ asset('images/icons/instagram.svg') }}" alt="Insta" class="max-w-[30px] max-h-[30px] mb-4 cursor-pointer"> 
-            <img src="{{ asset('images/icons/facebook.svg') }}" alt="Facebook" class="max-w-[30px] max-h-[30px] cursor-pointer">
+            <img src="{{ asset('images/icons/instagram.svg') }}" alt="Insta" class="max-w-[30px] max-h-[30px] mb-4 cursor-pointer dark:invert transition-all"> 
+            <img src="{{ asset('images/icons/facebook.svg') }}" alt="Facebook" class="max-w-[30px] max-h-[30px] cursor-pointer dark:invert transition-all">
         </div>
     </div>
     
@@ -57,7 +57,7 @@
 
     <!-- Author -->
     <div class="mb-8 lg:mb-12">
-        <span class="text-[10px] lg:text-[18px] font-bold font-['Montserrat'] text-black leading-[1.43] uppercase">
+        <span class="text-[0.625rem] lg:text-[1.125rem] font-bold font-['Montserrat'] text-black dark:text-gray-300 leading-[1.43] uppercase transition-colors">
                 АВТОР: {{ $author }}
         </span>
     </div>
@@ -71,7 +71,7 @@
     <div class="space-y-6 lg:space-y-8 my-10 lg:my-48">
         @foreach($paragraphs as $index => $paragraph)
             @if(trim($paragraph))
-                <p class="text-[16px] lg:text-[20px] font-normal font-['Montserrat'] text-black leading-[1.43]">
+                <p class="text-[1rem] lg:text-[1.25rem] font-normal font-['Montserrat'] text-black dark:text-gray-200 leading-[1.43] transition-colors">
                     {{ $paragraph }}
                 </p>
             @endif
@@ -80,7 +80,7 @@
             @if($index === 2 && isset($photos[0]))
                 <div class="flex flex-col lg:flex-row gap-6 items-start my-8">
                     <img src="{{ $photos[0] }}" alt="News Photo" class="w-full lg:max-w-[420px] max-h-[285px] object-cover rounded-[20px] flex-shrink-0">
-                    <p class="text-[16px] lg:text-[20px] font-normal font-['Montserrat'] text-black leading-[1.43]">
+                    <p class="text-[1rem] lg:text-[1.25rem] font-normal font-['Montserrat'] text-black dark:text-gray-200 leading-[1.43] transition-colors">
                         <!-- Logic for potential caption or continued text if needed, currently reusing paragraph styling -->
                     </p>
                 </div>

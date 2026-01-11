@@ -1,16 +1,25 @@
 <div id="mobile-menu" class="fixed inset-0 bg-white z-[60] hidden flex flex-col h-screen">
     <!-- Header: UA, Theme Switch, Close Button -->
     <div class="flex items-center justify-between px-5 pt-6 pb-6">
-        <div class="flex items-center gap-6">
+        <div class="flex items-center gap-4">
             <!-- Language -->
             <button class="flex items-center space-x-1 text-black">
                 <span class="font-bold text-lg">UA</span>
                 <img class="pb-1" src="{{ asset('images/icons/arrow-down.svg') }}" alt="Dropdown">
             </button>
 
+            <!-- Accessibility Toggle -->
+            <button class="transition-colors" onclick="toggleMobileAccessibility()" title="Доступність">
+                <svg class="w-7 h-7 text-black" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="4.5" r="2.5" />
+                    <path d="M12 7.5v2.5M12 10l-4 8M12 10l4 8M7 14h10" />
+                </svg>
+            </button>
+
             <!-- Dark Mode Switch -->
-            <button class="transition-colors" onclick="toggleDarkMode()">
-                <img class="h-[30px]" src="{{ asset('images/icons/switch.svg') }}" alt="Dark Mode Toggle">
+            <button class="transition-colors" onclick="accessibility.toggleTheme()">
+                <img class="h-[30px] theme-toggle-icon" src="{{ asset('images/icons/switch.svg') }}"
+                    alt="Dark Mode Toggle">
             </button>
         </div>
 
@@ -86,6 +95,70 @@
                 </a>
             </div>
         </nav>
+
+        {{-- Mobile Accessibility Panel (Initially Hidden) --}}
+        <div id="mobile-accessibility-panel" class="hidden w-full bg-gray-50 rounded-2xl p-5 mb-6 space-y-4">
+            <h3 class="font-bold text-lg text-black text-center mb-4">Доступність</h3>
+
+            {{-- Font Size --}}
+            <div class="space-y-2">
+                <div class="flex justify-between items-center">
+                    <label class="font-semibold text-sm text-black">Розмір тексту</label>
+                    <span id="mobile-a11y-font-value" class="text-sm font-bold text-veteran-blue">100%</span>
+                </div>
+                <input type="range" id="mobile-a11y-font-slider" min="100" max="120" value="100" step="5"
+                    class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-veteran-blue"
+                    oninput="accessibility.setFontScale(this.value); document.getElementById('mobile-a11y-font-value').textContent = this.value + '%'">
+            </div>
+
+            {{-- Saturation --}}
+            <div class="space-y-2">
+                <div class="flex justify-between items-center">
+                    <label class="font-semibold text-sm text-black">Насиченість</label>
+                    <span id="mobile-a11y-saturation-value" class="text-sm font-bold text-veteran-blue">100%</span>
+                </div>
+                <input type="range" id="mobile-a11y-saturation-slider" min="0" max="100" value="100" step="10"
+                    class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-veteran-blue"
+                    oninput="accessibility.setSaturation(this.value); document.getElementById('mobile-a11y-saturation-value').textContent = this.value + '%'">
+            </div>
+
+            {{-- Toggle Grid --}}
+            <div class="grid grid-cols-2 gap-3 pt-2">
+                {{-- Reduce Motion --}}
+                <label class="flex items-center gap-2 cursor-pointer p-2 bg-white rounded-lg border border-gray-200">
+                    <input type="checkbox" id="mobile-a11y-motion" class="w-5 h-5 accent-veteran-blue"
+                        onchange="accessibility.toggleReduceMotion()">
+                    <span class="text-sm font-medium text-black">Без анімацій</span>
+                </label>
+
+                {{-- High Contrast --}}
+                <label class="flex items-center gap-2 cursor-pointer p-2 bg-white rounded-lg border border-gray-200">
+                    <input type="checkbox" id="mobile-a11y-contrast" class="w-5 h-5 accent-veteran-blue"
+                        onchange="accessibility.toggleHighContrast()">
+                    <span class="text-sm font-medium text-black">Контраст</span>
+                </label>
+
+                {{-- Large Cursor --}}
+                <label class="flex items-center gap-2 cursor-pointer p-2 bg-white rounded-lg border border-gray-200">
+                    <input type="checkbox" id="mobile-a11y-cursor" class="w-5 h-5 accent-veteran-blue"
+                        onchange="accessibility.toggleLargeCursor()">
+                    <span class="text-sm font-medium text-black">Курсор</span>
+                </label>
+
+                {{-- Highlight Links --}}
+                <label class="flex items-center gap-2 cursor-pointer p-2 bg-white rounded-lg border border-gray-200">
+                    <input type="checkbox" id="mobile-a11y-links" class="w-5 h-5 accent-veteran-blue"
+                        onchange="accessibility.toggleHighlightLinks()">
+                    <span class="text-sm font-medium text-black">Посилання</span>
+                </label>
+            </div>
+
+            {{-- Reset Button --}}
+            <button onclick="accessibility.resetAccessibility(); syncMobileAccessibilityUI()"
+                class="w-full py-2 text-sm font-bold text-gray-600 border border-gray-300 rounded-full hover:border-veteran-blue hover:text-veteran-blue transition-colors">
+                Скинути
+            </button>
+        </div>
 
         <div class="mt-auto pb-10 w-full">
             <!-- Support Button -->

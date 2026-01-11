@@ -3,13 +3,14 @@
 @section('title', 'Про нас - ВЕТЕРАНСЬКИЙ ПРОСТІР')
 
 @section('content')
-    <div class="bg-white">
+    <div class="bg-white dark:bg-zinc-900 transition-colors duration-300">
         <!-- Main About Section -->
         <div class="pt-[40px] lg:pt-[120px] pb-[60px] lg:pb-[100px] overflow-hidden">
             <!-- Page Title -->
-            <div class="px-4 lg:px-0 lg:max-w-[1200px] lg:mx-auto mb-[40px] lg:mb-[80px] flex justify-between items-start">
+            <div
+                class="px-4 lg:px-8 xl:px-4 2xl:px-0 lg:max-w-[900px] xl:max-w-[1100px] 2xl:max-w-[1200px] lg:mx-auto mb-[40px] lg:mb-[80px] flex justify-between items-start">
                 <h1
-                    class="text-[40px] lg:text-[158px] font-extrabold font-['Montserrat'] text-black uppercase leading-[0.92]">
+                    class="text-[2.5rem] lg:text-[9.875rem] font-extrabold font-['Montserrat'] text-black dark:text-white uppercase leading-[0.92] transition-colors">
                     Про нас:
                 </h1>
                 <img src="{{ asset('images/icons/button-support.svg') }}" alt="Support"
@@ -18,9 +19,10 @@
             </div>
 
             <!-- Description -->
-            <div class="px-4 lg:px-0 lg:max-w-[1200px] lg:mx-auto mb-[60px] lg:mb-[120px]">
+            <div
+                class="px-4 lg:px-8 xl:px-4 2xl:px-0 lg:max-w-[900px] xl:max-w-[1100px] 2xl:max-w-[1200px] lg:mx-auto mb-[60px] lg:mb-[120px]">
                 <div
-                    class="max-w-full lg:max-w-[869px] text-[16px] lg:text-[20px] font-normal font-['Montserrat'] text-black text-left lg:text-justify leading-[1.43] space-y-2">
+                    class="max-w-full lg:max-w-[869px] text-[1rem] lg:text-[1.25rem] font-normal font-['Montserrat'] text-black dark:text-gray-200 text-left lg:text-justify leading-[1.43] space-y-2 transition-colors">
                     <p>Привіт!</p>
                     <p>Тут ти детальніше ознайомишся з розвитком Ветеранського простору та зрозумієш, який шлях ми пройшли,
                         щоб мати можливість допомогти тобі адаптуватися до нового життя.</p>
@@ -28,9 +30,10 @@
             </div>
 
             <!-- Goal Section -->
-            <div class="px-4 lg:px-0 lg:max-w-[1200px] lg:mx-auto mb-[60px] lg:mb-[100px]">
+            <div
+                class="px-4 lg:px-8 xl:px-4 2xl:px-0 lg:max-w-[900px] xl:max-w-[1100px] 2xl:max-w-[1200px] lg:mx-auto mb-[60px] lg:mb-[100px]">
                 <h2
-                    class="text-[24px] lg:text-[48px] font-extrabold font-['Montserrat'] text-black leading-[1.1] lg:leading-[0.93] mb-[30px] lg:mb-[60px] max-w-[870px]">
+                    class="text-[1.5rem] lg:text-[3rem] font-extrabold font-['Montserrat'] text-black dark:text-white leading-[1.1] lg:leading-[0.93] mb-[30px] lg:mb-[60px] max-w-[870px] transition-colors">
                     Заклад створений з метою надання отримувачам послуг:
                 </h2>
 
@@ -47,11 +50,11 @@
             <!-- Task Section -->
             <div class="px-4 lg:px-0 lg:max-w-[1200px] lg:mx-auto mb-[60px] lg:mb-[100px]">
                 <h2
-                    class="text-[24px] lg:text-[48px] font-extrabold font-['Montserrat'] text-black leading-[1.1] lg:leading-[0.92] mb-[20px] lg:mb-[30px]">
+                    class="text-[1.5rem] lg:text-[3rem] font-extrabold font-['Montserrat'] text-black dark:text-white leading-[1.1] lg:leading-[0.92] mb-[20px] lg:mb-[30px] transition-colors">
                     Завдання:
                 </h2>
                 <div
-                    class="max-w-[873px] text-[16px] lg:text-[20px] font-normal font-['Montserrat'] text-black leading-[1.43]">
+                    class="max-w-[873px] text-[1rem] lg:text-[1.25rem] font-normal font-['Montserrat'] text-black dark:text-gray-200 leading-[1.43] transition-colors">
                     <p>Основним завданням Закладу є забезпечення взаємодії з органами влади та місцевого самоврядування,
                         громадськими об'єднаннями для вирішення проблемних питань ветеранської спільноти.</p>
                 </div>
@@ -59,7 +62,7 @@
 
             <!-- Divider -->
             <div class="px-4 lg:px-0 lg:max-w-[1200px] lg:mx-auto mb-[60px] lg:mb-[100px]">
-                <div class="w-full border-t border-black"></div>
+                <div class="w-full border-t border-black dark:border-zinc-700 transition-colors"></div>
             </div>
 
             <!-- Timeline Section -->

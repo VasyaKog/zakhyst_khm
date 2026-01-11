@@ -37,14 +37,14 @@
                 <div class="pt-8 md:pt-[60px] px-6 md:px-[70px] pb-8 md:pb-[50px]">
                     <!-- Title -->
                     <h2
-                        class="text-2xl md:text-[36px] font-bold font-['Montserrat'] text-black uppercase text-center leading-[1.2] mb-6 md:mb-[30px]">
+                        class="text-2xl md:text-[2.25rem] font-bold font-['Montserrat'] text-black uppercase text-center leading-[1.2] mb-6 md:mb-[30px]">
                         ПІДТРИМАЙ СПІЛЬНІ БЛАГОДІЙНІ<br />
                         ІНІЦІАТИВИ
                     </h2>
 
                     <!-- Description -->
                     <p
-                        class="text-base md:text-[20px] font-bold font-['Montserrat'] text-black text-center leading-[1.33] mb-6 md:mb-[20px]">
+                        class="text-base md:text-[1.25rem] font-bold font-['Montserrat'] text-black text-center leading-[1.33] mb-6 md:mb-[20px]">
                         Ветеранського простору та ГО "Захист - об'єднання волонтерів"
                     </p>
 
@@ -57,14 +57,14 @@
                     <!-- Donate Button -->
                     <div class="flex justify-center mb-8 md:mb-[35px]">
                         <button
-                            class="h-[50px] px-6 md:px-10 border-2 border-veteran-blue bg-transparent text-black text-sm md:text-[18px] font-black font-['Montserrat'] uppercase rounded-full hover:bg-veteran-blue hover:text-white transition-all duration-300 flex items-center justify-center">
+                            class="h-[50px] px-6 md:px-10 border-2 border-veteran-blue bg-transparent text-black text-sm md:text-[1.125rem] font-black font-['Montserrat'] uppercase rounded-full hover:bg-veteran-blue hover:text-white transition-all duration-300 flex items-center justify-center">
                             ДОНАТИТИ ЗА ПОСИЛАННЯМ
                         </button>
                     </div>
 
                     <!-- Thank You Message -->
                     <p
-                        class="text-center text-base md:text-[20px] font-bold font-['Montserrat'] text-black leading-relaxed">
+                        class="text-center text-base md:text-[1.25rem] font-bold font-['Montserrat'] text-black leading-relaxed">
                         Дякуємо за твою підтримку! ;
                     </p>
                 </div>
@@ -75,14 +75,14 @@
                 <div class="pt-8 md:pt-[60px] px-6 md:px-[70px] pb-8 md:pb-[50px]">
                     <!-- Title -->
                     <h2
-                        class="text-2xl md:text-[36px] font-bold font-['Montserrat'] text-black uppercase text-center leading-[1.2] mb-6 md:mb-[30px]">
+                        class="text-2xl md:text-[2.25rem] font-bold font-['Montserrat'] text-black uppercase text-center leading-[1.2] mb-6 md:mb-[30px]">
                         ПІДТРИМАЙ СПІЛЬНІ БЛАГОДІЙНІ<br />
                         ІНІЦІАТИВИ
                     </h2>
 
                     <!-- Description -->
                     <p
-                        class="text-base md:text-[20px] font-bold font-['Montserrat'] text-black text-center leading-[1.33] mb-8 md:mb-[50px]">
+                        class="text-base md:text-[1.25rem] font-bold font-['Montserrat'] text-black text-center leading-[1.33] mb-8 md:mb-[50px]">
                         Ветеранського простору та ГО "Захист - об'єднання волонтерів"
                     </p>
 
@@ -95,7 +95,7 @@
                     <!-- IBAN Section -->
                     <div class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 mb-8 md:mb-[35px]">
                         <span
-                            class="text-sm md:text-[18px] font-bold font-['Montserrat'] text-black tracking-wide text-center break-all">IBAN
+                            class="text-sm md:text-[1.125rem] font-bold font-['Montserrat'] text-black tracking-wide text-center break-all">IBAN
                             UA69305299000002600902600282</span>
                         <button onclick="copyIBAN('UA69305299000002600902600282')"
                             class="w-6 h-6 flex items-center justify-center hover:opacity-70 transition-opacity">
@@ -109,7 +109,7 @@
 
                     <!-- Thank You Message -->
                     <p
-                        class="text-center text-base md:text-[20px] font-bold font-['Montserrat'] text-black leading-relaxed">
+                        class="text-center text-base md:text-[1.25rem] font-bold font-['Montserrat'] text-black leading-relaxed">
                         Дякуємо за твою підтримку! ;
                     </p>
                 </div>

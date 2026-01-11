@@ -8,24 +8,72 @@
     @vite(['resources/js/web.js'])
 </head>
 
-<body class="bg-white">
-    @include('partials.header')
+<body class="bg-white dark:bg-zinc-900 transition-colors duration-300">
+    <!-- Content wrapper for saturation filter (fixed elements outside this div) -->
+    <div id="page-content">
+        @include('partials.header')
 
-    <main class="min-h-screen">
-        <div class="px-4 md:px-[50px]">
-            @yield('content')
-        </div>
-    </main>
+        <main class="min-h-screen">
+            <div class="px-4 md:px-[50px]">
+                @yield('content')
+            </div>
+        </main>
 
-    @hasSection('footer')
-        @yield('footer')
-    @else
-        @include('partials.footer-basic')
-    @endif
+        @hasSection('footer')
+            @yield('footer')
+        @else
+            @include('partials.footer-basic')
+        @endif
+    </div>
 
+    <!-- Fixed elements outside page-content (not affected by saturation filter) -->
     <!-- Donation Modal -->
     @include('components.donation-modal')
     @include('components.contact-modal')
+
+    <!-- Accessibility Panel (Desktop floating) -->
+    @include('partials.accessibility-panel')
+
+    <script>
+        // Toggle mobile accessibility panel visibility
+        function toggleMobileAccessibility() {
+            const panel = document.getElementById('mobile-accessibility-panel');
+            if (panel) {
+                panel.classList.toggle('hidden');
+                if (!panel.classList.contains('hidden')) {
+                    syncMobileAccessibilityUI();
+                }
+            }
+        }
+
+        // Sync mobile UI controls with current accessibility settings
+        function syncMobileAccessibilityUI() {
+            if (typeof accessibility === 'undefined') return;
+            const settings = accessibility.getSettings();
+
+            // Sync sliders
+            const fontSlider = document.getElementById('mobile-a11y-font-slider');
+            const fontValue = document.getElementById('mobile-a11y-font-value');
+            const satSlider = document.getElementById('mobile-a11y-saturation-slider');
+            const satValue = document.getElementById('mobile-a11y-saturation-value');
+
+            if (fontSlider) fontSlider.value = settings.fontScale;
+            if (fontValue) fontValue.textContent = settings.fontScale + '%';
+            if (satSlider) satSlider.value = settings.saturation;
+            if (satValue) satValue.textContent = settings.saturation + '%';
+
+            // Sync checkboxes
+            const motionCb = document.getElementById('mobile-a11y-motion');
+            const contrastCb = document.getElementById('mobile-a11y-contrast');
+            const cursorCb = document.getElementById('mobile-a11y-cursor');
+            const linksCb = document.getElementById('mobile-a11y-links');
+
+            if (motionCb) motionCb.checked = settings.reduceMotion;
+            if (contrastCb) contrastCb.checked = settings.highContrast;
+            if (cursorCb) cursorCb.checked = settings.largeCursor;
+            if (linksCb) linksCb.checked = settings.highlightLinks;
+        }
+    </script>
 </body>
 
 </html>

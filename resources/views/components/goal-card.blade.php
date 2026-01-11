@@ -4,7 +4,7 @@
 <div class="relative w-full h-auto aspect-square max-w-[207px] bg-veteran-blue rounded-[20px] p-[20px] lg:p-[25px]">
     <!-- Title (top area) -->
     <p
-        class="text-[12px] lg:text-[14px] font-extrabold font-['Montserrat'] text-white uppercase leading-[1.25] w-[80%]">
+        class="text-[0.75rem] lg:text-[0.875rem] font-extrabold font-['Montserrat'] text-white uppercase leading-[1.25] w-[80%]">
         {{ $title }}
     </p>
 

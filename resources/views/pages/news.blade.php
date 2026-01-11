@@ -7,21 +7,21 @@
         <div class="w-full lg:max-w-[869px]">
             <div class="flex justify-between items-start lg:block">
                 <h1
-                    class="text-[40px] lg:text-[158px] font-extrabold font-['Montserrat'] text-black uppercase leading-[0.92]">
+                    class="text-[2.5rem] lg:text-[9.875rem] font-extrabold font-['Montserrat'] text-black dark:text-white uppercase leading-[0.92] whitespace-nowrap transition-colors">
                     НОВИНИ:
                 </h1>
 
                 <!-- Mobile Icons -->
                 <div class="flex gap-4 lg:hidden mt-2">
                     <img src="{{ asset('images/icons/instagram.svg') }}" alt="Insta"
-                        class="w-[30px] h-[30px] cursor-pointer">
+                        class="w-[30px] h-[30px] cursor-pointer dark:invert transition-all">
                     <img src="{{ asset('images/icons/facebook.svg') }}" alt="Facebook"
-                        class="w-[30px] h-[30px] cursor-pointer">
+                        class="w-[30px] h-[30px] cursor-pointer dark:invert transition-all">
                 </div>
             </div>
 
             <div
-                class="text-[16px] lg:text-[20px] font-normal font-['Montserrat'] text-black leading-[1.43] mb-8 lg:mb-16 mt-6 lg:mt-20">
+                class="text-[1rem] lg:text-[1.25rem] font-normal font-['Montserrat'] text-black dark:text-gray-300 leading-[1.43] mb-8 lg:mb-16 mt-6 lg:mt-20 transition-colors">
                 <p class="mb-0">Найсвіжіші новини для спільноти ветеранів, діючих військових, їхніх родин<br
                         class="hidden lg:block" />та близьких,
                     а також спільнот, які цікавляться ветеранською тематику.</p>
@@ -31,14 +31,14 @@
         <!-- Desktop Icons -->
         <div class="hidden lg:block">
             <img src="{{ asset('images/icons/instagram.svg') }}" alt="Insta"
-                class="lg:max-w-[30px] lg:max-h-[30px] lg:mb-4 cursor-pointer">
+                class="lg:max-w-[30px] lg:max-h-[30px] lg:mb-4 cursor-pointer dark:invert transition-all">
             <img src="{{ asset('images/icons/facebook.svg') }}" alt="Facebook"
-                class="lg:max-w-[30px] lg:max-h-[30px] cursor-pointer">
+                class="lg:max-w-[30px] lg:max-h-[30px] cursor-pointer dark:invert transition-all">
         </div>
     </div>
 
     <!-- Divider -->
-    <div class="w-full h-px bg-black mb-10 lg:mb-32"></div>
+    <div class="w-full h-px bg-black dark:bg-zinc-700 mb-10 lg:mb-32 transition-colors"></div>
 
     <!-- Desktop Grid (Hidden on Mobile) -->
     <div class="hidden lg:grid grid-cols-[1fr_930px] gap-x-[70px] max-w-[1920px]">
@@ -76,19 +76,22 @@
                         src="{{ asset('storage/' . $article->image_url) }}" alt="{{ $article->title }}">
 
                     <!-- Title -->
-                    <div class="w-full mt-4 text-black text-[20px] font-bold font-['Montserrat'] leading-tight line-clamp-2">
+                    <div
+                        class="w-full mt-4 text-black dark:text-white text-[1.25rem] font-bold font-['Montserrat'] leading-tight line-clamp-2 transition-colors">
                         {{ $article->title }}
                     </div>
 
                     <!-- Description -->
-                    <div class="w-full mt-3 text-black text-[14px] font-normal font-['Montserrat'] leading-snug line-clamp-5">
+                    <div
+                        class="w-full mt-3 text-black dark:text-gray-300 text-[0.875rem] font-normal font-['Montserrat'] leading-snug line-clamp-5 transition-colors">
                         {{ $article->summary }}
                     </div>
 
                     <!-- Date & Button row -->
                     <div class="w-full mt-4 flex justify-between items-center">
                         <!-- Date -->
-                        <div class="text-black text-[12px] font-bold font-['Montserrat'] uppercase tracking-wide">
+                        <div
+                            class="text-black dark:text-gray-400 text-[0.75rem] font-bold font-['Montserrat'] uppercase tracking-wide transition-colors">
                             {{ $article->published_at->isoFormat('D MMM, YYYY') }}
                         </div>
 
@@ -96,7 +99,7 @@
                         <div
                             class="w-32 h-10 rounded-full border-2 border-veteran-blue flex items-center justify-center group-active:bg-veteran-blue transition-colors">
                             <span
-                                class="text-black group-active:text-white text-[10px] font-bold font-['Montserrat'] uppercase tracking-wide transition-colors">
+                                class="text-black dark:text-white group-active:text-white text-[0.625rem] font-bold font-['Montserrat'] uppercase tracking-wide transition-colors">
                                 ЧИТАТИ ДАЛІ
                             </span>
                         </div>
@@ -114,17 +117,20 @@
                         src="{{ asset('storage/' . $article->image_url) }}" alt="{{ $article->title }}">
 
                     <!-- Title -->
-                    <div class="w-full text-black text-[14px] font-bold font-['Montserrat'] leading-tight line-clamp-3 mb-2">
+                    <div
+                        class="w-full text-black dark:text-white text-[0.875rem] font-bold font-['Montserrat'] leading-tight line-clamp-3 mb-2 transition-colors">
                         {{ $article->title }}
                     </div>
 
                     <!-- Description -->
-                    <div class="w-full text-black text-[12px] font-normal font-['Montserrat'] leading-snug line-clamp-4 mb-3">
+                    <div
+                        class="w-full text-black dark:text-gray-300 text-[0.75rem] font-normal font-['Montserrat'] leading-snug line-clamp-4 mb-3 transition-colors">
                         {{ $article->summary }}
                     </div>
 
                     <!-- Date -->
-                    <div class="mt-auto text-black text-[10px] font-bold font-['Montserrat'] uppercase tracking-wide">
+                    <div
+                        class="mt-auto text-black dark:text-gray-400 text-[0.625rem] font-bold font-['Montserrat'] uppercase tracking-wide transition-colors">
                         {{ $article->published_at->isoFormat('D MMM, YYYY') }}
                     </div>
                 </a>

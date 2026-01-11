@@ -59,5 +59,145 @@ body {
 
 // Partners carousel container - ensure exact 4 items visible
 #partners-track {
-    width: 1100px; /* Width to show exactly 4 items with gaps */
+    width: 1100px;
+    /* Width to show exactly 4 items with gaps */
+}
+
+// ================================
+// Global Text Scaling Support
+// ================================
+// These rules help prevent text overflow when font size is scaled up
+
+html {
+    overflow-x: hidden; // Prevent horizontal scroll from scaled text
+}
+
+body {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+// Prevent text from escaping containers
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+li,
+td,
+th,
+label,
+button {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+// ================================
+// Accessibility Utility Classes
+// ================================
+
+// Reduce Motion - disable rapid/flashing animations and transitions
+// Smooth scroll-driven interactions (carousels, scroll-snap) are preserved
+// as they are user-controlled and non-triggering for PTSD/vestibular issues
+.reduce-motion *,
+.reduce-motion *::before,
+.reduce-motion *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+}
+
+// Allow scroll behavior to remain smooth for carousels
+.reduce-motion {
+    scroll-behavior: auto;
+
+    // But disable transform-based slide animations
+    .carousel-slide,
+    .mobile-carousel-slide {
+        transition: none !important;
+    }
+}
+
+// High Contrast Mode - apply to page-content to preserve fixed elements
+.high-contrast #page-content {
+    filter: contrast(1.4) !important;
+
+    img,
+    video,
+    svg {
+        filter: contrast(0.85); // Slightly reduce contrast on images to compensate
+    }
+}
+
+// Large Cursor
+.large-cursor,
+.large-cursor * {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 24 24'%3E%3Cpath fill='black' stroke='white' stroke-width='1' d='M5 3l14 9-7 2-3 7z'/%3E%3C/svg%3E") 4 4, auto !important;
+}
+
+.large-cursor a,
+.large-cursor button,
+.large-cursor [role="button"],
+.large-cursor input[type="submit"],
+.large-cursor input[type="button"] {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 24 24'%3E%3Cpath fill='black' stroke='white' stroke-width='1' d='M7 11l2-2m-2 2l-2-2m2 2v6m4-8h6m-6 0l-2-2m2 2l2-2'/%3E%3Ccircle fill='black' stroke='white' cx='14' cy='14' r='6'/%3E%3C/svg%3E") 14 14, pointer !important;
+}
+
+// Highlight Links - make all links visually distinct
+.highlight-links a:not(.no-highlight) {
+    outline: 3px solid #3971E2 !important;
+    outline-offset: 2px !important;
+    text-decoration: underline !important;
+    text-underline-offset: 3px !important;
+}
+
+.highlight-links a:not(.no-highlight):hover {
+    outline-color: #1e40af !important;
+    background-color: rgba(57, 113, 226, 0.1) !important;
+}
+
+// Focus visible improvements for accessibility
+:focus-visible {
+    outline: 3px solid #3971E2;
+    outline-offset: 2px;
+}
+
+// Accessibility panel styles
+#accessibility-panel {
+    &.hidden+#accessibility-trigger {
+        display: flex;
+    }
+
+    &:not(.hidden)+#accessibility-trigger {
+        display: none;
+    }
+}
+
+// Custom range slider styling for accessibility panel
+input[type="range"].accent-veteran-blue {
+    &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: #3971E2;
+        cursor: pointer;
+        border: 2px solid white;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    &::-moz-range-thumb {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: #3971E2;
+        cursor: pointer;
+        border: 2px solid white;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
 }

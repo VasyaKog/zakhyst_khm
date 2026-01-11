@@ -3,21 +3,21 @@
 @section('title', 'Команда - ВЕТЕРАНСЬКИЙ ПРОСТІР')
 
 @section('content')
-    <div class="bg-white">
+    <div class="bg-white dark:bg-zinc-900 transition-colors duration-300">
         <!-- Main Team Section -->
         <div class="pt-[40px] lg:pt-[120px] pb-[60px] lg:pb-[100px]">
             <!-- Main Title Area -->
             <div
-                class="lg:px-0 lg:max-w-[1200px] lg:mx-auto md:ml-[50px] mb-[60px] lg:mb-[119px] flex justify-between items-start">
+                class="lg:px-0 lg:max-w-[1200px] lg:mx-auto md:ml-[50px] mb-[60px] lg:mb-[119px] flex justify-between items-start pt-[50px] lg:pt-0">
                 <div>
                     <h1
-                        class="text-[40px] lg:text-[80px] md:text-[60px] font-extrabold text-black uppercase leading-[1.1] lg:leading-[1.02] mb-[40px] lg:mb-[77px]">
+                        class="text-[2.5rem] lg:text-[5rem] md:text-[3.75rem] font-extrabold text-black dark:text-white uppercase leading-[1.1] lg:leading-[1.02] mb-[40px] lg:mb-[77px] transition-colors">
                         Команда<br />
                         ветеранського<br />
                         простору
                     </h1>
                     <p
-                        class="text-[16px] lg:text-[20px] md:text-[18px] font-normal text-black text-left lg:text-justify max-w-full lg:max-w-[869px] leading-[1.43]">
+                        class="text-[1rem] lg:text-[1.25rem] md:text-[1.125rem] font-normal text-black dark:text-gray-200 text-left lg:text-justify max-w-full lg:max-w-[869px] leading-[1.43] transition-colors">
                         Знайомся!<br />
                         Це команда веретанського простору та партнерська команда, що допомагає втілити задумані нами ідеї.
                     </p>
@@ -35,15 +35,15 @@
                     @foreach($mainTeam as $member)
                         <div class="w-full max-w-[270px] mx-auto sm:mx-0">
                             <div
-                                class="w-full h-[225px] lg:h-[325px] mb-[20px] lg:mb-[30px] rounded-[20px] overflow-hidden bg-gray-100">
+                                class="w-full h-[225px] lg:h-[325px] mb-[20px] lg:mb-[30px] rounded-[20px] overflow-hidden bg-gray-100 dark:bg-zinc-800 transition-colors">
                                 <img src="{{ asset('storage/' . $member->photo) }}" alt="{{ $member->full_name }}"
-                                    class="w-full h-full object-cover">
+                                    class="w-full h-full object-cover dark:opacity-90 transition-opacity">
                             </div>
                             <h3
-                                class="text-[24px] lg:text-[32px] font-extrabold text-black leading-[1.25] mb-[15px] lg:mb-[35px] text-left">
+                                class="text-[1.5rem] lg:text-[2rem] font-extrabold text-black dark:text-white leading-[1.25] mb-[15px] lg:mb-[35px] text-left transition-colors">
                                 {{ $member->first_name }}<br />{{ $member->last_name }}</h3>
                             <p
-                                class="text-[16px] lg:text-[20px] font-normal text-black leading-[1.43] text-left">
+                                class="text-[1rem] lg:text-[1.25rem] font-normal text-black dark:text-gray-300 leading-[1.43] text-left transition-colors">
                                 {{ $member->role }}</p>
                         </div>
                     @endforeach
@@ -55,7 +55,7 @@
             <div
                 class="lg:px-0 lg:max-w-[1200px] lg:mx-auto md:ml-[50px] mb-[50px] lg:mb-[100px]">
                 <h2
-                    class="text-[40px] lg:text-[80px] md:text-[60px] font-extrabold text-black uppercase leading-[1.1] lg:leading-[1.02] mb-[50px] lg:mb-[100px]">
+                    class="text-[2.5rem] lg:text-[5rem] md:text-[3.75rem] font-extrabold text-black dark:text-white uppercase leading-[1.1] lg:leading-[1.02] mb-[50px] lg:mb-[100px] transition-colors">
                     Партнерська<br />
                     Команда
                 </h2>
@@ -69,15 +69,15 @@
                     @foreach($partnerTeam as $member)
                     <div class="w-full max-w-[270px] mx-auto sm:mx-0">
                         <div
-                            class="w-full h-[225px] lg:h-[325px] mb-[20px] lg:mb-[30px] rounded-[20px] overflow-hidden bg-gray-100">
+                            class="w-full h-[225px] lg:h-[325px] mb-[20px] lg:mb-[30px] rounded-[20px] overflow-hidden bg-gray-100 dark:bg-zinc-800 transition-colors">
                             <img src="{{ asset('storage/' . $member->photo) }}" alt="{{ $member->full_name }}"
-                                class="w-full h-full object-cover">
+                                class="w-full h-full object-cover dark:opacity-90 transition-opacity">
                         </div>
                         <h3
-                            class="text-[24px] lg:text-[32px] font-extrabold text-black leading-[1.25] mb-[15px] lg:mb-[35px] text-left">
+                            class="text-[1.5rem] lg:text-[2rem] font-extrabold text-black dark:text-white leading-[1.25] mb-[15px] lg:mb-[35px] text-left transition-colors">
                             {{ $member->first_name }}<br />{{ $member->last_name }}</h3>
                         <p
-                            class="text-[16px] lg:text-[20px] font-normal text-black leading-[1.43] text-left">
+                            class="text-[1rem] lg:text-[1.25rem] font-normal text-black dark:text-gray-300 leading-[1.43] text-left transition-colors">
                             {{ $member->role }}</p>
                     </div>
                     @endforeach

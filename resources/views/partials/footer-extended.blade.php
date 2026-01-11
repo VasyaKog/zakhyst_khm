@@ -1,16 +1,16 @@
 <!-- Hero Section Above Footer -->
 <div class="px-4 md:px-[2.6%]">
     <!-- Desktop Layout (>=768px) -->
-    <div class="hidden md:block relative h-[820px] mb-8 rounded-[100px] overflow-hidden">
+    <div class="hidden md:block relative min-h-[820px] h-auto mb-8 rounded-[100px] overflow-hidden">
         <!-- Background Image -->
         <img src="{{ asset('images/backgrounds/footer-background.png') }}" alt="Footer Hero Background"
-            class="w-full h-full object-cover">
+            class="absolute inset-0 w-full h-full object-cover">
 
         <!-- Content Div -->
         <div
             class="absolute left-[48%] top-1/2 transform -translate-y-1/2 w-[30%] min-w-[400px] max-w-[570px] flex flex-col justify-center">
             <!-- Main Headline -->
-            <h2 class="text-white text-[64px] font-extrabold mb-8 leading-tight">
+            <h2 class="text-white text-[4rem] font-extrabold mb-8 leading-tight">
                 Твоя підтримка<br />
                 змінює життя<br />
                 ветеранів!
@@ -30,7 +30,7 @@
     </div>
 
     <!-- Mobile Layout (<768px) -->
-    <div class="block md:hidden relative h-[682px] mb-8 rounded-[62px] overflow-hidden">
+    <div class="block md:hidden relative min-h-[682px] h-auto mb-8 rounded-[62px] overflow-hidden">
         <!-- Background Image -->
         <img src="{{ asset('images/backgrounds/footer-background.png') }}" alt="Footer Hero Background"
             class="absolute inset-0 w-full h-full object-cover object-center">
@@ -41,20 +41,21 @@
         <!-- Content -->
         <div class="absolute inset-0 flex flex-col justify-end items-center text-center px-4 pb-12">
             <!-- Main Headline -->
-            <h2 class="text-white text-left text-[35px] font-extrabold font-montserrat leading-[1.1] mb-8 w-[298px]">
+            <h2
+                class="text-white text-left text-[2.1875rem] font-extrabold font-montserrat leading-[1.1] mb-8 max-w-[298px]">
                 Твоя підтримка змінює життя ветеранів!
             </h2>
 
             <!-- Sub-headline -->
             <p
-                class="text-white text-left text-[20px] font-medium font-montserrat uppercase leading-[1.43] mb-8 w-[298px]">
+                class="text-white text-left text-[1.25rem] font-medium font-montserrat uppercase leading-[1.43] mb-8 max-w-[298px]">
                 Велика вдячність за кожен ваш донат
             </p>
 
             <!-- Call to Action Button -->
             <button onclick="openDonationModal()"
                 class="w-[330px] h-[70px] border-2 border-white rounded-[412px] flex items-center justify-center active:bg-white active:text-veteran-blue transition-colors">
-                <span class="text-white text-[20px] font-black font-montserrat uppercase tracking-[1px]">
+                <span class="text-white text-[1.25rem] font-black font-montserrat uppercase tracking-[1px]">
                     підтримати Зсу
                 </span>
             </button>

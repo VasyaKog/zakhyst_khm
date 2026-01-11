@@ -1,6 +1,6 @@
 <header id="header">
     <div class="mx-auto my-10 px-4 min-[1250px]:px-[50px]">
-        <div class="relative flex items-center justify-between h-24">
+        <div class="relative flex items-center justify-between min-h-24">
 
             <div class="flex items-center space-x-3 flex-shrink-0">
                 <a href="{{ route('home') }}">
@@ -14,22 +14,22 @@
                 class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 max-[1399px]:hidden">
                 <div class="flex items-center space-x-8 whitespace-nowrap">
                     <a href="{{ route('about') }}"
-                        class="text-black hover:text-veteran-blue font-bold text-base uppercase leading-tight tracking-wide transition-colors whitespace-nowrap">
+                        class="text-black dark:text-white hover:text-veteran-blue dark:hover:text-veteran-blue font-bold text-base uppercase leading-tight tracking-wide transition-colors whitespace-nowrap">
                         ПРО НАС
                     </a>
                     <a href="{{ route('services') }}"
-                        class="text-black hover:text-veteran-blue font-bold text-base uppercase leading-tight tracking-wide transition-colors whitespace-nowrap">
+                        class="text-black dark:text-white hover:text-veteran-blue dark:hover:text-veteran-blue font-bold text-base uppercase leading-tight tracking-wide transition-colors whitespace-nowrap">
                         ПОСЛУГИ
                     </a>
                     <a href="{{ route('contact') }}"
-                        class="text-black hover:text-veteran-blue font-bold text-base uppercase leading-tight tracking-wide transition-colors whitespace-nowrap">
+                        class="text-black dark:text-white hover:text-veteran-blue dark:hover:text-veteran-blue font-bold text-base uppercase leading-tight tracking-wide transition-colors whitespace-nowrap">
                         КОНТАКТИ
                     </a>
                 </div>
             </div>
 
             <div id="mobile-nav" class="hidden min-[1400px]:flex-1 justify-center min-w-0 mx-5">
-                <div class="flex items-center justify-center gap-3 xl:gap-5 min-[1700px]:gap-8 whitespace-nowrap px-4">
+                <div class="flex items-center justify-center gap-3 xl:gap-5 min-[1700px]:gap-8 flex-wrap">
                     <a href="#"
                         class="text-black hover:text-veteran-blue font-bold text-sm min-[1700px]:text-base uppercase leading-tight tracking-wide transition-colors whitespace-nowrap">
                         МИ ПАМ'ЯТАЄМО
@@ -84,8 +84,9 @@
                 <!-- Dark Mode Switch: Hidden on mobile, Visible > 1400px -->
                 <!-- Default gap is 32px. Large screens add 33px margin. -->
                 <button class="transition-colors hidden min-[1400px]:block min-[1800px]:mr-[33px]"
-                    onclick="toggleDarkMode()">
-                    <img class="h-[30px]" src="{{ asset('images/icons/switch.svg') }}" alt="Dark Mode Toggle">
+                    onclick="accessibility.toggleTheme()">
+                    <img class="h-[30px] theme-toggle-icon" src="{{ asset('images/icons/switch.svg') }}"
+                        alt="Dark Mode Toggle">
                 </button>
 
                 <button onclick="openDonationModal()"

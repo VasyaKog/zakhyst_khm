@@ -3,12 +3,12 @@
 @section('content')
     <!-- Desktop Hero & Footer Wrapper (>=768px) -->
     <div class="hidden md:block">
-        <div id="hero-carousel" class="relative overflow-hidden min-h-[820px] h-auto mb-8 rounded-[100px]">
+        <div id="hero-carousel" class="relative overflow-hidden h-[820px] mb-8 rounded-[100px]">
             @forelse($heroBanners as $index => $banner)
                 <x-hero-slide :banner="$banner" :isFirst="$index === 0" />
             @empty
                 <!-- Fallback if no banners -->
-                <div class="absolute inset-0 w-full min-h-[820px] bg-gray-200 flex items-center justify-center">
+                <div class="absolute inset-0 w-full h-[820px] bg-gray-200 flex items-center justify-center">
                     <p class="text-gray-500 text-xl">Немає банерів для відображення</p>
                 </div>
             @endforelse
@@ -29,7 +29,7 @@
             </div>
 
             <!-- Search Bar -->
-            <div class="flex-1 max-w-[995px] h-12 rounded-[300px] border border-black flex items-center px-5">
+            <div class="w-[995px] h-12 rounded-[300px] border border-black flex items-center px-5">
                 <span class="text-black text-base font-normal font-montserrat">Не можеш знайти? Пошукай тут...</span>
                 <div class="ml-auto w-8 h-8 bg-black rounded-full flex items-center justify-center">
                     <img class="w-6 h-6" src="{{ asset('images/icons/icon-search.svg') }}" alt="Search">
@@ -40,7 +40,7 @@
 
     <!-- Mobile Hero Section (<768px) -->
     <div id="mobile-hero-carousel" class="block md:hidden mb-8">
-        <div class="relative min-h-[600px] h-auto rounded-[62px] overflow-hidden mb-6">
+        <div class="relative h-[600px] rounded-[62px] overflow-hidden mb-6">
             @forelse($heroBanners as $index => $banner)
                 <x-mobile-hero-slide :banner="$banner" :isFirst="$index === 0" />
             @empty
@@ -67,7 +67,7 @@
         <img src="{{ asset('images/icons/button-support.svg') }}" alt="Support"
             class="absolute right-0 top-4 w-[70px] h-[70px] cursor-pointer hover:opacity-80 transition-opacity z-20"
             onclick="openContactModal()">
-        <h2 class="text-black dark:text-white text-[2.5rem] font-extrabold font-montserrat uppercase leading-tight px-4 mb-8 transition-colors">
+        <h2 class="text-black text-[40px] font-extrabold font-montserrat uppercase leading-tight px-4 mb-8">
             Види послуг
         </h2>
 
@@ -134,21 +134,21 @@
 
             <!-- All Services Button -->
             <a href="{{ route('services') }}"
-                class="px-8 py-3 border-2 border-veteran-blue text-black dark:text-white text-sm font-black font-montserrat uppercase tracking-wide rounded-full active:bg-veteran-blue active:text-white transition-colors">
+                class="px-8 py-3 border-2 border-veteran-blue text-black text-sm font-black font-montserrat uppercase tracking-wide rounded-full active:bg-veteran-blue active:text-white transition-colors">
                 всі послуги
             </a>
         </div>
     </div>
 
     <!-- Desktop Services Section (>=768px) -->
-    <div class="hidden md:flex justify-center mt-[152px] mb-[300px] px-4">
-        <div id="desktop-services-container" class="relative w-full max-w-[1215px] min-h-[765px] h-auto transition-all duration-300">
+    <div class="hidden md:flex justify-center mt-[152px] mb-[300px]">
+        <div class="relative w-[1215px] h-[765px]">
             <img src="{{ asset('images/icons/button-support.svg') }}" alt="Support"
                 class="absolute right-0 top-0 w-[70px] h-[70px] cursor-pointer hover:opacity-80 transition-opacity z-20"
                 onclick="openContactModal()">
             <!-- Title Section -->
             <div class="absolute left-0 top-0">
-                <h2 class="text-black dark:text-white text-[72px] font-extrabold font-montserrat uppercase leading-[85.36px] m-0 transition-colors">
+                <h2 class="text-black text-[72px] font-extrabold font-montserrat uppercase leading-[85.36px] m-0">
                     Види<br />послуг
                 </h2>
             </div>
@@ -156,13 +156,13 @@
             <!-- All Services Button -->
             <div class="absolute right-0 top-[90px]">
                 <a href="{{ route('services') }}"
-                    class="w-64 h-16 border-2 border-veteran-blue bg-white dark:bg-zinc-900 text-black dark:text-white text-xl font-black font-montserrat uppercase tracking-wide cursor-pointer transition-all duration-300 ease-in-out rounded-[412px] flex items-center justify-center hover:bg-veteran-blue hover:text-white">
+                    class="w-64 h-16 border-2 border-veteran-blue bg-white text-black text-xl font-black font-montserrat uppercase tracking-wide cursor-pointer transition-all duration-300 ease-in-out rounded-[412px] flex items-center justify-center hover:bg-veteran-blue hover:text-white">
                     всі послуги
                 </a>
             </div>
 
             <!-- Service Cards -->
-            <div class="flex flex-wrap justify-center gap-8 items-start pt-[269px]">
+            <div class="absolute left-0 top-[269px] flex gap-8">
                 @php
                     $icons = [
                         '01' => 'support.svg',
@@ -176,32 +176,31 @@
 
                 @foreach($services as $service)
                     <a href="{{ route('services') }}"
-                        class="desktop-service-card relative w-[370px] min-h-[496px] cursor-pointer transition-transform duration-300 hover:scale-105 flex flex-col"
-                        style="background-image: url('{{ asset('images/backgrounds/service-bg.svg') }}'); background-size: contain; background-repeat: no-repeat; background-position: top center;">
-                        
-                        <!-- Icon (Fixed Position relative to top-left) -->
+                        class="relative w-96 h-[496px] cursor-pointer transition-transform duration-300 hover:scale-105"
+                        style="background-image: url('{{ asset('images/backgrounds/service-bg.svg') }}'); background-size: fit; background-repeat: no-repeat; background-position: center;">
+                        <!-- Icon -->
                         <div
                             class="absolute left-[39px] top-[41px] w-[59px] h-[59px] rounded-full flex items-center justify-center">
                             <img src="{{ $service->icon_path ? asset('storage/' . $service->icon_path) : asset('storage/images/icons/' . ($icons[$service->number] ?? 'support.svg')) }}"
                                 alt="Icon" class="w-[59px] h-[59px]">
                         </div>
 
-                        <!-- Arrow (Fixed Position) -->
-                        <div class="absolute top-0 right-0 w-[30px] h-[30px] mt-[41px] mr-[5px]">
+                        <!-- Arrow -->
+                        <div class="absolute right-[5px] w-[30px] h-[30px]">
                             <img src="{{ asset('images/icons/arrow.svg') }}" alt="Arrow" class="w-[30px] h-[30px]">
                         </div>
 
-                        <!-- Content Flow Wrapper -->
-                        <div class="flex flex-col h-full pt-[143px] px-[39px] pb-[40px]">
-                             <!-- Title -->
-                            <h3 class="w-72 text-white text-[30px] font-extrabold font-montserrat leading-10 m-0 mb-[40px]">
+                        <!-- Title -->
+                        <div class="absolute left-[39px] top-[143px] w-72">
+                            <h3 class="text-white text-[30px] font-extrabold font-montserrat leading-10 m-0">
                                 {{ $service->title }}
                             </h3>
+                        </div>
 
-                            <!-- Description -->
-                            <div class="w-full text-white text-xl font-normal font-montserrat leading-7 m-0 overflow-hidden line-clamp-6 [&>ul]:list-disc [&>ul]:pl-2 [&>ul>li]:mb-7">
-                                {!! $service->left_content !!}
-                            </div>
+                        <!-- Description -->
+                        <div
+                            class="absolute left-[39px] top-[253px] w-72 text-white text-xl font-normal font-montserrat leading-7 m-0 overflow-hidden line-clamp-6 [&>ul]:list-disc [&>ul]:pl-2 [&>ul>li]:mb-7">
+                            {!! $service->left_content !!}
                         </div>
                     </a>
                 @endforeach
@@ -209,52 +208,11 @@
         </div>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const container = document.getElementById('desktop-services-container');
-            const cards = document.querySelectorAll('.desktop-service-card');
-            
-            if (!container || cards.length === 0) return;
-
-            const baseCardHeight = 496;
-            
-            function adjustServiceCards() {
-                // simple reset
-                cards.forEach(card => card.style.height = '');
-
-                let maxContentHeight = baseCardHeight;
-
-                // Check natural heights
-                cards.forEach(card => {
-                    // Force auto height to measure content
-                    card.style.height = 'auto';
-                    const scrollHeight = card.scrollHeight;
-                    if (scrollHeight > maxContentHeight) {
-                        maxContentHeight = scrollHeight;
-                    }
-                });
-
-                // Apply max height to all for uniformity
-                cards.forEach(card => {
-                     card.style.height = `${maxContentHeight}px`;
-                });
-                
-                // Note: Container height is handled by CSS (h-auto)
-            }
-
-            // Run iteratively
-            adjustServiceCards();
-            window.addEventListener('resize', adjustServiceCards);
-            
-            // Poll for font changes (Alternative to window.accessibility listener if not broadcasting event)
-            setInterval(adjustServiceCards, 1000);
-        });
-    </script>
 
     <!-- Mobile News Section (<768px) -->
     <div class="block md:hidden px-4 mt-12 mb-12">
         <div class="flex justify-between items-center mb-6">
-            <h2 class="text-black dark:text-white text-[2.5rem] font-extrabold font-montserrat uppercase leading-tight transition-colors">
+            <h2 class="text-black text-[40px] font-extrabold font-montserrat uppercase leading-tight">
                 Новини
             </h2>
         </div>
@@ -268,19 +226,19 @@
                         src="{{ asset('storage/' . $article->image_url) }}" alt="{{ $article->title }}">
 
                     <!-- Title -->
-                    <div class="w-full mt-4 text-black dark:text-white text-xl font-bold leading-tight line-clamp-2 transition-colors">
+                    <div class="w-full mt-4 text-black text-xl font-bold leading-tight line-clamp-2">
                         {{ $article->title }}
                     </div>
 
                     <!-- Description -->
-                    <div class="w-full mt-3 text-black dark:text-gray-300 text-sm font-normal leading-snug line-clamp-5 transition-colors">
+                    <div class="w-full mt-3 text-black text-sm font-normal leading-snug line-clamp-5">
                         {{ $article->summary }}
                     </div>
 
                     <!-- Date & Button row -->
                     <div class="w-full mt-4 flex justify-between items-center">
                         <!-- Date -->
-                        <div class="text-black dark:text-gray-400 text-xs font-bold uppercase tracking-wide transition-colors">
+                        <div class="text-black text-xs font-bold uppercase tracking-wide">
                             {{ $article->published_at->isoFormat('D MMM, YYYY') }}
                         </div>
 
@@ -288,7 +246,7 @@
                         <div
                             class="w-32 h-10 rounded-full border-2 border-veteran-blue flex items-center justify-center group-active:bg-veteran-blue transition-colors">
                             <span
-                                class="text-black dark:text-white group-active:text-white text-[0.625rem] font-bold uppercase tracking-wide transition-colors">
+                                class="text-black group-active:text-white text-[10px] font-bold uppercase tracking-wide transition-colors">
                                 ЧИТАТИ ДАЛІ
                             </span>
                         </div>
@@ -300,7 +258,7 @@
 
     <div class="md:hidden flex justify-end">
         <a href="{{ route('news') }}"
-            class="text-base font-bold text-black dark:text-white uppercase border-b border-black dark:border-white hover:text-veteran-blue dark:hover:text-veteran-blue hover:border-veteran-blue dark:hover:border-veteran-blue transition-colors">
+            class="text-base font-bold text-black uppercase border-b border-black hover:text-veteran-blue hover:border-veteran-blue transition-colors">
             БІЛЬШЕ НОВИН ТУТ
         </a>
     </div>
@@ -310,7 +268,7 @@
         <!-- More News Link -->
         <div class="flex justify-end mb-8">
             <a href="{{ route('news') }}"
-                class="text-base font-bold text-black dark:text-white uppercase border-b border-black dark:border-white hover:text-veteran-blue dark:hover:text-veteran-blue hover:border-veteran-blue dark:hover:border-veteran-blue transition-colors">
+                class="text-base font-bold text-black uppercase border-b border-black hover:text-veteran-blue hover:border-veteran-blue transition-colors">
                 БІЛЬШЕ НОВИН ТУТ
             </a>
         </div>
@@ -320,23 +278,23 @@
             @foreach($news as $article)
                 <a href="{{ route('news.show', $article) }}" class="flex-1 min-w-0 flex flex-col group block">
                     <!-- Image -->
-                    <img class="w-full h-[285px] rounded-[20px] object-cover opacity-90 dark:opacity-80 transition-opacity"
+                    <img class="w-full h-[285px] rounded-[20px] object-cover"
                         src="{{ asset('storage/' . $article->image_url) }}" alt="{{ $article->title }}">
 
                     <!-- Title -->
-                    <div class="w-full mt-10 text-black dark:text-white text-3xl font-bold leading-10 h-20 line-clamp-2 transition-colors">
+                    <div class="w-full mt-10 text-black text-3xl font-bold leading-10 h-20 line-clamp-2">
                         {{ $article->title }}
                     </div>
 
                     <!-- Description -->
-                    <div class="w-full mt-20 text-black dark:text-gray-300 text-base font-normal leading-snug line-clamp-3 transition-colors">
+                    <div class="w-full mt-20 text-black text-base font-normal leading-snug line-clamp-3">
                         {{ $article->summary }}
                     </div>
 
                     <!-- Date & Button row -->
                     <div class="w-full mt-auto pt-20 flex justify-between items-center">
                         <!-- Date -->
-                        <div class="text-black dark:text-gray-400 text-sm font-bold uppercase leading-tight tracking-wide transition-colors">
+                        <div class="text-black text-sm font-bold uppercase leading-tight tracking-wide">
                             {{ $article->published_at->isoFormat('D MMMM, YYYY') }}
                         </div>
 
@@ -344,7 +302,7 @@
                         <div
                             class="w-44 h-12 rounded-[200px] border-2 border-veteran-blue flex items-center justify-center group-hover:bg-veteran-blue transition-colors cursor-pointer">
                             <span
-                                class="text-black dark:text-white group-hover:text-white text-xs font-bold uppercase leading-none tracking-wide transition-colors">ЧИТАТИ
+                                class="text-black group-hover:text-white text-xs font-bold uppercase leading-none tracking-wide transition-colors">ЧИТАТИ
                                 ДАЛІ</span>
                         </div>
                     </div>
@@ -355,24 +313,25 @@
 
     <!-- Mobile Team Section (<768px) -->
     <div class="block md:hidden mt-16 mb-16">
-        <h2 class="text-black dark:text-white text-[2.5rem] font-extrabold font-montserrat uppercase leading-tight mb-8 transition-colors">
+        <h2 class="text-black text-[40px] font-extrabold font-montserrat uppercase leading-tight mb-8">
             Наша<br>команда
         </h2>
 
         <!-- Swipe Carousel -->
+        <!-- Added [&::-webkit-scrollbar]:hidden to force hide scrollbar -->
         <div id="mobile-team-carousel" class="overflow-x-auto pb-4 [&::-webkit-scrollbar]:hidden"
             style="scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none;">
             <div class="flex gap-4 px-1" style="width: max-content;">
                 @foreach($team as $member)
                     <div class="flex-shrink-0 w-[394px]" style="scroll-snap-align: center;">
-                        <div class="w-full h-[440px] bg-zinc-300 dark:bg-zinc-800 rounded-[20px] overflow-hidden transition-colors">
-                            <img class="w-full h-full object-cover dark:opacity-90 transition-opacity" style="object-position: center 5%;"
+                        <div class="w-full h-[440px] bg-zinc-300 rounded-[20px] overflow-hidden">
+                            <img class="w-full h-full object-cover" style="object-position: center 5%;"
                                 src="{{ asset('storage/' . $member->photo) }}" alt="{{ $member->full_name }}">
                         </div>
-                        <div class="mt-6 text-black dark:text-white text-2xl font-extrabold font-montserrat leading-8 transition-colors">
+                        <div class="mt-6 text-black text-2xl font-extrabold font-montserrat leading-8">
                             {{ $member->full_name }}
                         </div>
-                        <div class="mt-3 text-black dark:text-white text-base font-normal font-montserrat leading-6 transition-colors">
+                        <div class="mt-3 text-black text-base font-normal font-montserrat leading-6">
                             {{ $member->role }}
                         </div>
                     </div>
@@ -380,20 +339,20 @@
             </div>
         </div>
 
-        <!-- Controls Row -->
+        <!-- Controls Row: Dots (Left) + Button (Right) -->
         <div class="flex justify-between items-center mt-4">
             <!-- Pagination Dots -->
             <div class="flex gap-2" id="mobile-team-dots">
                 @foreach($team as $index => $member)
                     <button
-                        class="w-4 h-4 rounded-full transition-colors {{ $index === 0 ? 'bg-veteran-blue' : 'bg-gray-300 dark:bg-zinc-600' }}"
+                        class="w-4 h-4 rounded-full transition-colors {{ $index === 0 ? 'bg-veteran-blue' : 'bg-gray-300' }}"
                         onclick="scrollToTeamMember({{ $index }})"></button>
                 @endforeach
             </div>
 
             <!-- Team Button -->
             <a href="{{ route('team') }}"
-                class="px-12 py-3 border-2 border-veteran-blue text-black dark:text-white text-lg font-black font-montserrat uppercase tracking-wide rounded-full active:bg-veteran-blue active:text-white transition-colors">
+                class="px-12 py-3 border-2 border-veteran-blue text-black text-lg font-black font-montserrat uppercase tracking-wide rounded-full active:bg-veteran-blue active:text-white transition-colors">
                 команда
             </a>
         </div>
@@ -404,7 +363,7 @@
         <div class="relative w-[1170px] h-[600px]">
             <!-- Title Section -->
             <div class="absolute left-0 top-0">
-                <h2 class="text-black dark:text-white text-[4.5rem] font-extrabold font-montserrat uppercase leading-[85.36px] m-0 transition-colors">
+                <h2 class="text-black text-[72px] font-extrabold font-montserrat uppercase leading-[85.36px] m-0">
                     Наша<br />команда
                 </h2>
             </div>
@@ -412,7 +371,7 @@
             <!-- Team Button -->
             <div class="absolute right-0 top-5">
                 <a href="{{ route('team') }}"
-                    class="w-64 h-16 border-2 border-veteran-blue bg-white dark:bg-zinc-900 text-black dark:text-white text-xl font-black font-montserrat uppercase tracking-wide cursor-pointer transition-all duration-300 ease-in-out rounded-[412px] flex items-center justify-center hover:bg-veteran-blue hover:text-white">
+                    class="w-64 h-16 border-2 border-veteran-blue bg-white text-black text-xl font-black font-montserrat uppercase tracking-wide cursor-pointer transition-all duration-300 ease-in-out rounded-[412px] flex items-center justify-center hover:bg-veteran-blue hover:text-white">
                     команда
                 </a>
             </div>
@@ -421,14 +380,14 @@
             <div class="absolute left-0 top-64 flex gap-[30px]">
                 @foreach($team as $member)
                     <div class="relative">
-                        <div class="w-[370px] h-[440px] bg-zinc-300 dark:bg-zinc-800 rounded-[20px] overflow-hidden transition-colors">
-                            <img class="w-full h-full object-cover dark:opacity-90 transition-opacity" style="object-position: center 5%;"
+                        <div class="w-[370px] h-[440px] bg-zinc-300 rounded-[20px] overflow-hidden">
+                            <img class="w-full h-full object-cover" style="object-position: center 5%;"
                                 src="{{ asset('storage/' . $member->photo) }}" alt="{{ $member->full_name }}">
                         </div>
-                        <div class="mt-10 text-black dark:text-white text-3xl font-extrabold font-montserrat leading-10 transition-colors">
+                        <div class="mt-10 text-black text-3xl font-extrabold font-montserrat leading-10">
                             {{ $member->full_name }}
                         </div>
-                        <div class="mt-6 text-black dark:text-white text-xl font-normal font-montserrat leading-7 transition-colors">
+                        <div class="mt-6 text-black text-xl font-normal font-montserrat leading-7">
                             {{ $member->role }}
                         </div>
                     </div>
@@ -437,43 +396,47 @@
         </div>
     </div>
 
+
     <!-- Mobile Map Section (<768px) -->
     <div class="block md:hidden mt-12 mb-16">
-        <h2 class="text-black dark:text-white text-[2.5rem] font-extrabold font-montserrat uppercase leading-tight mb-8 transition-colors">
+        <h2 class="text-black text-[40px] font-extrabold font-montserrat uppercase leading-tight mb-8">
             Хмельницький<br>вдячний
         </h2>
 
-        <div class="rounded-[30px] overflow-hidden border-2 border-black dark:border-zinc-500 transition-colors">
+        <div class="rounded-[30px] overflow-hidden border-2 border-black">
             <div class="relative h-[700px]">
                 <img src="{{ asset('images/backgrounds/map.png') }}" alt="Хмельницький Вдячний Map"
-                    class="w-full h-full object-cover dark:opacity-80 transition-opacity">
+                    class="w-full h-full object-cover">
             </div>
         </div>
     </div>
 
     <!-- Desktop Map Section (>=768px) -->
-    <div class="hidden md:block pt-[300px]">
-        <!-- Title in responsive container aligned with other sections -->
-        <div class="px-4 lg:px-8 xl:px-4 2xl:px-0 lg:max-w-[900px] xl:max-w-[1100px] 2xl:max-w-[1170px] lg:mx-auto mb-16">
-            <h2 class="text-black dark:text-white text-[4.5rem] font-extrabold font-montserrat uppercase leading-[85.36px] m-0 transition-colors">
-                Хмельницький<br />вдячний
-            </h2>
-        </div>
+    <div class="hidden md:flex pt-[300px] justify-center">
+        <div class="relative w-[1815px]">
+            <!-- Title Section -->
+            <div class="absolute left-[325px] top-0">
+                <h2 class="text-black text-[72px] font-extrabold font-montserrat uppercase leading-[85.36px] m-0">
+                    Хмельницький<br />вдячний
+                </h2>
+            </div>
 
-        <!-- Map at original large size, centered -->
-        <div class="flex justify-center">
-            <div class="w-[1815px] rounded-[100px] overflow-hidden border-2 border-black dark:border-zinc-500 transition-colors">
-                <div class="relative h-[750px]">
-                    <img src="{{ asset('images/backgrounds/map.png') }}" alt="Хмельницький Вдячний Map"
-                        class="w-full h-full object-cover dark:opacity-80 transition-opacity">
+            <!-- Map -->
+            <div class="mt-40 pt-20">
+                <div class="rounded-[100px] overflow-hidden border-2 border-black">
+                    <div class="relative h-[750px]">
+                        <img src="{{ asset('images/backgrounds/map.png') }}" alt="Хмельницький Вдячний Map"
+                            class="w-full h-full object-cover">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
+
     <!-- Mobile Partners Section (<768px) -->
     <div class="block md:hidden mt-12 mb-16">
-        <h2 class="text-black dark:text-white text-[2.5rem] font-extrabold font-montserrat uppercase leading-tight mb-8 transition-colors">
+        <h2 class="text-black text-[40px] font-extrabold font-montserrat uppercase leading-tight mb-8">
             Наші партнери
         </h2>
 
@@ -485,9 +448,9 @@
                 @endphp
                 <div class="{{ $isLastOdd ? 'col-span-2 flex justify-center' : '' }}">
                     <div
-                        class="w-full {{ $isLastOdd ? 'max-w-[160px]' : '' }} h-24 flex items-center justify-center rounded-lg p-2 bg-transparent">
+                        class="w-full {{ $isLastOdd ? 'max-w-[160px]' : '' }} h-24 flex items-center justify-center rounded-lg p-2">
                         <img src="{{ asset('storage/' . $partner->logo_path) }}" alt="{{ $partner->name }}"
-                            class="max-w-full max-h-full object-contain dark:brightness-0 dark:invert transition-all duration-300">
+                            class="max-w-full max-h-full object-contain">
                     </div>
                 </div>
             @endforeach
@@ -499,7 +462,7 @@
         <div class="relative w-[1170px]">
             <!-- Title Section -->
             <div class="absolute left-0 top-0">
-                <h2 class="text-black dark:text-white text-[4.5rem] font-extrabold font-montserrat uppercase leading-[85.36px] m-0 transition-colors">
+                <h2 class="text-black text-[72px] font-extrabold font-montserrat uppercase leading-[85.36px] m-0">
                     Наші партнери
                 </h2>
             </div>
@@ -830,79 +793,20 @@
 
                         teamDots.forEach((dot, index) => {
                             if (index === activeIndex) {
-                                dot.classList.add('bg-veteran-blue');
                                 dot.classList.remove('bg-gray-300');
+                                dot.classList.add('bg-veteran-blue');
                             } else {
                                 dot.classList.remove('bg-veteran-blue');
                                 dot.classList.add('bg-gray-300');
                             }
                         });
-                    }, 50); // Debounce slightly
+                    }, 50); // Debounce
                 });
             }
         });
     </script>
+@endsection
 
-    <!-- Text Zoom Detection & Handling -->
-    <style>
-        /* Force flow layout if text zoom is detected */
-        body.text-zoomed .home-cards-wrapper {
-            position: relative !important;
-            display: flex !important;
-            flex-wrap: wrap !important;
-            justify-content: center !important;
-            top: auto !important;
-            left: auto !important;
-            transform: none !important;
-            height: auto !important;
-            max-width: 100% !important;
-            padding-left: 1rem !important;
-            padding-right: 1rem !important;
-        }
-
-        body.text-zoomed .home-cards-container-parent {
-            display: flex !important;
-            flex-direction: column !important;
-            height: auto !important;
-            display: block !important;
-            min-height: 0 !important;
-        }
-    </style>
-    <script>
-        (function () {
-            function checkTextZoom() {
-                // Create a reference element
-                const div = document.createElement('div');
-                div.style.fontSize = '16px';
-                div.style.width = '1em';
-                div.style.position = 'absolute';
-                div.style.visibility = 'hidden';
-                document.body.appendChild(div);
-
-                const width = div.offsetWidth;
-                document.body.removeChild(div);
-
-                // If 1em is significantly larger than 16px (e.g. >17px), assume zoom
-                // Standard browser zoom changes pixels too, so 1em = 16px usually.
-                // Text-only zoom usually changes base size.
-                // Let's check computed font size of root.
-                const rootSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
-
-                // Also check pixel ratio for good measure (though user said text zoom)
-                // If rootSize is > 18px (default is usually 16px), trigger zoomed mode
-                const isTextZoomed = rootSize > 17;
-
-                if (isTextZoomed) {
-                    document.body.classList.add('text-zoomed');
-                } else {
-                    document.body.classList.remove('text-zoomed');
-                }
-            }
-
-            window.addEventListener('load', checkTextZoom);
-            window.addEventListener('resize', checkTextZoom);
-            // Run immediately
-            checkTextZoom();
-        })();
-    </script>
+@section('footer')
+    @include('partials.footer-extended')
 @endsection

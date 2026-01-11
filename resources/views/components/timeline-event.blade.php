@@ -20,27 +20,29 @@
     <!-- Content Wrapper -->
     <div class="flex flex-col lg:flex-row flex-1 ml-[20px] lg:ml-[30px]">
         <!-- Date Section -->
-        <div class="w-full lg:w-[200px] flex-shrink-0 mb-[20px] lg:mb-0">
+        <div class="w-full lg:min-w-[200px] lg:w-auto flex-shrink-0 mb-[20px] lg:mb-0">
             <!-- Date (small text) -->
             <p
-                class="text-[14px] lg:text-[20px] font-extrabold font-['Montserrat'] text-black tracking-[3px] lg:tracking-[4.8px] uppercase leading-[0.92] mb-[10px] lg:mb-[18px]">
+                class="text-[0.875rem] lg:text-[1.25rem] font-extrabold font-['Montserrat'] text-black dark:text-white tracking-[3px] lg:tracking-[4.8px] uppercase leading-[0.92] mb-[10px] lg:mb-[18px] transition-colors">
                 {{ $date }}
             </p>
 
             <!-- Year (large text) -->
             <p
-                class="text-[48px] lg:text-[80px] font-extrabold font-['Montserrat'] text-black uppercase leading-[0.92] mb-[15px] lg:mb-[28px]">
+                class="text-[3rem] lg:text-[5rem] font-extrabold font-['Montserrat'] text-black dark:text-white uppercase leading-[0.92] mb-[15px] lg:mb-[28px] whitespace-nowrap transition-colors">
                 {{ $year }}
             </p>
 
             <!-- Horizontal line -->
-            <div class="w-[full] max-w-[150px] lg:w-[198px] lg:max-w-none h-[6px] lg:h-[12px] bg-black"></div>
+            <div
+                class="w-[full] max-w-[150px] lg:w-[198px] lg:max-w-none h-[6px] lg:h-[12px] bg-black dark:bg-white transition-colors">
+            </div>
         </div>
 
         <!-- Description -->
         <div class="lg:ml-[50px] flex-1 pt-0 lg:pt-[38px]">
             <p
-                class="text-[18px] lg:text-[32px] font-normal font-['Montserrat'] text-black leading-[1.35] lg:leading-[1.25]">
+                class="text-[1.125rem] lg:text-[2rem] font-normal font-['Montserrat'] text-black dark:text-gray-200 leading-[1.35] lg:leading-[1.25] transition-colors">
                 {{ $description }}
             </p>
         </div>

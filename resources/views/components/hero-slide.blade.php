@@ -6,7 +6,7 @@
     $codedSlideId = $banner->coded_slide_id;
 @endphp
 
-<div class="carousel-slide absolute inset-0 w-full h-[820px] overflow-hidden {{ $isFirst ? 'active' : '' }} transition-all duration-1500 ease-in-out"
+<div class="carousel-slide absolute inset-0 w-full min-h-[820px] overflow-hidden {{ $isFirst ? 'active' : '' }} transition-all duration-1500 ease-in-out"
     style="transform: translateX({{ $isFirst ? '0%' : '100%' }});">
 
     @if($codedSlideId === 'slide1')
@@ -21,35 +21,46 @@
         </div>
 
         <div class="absolute left-[326px] top-[367px] grid grid-cols-2 gap-8">
-            <div class="w-[300px] h-[90px] bg-white rounded-[10px] flex items-center px-4 space-x-4">
+            <div
+                class="min-w-[280px] max-w-[300px] min-h-[90px] bg-white dark:bg-zinc-800 rounded-[10px] flex items-center px-4 space-x-4 py-3 transition-colors">
                 <div class="w-11 h-11 flex items-center justify-center">
-                    <img src="{{ asset('images/icons/family.svg') }}" alt="Family" class="w-11 h-11">
+                    <img src="{{ asset('images/icons/family.svg') }}" alt="Family"
+                        class="w-11 h-11 dark:invert transition-all">
                 </div>
-                <span class="text-black text-xs font-bold font-montserrat uppercase leading-tight tracking-wide">
+                <span
+                    class="text-black dark:text-white text-xs font-bold font-montserrat uppercase leading-tight tracking-wide transition-colors">
                     ВЕТЕРАНИ ТА ЧЛЕНИ ЇХ РОДИН
                 </span>
             </div>
-            <div class="w-[300px] h-[90px] bg-white rounded-[10px] flex items-center px-4 space-x-4">
+            <div
+                class="min-w-[280px] max-w-[300px] min-h-[90px] bg-white dark:bg-zinc-800 rounded-[10px] flex items-center px-4 space-x-4 py-3 transition-colors">
                 <div class="w-11 h-11 flex items-center justify-center">
-                    <img src="{{ asset('images/icons/heart.svg') }}" alt="Heart" class="w-11 h-11">
+                    <img src="{{ asset('images/icons/heart.svg') }}" alt="Heart"
+                        class="w-11 h-11 dark:invert transition-all">
                 </div>
-                <span class="text-black text-xs font-bold font-montserrat uppercase leading-tight tracking-wide">
+                <span
+                    class="text-black dark:text-white text-xs font-bold font-montserrat uppercase leading-tight tracking-wide transition-colors">
                     ЧЛЕНИ СІМЕЙ ЗАГИБЛИХ
                 </span>
             </div>
-            <div class="w-[300px] h-[90px] bg-white rounded-[10px] flex items-center px-4 space-x-4">
+            <div
+                class="w-[300px] h-[90px] bg-white dark:bg-zinc-800 rounded-[10px] flex items-center px-4 space-x-4 transition-colors">
                 <div class="w-11 h-11 flex items-center justify-center">
-                    <img src="{{ asset('images/icons/army.svg') }}" alt="Army" class="w-11 h-11">
+                    <img src="{{ asset('images/icons/army.svg') }}" alt="Army" class="w-11 h-11 dark:invert transition-all">
                 </div>
-                <span class="text-black text-xs font-bold font-montserrat uppercase leading-tight tracking-wide">
+                <span
+                    class="text-black dark:text-white text-xs font-bold font-montserrat uppercase leading-tight tracking-wide transition-colors">
                     ВІЙСЬКОВІ ТА ЧЛЕНИ ЇХ РОДИН
                 </span>
             </div>
-            <div class="w-[300px] h-[90px] bg-white rounded-[10px] flex items-center px-4 space-x-4">
+            <div
+                class="w-[300px] h-[90px] bg-white dark:bg-zinc-800 rounded-[10px] flex items-center px-4 space-x-4 transition-colors">
                 <div class="w-11 h-11 flex items-center justify-center">
-                    <img src="{{ asset('images/icons/people.svg') }}" alt="People" class="w-11 h-11">
+                    <img src="{{ asset('images/icons/people.svg') }}" alt="People"
+                        class="w-11 h-11 dark:invert transition-all">
                 </div>
-                <span class="text-black text-xs font-bold font-montserrat uppercase leading-tight tracking-wide">
+                <span
+                    class="text-black dark:text-white text-xs font-bold font-montserrat uppercase leading-tight tracking-wide transition-colors">
                     ЧЛЕНИ СІМЕЙ ВІЙСЬКОВОПОЛОНЕННИХ<br />ТА ЗНИКЛИХ БЕЗВІСТИ
                 </span>
             </div>

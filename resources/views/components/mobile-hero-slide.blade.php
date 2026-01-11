@@ -16,28 +16,36 @@
         <div class="absolute inset-0 bg-neutral-900/30"></div>
 
         <div class="absolute inset-0 flex flex-col pt-36">
-            <h1 class="text-white text-[36px] font-bold font-unbounded mb-5 leading-[116%] tracking-normal px-12">
+            <h1 class="text-white text-[2.25rem] font-bold font-unbounded mb-5 leading-[116%] tracking-normal px-12">
                 Для кого ми:
             </h1>
 
             <div class="flex flex-col gap-2 mx-8">
-                <div class="bg-white w-full h-12 rounded-full py-2.5 px-6 flex items-center gap-3">
-                    <span class="text-black text-[12px] font-bold font-montserrat uppercase leading-tight">
+                <div
+                    class="bg-white dark:bg-zinc-800 w-full min-h-12 rounded-full py-2.5 px-6 flex items-center gap-3 transition-colors">
+                    <span
+                        class="text-black dark:text-white text-[0.75rem] font-bold font-montserrat uppercase leading-tight transition-colors">
                         ВЕТЕРАНИ ТА ЧЛЕНИ ЇХ РОДИН
                     </span>
                 </div>
-                <div class="bg-white w-full h-12 rounded-full py-2.5 px-6 flex items-center gap-3">
-                    <span class="text-black text-[12px] font-bold font-montserrat uppercase leading-tight">
+                <div
+                    class="bg-white dark:bg-zinc-800 w-full min-h-12 rounded-full py-2.5 px-6 flex items-center gap-3 transition-colors">
+                    <span
+                        class="text-black dark:text-white text-[0.75rem] font-bold font-montserrat uppercase leading-tight transition-colors">
                         ЧЛЕНИ СІМЕЙ ЗАГИБЛИХ
                     </span>
                 </div>
-                <div class="bg-white w-full h-12 rounded-full py-2.5 px-6 flex items-center gap-3">
-                    <span class="text-black text-[12px] font-bold font-montserrat uppercase leading-tight">
+                <div
+                    class="bg-white dark:bg-zinc-800 w-full min-h-12 rounded-full py-2.5 px-6 flex items-center gap-3 transition-colors">
+                    <span
+                        class="text-black dark:text-white text-[0.75rem] font-bold font-montserrat uppercase leading-tight transition-colors">
                         ВІЙСЬКОВІ ТА ЧЛЕНИ ЇХ РОДИН
                     </span>
                 </div>
-                <div class="bg-white w-full h-12 rounded-full py-2.5 px-6 flex items-center gap-3">
-                    <span class="text-black text-[12px] font-bold font-montserrat uppercase leading-tight">
+                <div
+                    class="bg-white dark:bg-zinc-800 w-full min-h-12 rounded-full py-2.5 px-6 flex items-center gap-3 transition-colors">
+                    <span
+                        class="text-black dark:text-white text-[0.75rem] font-bold font-montserrat uppercase leading-tight transition-colors">
                         ЧЛЕНИ СІМЕЙ ВІЙСЬКОВОПОЛОНЕННИХ ТА ЗНИКЛИХ БЕЗВІСТИ
                     </span>
                 </div>
@@ -52,7 +60,7 @@
 
         <div class="absolute inset-0 flex flex-col justify-center px-4">
             <div class="p-6">
-                <h2 class="text-white text-[42px] font-bold font-unbounded leading-tight mb-4">
+                <h2 class="text-white text-[2.625rem] font-bold font-unbounded leading-tight mb-4">
                     Бізнес - ветеранам!
                 </h2>
                 <p class="text-white text-lg font-medium font-unbounded uppercase">
@@ -68,7 +76,7 @@
         <div class="absolute inset-0 bg-neutral-900/30"></div>
 
         <div class="absolute inset-0 flex flex-col justify-center px-4">
-            <h2 class="text-white text-[32px] font-bold font-unbounded leading-tight mb-4">
+            <h2 class="text-white text-[2rem] font-bold font-unbounded leading-tight mb-4">
                 Вони загинули за Україну!
             </h2>
             <p class="text-white text-lg font-medium font-unbounded uppercase mb-6">

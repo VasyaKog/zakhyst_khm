@@ -10,5 +10,8 @@ php artisan route:cache
 php artisan view:cache
 php artisan event:cache
 
+echo "Seeding database..."
+php artisan db:seed --force
+
 echo "Starting Apache..."
 exec apache2-foreground

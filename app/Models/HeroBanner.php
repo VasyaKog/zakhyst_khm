@@ -4,11 +4,19 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+use Spatie\Translatable\HasTranslations;
+
 class HeroBanner extends Model
 {
+    use HasTranslations;
+
+    public $translatable = ['title', 'text', 'link_url'];
+
     protected $fillable = [
         'image_path',
         'link_url',
+        'title',
+        'text',
         'coded_slide_id',
         'sort_order',
         'is_active',

@@ -7,6 +7,7 @@ use App\Filament\Resources\NewsArticleResource\RelationManagers;
 use App\Models\NewsArticle;
 use Filament\Forms;
 use Filament\Forms\Form;
+use Filament\Resources\Concerns\Translatable;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
@@ -15,41 +16,58 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class NewsArticleResource extends Resource
 {
+    use Translatable;
+
     protected static ?string $model = NewsArticle::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-newspaper';
+
+    protected static ?string $navigationLabel = 'Новини';
+
+    protected static ?string $modelLabel = 'Новина';
+
+    protected static ?string $pluralModelLabel = 'Новини';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
                 Forms\Components\TextInput::make('title')
+                    ->label('Заголовок')
                     ->required()
                     ->maxLength(255),
                 Forms\Components\TextInput::make('slug')
+                    ->label('URL-адреса (slug)')
                     ->required()
                     ->maxLength(255),
                 Forms\Components\Textarea::make('summary')
+                    ->label('Короткий опис')
                     ->required()
                     ->columnSpanFull(),
                 Forms\Components\RichEditor::make('content')
+                    ->label('Зміст статті')
                     ->required()
                     ->columnSpanFull(),
                 Forms\Components\FileUpload::make('image_url')
+                    ->label('Головне зображення')
                     ->image()
                     ->disk('public')
                     ->directory('images/backgrounds')
                     ->visibility('public'),
                 Forms\Components\FileUpload::make('gallery_images')
+                    ->label('Галерея зображень')
                     ->multiple()
                     ->disk('public')
                     ->directory('images/backgrounds')
                     ->visibility('public'),
                 Forms\Components\TextInput::make('author')
+                    ->label('Автор')
                     ->maxLength(255),
                 Forms\Components\TextInput::make('video_url')
+                    ->label('Посилання на відео')
                     ->maxLength(255),
-                Forms\Components\DateTimePicker::make('published_at'),
+                Forms\Components\DateTimePicker::make('published_at')
+                    ->label('Дата публікації'),
             ]);
     }
 
@@ -58,22 +76,27 @@ class NewsArticleResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('title')
+                    ->label('Заголовок')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('slug')
+                    ->label('Slug')
                     ->searchable(),
-                Tables\Columns\ImageColumn::make('image_url'),
+                Tables\Columns\ImageColumn::make('image_url')
+                    ->label('Зображення'),
                 Tables\Columns\TextColumn::make('author')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('video_url')
+                    ->label('Автор')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('published_at')
+                    ->label('Опубліковано')
                     ->dateTime()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')
+                    ->label('Створено')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('updated_at')
+                    ->label('Оновлено')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),

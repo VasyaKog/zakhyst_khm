@@ -16,7 +16,9 @@
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.10.1",
         "tightenco/ziggy": "^2.0",
-        "fakerphp/faker": "^1.23"
+        "fakerphp/faker": "^1.23",
+        "spatie/laravel-translatable": "^6.0",
+        "filament/spatie-laravel-translatable-plugin": "^3.2"
     },
     "require-dev": {
         "laravel/breeze": "^2.3",

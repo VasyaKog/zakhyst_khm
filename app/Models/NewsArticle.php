@@ -4,8 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+use Spatie\Translatable\HasTranslations;
+
 class NewsArticle extends Model
 {
+    use HasTranslations;
+
+    public $translatable = ['title', 'summary', 'content'];
+
     protected $fillable = [
         'title',
         'slug',

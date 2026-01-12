@@ -55,13 +55,27 @@
             </div>
 
             <div class="flex items-center gap-8 flex-shrink-0">
-                <!-- Language toggle: Hidden on mobile (moved to burger menu), Visible > 1400px -->
-                <button id="language-toggle"
-                    class="hidden min-[1400px]:flex items-center space-x-1 text-black dark:text-white transition-colors">
-                    <span class="font-bold text-base">UA</span>
-                    <img class="pb-1 dark:invert transition-all" src="{{ asset('images/icons/arrow-down.svg') }}"
-                        alt="Dropdown">
-                </button>
+                <!-- Language Dropdown: Hidden on mobile, Visible > 1400px -->
+                <div id="language-dropdown" class="relative hidden min-[1400px]:block">
+                    <button id="language-toggle"
+                        class="flex items-center space-x-1 text-black dark:text-white transition-colors"
+                        onclick="toggleLanguageDropdown()">
+                        <span class="font-bold text-base">{{ strtoupper(app()->getLocale()) }}</span>
+                        <img class="pb-1 dark:invert transition-all" src="{{ asset('images/icons/arrow-down.svg') }}"
+                            alt="Dropdown">
+                    </button>
+                    <div id="language-menu"
+                        class="hidden absolute top-full left-0 mt-2 bg-white dark:bg-zinc-800 shadow-lg rounded-lg overflow-hidden z-50 min-w-[80px]">
+                        <a href="{{ route('lang.switch', 'ua') }}"
+                            class="block px-4 py-2 text-sm font-bold text-black dark:text-white hover:bg-gray-100 dark:hover:bg-zinc-700 {{ app()->getLocale() === 'ua' ? 'bg-gray-100 dark:bg-zinc-700' : '' }}">
+                            UA
+                        </a>
+                        <a href="{{ route('lang.switch', 'en') }}"
+                            class="block px-4 py-2 text-sm font-bold text-black dark:text-white hover:bg-gray-100 dark:hover:bg-zinc-700 {{ app()->getLocale() === 'en' ? 'bg-gray-100 dark:bg-zinc-700' : '' }}">
+                            EN
+                        </a>
+                    </div>
+                </div>
 
                 <!-- Burger/Cross Button: Visible on Mobile (<1400), Hidden on Desktop (>1400) UNLESS extended nav is open -->
                 <!-- Note: Logic handled by JS, but base class setup here -->
@@ -110,7 +124,7 @@
         const mobileMenu = document.getElementById('mobile-menu'); // Full screen overlay
         const burgerIcon = document.getElementById('burger-icon');
         const crossIcon = document.getElementById('cross-icon');
-        const languageToggle = document.getElementById('language-toggle');
+        const languageDropdown = document.getElementById('language-dropdown'); // Wrapper div
 
         const isDesktop = window.innerWidth >= 1400;
 
@@ -129,8 +143,8 @@
                 burgerIcon.classList.remove('hidden');
                 crossIcon.classList.add('hidden');
 
-                // Language Toggle
-                languageToggle.style.display = '';
+                // Language Dropdown - show in default nav
+                if (languageDropdown) languageDropdown.style.display = '';
             } else {
                 // OPEN Extended Nav -> HIDE Desktop Nav
                 desktopNav.style.display = 'none'; // Force hide
@@ -140,8 +154,8 @@
                 burgerIcon.classList.add('hidden');
                 crossIcon.classList.remove('hidden');
 
-                // Language Toggle
-                languageToggle.style.display = 'none';
+                // Language Dropdown - hide in extended nav (use style to override Tailwind)
+                if (languageDropdown) languageDropdown.style.display = 'none';
             }
         } else {
             // Mobile Logic: Toggle Full Screen Menu
@@ -163,4 +177,18 @@
         // Dark mode toggle functionality
         console.log('Dark mode toggle clicked');
     }
+
+    function toggleLanguageDropdown() {
+        const menu = document.getElementById('language-menu');
+        menu.classList.toggle('hidden');
+    }
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function (event) {
+        const dropdown = document.getElementById('language-dropdown');
+        const menu = document.getElementById('language-menu');
+        if (dropdown && menu && !dropdown.contains(event.target)) {
+            menu.classList.add('hidden');
+        }
+    });
 </script>

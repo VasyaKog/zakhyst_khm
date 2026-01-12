@@ -20,4 +20,12 @@ Route::get('/404', [PageController::class, 'notFound'])->name('404');
 
 Route::get('/api/search', [\App\Http\Controllers\Web\SearchController::class, 'search'])->name('api.search');
 
+// Language Switcher
+Route::get('/lang/{locale}', function (string $locale) {
+    if (in_array($locale, ['ua', 'en'])) {
+        session(['locale' => $locale]);
+    }
+    return redirect()->back();
+})->name('lang.switch');
+
 // require __DIR__ . '/auth.php';

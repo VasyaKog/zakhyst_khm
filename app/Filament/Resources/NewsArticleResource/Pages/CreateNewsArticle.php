@@ -8,5 +8,14 @@ use Filament\Resources\Pages\CreateRecord;
 
 class CreateNewsArticle extends CreateRecord
 {
+    use CreateRecord\Concerns\Translatable;
+
     protected static string $resource = NewsArticleResource::class;
+
+    protected function getHeaderActions(): array
+    {
+        return [
+            Actions\LocaleSwitcher::make(),
+        ];
+    }
 }

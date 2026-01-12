@@ -4,8 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+use Spatie\Translatable\HasTranslations;
+
 class TeamMember extends Model
 {
+    use HasTranslations;
+
+    public $translatable = ['first_name', 'last_name', 'role'];
+
     protected $fillable = [
         'first_name',
         'last_name',

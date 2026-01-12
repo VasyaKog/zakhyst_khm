@@ -3,11 +3,25 @@
     <!-- Header: UA, Theme Switch, Close Button -->
     <div class="flex items-center justify-between px-5 pt-6 pb-6">
         <div class="flex items-center gap-4">
-            <!-- Language -->
-            <button class="flex items-center space-x-1 text-black dark:text-white transition-colors">
-                <span class="font-bold text-lg">UA</span>
-                <img class="pb-1 dark:invert" src="{{ asset('images/icons/arrow-down.svg') }}" alt="Dropdown">
-            </button>
+            <!-- Language Dropdown -->
+            <div class="relative">
+                <button class="flex items-center space-x-1 text-black dark:text-white transition-colors"
+                    onclick="toggleMobileLanguageDropdown()">
+                    <span class="font-bold text-lg">{{ strtoupper(app()->getLocale()) }}</span>
+                    <img class="pb-1 dark:invert" src="{{ asset('images/icons/arrow-down.svg') }}" alt="Dropdown">
+                </button>
+                <div id="mobile-language-menu"
+                    class="hidden absolute top-full left-0 mt-2 bg-white dark:bg-zinc-800 shadow-lg rounded-lg overflow-hidden z-50 min-w-[80px]">
+                    <a href="{{ route('lang.switch', 'ua') }}"
+                        class="block px-4 py-2 text-sm font-bold text-black dark:text-white hover:bg-gray-100 dark:hover:bg-zinc-700 {{ app()->getLocale() === 'ua' ? 'bg-gray-100 dark:bg-zinc-700' : '' }}">
+                        UA
+                    </a>
+                    <a href="{{ route('lang.switch', 'en') }}"
+                        class="block px-4 py-2 text-sm font-bold text-black dark:text-white hover:bg-gray-100 dark:hover:bg-zinc-700 {{ app()->getLocale() === 'en' ? 'bg-gray-100 dark:bg-zinc-700' : '' }}">
+                        EN
+                    </a>
+                </div>
+            </div>
 
             <!-- Accessibility Toggle -->
             <button class="transition-colors" onclick="toggleMobileAccessibility()" title="Доступність">
@@ -206,3 +220,10 @@
         </div>
     </div>
 </div>
+
+<script>
+    function toggleMobileLanguageDropdown() {
+        const menu = document.getElementById('mobile-language-menu');
+        menu.classList.toggle('hidden');
+    }
+</script>

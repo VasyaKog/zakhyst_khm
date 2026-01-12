@@ -107,7 +107,7 @@
                 </button>
 
                 <button onclick="window.openDonationModal()"
-                    class="w-[200px] h-[50px] bg-veteran-blue hover:bg-blue-700 text-white font-black text-sm uppercase rounded-full transition-colors tracking-wide">
+                    class="hidden min-[1400px]:block w-[200px] h-[50px] bg-veteran-blue hover:bg-blue-700 text-white font-black text-sm uppercase rounded-full transition-colors tracking-wide">
                     {{ __('Support') }}
                 </button>
             </div>

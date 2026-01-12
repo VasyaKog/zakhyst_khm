@@ -55,50 +55,55 @@
         <nav class="flex flex-col items-center w-full mb-8">
             <!-- Group 1 -->
             <div class="flex flex-col gap-4 mb-6 items-center">
-                <a href="{{ route('services') }}"
-                    class="text-white hover:text-veteran-blue font-bold text-3xl uppercase transition-colors px-1 text-center font-['Montserrat'] leading-relaxed tracking-wide">
-                    {{ __('Services') }}
+                <a href="{{ route('services') }}" class="flex items-center justify-center gap-1 group">
+                    <span
+                        class="text-black dark:text-white font-semibold text-lg uppercase tracking-wide group-hover:text-veteran-blue transition-colors">{{ __('Services') }}</span>
+                    <span
+                        class="text-black dark:text-white font-semibold text-lg group-hover:text-veteran-blue transition-colors">&gt;</span>
                 </a>
-                <a href="{{ route('about') }}"
-                    class="text-white hover:text-veteran-blue font-bold text-3xl uppercase transition-colors px-1 text-center font-['Montserrat'] leading-relaxed tracking-wide">
-                    {{ __('About Us') }}
+                <a href="{{ route('about') }}" class="flex items-center justify-center gap-1 group">
+                    <span
+                        class="text-black dark:text-white font-semibold text-lg uppercase tracking-wide group-hover:text-veteran-blue transition-colors">{{ __('About') }}</span>
+                    <span
+                        class="text-black dark:text-white font-semibold text-lg group-hover:text-veteran-blue transition-colors">&gt;</span>
                 </a>
-                <a href="{{ route('contact') }}"
-                    class="text-white hover:text-veteran-blue font-bold text-3xl uppercase transition-colors px-1 text-center font-['Montserrat'] leading-relaxed tracking-wide">
-                    {{ __('Contacts') }}
+                <a href="{{ route('contact') }}" class="flex items-center justify-center gap-1 group">
+                    <span
+                        class="text-black dark:text-white font-semibold text-lg uppercase tracking-wide group-hover:text-veteran-blue transition-colors">{{ __('Contacts') }}</span>
+                    <span
+                        class="text-black dark:text-white font-semibold text-lg group-hover:text-veteran-blue transition-colors">&gt;</span>
                 </a>
             </div>
 
             <!-- Group 2 -->
             <div class="flex flex-col gap-4 items-center">
+                <a href="{{ route('indifferent') }}" class="flex items-center justify-center gap-1 group">
                     <span
-                        class="text-black dark:text-white font-semibold text-lg uppercase tracking-wide group-hover:text-veteran-blue transition-colors">НЕБАЙДУЖИМ</span>
+                        class="text-black dark:text-white font-semibold text-lg uppercase tracking-wide group-hover:text-veteran-blue transition-colors">{{ __('To Indifferent') }}</span>
                     <span
                         class="text-black dark:text-white font-semibold text-lg group-hover:text-veteran-blue transition-colors">&gt;</span>
                 </a>
                 <a href="{{ route('path') }}" class="flex items-center justify-center gap-1 group">
                     <span
-                        class="text-black dark:text-white font-semibold text-lg uppercase tracking-wide group-hover:text-veteran-blue transition-colors">ГРОМАДА
-                        - ВЕТЕРАНУ</span>
+                        class="text-black dark:text-white font-semibold text-lg uppercase tracking-wide group-hover:text-veteran-blue transition-colors">{{ __('Community to Veteran') }}</span>
                     <span
                         class="text-black dark:text-white font-semibold text-lg group-hover:text-veteran-blue transition-colors">&gt;</span>
                 </a>
                 <a href="{{ route('news') }}" class="flex items-center justify-center gap-1 group">
                     <span
-                        class="text-black dark:text-white font-semibold text-lg uppercase tracking-wide group-hover:text-veteran-blue transition-colors">НОВИНИ</span>
+                        class="text-black dark:text-white font-semibold text-lg uppercase tracking-wide group-hover:text-veteran-blue transition-colors">{{ __('News') }}</span>
                     <span
                         class="text-black dark:text-white font-semibold text-lg group-hover:text-veteran-blue transition-colors">&gt;</span>
                 </a>
                 <a href="#" class="flex items-center justify-center gap-1 group">
                     <span
-                        class="text-black dark:text-white font-semibold text-lg uppercase tracking-wide group-hover:text-veteran-blue transition-colors">МИ
-                        ПАМ'ЯТАЄМО</span>
+                        class="text-black dark:text-white font-semibold text-lg uppercase tracking-wide group-hover:text-veteran-blue transition-colors">{{ __('We Remember') }}</span>
                     <span
                         class="text-black dark:text-white font-semibold text-lg group-hover:text-veteran-blue transition-colors">&gt;</span>
                 </a>
                 <a href="#" class="flex items-center justify-center gap-1 group">
                     <span
-                        class="text-black dark:text-white font-semibold text-lg uppercase tracking-wide group-hover:text-veteran-blue transition-colors">ВІДГУКИ</span>
+                        class="text-black dark:text-white font-semibold text-lg uppercase tracking-wide group-hover:text-veteran-blue transition-colors">{{ __('Reviews') }}</span>
                     <span
                         class="text-black dark:text-white font-semibold text-lg group-hover:text-veteran-blue transition-colors">&gt;</span>
                 </a>

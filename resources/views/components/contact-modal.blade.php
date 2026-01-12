@@ -1,7 +1,7 @@
 <!-- Toast Notification -->
 <div id="contact-toast"
     class="fixed bottom-8 left-1/2 -translate-x-1/2 bg-veteran-blue text-white px-6 py-3 rounded-lg shadow-lg z-[60] opacity-0 transition-opacity duration-300 pointer-events-none">
-    <p class="text-base font-bold font-['Montserrat'] m-0">Повідомлення надіслано!</p>
+    <p class="text-base font-bold font-['Montserrat'] m-0">{{ __('Message Sent') }}</p>
 </div>
 
 <!-- Contact Modal -->
@@ -26,7 +26,7 @@
                         <input type="text" id="contact-name" name="name" required
                             class="w-full h-12 bg-transparent text-base md:text-xl font-bold font-['Montserrat'] leading-relaxed text-black dark:text-white appearance-none focus:ring-0 focus:shadow-none placeholder-shown:border-gray-400 dark:placeholder-shown:border-gray-600"
                             style="border: none; border-bottom: 1px solid #9CA3AF; outline: none; box-shadow: none;"
-                            placeholder="[ ІМ'Я* ]">
+                            placeholder="{{ __('Name Placeholder') }}">
                     </div>
 
                     <!-- Surname Field -->
@@ -34,7 +34,7 @@
                         <input type="text" id="contact-surname" name="surname"
                             class="w-full h-12 bg-transparent text-base md:text-xl font-bold font-['Montserrat'] leading-relaxed text-black dark:text-white appearance-none focus:ring-0 focus:shadow-none"
                             style="border: none; border-bottom: 1px solid #9CA3AF; outline: none; box-shadow: none;"
-                            placeholder="[ ПРІЗВИЩЕ ]">
+                            placeholder="{{ __('Surname Placeholder') }}">
                     </div>
                 </div>
 
@@ -43,7 +43,7 @@
                     <input type="text" id="contact-contact" name="contact" required
                         class="w-full h-12 bg-transparent text-base md:text-xl font-bold font-['Montserrat'] uppercase leading-relaxed text-black dark:text-white appearance-none focus:ring-0 focus:shadow-none"
                         style="border: none; border-bottom: 1px solid #9CA3AF; outline: none; box-shadow: none;"
-                        placeholder="[ тел / імейл* ]">
+                        placeholder="{{ __('Contact Placeholder') }}">
                 </div>
 
                 <!-- Message Field -->
@@ -51,7 +51,7 @@
                     <textarea id="contact-message" name="message" required
                         class="w-full h-[200px] md:h-[345px] bg-transparent text-base md:text-xl font-bold font-['Montserrat'] uppercase leading-relaxed text-black dark:text-white appearance-none focus:ring-0 focus:shadow-none"
                         style="border: none; border-bottom: 1px solid #9CA3AF; outline: none; resize: none; box-shadow: none;"
-                        placeholder="[ Твій запит / відгук* ]"></textarea>
+                        placeholder="{{ __('Message Placeholder') }}"></textarea>
                 </div>
 
                 <!-- Required Fields Note and Submit Button -->
@@ -62,12 +62,11 @@
                             class="text-veteran-blue text-3xl md:text-4xl font-normal font-['Montserrat'] pt-[10px] md:pt-[15px]">*</span>
                         <span
                             class="text-black dark:text-white text-sm md:text-lg font-bold font-['Montserrat'] leading-6">
-                            - Поля
-                            обов'язкові до заповнення</span>
+                            {{ __('Required Fields Note') }}</span>
                     </div>
                     <button type="submit"
                         class="order-1 md:order-2 w-full md:w-[260px] h-[60px] md:h-[70px] px-8 py-6 rounded-full border-2 border-veteran-blue bg-transparent text-black dark:text-white text-base md:text-lg font-black font-['Montserrat'] uppercase leading-normal tracking-wide hover:bg-veteran-blue hover:text-white transition-colors duration-300 flex items-center justify-center">
-                        Надіслати
+                        {{ __('Send Button') }}
                     </button>
                 </div>
             </form>
@@ -152,7 +151,7 @@
 
             // Basic validation
             if (!data.name || !data.contact || !data.message) {
-                alert('Будь ласка, заповніть всі обов\'язкові поля.');
+                alert('{{ __('Fill Required Fields') }}');
                 return;
             }
 

@@ -11,20 +11,18 @@
             class="absolute left-[48%] top-1/2 transform -translate-y-1/2 w-[30%] min-w-[400px] max-w-[570px] flex flex-col justify-center">
             <!-- Main Headline -->
             <h2 class="text-white text-[4rem] font-extrabold mb-8 leading-tight">
-                Твоя підтримка<br />
-                змінює життя<br />
-                ветеранів!
+                {!! nl2br(__('Your Support Changes Lives')) !!}
             </h2>
 
             <!-- Sub-headline -->
             <p class="text-white text-xl font-medium mb-16">
-                ВЕЛИКА ВДЯЧНІСТЬ ЗА КОЖЕН ВАШ ДОНАТ
+                {{ __('Great Gratitude') }}
             </p>
 
             <!-- Call to Action Button -->
             <button onclick="openDonationModal()"
                 class="w-fit px-[60px] py-6 border-2 border-white text-white text-xl font-extrabold rounded-full hover:bg-white hover:text-veteran-blue transition-all duration-300">
-                ПІДТРИМАТИ ЗСУ
+                {{ __('Support ZSU') }}
             </button>
         </div>
     </div>
@@ -43,20 +41,20 @@
             <!-- Main Headline -->
             <h2
                 class="text-white text-left text-[2.1875rem] font-extrabold font-montserrat leading-[1.1] mb-8 max-w-[298px]">
-                Твоя підтримка змінює життя ветеранів!
+                {{ __('Your Support Changes Lives') }}
             </h2>
 
             <!-- Sub-headline -->
             <p
                 class="text-white text-left text-[1.25rem] font-medium font-montserrat uppercase leading-[1.43] mb-8 max-w-[298px]">
-                Велика вдячність за кожен ваш донат
+                {{ __('Great Gratitude') }}
             </p>
 
             <!-- Call to Action Button -->
             <button onclick="openDonationModal()"
                 class="w-[330px] h-[70px] border-2 border-white rounded-[412px] flex items-center justify-center active:bg-white active:text-veteran-blue transition-colors">
                 <span class="text-white text-[1.25rem] font-black font-montserrat uppercase tracking-[1px]">
-                    підтримати Зсу
+                    {{ __('Support ZSU') }}
                 </span>
             </button>
         </div>

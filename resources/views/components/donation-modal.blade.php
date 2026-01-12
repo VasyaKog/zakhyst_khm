@@ -42,14 +42,13 @@
                     <!-- Title -->
                     <h2
                         class="text-2xl md:text-[2.25rem] font-bold font-['Montserrat'] text-black dark:text-white uppercase text-center leading-[1.2] mb-6 md:mb-[30px] transition-colors">
-                        ПІДТРИМАЙ СПІЛЬНІ БЛАГОДІЙНІ<br />
-                        ІНІЦІАТИВИ
+                        {!! nl2br(__('Support Joint Initiatives')) !!}
                     </h2>
 
                     <!-- Description -->
                     <p
                         class="text-base md:text-[1.25rem] font-bold font-['Montserrat'] text-black dark:text-white text-center leading-[1.33] mb-6 md:mb-[20px] transition-colors">
-                        Ветеранського простору та ГО "Захист - об'єднання волонтерів"
+                        {{ __('Veteran Space Organization') }}
                     </p>
 
                     <!-- QR Code -->
@@ -62,14 +61,14 @@
                     <div class="flex justify-center mb-8 md:mb-[35px]">
                         <button
                             class="h-[50px] px-6 md:px-10 border-2 border-veteran-blue bg-transparent text-black dark:text-white text-sm md:text-[1.125rem] font-black font-['Montserrat'] uppercase rounded-full hover:bg-veteran-blue hover:text-white transition-all duration-300 flex items-center justify-center">
-                            ДОНАТИТИ ЗА ПОСИЛАННЯМ
+                            {{ __('Donate via Link') }}
                         </button>
                     </div>
 
                     <!-- Thank You Message -->
                     <p
                         class="text-center text-base md:text-[1.25rem] font-bold font-['Montserrat'] text-black dark:text-white leading-relaxed transition-colors">
-                        Дякуємо за твою підтримку! ;
+                        {{ __('Thank You Support') }}
                     </p>
                 </div>
             </div>
@@ -80,14 +79,13 @@
                     <!-- Title -->
                     <h2
                         class="text-2xl md:text-[2.25rem] font-bold font-['Montserrat'] text-black dark:text-white uppercase text-center leading-[1.2] mb-6 md:mb-[30px] transition-colors">
-                        ПІДТРИМАЙ СПІЛЬНІ БЛАГОДІЙНІ<br />
-                        ІНІЦІАТИВИ
+                        {!! nl2br(__('Support Joint Initiatives')) !!}
                     </h2>
 
                     <!-- Description -->
                     <p
                         class="text-base md:text-[1.25rem] font-bold font-['Montserrat'] text-black dark:text-white text-center leading-[1.33] mb-8 md:mb-[50px] transition-colors">
-                        Ветеранського простору та ГО "Захист - об'єднання волонтерів"
+                        {{ __('Veteran Space Organization') }}
                     </p>
 
                     <!-- Privat Bank Image -->
@@ -114,7 +112,7 @@
                     <!-- Thank You Message -->
                     <p
                         class="text-center text-base md:text-[1.25rem] font-bold font-['Montserrat'] text-black dark:text-white leading-relaxed transition-colors">
-                        Дякуємо за твою підтримку! ;
+                        {{ __('Thank You Support') }}
                     </p>
                 </div>
             </div>

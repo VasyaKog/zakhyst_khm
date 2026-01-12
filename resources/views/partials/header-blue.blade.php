@@ -15,15 +15,15 @@
                 <div class="flex items-center space-x-8 whitespace-nowrap">
                     <a href="{{ route('about') }}"
                         class="text-white hover:text-blue-200 font-bold text-base uppercase leading-tight tracking-wide transition-colors whitespace-nowrap">
-                        ПРО НАС
+                        {{ __('Who We Are') }}
                     </a>
                     <a href="{{ route('services') }}"
                         class="text-white hover:text-blue-200 font-bold text-base uppercase leading-tight tracking-wide transition-colors whitespace-nowrap">
-                        ПОСЛУГИ
+                        {{ __('Services') }}
                     </a>
                     <a href="{{ route('contact') }}"
                         class="text-white hover:text-blue-200 font-bold text-base uppercase leading-tight tracking-wide transition-colors whitespace-nowrap">
-                        КОНТАКТИ
+                        {{ __('Contacts') }}
                     </a>
                 </div>
             </div>
@@ -32,23 +32,23 @@
                 <div class="flex items-center justify-center gap-3 xl:gap-5 min-[1700px]:gap-8 whitespace-nowrap px-4">
                     <a href="#"
                         class="text-white hover:text-blue-200 font-bold text-sm min-[1700px]:text-base uppercase leading-tight tracking-wide transition-colors whitespace-nowrap">
-                        МИ ПАМ'ЯТАЄМО
+                        {{ __('We Remember') }}
                     </a>
                     <a href="{{ route('news') }}"
                         class="text-white hover:text-blue-200 font-bold text-sm min-[1700px]:text-base uppercase leading-tight tracking-wide transition-colors whitespace-nowrap">
-                        НОВИНИ
+                        {{ __('News') }}
                     </a>
                     <a href="{{ route('path') }}"
                         class="text-white hover:text-blue-200 font-bold text-sm min-[1700px]:text-base uppercase leading-tight tracking-wide transition-colors whitespace-nowrap">
-                        ГРОМАДА - ВЕТЕРАНУ
+                        {{ __('Community To Veteran') }}
                     </a>
                     <a href="{{ route('indifferent') }}"
                         class="text-white hover:text-blue-200 font-bold text-sm min-[1700px]:text-base uppercase leading-tight tracking-wide transition-colors whitespace-nowrap">
-                        НЕБАЙДУЖИМ
+                        {{ __('To Indifferent') }}
                     </a>
                     <a href="#"
                         class="text-white hover:text-blue-200 font-bold text-sm min-[1700px]:text-base uppercase leading-tight tracking-wide transition-colors whitespace-nowrap">
-                        ВІДГУКИ
+                        {{ __('Reviews') }}
                     </a>
                 </div>
             </div>
@@ -90,7 +90,7 @@
 
                 <button onclick="openDonationModal()"
                     class="hidden min-[1400px]:flex bg-white hover:bg-blue-100 w-[260px] h-[70px] text-veteran-blue text-xl font-black px-12 py-6 rounded-full transition-colors items-center justify-center">
-                    ПІДТРИМАТИ
+                    {{ __('Support') }}
                 </button>
             </div>
         </div>

@@ -1,5 +1,5 @@
 @extends('layouts.web')
-@section('title', 'Новина')
+@section('title', __('News Article'))
 @section('content')
 
     @php
@@ -20,7 +20,7 @@
     <!-- You may be interested -->
     <div class="px-4 lg:px-[50px] max-w-[1920px] mx-auto mt-12 lg:mt-24 mb-6 lg:mb-12">
         <p class="text-[1.5rem] lg:text-[3rem] font-bold font-['Montserrat'] text-black dark:text-white leading-[1.33] transition-colors">
-            Тобі може бути цікаво
+            {{ __('You Might Be Interested') }}
         </p>
     </div>
 

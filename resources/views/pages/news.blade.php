@@ -1,5 +1,5 @@
 @extends('layouts.web')
-@section('title', 'Новини')
+@section('title', __('News'))
 @section('content')
 
     <!-- Header Section -->
@@ -8,7 +8,7 @@
             <div class="flex justify-between items-start lg:block">
                 <h1
                     class="text-[2.5rem] lg:text-[9.875rem] font-extrabold font-['Montserrat'] text-black dark:text-white uppercase leading-[0.92] whitespace-nowrap transition-colors">
-                    НОВИНИ:
+                    {{ __('NEWS:') }}
                 </h1>
 
                 <!-- Mobile Icons -->
@@ -22,9 +22,7 @@
 
             <div
                 class="text-[1rem] lg:text-[1.25rem] font-normal font-['Montserrat'] text-black dark:text-gray-300 leading-[1.43] mb-8 lg:mb-16 mt-6 lg:mt-20 transition-colors">
-                <p class="mb-0">Найсвіжіші новини для спільноти ветеранів, діючих військових, їхніх родин<br
-                        class="hidden lg:block" />та близьких,
-                    а також спільнот, які цікавляться ветеранською тематику.</p>
+                <p class="mb-0">{{ __('Latest News Description') }}</p>
             </div>
         </div>
 

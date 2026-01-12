@@ -1,6 +1,6 @@
 @extends('layouts.web')
 
-@section('title', 'Команда - ВЕТЕРАНСЬКИЙ ПРОСТІР')
+@section('title', __('Team Page Title'))
 
 @section('content')
     <div class="bg-white dark:bg-zinc-900 transition-colors duration-300">
@@ -12,14 +12,11 @@
                 <div>
                     <h1
                         class="text-[2.5rem] lg:text-[5rem] md:text-[3.75rem] font-extrabold text-black dark:text-white uppercase leading-[1.1] lg:leading-[1.02] mb-[40px] lg:mb-[77px] transition-colors">
-                        Команда<br />
-                        ветеранського<br />
-                        простору
+                        {!! nl2br(__('Veteran Space Team')) !!}
                     </h1>
                     <p
                         class="text-[1rem] lg:text-[1.25rem] md:text-[1.125rem] font-normal text-black dark:text-gray-200 text-left lg:text-justify max-w-full lg:max-w-[869px] leading-[1.43] transition-colors">
-                        Знайомся!<br />
-                        Це команда веретанського простору та партнерська команда, що допомагає втілити задумані нами ідеї.
+                        {!! nl2br(__('Team Intro')) !!}
                     </p>
                 </div>
                 <img src="{{ asset('images/icons/button-support.svg') }}" alt="Support"
@@ -56,8 +53,7 @@
                 class="lg:px-0 lg:max-w-[1200px] lg:mx-auto md:ml-[50px] mb-[50px] lg:mb-[100px]">
                 <h2
                     class="text-[2.5rem] lg:text-[5rem] md:text-[3.75rem] font-extrabold text-black dark:text-white uppercase leading-[1.1] lg:leading-[1.02] mb-[50px] lg:mb-[100px] transition-colors">
-                    Партнерська<br />
-                    Команда
+                    {!! nl2br(__('Partner Team')) !!}
                 </h2>
             </div>
 

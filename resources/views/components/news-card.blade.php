@@ -79,7 +79,7 @@ $bottomContainerMarginClass = [
             @if($showButton)
             <div class="w-44 h-12 rounded-full border-2 border-veteran-blue flex items-center justify-center group-hover:bg-veteran-blue transition-colors">
                 <span class="text-black dark:text-white group-hover:text-white text-xs font-bold uppercase leading-none tracking-wide transition-colors">
-                    ЧИТАТИ ДАЛІ
+                    {{ __('Read More') }}
                 </span>
             </div>
             @endif

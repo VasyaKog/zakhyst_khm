@@ -13,12 +13,11 @@
         <!-- Working Hours & Address -->
         <div class="flex gap-[80px] py-4">
             <div class="text-white text-base font-bold text-left">
-                Пн-Пт 09:00 - 17:30<br />
-                Сб-Нд за домовленістю
+                {!! nl2br(__('Working Hours')) !!}
             </div>
             <div class="text-white text-base font-bold text-left">
-                м. Хмельницький<br />
-                вул. Кам'янецька, 76
+                {{ __('Address City') }}<br />
+                {{ __('Address Street') }}
             </div>
         </div>
 
@@ -54,14 +53,13 @@
         <div class="flex justify-between items-start mb-4">
             <!-- Schedule -->
             <div class="text-white text-sm font-bold font-montserrat leading-[18px]">
-                Пн-Пт 09:00 - 17:30<br>
-                Сб-Нд за домовленістю
+                {!! nl2br(__('Working Hours')) !!}
             </div>
 
             <!-- Address -->
             <div class="text-white text-sm font-bold font-montserrat leading-[18px] text-left">
-                м. Хмельницький<br>
-                вул. Кам'янецька, 76
+                {{ __('Address City') }}<br>
+                {{ __('Address Street') }}
             </div>
         </div>
 

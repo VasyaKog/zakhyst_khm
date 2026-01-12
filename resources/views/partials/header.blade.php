@@ -16,15 +16,15 @@
                 <div class="flex items-center space-x-8 whitespace-nowrap">
                     <a href="{{ route('about') }}"
                         class="text-black dark:text-white hover:text-veteran-blue dark:hover:text-veteran-blue font-bold text-base uppercase leading-tight tracking-wide transition-colors whitespace-nowrap">
-                        ПРО НАС
+                        {{ __('About') }}
                     </a>
                     <a href="{{ route('services') }}"
                         class="text-black dark:text-white hover:text-veteran-blue dark:hover:text-veteran-blue font-bold text-base uppercase leading-tight tracking-wide transition-colors whitespace-nowrap">
-                        ПОСЛУГИ
+                        {{ __('Services') }}
                     </a>
                     <a href="{{ route('contact') }}"
                         class="text-black dark:text-white hover:text-veteran-blue dark:hover:text-veteran-blue font-bold text-base uppercase leading-tight tracking-wide transition-colors whitespace-nowrap">
-                        КОНТАКТИ
+                        {{ __('Contacts') }}
                     </a>
                 </div>
             </div>
@@ -33,23 +33,23 @@
                 <div class="flex items-center justify-center gap-3 xl:gap-5 min-[1700px]:gap-8 flex-wrap">
                     <a href="#"
                         class="text-black dark:text-white hover:text-veteran-blue font-bold text-sm min-[1700px]:text-base uppercase leading-tight tracking-wide transition-colors whitespace-nowrap">
-                        МИ ПАМ'ЯТАЄМО
+                        {{ __('We Remember') }}
                     </a>
                     <a href="{{ route('news') }}"
                         class="text-black dark:text-white hover:text-veteran-blue font-bold text-sm min-[1700px]:text-base uppercase leading-tight tracking-wide transition-colors whitespace-nowrap">
-                        НОВИНИ
+                        {{ __('News') }}
                     </a>
                     <a href="{{ route('path') }}"
                         class="text-black dark:text-white hover:text-veteran-blue font-bold text-sm min-[1700px]:text-base uppercase leading-tight tracking-wide transition-colors whitespace-nowrap">
-                        ГРОМАДА - ВЕТЕРАНУ
+                        {{ __('Community to Veteran') }}
                     </a>
                     <a href="{{ route('indifferent') }}"
                         class="text-black dark:text-white hover:text-veteran-blue font-bold text-sm min-[1700px]:text-base uppercase leading-tight tracking-wide transition-colors whitespace-nowrap">
-                        НЕБАЙДУЖИМ
+                        {{ __('To Indifferent') }}
                     </a>
                     <a href="#"
                         class="text-black dark:text-white hover:text-veteran-blue font-bold text-sm min-[1700px]:text-base uppercase leading-tight tracking-wide transition-colors whitespace-nowrap">
-                        ВІДГУКИ
+                        {{ __('Reviews') }}
                     </a>
                 </div>
             </div>
@@ -106,9 +106,9 @@
                         src="{{ asset('images/icons/switch.svg') }}" alt="Dark Mode Toggle">
                 </button>
 
-                <button onclick="openDonationModal()"
-                    class="hidden min-[1400px]:flex bg-veteran-blue hover:bg-blue-700 w-[260px] h-[70px] text-white text-xl font-black px-12 py-6 rounded-full transition-colors items-center justify-center">
-                    ПІДТРИМАТИ
+                <button onclick="window.openDonationModal()"
+                    class="w-[200px] h-[50px] bg-veteran-blue hover:bg-blue-700 text-white font-black text-sm uppercase rounded-full transition-colors tracking-wide">
+                    {{ __('Support') }}
                 </button>
             </div>
         </div>

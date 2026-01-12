@@ -1,5 +1,5 @@
 @extends('layouts.web')
-@section('title', 'Головна')
+@section('title', __('News'))
 @section('content')
     <!-- Desktop Hero & Footer Wrapper (>=768px) -->
     <div class="hidden md:block">
@@ -9,7 +9,7 @@
             @empty
                 <!-- Fallback if no banners -->
                 <div class="absolute inset-0 w-full min-h-[820px] bg-gray-200 flex items-center justify-center">
-                    <p class="text-gray-500 text-xl">Немає банерів для відображення</p>
+                    <p class="text-gray-500 text-xl">{{ __('No Banners Display') }}</p>
                 </div>
             @endforelse
         </div>
@@ -34,7 +34,7 @@
                     <input type="text" 
                         id="desktop-search-input"
                         class="w-full bg-transparent border-none text-black dark:text-white text-base font-normal font-montserrat placeholder-black dark:placeholder-gray-400 focus:ring-0 p-0"
-                        placeholder="Не можеш знайти? Пошукай тут..."
+                        placeholder="{{ __('Search Placeholder') }}"
                         autocomplete="off">
                     <div class="ml-auto w-8 h-8 bg-black dark:bg-white rounded-full flex items-center justify-center cursor-pointer">
                         <img class="w-6 h-6 dark:invert" src="{{ asset('images/icons/icon-search.svg') }}" alt="Search">
@@ -56,7 +56,7 @@
             @empty
                 <!-- Fallback if no banners -->
                 <div class="absolute inset-0 w-full h-full bg-gray-200 flex items-center justify-center">
-                    <p class="text-gray-500 text-lg">Немає банерів</p>
+                    <p class="text-gray-500 text-lg">{{ __('No Banners') }}</p>
                 </div>
             @endforelse
         </div>
@@ -67,7 +67,7 @@
                 <input type="text"
                     id="mobile-search-input"
                     class="flex-1 bg-transparent border-none text-black dark:text-white text-sm font-normal font-montserrat placeholder-black dark:placeholder-gray-400 focus:ring-0 p-0 truncate"
-                    placeholder="Не можеш знайти? Пошукай тут..."
+                    placeholder="{{ __('Search Placeholder') }}"
                     autocomplete="off">
                 <div class="w-7 h-7 bg-black dark:bg-white rounded-full flex-shrink-0 flex items-center justify-center ml-2">
                     <img class="w-4 h-4 dark:invert" src="{{ asset('images/icons/icon-search.svg') }}" alt="Search">
@@ -87,7 +87,7 @@
             class="absolute right-0 top-4 w-[70px] h-[70px] cursor-pointer hover:opacity-80 transition-opacity z-20"
             onclick="openContactModal()">
         <h2 class="text-black dark:text-white text-[2.5rem] font-extrabold font-montserrat uppercase leading-tight px-4 mb-8 transition-colors">
-            Види послуг
+            {{ __('Types of Services') }}
         </h2>
 
         <!-- Swipe Carousel Container -->
@@ -154,7 +154,7 @@
             <!-- All Services Button -->
             <a href="{{ route('services') }}"
                 class="px-8 py-3 border-2 border-veteran-blue text-black dark:text-white text-sm font-black font-montserrat uppercase tracking-wide rounded-full active:bg-veteran-blue active:text-white transition-colors">
-                всі послуги
+                {{ __('All Services') }}
             </a>
         </div>
     </div>
@@ -168,7 +168,7 @@
             <!-- Title Section -->
             <div class="absolute left-0 top-0">
                 <h2 class="text-black dark:text-white text-[72px] font-extrabold font-montserrat uppercase leading-[85.36px] m-0 transition-colors">
-                    Види<br />послуг
+                    {!! nl2br(__('Types of Services')) !!}
                 </h2>
             </div>
 
@@ -176,7 +176,7 @@
             <div class="absolute right-0 top-[90px]">
                 <a href="{{ route('services') }}"
                     class="w-64 h-16 border-2 border-veteran-blue bg-white dark:bg-zinc-900 text-black dark:text-white text-xl font-black font-montserrat uppercase tracking-wide cursor-pointer transition-all duration-300 ease-in-out rounded-[412px] flex items-center justify-center hover:bg-veteran-blue hover:text-white">
-                    всі послуги
+                    {{ __('All Services') }}
                 </a>
             </div>
 
@@ -273,7 +273,7 @@
     <div class="block md:hidden px-4 mt-12 mb-12">
         <div class="flex justify-between items-center mb-6">
             <h2 class="text-black dark:text-white text-[2.5rem] font-extrabold font-montserrat uppercase leading-tight transition-colors">
-                Новини
+                {{ __('News') }}
             </h2>
         </div>
 
@@ -307,7 +307,7 @@
                             class="w-32 h-10 rounded-full border-2 border-veteran-blue flex items-center justify-center group-active:bg-veteran-blue transition-colors">
                             <span
                                 class="text-black dark:text-white group-active:text-white text-[0.625rem] font-bold uppercase tracking-wide transition-colors">
-                                ЧИТАТИ ДАЛІ
+                                {{ __('Read More') }}
                             </span>
                         </div>
                     </div>
@@ -319,7 +319,7 @@
     <div class="md:hidden flex justify-end">
         <a href="{{ route('news') }}"
             class="text-base font-bold text-black dark:text-white uppercase border-b border-black dark:border-white hover:text-veteran-blue dark:hover:text-veteran-blue hover:border-veteran-blue dark:hover:border-veteran-blue transition-colors">
-            БІЛЬШЕ НОВИН ТУТ
+            {{ __('More News Here') }}
         </a>
     </div>
 
@@ -329,7 +329,7 @@
         <div class="flex justify-end mb-8">
             <a href="{{ route('news') }}"
                 class="text-base font-bold text-black dark:text-white uppercase border-b border-black dark:border-white hover:text-veteran-blue dark:hover:text-veteran-blue hover:border-veteran-blue dark:hover:border-veteran-blue transition-colors">
-                БІЛЬШЕ НОВИН ТУТ
+                {{ __('More News Here') }}
             </a>
         </div>
 
@@ -362,8 +362,7 @@
                         <div
                             class="w-44 h-12 rounded-[200px] border-2 border-veteran-blue flex items-center justify-center group-hover:bg-veteran-blue transition-colors cursor-pointer">
                             <span
-                                class="text-black dark:text-white group-hover:text-white text-xs font-bold uppercase leading-none tracking-wide transition-colors">ЧИТАТИ
-                                ДАЛІ</span>
+                                class="text-black dark:text-white group-hover:text-white text-xs font-bold uppercase leading-none tracking-wide transition-colors">{{ __('Read More') }}</span>
                         </div>
                     </div>
                 </a>
@@ -374,7 +373,7 @@
     <!-- Mobile Team Section (<768px) -->
     <div class="block md:hidden mt-16 mb-16">
         <h2 class="text-black dark:text-white text-[2.5rem] font-extrabold font-montserrat uppercase leading-tight mb-8 transition-colors">
-            Наша<br>команда
+            {!! nl2br(__('Our Team')) !!}
         </h2>
 
         <!-- Swipe Carousel -->
@@ -412,7 +411,7 @@
             <!-- Team Button -->
             <a href="{{ route('team') }}"
                 class="px-12 py-3 border-2 border-veteran-blue text-black dark:text-white text-lg font-black font-montserrat uppercase tracking-wide rounded-full active:bg-veteran-blue active:text-white transition-colors">
-                команда
+                {{ __('Team') }}
             </a>
         </div>
     </div>
@@ -423,7 +422,7 @@
             <!-- Title Section -->
             <div class="absolute left-0 top-0">
                 <h2 class="text-black dark:text-white text-[4.5rem] font-extrabold font-montserrat uppercase leading-[85.36px] m-0 transition-colors">
-                    Наша<br />команда
+                    {!! nl2br(__('Our Team')) !!}
                 </h2>
             </div>
 
@@ -431,7 +430,7 @@
             <div class="absolute right-0 top-5">
                 <a href="{{ route('team') }}"
                     class="w-64 h-16 border-2 border-veteran-blue bg-white dark:bg-zinc-900 text-black dark:text-white text-xl font-black font-montserrat uppercase tracking-wide cursor-pointer transition-all duration-300 ease-in-out rounded-[412px] flex items-center justify-center hover:bg-veteran-blue hover:text-white">
-                    команда
+                    {{ __('Team') }}
                 </a>
             </div>
 
@@ -458,7 +457,7 @@
     <!-- Mobile Map Section (<768px) -->
     <div class="block md:hidden mt-12 mb-16">
         <h2 class="text-black dark:text-white text-[2.5rem] font-extrabold font-montserrat uppercase leading-tight mb-8 transition-colors">
-            Хмельницький<br>вдячний
+            {!! nl2br(__('Khmelnytskyi Grateful')) !!}
         </h2>
 
         <div class="rounded-[30px] overflow-hidden border-2 border-black dark:border-zinc-500 transition-colors">
@@ -474,7 +473,7 @@
         <!-- Title in responsive container aligned with other sections -->
         <div class="px-4 lg:px-8 xl:px-4 2xl:px-0 lg:max-w-[900px] xl:max-w-[1100px] 2xl:max-w-[1170px] lg:mx-auto mb-16">
             <h2 class="text-black dark:text-white text-[4.5rem] font-extrabold font-montserrat uppercase leading-[85.36px] m-0 transition-colors">
-                Хмельницький<br />вдячний
+                {!! nl2br(__('Khmelnytskyi Grateful')) !!}
             </h2>
         </div>
 
@@ -492,7 +491,7 @@
     <!-- Mobile Partners Section (<768px) -->
     <div class="block md:hidden mt-12 mb-16">
         <h2 class="text-black dark:text-white text-[2.5rem] font-extrabold font-montserrat uppercase leading-tight mb-8 transition-colors">
-            Наші партнери
+            {{ __('Our Partners') }}
         </h2>
 
         <!-- 2-Column Grid with centered odd last item -->
@@ -518,7 +517,7 @@
             <!-- Title Section -->
             <div class="absolute left-0 top-0">
                 <h2 class="text-black dark:text-white text-[4.5rem] font-extrabold font-montserrat uppercase leading-[85.36px] m-0 transition-colors">
-                    Наші партнери
+                    {{ __('Our Partners') }}
                 </h2>
             </div>
 

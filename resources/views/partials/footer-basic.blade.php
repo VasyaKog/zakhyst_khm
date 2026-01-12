@@ -18,12 +18,12 @@
         <!-- Working Hours & Address -->
         <div class="flex gap-[80px] py-4">
             <div class="text-black dark:text-white text-base font-bold text-left transition-colors">
-                Пн-Пт 09:00 - 17:30<br />
-                Сб-Нд за домовленістю
+                {{ __('Mon-Fri') }} 09:00 - 17:30<br />
+                {{ __('Sat-Sun') }} {{ __('By Appointment') }}
             </div>
             <div class="text-black dark:text-white text-base font-bold text-left transition-colors">
-                м. Хмельницький<br />
-                вул. Кам'янецька, 76
+                {{ __('City Khmelnytskyi') }}<br />
+                {{ __('Address Street') }}
             </div>
         </div>
 
@@ -69,15 +69,15 @@
         <div class="flex justify-between items-start mb-4 flex-wrap gap-4">
             <!-- Schedule -->
             <div class="text-black dark:text-white text-sm font-bold font-montserrat leading-snug transition-colors">
-                Пн-Пт 09:00 - 17:30<br>
-                Сб-Нд за домовленістю
+                {{ __('Mon-Fri') }} 09:00 - 17:30<br>
+                {{ __('Sat-Sun') }} {{ __('By Appointment') }}
             </div>
 
             <!-- Address -->
             <div
                 class="text-black dark:text-white text-sm font-bold font-montserrat leading-snug text-left transition-colors">
-                м. Хмельницький<br>
-                вул. Кам'янецька, 76
+                {{ __('City Khmelnytskyi') }}<br>
+                {{ __('Address Street') }}
             </div>
         </div>
 

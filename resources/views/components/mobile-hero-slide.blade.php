@@ -17,7 +17,7 @@
 
         <div class="absolute inset-0 flex flex-col pt-36">
             <h1 class="text-white text-[2.25rem] font-bold font-unbounded mb-5 leading-[116%] tracking-normal px-12">
-                Для кого ми:
+                {{ __('Who We Are') }}
             </h1>
 
             <div class="flex flex-col gap-2 mx-8">
@@ -25,28 +25,28 @@
                     class="bg-white dark:bg-zinc-800 w-full min-h-12 rounded-full py-2.5 px-6 flex items-center gap-3 transition-colors">
                     <span
                         class="text-black dark:text-white text-[0.75rem] font-bold font-montserrat uppercase leading-tight transition-colors">
-                        ВЕТЕРАНИ ТА ЧЛЕНИ ЇХ РОДИН
+                        {{ __('Veterans Family') }}
                     </span>
                 </div>
                 <div
                     class="bg-white dark:bg-zinc-800 w-full min-h-12 rounded-full py-2.5 px-6 flex items-center gap-3 transition-colors">
                     <span
                         class="text-black dark:text-white text-[0.75rem] font-bold font-montserrat uppercase leading-tight transition-colors">
-                        ЧЛЕНИ СІМЕЙ ЗАГИБЛИХ
+                        {{ __('Fallen Family') }}
                     </span>
                 </div>
                 <div
                     class="bg-white dark:bg-zinc-800 w-full min-h-12 rounded-full py-2.5 px-6 flex items-center gap-3 transition-colors">
                     <span
                         class="text-black dark:text-white text-[0.75rem] font-bold font-montserrat uppercase leading-tight transition-colors">
-                        ВІЙСЬКОВІ ТА ЧЛЕНИ ЇХ РОДИН
+                        {{ __('Military Family') }}
                     </span>
                 </div>
                 <div
                     class="bg-white dark:bg-zinc-800 w-full min-h-12 rounded-full py-2.5 px-6 flex items-center gap-3 transition-colors">
                     <span
                         class="text-black dark:text-white text-[0.75rem] font-bold font-montserrat uppercase leading-tight transition-colors">
-                        ЧЛЕНИ СІМЕЙ ВІЙСЬКОВОПОЛОНЕННИХ ТА ЗНИКЛИХ БЕЗВІСТИ
+                        {{ __('POW Family') }}
                     </span>
                 </div>
             </div>
@@ -61,10 +61,10 @@
         <div class="absolute inset-0 flex flex-col justify-center px-4">
             <div class="p-6">
                 <h2 class="text-white text-[2.625rem] font-bold font-unbounded leading-tight mb-4">
-                    Бізнес - ветеранам!
+                    {{ __('Business To Veterans') }}
                 </h2>
                 <p class="text-white text-lg font-medium font-unbounded uppercase">
-                    Дізнайся більше про цінні пропозиції <span class="underline">тут</span>
+                    {{ __('Learn More Offers') }} <span class="underline">{{ __('Here') }}</span>
                 </p>
             </div>
         </div>
@@ -77,14 +77,14 @@
 
         <div class="absolute inset-0 flex flex-col justify-center px-4">
             <h2 class="text-white text-[2rem] font-bold font-unbounded leading-tight mb-4">
-                Вони загинули за Україну!
+                {{ __('Died For Ukraine') }}
             </h2>
             <p class="text-white text-lg font-medium font-unbounded uppercase mb-6">
-                Віртуальний меморіал полеглим захисникам та захисницям
+                {{ __('Virtual Memorial') }}
             </p>
             <button class="w-full max-w-[280px] h-14 border-2 border-white rounded-full flex items-center justify-center">
                 <span class="text-white text-base font-black font-montserrat uppercase tracking-wide">
-                    відвідати меморіал
+                    {{ __('Visit Memorial') }}
                 </span>
             </button>
         </div>

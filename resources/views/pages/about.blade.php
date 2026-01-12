@@ -1,6 +1,6 @@
 @extends('layouts.web')
 
-@section('title', 'Про нас - ВЕТЕРАНСЬКИЙ ПРОСТІР')
+@section('title', __('About Page Title'))
 
 @section('content')
     <div class="bg-white dark:bg-zinc-900 transition-colors duration-300">
@@ -11,7 +11,7 @@
                 class="px-4 lg:px-8 xl:px-4 2xl:px-0 lg:max-w-[900px] xl:max-w-[1100px] 2xl:max-w-[1200px] lg:mx-auto mb-[40px] lg:mb-[80px] flex justify-between items-start">
                 <h1
                     class="text-[2.5rem] lg:text-[9.875rem] font-extrabold font-['Montserrat'] text-black dark:text-white uppercase leading-[0.92] transition-colors">
-                    Про нас:
+                    {{ __('About Us') }}
                 </h1>
                 <img src="{{ asset('images/icons/button-support.svg') }}" alt="Support"
                     class="w-[70px] h-[70px] cursor-pointer hover:opacity-80 transition-opacity ml-4 shrink-0"
@@ -23,9 +23,8 @@
                 class="px-4 lg:px-8 xl:px-4 2xl:px-0 lg:max-w-[900px] xl:max-w-[1100px] 2xl:max-w-[1200px] lg:mx-auto mb-[60px] lg:mb-[120px]">
                 <div
                     class="max-w-full lg:max-w-[869px] text-[1rem] lg:text-[1.25rem] font-normal font-['Montserrat'] text-black dark:text-gray-200 text-left lg:text-justify leading-[1.43] space-y-2 transition-colors">
-                    <p>Привіт!</p>
-                    <p>Тут ти детальніше ознайомишся з розвитком Ветеранського простору та зрозумієш, який шлях ми пройшли,
-                        щоб мати можливість допомогти тобі адаптуватися до нового життя.</p>
+                    <p>{{ __('About Hello') }}</p>
+                    <p>{{ __('About Description') }}</p>
                 </div>
             </div>
 
@@ -34,16 +33,16 @@
                 class="px-4 lg:px-8 xl:px-4 2xl:px-0 lg:max-w-[900px] xl:max-w-[1100px] 2xl:max-w-[1200px] lg:mx-auto mb-[60px] lg:mb-[100px]">
                 <h2
                     class="text-[1.5rem] lg:text-[3rem] font-extrabold font-['Montserrat'] text-black dark:text-white leading-[1.1] lg:leading-[0.93] mb-[30px] lg:mb-[60px] max-w-[870px] transition-colors">
-                    Заклад створений з метою надання отримувачам послуг:
+                    {{ __('Goal Title') }}
                 </h2>
 
                 <!-- Goal Cards -->
                 <div class="grid grid-cols-2 lg:flex gap-4 lg:gap-[34px]">
-                    <x-goal-card title="адаптації" icon="adaptation-icon.svg" />
-                    <x-goal-card title="профілактики" icon="profilactic-icon.svg" />
-                    <x-goal-card title="інформування" icon="information-icon.svg" />
-                    <x-goal-card title="консультування" icon="consult-icon.svg" />
-                    <x-goal-card title="представництва інтересів" icon="interests-icon.svg" />
+                    <x-goal-card :title="__('Goal Adaptation')" icon="adaptation-icon.svg" />
+                    <x-goal-card :title="__('Goal Prevention')" icon="profilactic-icon.svg" />
+                    <x-goal-card :title="__('Goal Information')" icon="information-icon.svg" />
+                    <x-goal-card :title="__('Goal Consultation')" icon="consult-icon.svg" />
+                    <x-goal-card :title="__('Goal Representation')" icon="interests-icon.svg" />
                 </div>
             </div>
 
@@ -51,12 +50,11 @@
             <div class="px-4 lg:px-0 lg:max-w-[1200px] lg:mx-auto mb-[60px] lg:mb-[100px]">
                 <h2
                     class="text-[1.5rem] lg:text-[3rem] font-extrabold font-['Montserrat'] text-black dark:text-white leading-[1.1] lg:leading-[0.92] mb-[20px] lg:mb-[30px] transition-colors">
-                    Завдання:
+                    {{ __('Tasks Title') }}
                 </h2>
                 <div
                     class="max-w-[873px] text-[1rem] lg:text-[1.25rem] font-normal font-['Montserrat'] text-black dark:text-gray-200 leading-[1.43] transition-colors">
-                    <p>Основним завданням Закладу є забезпечення взаємодії з органами влади та місцевого самоврядування,
-                        громадськими об'єднаннями для вирішення проблемних питань ветеранської спільноти.</p>
+                    <p>{{ __('Task Description') }}</p>
                 </div>
             </div>
 
@@ -79,7 +77,7 @@
                             <x-timeline-event :date="$event->date_display" :year="$event->year"
                                 :description="$event->description" />
                         @empty
-                            <p class="text-gray-500 text-center">Немає подій для відображення.</p>
+                            <p class="text-gray-500 text-center">{{ __('Timeline No Events') }}</p>
                         @endforelse
                     </div>
                 </div>

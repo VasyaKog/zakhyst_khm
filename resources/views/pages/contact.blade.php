@@ -10,13 +10,13 @@
                 <div class="mb-8 lg:mb-16">
                     <h1
                         class="text-[2.5rem] lg:text-[9.875rem] font-extrabold font-['Montserrat'] text-black dark:text-white uppercase leading-[0.92] mb-6 lg:mb-8 transition-colors">
-                        КОНТАКТИ:
+                        {{ __('Contacts:') }}
                     </h1>
 
                     <div
                         class="max-w-full lg:max-w-[869px] text-[1rem] lg:text-[1.25rem] font-normal font-['Montserrat'] text-black dark:text-gray-200 leading-[1.43] mb-8 lg:mb-16 transition-colors">
-                        <p class="mb-0">Давай разом перейдемо на наступний рівень життя!</p>
-                        <p>Пиши, телефонуй, завітай до нас.</p>
+                        <p class="mb-0">{{ __('Contact Intro Next Level') }}</p>
+                        <p>{{ __('Contact Intro Write Call') }}</p>
                     </div>
                 </div>
 
@@ -34,7 +34,7 @@
                             <div>
                                 <h3
                                     class="text-[1rem] lg:text-[1.25rem] font-light font-['Montserrat'] text-black dark:text-white uppercase tracking-[1px] mb-2 lg:mb-4 transition-colors">
-                                    Локація простору:
+                                    {{ __('Space Location') }}
                                 </h3>
                                 <p
                                     class="text-[1.25rem] lg:text-[1.5rem] font-bold font-['Montserrat'] text-black dark:text-gray-200 leading-[1.08] transition-colors">
@@ -46,12 +46,12 @@
                             <div>
                                 <h3
                                     class="text-[1rem] lg:text-[1.25rem] font-light font-['Montserrat'] text-black dark:text-white uppercase tracking-[1px] mb-2 lg:mb-4 transition-colors">
-                                    Розклад:
+                                    {{ __('Schedule') }}
                                 </h3>
                                 <div
                                     class="text-[1.25rem] lg:text-[1.5rem] font-bold font-['Montserrat'] text-black dark:text-gray-200 leading-[1.63] transition-colors">
-                                    <p class="mb-0">Пн-Пт 09:00 - 17:30</p>
-                                    <p>Сб-Нд за домовленістю</p>
+                                    <p class="mb-0">{{ __('Mon-Fri') }} 09:00 - 17:30</p>
+                                    <p>{{ __('Sat-Sun') }} {{ __('By Appointment') }}</p>
                                 </div>
                             </div>
                         </div>
@@ -62,7 +62,7 @@
                             <div>
                                 <h3
                                     class="text-[1rem] lg:text-[1.25rem] font-light font-['Montserrat'] text-black dark:text-white uppercase tracking-[1px] mb-2 lg:mb-4 transition-colors">
-                                    Телефон:
+                                    {{ __('Phone') }}
                                 </h3>
                                 <p
                                     class="text-[1.25rem] lg:text-[1.5rem] font-bold font-['Montserrat'] text-black dark:text-gray-200 leading-[1.08] transition-colors">
@@ -74,7 +74,7 @@
                             <div>
                                 <h3
                                     class="text-[1rem] lg:text-[1.25rem] font-light font-['Montserrat'] text-black dark:text-white uppercase tracking-[1px] mb-2 lg:mb-4 transition-colors">
-                                    E-mail:
+                                    {{ __('E-mail') }}
                                 </h3>
                                 <p
                                     class="text-[1.25rem] lg:text-[1.5rem] font-bold font-['Montserrat'] text-black dark:text-gray-200 leading-[1.5] break-words transition-colors">

@@ -16,7 +16,7 @@
 
         <div class="absolute left-[326px] top-[243px]">
             <h1 class="text-white text-6xl font-bold font-unbounded leading-[74px] tracking-wide">
-                Для кого ми:
+                {{ __('Who We Are') }}
             </h1>
         </div>
 
@@ -29,7 +29,7 @@
                 </div>
                 <span
                     class="text-black dark:text-white text-xs font-bold font-montserrat uppercase leading-tight tracking-wide transition-colors">
-                    ВЕТЕРАНИ ТА ЧЛЕНИ ЇХ РОДИН
+                    {{ __('Veterans Family') }}
                 </span>
             </div>
             <div
@@ -40,7 +40,7 @@
                 </div>
                 <span
                     class="text-black dark:text-white text-xs font-bold font-montserrat uppercase leading-tight tracking-wide transition-colors">
-                    ЧЛЕНИ СІМЕЙ ЗАГИБЛИХ
+                    {{ __('Fallen Family') }}
                 </span>
             </div>
             <div
@@ -50,7 +50,7 @@
                 </div>
                 <span
                     class="text-black dark:text-white text-xs font-bold font-montserrat uppercase leading-tight tracking-wide transition-colors">
-                    ВІЙСЬКОВІ ТА ЧЛЕНИ ЇХ РОДИН
+                    {{ __('Military Family') }}
                 </span>
             </div>
             <div
@@ -61,7 +61,7 @@
                 </div>
                 <span
                     class="text-black dark:text-white text-xs font-bold font-montserrat uppercase leading-tight tracking-wide transition-colors">
-                    ЧЛЕНИ СІМЕЙ ВІЙСЬКОВОПОЛОНЕННИХ<br />ТА ЗНИКЛИХ БЕЗВІСТИ
+                    {!! nl2br(__('POW Family')) !!}
                 </span>
             </div>
         </div>
@@ -75,12 +75,12 @@
             style="border-top-left-radius: 150px; border-top-right-radius: 50px; border-bottom-left-radius: 150px; border-bottom-right-radius: 150px;">
             <div
                 class="absolute left-[90px] top-[74px] w-[519px] h-36 text-white text-6xl font-bold font-unbounded leading-[74.08px] tracking-wide">
-                Бізнес - ветеранам!
+                {{ __('Business To Veterans') }}
             </div>
             <div
                 class="absolute left-[90px] top-[260px] w-[519px] h-16 text-white text-2xl font-medium font-unbounded uppercase leading-9 tracking-tight">
-                Дізнайся більше про цінні пропозиції
-                <span class="underline">тут</span>
+                {{ __('Learn More Offers') }}
+                <span class="underline">{{ __('Here') }}</span>
             </div>
         </div>
 
@@ -92,16 +92,16 @@
         <div class="absolute left-[325px] top-[200px] w-[669px] h-96 rounded-[412px]">
             <div
                 class="absolute left-0 top-0 w-[669px] h-36 text-white text-6xl font-bold font-unbounded leading-[74.08px] tracking-wide">
-                Вони загинули за Україну!
+                {{ __('Died For Ukraine') }}
             </div>
             <div
                 class="absolute left-0 top-[186px] w-[669px] h-16 text-white text-2xl font-medium font-unbounded uppercase leading-9 tracking-tight">
-                Віртуальний меморіал полеглим захисникам та захисницям
+                {{ __('Virtual Memorial') }}
             </div>
             <div
                 class="absolute left-0 top-[317px] w-[320px] h-16 border-2 border-white flex items-center justify-center rounded-[412px]">
                 <span class="text-white text-xl font-black font-montserrat uppercase tracking-wide">
-                    відвідати меморіал
+                    {{ __('Visit Memorial') }}
                 </span>
             </div>
         </div>

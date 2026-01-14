@@ -64,7 +64,7 @@
                 </svg>
             </div>
              <!-- Bottom Part: Flexible CSS Box starting at 80px -->
-            <div class="flex-1 w-full -mt-[1px] border-x border-b border-black dark:border-zinc-600 rounded-b-[20px] relative z-0 transition-colors dark:bg-zinc-800" 
+            <div class="flex-1 w-full -mt-[1px] border-x border-b border-black dark:border-zinc-600 rounded-b-[20px] relative z-0 transition-colors dark:!bg-zinc-800" 
                  style="background-color: {{ $color }};"></div>
         @else
             <!-- Default Variant Mobile SVG (Original) -->
@@ -78,7 +78,7 @@
                 </svg>
             </div>
             <!-- Bottom Part for Default -->
-            <div class="flex-1 w-full -mt-[1px] border-x border-b border-black dark:border-zinc-600 rounded-b-[20px] relative z-0 transition-colors dark:bg-zinc-800" 
+            <div class="flex-1 w-full -mt-[1px] border-x border-b border-black dark:border-zinc-600 rounded-b-[20px] relative z-0 transition-colors dark:!bg-zinc-800" 
                  style="background-color: {{ $color }};"></div>
         @endif
     </div>

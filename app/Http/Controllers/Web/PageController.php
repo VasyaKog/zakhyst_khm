@@ -72,12 +72,14 @@ class PageController extends Controller
 
     public function contactSubmit(Request $request)
     {
-        $request->validate([
-            'first_name' => 'required|string|max:255',
-            'last_name' => 'nullable|string|max:255',
-            'subject' => 'nullable|string|max:255',
-            'message' => 'required|string|max:2000',
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'surname' => 'nullable|string|max:255',
+            'contact' => 'required|string|max:255',
+            'message' => 'required|string|max:5000',
         ]);
+
+        \App\Models\ContactMessage::create($validated);
 
         return response()->json([
             'success' => true,

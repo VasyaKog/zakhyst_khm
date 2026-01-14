@@ -5,10 +5,7 @@
     {{-- Header --}}
     <div class="bg-veteran-blue text-white px-5 py-4 flex items-center justify-between">
         <div class="flex items-center gap-3">
-            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10" />
-                <path d="M12 8v4M12 16h.01" />
-            </svg>
+            <x-icons.accessibility class="w-6 h-6" />
             <span class="font-bold text-lg">Доступність</span>
         </div>
         <button onclick="accessibility.toggleAccessibilityPanel()" class="hover:opacity-80 transition-opacity">
@@ -140,9 +137,5 @@
 <button id="accessibility-trigger" onclick="accessibility.toggleAccessibilityPanel()"
     class="fixed bottom-4 left-4 z-[99] w-14 h-14 bg-veteran-blue text-white rounded-full shadow-lg hover:bg-blue-700 transition-all items-center justify-center group hidden min-[1400px]:flex"
     title="Налаштування доступності">
-    <svg class="w-7 h-7 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none"
-        stroke="currentColor" stroke-width="2">
-        <circle cx="12" cy="4.5" r="2.5" />
-        <path d="M12 7.5v2.5M12 10l-4 8M12 10l4 8M7 14h10" />
-    </svg>
+    <x-icons.accessibility class="w-7 h-7 group-hover:scale-110 transition-transform" />
 </button>

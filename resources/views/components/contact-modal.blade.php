@@ -148,31 +148,42 @@
             // Get form data
             const formData = new FormData(form);
             const data = Object.fromEntries(formData);
+            const url = "{{ route('contact.submit') }}";
 
-            // Basic validation
-            if (!data.name || !data.contact || !data.message) {
-                alert('{{ __('Fill Required Fields') }}');
-                return;
-            }
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                },
+                body: JSON.stringify(data)
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // Show toast notification
+                        const toast = document.getElementById('contact-toast');
+                        toast.classList.remove('opacity-0');
+                        toast.classList.add('opacity-100');
 
-            // Here you would typically send the data to your backend
-            console.log('Contact form data:', data);
+                        // Hide after 3 seconds
+                        setTimeout(function () {
+                            toast.classList.remove('opacity-100');
+                            toast.classList.add('opacity-0');
+                        }, 3000);
 
-            // Show toast notification
-            const toast = document.getElementById('contact-toast');
-            toast.classList.remove('opacity-0');
-            toast.classList.add('opacity-100');
-
-            // Hide after 3 seconds
-            setTimeout(function () {
-                toast.classList.remove('opacity-100');
-                toast.classList.add('opacity-0');
-            }, 3000);
-
-            // Reset form and close modal
-            form.reset();
-            modal.classList.add('hidden');
-            modal.classList.remove('flex');
+                        // Reset form and close modal
+                        form.reset();
+                        modal.classList.add('hidden');
+                        modal.classList.remove('flex');
+                    } else {
+                        alert('Помилка відправки. Спробуйте пізніше.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Помилка відправки. Перевірте з\'єднання.');
+                });
         });
 
         // Function to open modal

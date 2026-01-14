@@ -167,15 +167,7 @@ button {
 }
 
 // Accessibility panel styles
-#accessibility-panel {
-    &.hidden+#accessibility-trigger {
-        display: flex;
-    }
-
-    &:not(.hidden)+#accessibility-trigger {
-        display: none;
-    }
-}
+// Accessibility panel toggling logic moved to JS/Tailwind
 
 // Custom range slider styling for accessibility panel
 input[type="range"].accent-veteran-blue {

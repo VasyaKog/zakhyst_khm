@@ -209,9 +209,15 @@ function toggleAccessibilityPanel() {
         const isHidden = panel.style.display === 'none' || panel.style.display === '';
         panel.style.display = isHidden ? 'block' : 'none';
         panel.classList.toggle('hidden', !isHidden);
-        // Also toggle trigger button visibility (show when panel hidden)
+        // Also toggle trigger button visibility
         if (trigger) {
-            trigger.style.display = isHidden ? 'none' : 'flex';
+            if (isHidden) {
+                // Opening panel: Hide trigger
+                trigger.style.display = 'none';
+            } else {
+                // Closing panel: Reset inline style so Tailwind governs visibility
+                trigger.style.display = '';
+            }
         }
     }
 }

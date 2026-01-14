@@ -1,4 +1,5 @@
 {
+    "Home": "HOME",
     "We Remember": "WE REMEMBER",
     "News": "NEWS",
     "Community to Veteran": "COMMUNITY TO VETERAN",
@@ -6,7 +7,9 @@
     "Reviews": "REVIEWS",
     "Support": "SUPPORT",
     "Support the Armed Forces": "SUPPORT THE ARMED FORCES",
-    "Your support changes lives": "Your support changes veterans' lives!",
+    "Your Support Changes Lives": "Your support changes veterans' lives!",
+    "Great Gratitude": "GREAT GRATITUDE FROM THE WHOLE TEAM FOR YOUR SUPPORT.",
+    "Support ZSU": "SUPPORT ZSU",
     "Social Networks": "Social Networks",
     "Contacts": "Contacts",
     "Working Hours": "Mon-Fri 09:00 - 17:30\nSat-Sun by appointment",
@@ -104,5 +107,8 @@
     "Tasks Title": "Tasks:",
     "Task Description": "The main task of the Institution is to ensure interaction with authorities and local self-government, public associations to resolve problematic issues of the veteran community.",
     "Timeline No Events": "No events to display.",
-    "Send Button": "Send"
+    "Send Button": "Send",
+    "Great Gratitude": "GREAT GRATITUDE FROM THE WHOLE TEAM FOR YOUR SUPPORT.",
+    "Support ZSU": "SUPPORT ZSU",
+    "Your Support Changes Lives": "Your support changes veterans' lives!"
 }

@@ -1,5 +1,5 @@
 @extends('layouts.web')
-@section('title', __('News'))
+@section('title', __('Home'))
 @section('content')
     <!-- Desktop Hero & Footer Wrapper (>=768px) -->
     <div class="hidden md:block">
@@ -18,30 +18,36 @@
         <footer class="flex items-center justify-between py-4 pb-[124px]">
             <!-- Contact Info -->
             <div class="flex items-center">
-                <img src="{{ asset('images/icons/watsapnp.svg') }}" alt="WhatsApp" class="w-6 h-6 dark:invert transition-all">
-                <img src="{{ asset('images/icons/signal.svg') }}" alt="Signal" class="w-6 h-6 ml-2 dark:invert transition-all">
-                <img src="{{ asset('images/icons/viber.svg') }}" alt="Viber" class="w-6 h-6 ml-2 dark:invert transition-all">
+                <img src="{{ asset('images/icons/watsapnp.svg') }}" alt="WhatsApp"
+                    class="w-6 h-6 dark:invert transition-all">
+                <img src="{{ asset('images/icons/signal.svg') }}" alt="Signal"
+                    class="w-6 h-6 ml-2 dark:invert transition-all">
+                <img src="{{ asset('images/icons/viber.svg') }}" alt="Viber"
+                    class="w-6 h-6 ml-2 dark:invert transition-all">
                 <span class="text-black dark:text-white text-base font-bold font-montserrat transition-colors"
                     style="margin-left: 20px; margin-right: 56px;">+38
                     067 563 0090</span>
-                <img src="{{ asset('images/icons/facebook.svg') }}" alt="Facebook" class="w-6 h-6 dark:invert transition-all">
-                <img src="{{ asset('images/icons/instagram.svg') }}" alt="Instagram" class="w-6 h-6 ml-2 dark:invert transition-all">
+                <img src="{{ asset('images/icons/facebook.svg') }}" alt="Facebook"
+                    class="w-6 h-6 dark:invert transition-all">
+                <img src="{{ asset('images/icons/instagram.svg') }}" alt="Instagram"
+                    class="w-6 h-6 ml-2 dark:invert transition-all">
             </div>
 
             <!-- Search Bar -->
             <div class="flex-1 max-w-[995px] relative">
-                <div class="w-full h-12 rounded-[300px] border border-black flex items-center px-5 bg-white dark:bg-zinc-800 transition-colors">
-                    <input type="text" 
-                        id="desktop-search-input"
+                <div
+                    class="w-full h-12 rounded-[300px] border border-black flex items-center px-5 bg-white dark:bg-zinc-800 transition-colors">
+                    <input type="text" id="desktop-search-input"
                         class="w-full bg-transparent border-none text-black dark:text-white text-base font-normal font-montserrat placeholder-black dark:placeholder-gray-400 focus:ring-0 p-0"
-                        placeholder="{{ __('Search Placeholder') }}"
-                        autocomplete="off">
-                    <div class="ml-auto w-8 h-8 bg-black dark:bg-white rounded-full flex items-center justify-center cursor-pointer">
+                        placeholder="{{ __('Search Placeholder') }}" autocomplete="off">
+                    <div
+                        class="ml-auto w-8 h-8 bg-black dark:bg-white rounded-full flex items-center justify-center cursor-pointer">
                         <img class="w-6 h-6 dark:invert" src="{{ asset('images/icons/icon-search.svg') }}" alt="Search">
                     </div>
                 </div>
                 <!-- Dropdown Results -->
-                <div id="desktop-search-results" class="hidden absolute top-full left-0 w-full mt-2 bg-white dark:bg-zinc-900 rounded-xl shadow-xl z-50 overflow-hidden border border-gray-100 dark:border-zinc-700 max-h-[400px] overflow-y-auto">
+                <div id="desktop-search-results"
+                    class="hidden absolute top-full left-0 w-full mt-2 bg-white dark:bg-zinc-900 rounded-xl shadow-xl z-50 overflow-hidden border border-gray-100 dark:border-zinc-700 max-h-[400px] overflow-y-auto">
                     <!-- Results injected by JS -->
                 </div>
             </div>
@@ -63,18 +69,19 @@
 
         <!-- Mobile Search Bar -->
         <div class="w-full relative z-30">
-            <div class="w-full h-11 rounded-full border border-black flex items-center px-4 bg-white dark:bg-zinc-800 transition-colors">
-                <input type="text"
-                    id="mobile-search-input"
+            <div
+                class="w-full h-11 rounded-full border border-black flex items-center px-4 bg-white dark:bg-zinc-800 transition-colors">
+                <input type="text" id="mobile-search-input"
                     class="flex-1 bg-transparent border-none text-black dark:text-white text-sm font-normal font-montserrat placeholder-black dark:placeholder-gray-400 focus:ring-0 p-0 truncate"
-                    placeholder="{{ __('Search Placeholder') }}"
-                    autocomplete="off">
-                <div class="w-7 h-7 bg-black dark:bg-white rounded-full flex-shrink-0 flex items-center justify-center ml-2">
+                    placeholder="{{ __('Search Placeholder') }}" autocomplete="off">
+                <div
+                    class="w-7 h-7 bg-black dark:bg-white rounded-full flex-shrink-0 flex items-center justify-center ml-2">
                     <img class="w-4 h-4 dark:invert" src="{{ asset('images/icons/icon-search.svg') }}" alt="Search">
                 </div>
             </div>
-             <!-- Dropdown Results -->
-            <div id="mobile-search-results" class="hidden absolute top-full left-0 w-full mt-2 bg-white dark:bg-zinc-900 rounded-xl shadow-xl z-50 overflow-hidden border border-gray-100 dark:border-zinc-700 max-h-[300px] overflow-y-auto">
+            <!-- Dropdown Results -->
+            <div id="mobile-search-results"
+                class="hidden absolute top-full left-0 w-full mt-2 bg-white dark:bg-zinc-900 rounded-xl shadow-xl z-50 overflow-hidden border border-gray-100 dark:border-zinc-700 max-h-[300px] overflow-y-auto">
                 <!-- Results injected by JS -->
             </div>
         </div>
@@ -86,7 +93,8 @@
         <img src="{{ asset('images/icons/button-support.svg') }}" alt="Support"
             class="absolute right-0 top-4 w-[70px] h-[70px] cursor-pointer hover:opacity-80 transition-opacity z-20"
             onclick="openContactModal()">
-        <h2 class="text-black dark:text-white text-[2.5rem] font-extrabold font-montserrat uppercase leading-tight px-4 mb-8 transition-colors">
+        <h2
+            class="text-black dark:text-white text-[2.5rem] font-extrabold font-montserrat uppercase leading-tight px-4 mb-8 transition-colors">
             {{ __('Types of Services') }}
         </h2>
 
@@ -118,7 +126,8 @@
 
                         <!-- Arrow -->
                         <div class="absolute right-2 top-2 w-7 h-7">
-                            <img src="{{ asset('images/icons/arrow.svg') }}" alt="Arrow" class="w-7 h-7 dark:invert transition-all">
+                            <img src="{{ asset('images/icons/arrow.svg') }}" alt="Arrow"
+                                class="w-7 h-7 dark:invert transition-all">
                         </div>
 
                         <!-- Title -->
@@ -161,13 +170,15 @@
 
     <!-- Desktop Services Section (>=768px) -->
     <div class="hidden md:flex justify-center mt-[152px] mb-[300px] px-4">
-        <div id="desktop-services-container" class="relative w-full max-w-[1215px] min-h-[765px] h-auto transition-all duration-300">
+        <div id="desktop-services-container"
+            class="relative w-full max-w-[1215px] min-h-[765px] h-auto transition-all duration-300">
             <img src="{{ asset('images/icons/button-support.svg') }}" alt="Support"
                 class="absolute right-0 top-0 w-[70px] h-[70px] cursor-pointer hover:opacity-80 transition-opacity z-20"
                 onclick="openContactModal()">
             <!-- Title Section -->
             <div class="absolute left-0 top-0">
-                <h2 class="text-black dark:text-white text-[72px] font-extrabold font-montserrat uppercase leading-[85.36px] m-0 transition-colors">
+                <h2
+                    class="text-black dark:text-white text-[72px] font-extrabold font-montserrat uppercase leading-[85.36px] m-0 transition-colors">
                     {!! nl2br(__('Types of Services')) !!}
                 </h2>
             </div>
@@ -197,7 +208,7 @@
                     <a href="{{ route('services') }}"
                         class="desktop-service-card relative w-[370px] min-h-[496px] cursor-pointer transition-transform duration-300 hover:scale-105 flex flex-col"
                         style="background-image: url('{{ asset('images/backgrounds/service-bg.svg') }}'); background-size: contain; background-repeat: no-repeat; background-position: top center;">
-                        
+
                         <!-- Icon (Fixed Position relative to top-left) -->
                         <div
                             class="absolute left-[39px] top-[41px] w-[59px] h-[59px] rounded-full flex items-center justify-center">
@@ -207,18 +218,20 @@
 
                         <!-- Arrow (Fixed Position) -->
                         <div class="absolute right-2 top-2 w-7 h-7">
-                            <img src="{{ asset('images/icons/arrow.svg') }}" alt="Arrow" class="w-7 h-7 dark:invert transition-all">
+                            <img src="{{ asset('images/icons/arrow.svg') }}" alt="Arrow"
+                                class="w-7 h-7 dark:invert transition-all">
                         </div>
 
                         <!-- Content Flow Wrapper -->
                         <div class="flex flex-col h-full pt-[143px] px-[39px] pb-[40px]">
-                             <!-- Title -->
+                            <!-- Title -->
                             <h3 class="w-72 text-white text-[30px] font-extrabold font-montserrat leading-10 m-0 mb-[40px]">
                                 {{ $service->title }}
                             </h3>
 
                             <!-- Description -->
-                            <div class="w-full text-white text-xl font-normal font-montserrat leading-7 m-0 overflow-hidden line-clamp-6 [&>ul]:list-disc [&>ul]:pl-2 [&>ul>li]:mb-7">
+                            <div
+                                class="w-full text-white text-xl font-normal font-montserrat leading-7 m-0 overflow-hidden line-clamp-6 [&>ul]:list-disc [&>ul]:pl-2 [&>ul>li]:mb-7">
                                 {!! $service->left_content !!}
                             </div>
                         </div>
@@ -229,14 +242,14 @@
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const container = document.getElementById('desktop-services-container');
             const cards = document.querySelectorAll('.desktop-service-card');
-            
+
             if (!container || cards.length === 0) return;
 
             const baseCardHeight = 496;
-            
+
             function adjustServiceCards() {
                 // simple reset
                 cards.forEach(card => card.style.height = '');
@@ -255,15 +268,15 @@
 
                 // Apply max height to all for uniformity
                 cards.forEach(card => {
-                     card.style.height = `${maxContentHeight}px`;
+                    card.style.height = `${maxContentHeight}px`;
                 });
-                
+
                 // Note: Container height is handled by CSS (h-auto)
             }
 
             adjustServiceCards();
             window.addEventListener('resize', adjustServiceCards);
-            
+
 
             setInterval(adjustServiceCards, 1000);
         });
@@ -272,7 +285,8 @@
     <!-- Mobile News Section (<768px) -->
     <div class="block md:hidden px-4 mt-12 mb-12">
         <div class="flex justify-between items-center mb-6">
-            <h2 class="text-black dark:text-white text-[2.5rem] font-extrabold font-montserrat uppercase leading-tight transition-colors">
+            <h2
+                class="text-black dark:text-white text-[2.5rem] font-extrabold font-montserrat uppercase leading-tight transition-colors">
                 {{ __('News') }}
             </h2>
         </div>
@@ -286,12 +300,14 @@
                         src="{{ asset('storage/' . $article->image_url) }}" alt="{{ $article->title }}">
 
                     <!-- Title -->
-                    <div class="w-full mt-4 text-black dark:text-white text-xl font-bold leading-tight line-clamp-2 transition-colors">
+                    <div
+                        class="w-full mt-4 text-black dark:text-white text-xl font-bold leading-tight line-clamp-2 transition-colors">
                         {{ $article->title }}
                     </div>
 
                     <!-- Description -->
-                    <div class="w-full mt-3 text-black dark:text-gray-300 text-sm font-normal leading-snug line-clamp-5 transition-colors">
+                    <div
+                        class="w-full mt-3 text-black dark:text-gray-300 text-sm font-normal leading-snug line-clamp-5 transition-colors">
                         {{ $article->summary }}
                     </div>
 
@@ -342,19 +358,22 @@
                         src="{{ asset('storage/' . $article->image_url) }}" alt="{{ $article->title }}">
 
                     <!-- Title -->
-                    <div class="w-full mt-10 text-black dark:text-white text-3xl font-bold leading-10 h-20 line-clamp-2 transition-colors">
+                    <div
+                        class="w-full mt-10 text-black dark:text-white text-3xl font-bold leading-10 h-20 line-clamp-2 transition-colors">
                         {{ $article->title }}
                     </div>
 
                     <!-- Description -->
-                    <div class="w-full mt-20 text-black dark:text-gray-300 text-base font-normal leading-snug line-clamp-3 transition-colors">
+                    <div
+                        class="w-full mt-20 text-black dark:text-gray-300 text-base font-normal leading-snug line-clamp-3 transition-colors">
                         {{ $article->summary }}
                     </div>
 
                     <!-- Date & Button row -->
                     <div class="w-full mt-auto pt-20 flex justify-between items-center">
                         <!-- Date -->
-                        <div class="text-black dark:text-gray-400 text-sm font-bold uppercase leading-tight tracking-wide transition-colors">
+                        <div
+                            class="text-black dark:text-gray-400 text-sm font-bold uppercase leading-tight tracking-wide transition-colors">
                             {{ $article->published_at->isoFormat('D MMMM, YYYY') }}
                         </div>
 
@@ -372,7 +391,8 @@
 
     <!-- Mobile Team Section (<768px) -->
     <div class="block md:hidden mt-16 mb-16">
-        <h2 class="text-black dark:text-white text-[2.5rem] font-extrabold font-montserrat uppercase leading-tight mb-8 transition-colors">
+        <h2
+            class="text-black dark:text-white text-[2.5rem] font-extrabold font-montserrat uppercase leading-tight mb-8 transition-colors">
             {!! nl2br(__('Our Team')) !!}
         </h2>
 
@@ -382,14 +402,18 @@
             <div class="flex gap-4 px-1" style="width: max-content;">
                 @foreach($team as $member)
                     <div class="flex-shrink-0 w-[394px]" style="scroll-snap-align: center;">
-                        <div class="w-full h-[440px] bg-zinc-300 dark:bg-zinc-800 rounded-[20px] overflow-hidden transition-colors">
-                            <img class="w-full h-full object-cover dark:opacity-90 transition-opacity" style="object-position: center 5%;"
-                                src="{{ asset('storage/' . $member->photo) }}" alt="{{ $member->full_name }}">
+                        <div
+                            class="w-full h-[440px] bg-zinc-300 dark:bg-zinc-800 rounded-[20px] overflow-hidden transition-colors">
+                            <img class="w-full h-full object-cover dark:opacity-90 transition-opacity"
+                                style="object-position: center 5%;" src="{{ asset('storage/' . $member->photo) }}"
+                                alt="{{ $member->full_name }}">
                         </div>
-                        <div class="mt-6 text-black dark:text-white text-2xl font-extrabold font-montserrat leading-8 transition-colors">
+                        <div
+                            class="mt-6 text-black dark:text-white text-2xl font-extrabold font-montserrat leading-8 transition-colors">
                             {{ $member->full_name }}
                         </div>
-                        <div class="mt-3 text-black dark:text-white text-base font-normal font-montserrat leading-6 transition-colors">
+                        <div
+                            class="mt-3 text-black dark:text-white text-base font-normal font-montserrat leading-6 transition-colors">
                             {{ $member->role }}
                         </div>
                     </div>
@@ -421,7 +445,8 @@
         <div class="relative w-[1170px] h-[600px]">
             <!-- Title Section -->
             <div class="absolute left-0 top-0">
-                <h2 class="text-black dark:text-white text-[4.5rem] font-extrabold font-montserrat uppercase leading-[85.36px] m-0 transition-colors">
+                <h2
+                    class="text-black dark:text-white text-[4.5rem] font-extrabold font-montserrat uppercase leading-[85.36px] m-0 transition-colors">
                     {!! nl2br(__('Our Team')) !!}
                 </h2>
             </div>
@@ -438,14 +463,18 @@
             <div class="absolute left-0 top-64 flex gap-[30px]">
                 @foreach($team as $member)
                     <div class="relative">
-                        <div class="w-[370px] h-[440px] bg-zinc-300 dark:bg-zinc-800 rounded-[20px] overflow-hidden transition-colors">
-                            <img class="w-full h-full object-cover dark:opacity-90 transition-opacity" style="object-position: center 5%;"
-                                src="{{ asset('storage/' . $member->photo) }}" alt="{{ $member->full_name }}">
+                        <div
+                            class="w-[370px] h-[440px] bg-zinc-300 dark:bg-zinc-800 rounded-[20px] overflow-hidden transition-colors">
+                            <img class="w-full h-full object-cover dark:opacity-90 transition-opacity"
+                                style="object-position: center 5%;" src="{{ asset('storage/' . $member->photo) }}"
+                                alt="{{ $member->full_name }}">
                         </div>
-                        <div class="mt-10 text-black dark:text-white text-3xl font-extrabold font-montserrat leading-10 transition-colors">
+                        <div
+                            class="mt-10 text-black dark:text-white text-3xl font-extrabold font-montserrat leading-10 transition-colors">
                             {{ $member->full_name }}
                         </div>
-                        <div class="mt-6 text-black dark:text-white text-xl font-normal font-montserrat leading-7 transition-colors">
+                        <div
+                            class="mt-6 text-black dark:text-white text-xl font-normal font-montserrat leading-7 transition-colors">
                             {{ $member->role }}
                         </div>
                     </div>
@@ -456,7 +485,8 @@
 
     <!-- Mobile Map Section (<768px) -->
     <div class="block md:hidden mt-12 mb-16">
-        <h2 class="text-black dark:text-white text-[2.5rem] font-extrabold font-montserrat uppercase leading-tight mb-8 transition-colors">
+        <h2
+            class="text-black dark:text-white text-[2.5rem] font-extrabold font-montserrat uppercase leading-tight mb-8 transition-colors">
             {!! nl2br(__('Khmelnytskyi Grateful')) !!}
         </h2>
 
@@ -472,14 +502,16 @@
     <div class="hidden md:block pt-[300px]">
         <!-- Title in responsive container aligned with other sections -->
         <div class="px-4 lg:px-8 xl:px-4 2xl:px-0 lg:max-w-[900px] xl:max-w-[1100px] 2xl:max-w-[1170px] lg:mx-auto mb-16">
-            <h2 class="text-black dark:text-white text-[4.5rem] font-extrabold font-montserrat uppercase leading-[85.36px] m-0 transition-colors">
+            <h2
+                class="text-black dark:text-white text-[4.5rem] font-extrabold font-montserrat uppercase leading-[85.36px] m-0 transition-colors">
                 {!! nl2br(__('Khmelnytskyi Grateful')) !!}
             </h2>
         </div>
 
         <!-- Map at original large size, centered -->
         <div class="flex justify-center">
-            <div class="w-[1815px] rounded-[100px] overflow-hidden border-2 border-black dark:border-zinc-500 transition-colors">
+            <div
+                class="w-[1815px] rounded-[100px] overflow-hidden border-2 border-black dark:border-zinc-500 transition-colors">
                 <div class="relative h-[750px]">
                     <img src="{{ asset('images/backgrounds/map.png') }}" alt="Хмельницький Вдячний Map"
                         class="w-full h-full object-cover dark:opacity-80 transition-opacity">
@@ -490,7 +522,8 @@
 
     <!-- Mobile Partners Section (<768px) -->
     <div class="block md:hidden mt-12 mb-16">
-        <h2 class="text-black dark:text-white text-[2.5rem] font-extrabold font-montserrat uppercase leading-tight mb-8 transition-colors">
+        <h2
+            class="text-black dark:text-white text-[2.5rem] font-extrabold font-montserrat uppercase leading-tight mb-8 transition-colors">
             {{ __('Our Partners') }}
         </h2>
 
@@ -516,7 +549,8 @@
         <div class="relative w-[1170px]">
             <!-- Title Section -->
             <div class="absolute left-0 top-0">
-                <h2 class="text-black dark:text-white text-[4.5rem] font-extrabold font-montserrat uppercase leading-[85.36px] m-0 transition-colors">
+                <h2
+                    class="text-black dark:text-white text-[4.5rem] font-extrabold font-montserrat uppercase leading-[85.36px] m-0 transition-colors">
                     {{ __('Our Partners') }}
                 </h2>
             </div>
@@ -801,7 +835,7 @@
                         // Calculate index
                         // We add half width to center threshold
                         const index = Math.round(scrollLeft / (cardWidth + gap));
-                        
+
                         servicesDots.forEach((dot, i) => {
                             if (i === index) {
                                 dot.classList.remove('bg-gray-300');
@@ -820,10 +854,10 @@
             const teamDots = document.querySelectorAll('#mobile-team-dots button');
 
             if (teamCarousel && teamDots.length > 0) {
-                 // Scroll to specific member
+                // Scroll to specific member
                 window.scrollToTeamMember = (index) => {
-                    const cardWidth = 394; 
-                    const gap = 16; 
+                    const cardWidth = 394;
+                    const gap = 16;
                     const scrollLeft = index * (cardWidth + gap);
                     teamCarousel.scrollTo({
                         left: scrollLeft,
@@ -840,7 +874,7 @@
                         const cardWidth = 394;
                         const gap = 16;
                         const index = Math.round(scrollLeft / (cardWidth + gap));
-                        
+
                         teamDots.forEach((dot, i) => {
                             if (i === index) {
                                 dot.classList.remove('bg-gray-300', 'dark:bg-zinc-600');

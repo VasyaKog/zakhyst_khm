@@ -1,35 +1,35 @@
 <div id="mobile-menu"
     class="fixed inset-0 bg-white dark:bg-zinc-900 z-[60] hidden flex flex-col h-screen transition-colors">
     <!-- Header: UA, Theme Switch, Close Button -->
-    <div class="flex items-center justify-between px-5 pt-6 pb-6">
-        <div class="flex items-center gap-4">
-            <!-- Language Dropdown -->
-            <div class="relative">
-                <button class="flex items-center space-x-1 text-black dark:text-white transition-colors"
-                    onclick="toggleMobileLanguageDropdown()">
-                    <span class="font-bold text-lg">{{ strtoupper(app()->getLocale()) }}</span>
-                    <img class="pb-1 dark:invert" src="{{ asset('images/icons/arrow-down.svg') }}" alt="Dropdown">
-                </button>
-                <div id="mobile-language-menu"
-                    class="hidden absolute top-full left-0 mt-2 bg-white dark:bg-zinc-800 shadow-lg rounded-lg overflow-hidden z-50 min-w-[80px]">
-                    <a href="{{ route('lang.switch', 'ua') }}"
-                        class="block px-4 py-2 text-sm font-bold text-black dark:text-white hover:bg-gray-100 dark:hover:bg-zinc-700 {{ app()->getLocale() === 'ua' ? 'bg-gray-100 dark:bg-zinc-700' : '' }}">
-                        UA
-                    </a>
-                    <a href="{{ route('lang.switch', 'en') }}"
-                        class="block px-4 py-2 text-sm font-bold text-black dark:text-white hover:bg-gray-100 dark:hover:bg-zinc-700 {{ app()->getLocale() === 'en' ? 'bg-gray-100 dark:bg-zinc-700' : '' }}">
-                        EN
-                    </a>
-                </div>
+    <!-- Header: UA, Buttons, Close Button -->
+    <div class="flex items-center justify-between px-5 pt-6 pb-6 relative">
+        <!-- Left: Language Dropdown -->
+        <div class="relative z-10">
+            <button class="flex items-center space-x-1 text-black dark:text-white transition-colors"
+                onclick="toggleMobileLanguageDropdown()">
+                <span class="font-bold text-lg">{{ strtoupper(app()->getLocale()) }}</span>
+                <img class="pb-1 dark:invert" src="{{ asset('images/icons/arrow-down.svg') }}" alt="Dropdown">
+            </button>
+            <div id="mobile-language-menu"
+                class="hidden absolute top-full left-0 mt-2 bg-white dark:bg-zinc-800 shadow-lg rounded-lg overflow-hidden z-50 min-w-[80px]">
+                <a href="{{ route('lang.switch', 'ua') }}"
+                    class="block px-4 py-2 text-sm font-bold text-black dark:text-white hover:bg-gray-100 dark:hover:bg-zinc-700 {{ app()->getLocale() === 'ua' ? 'bg-gray-100 dark:bg-zinc-700' : '' }}">
+                    UA
+                </a>
+                <a href="{{ route('lang.switch', 'en') }}"
+                    class="block px-4 py-2 text-sm font-bold text-black dark:text-white hover:bg-gray-100 dark:hover:bg-zinc-700 {{ app()->getLocale() === 'en' ? 'bg-gray-100 dark:bg-zinc-700' : '' }}">
+                    EN
+                </a>
             </div>
+        </div>
 
-            <!-- Accessibility Toggle -->
-            <button class="transition-colors" onclick="toggleMobileAccessibility()" title="Доступність">
-                <svg class="w-7 h-7 text-black dark:text-white transition-colors" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="4.5" r="2.5" />
-                    <path d="M12 7.5v2.5M12 10l-4 8M12 10l4 8M7 14h10" />
-                </svg>
+        <!-- Center: Accessibility & Theme Toggle -->
+        <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center gap-3">
+            <!-- Accessibility Toggle (Pill Button) -->
+            <button
+                class="h-[30px] min-w-[50px] px-3 flex items-center justify-center border border-black dark:border-white rounded-full transition-colors"
+                onclick="toggleMobileAccessibility()" title="Доступність">
+                <x-icons.accessibility class="w-5 h-5 text-black dark:text-white transition-colors" />
             </button>
 
             <!-- Dark Mode Switch -->
@@ -39,9 +39,9 @@
             </button>
         </div>
 
-        <!-- Close Button -->
+        <!-- Right: Close Button -->
         <button type="button" onclick="toggleMobileMenu()"
-            class="text-black dark:text-white focus:outline-none transition-colors">
+            class="text-black dark:text-white focus:outline-none transition-colors z-10">
             <div class="relative w-8 h-8">
                 <div class="absolute w-full h-[2px] bg-blue-600 top-1/2 left-0 -translate-y-1/2 rotate-45"></div>
                 <div class="absolute w-full h-[2px] bg-blue-600 top-1/2 left-0 -translate-y-1/2 -rotate-45"></div>

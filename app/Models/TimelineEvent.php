@@ -8,7 +8,22 @@ use Spatie\Translatable\HasTranslations;
 
 class TimelineEvent extends Model
 {
-    use HasTranslations;
+    use HasTranslations {
+        getAttributeValue as traitGetAttributeValue;
+    }
+
+    public function getAttributeValue($key)
+    {
+        $value = $this->traitGetAttributeValue($key);
+
+        if ($this->isTranslatableAttribute($key)) {
+            if (empty($value) && app()->getLocale() !== config('app.fallback_locale')) {
+                return $this->getTranslation($key, config('app.fallback_locale'));
+            }
+        }
+
+        return $value;
+    }
 
     public $translatable = ['description', 'date_display'];
 

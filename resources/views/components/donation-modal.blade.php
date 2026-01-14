@@ -1,7 +1,7 @@
 <!-- Toast Notification -->
 <div id="copy-toast"
     class="fixed bottom-8 left-1/2 -translate-x-1/2 bg-veteran-blue text-white px-6 py-3 rounded-lg shadow-lg z-[60] opacity-0 transition-opacity duration-300 pointer-events-none">
-    <p class="text-base font-bold font-['Montserrat'] m-0">IBAN скопійовано!</p>
+    <p class="text-base font-bold font-['Montserrat'] m-0">{{ __('IBAN copied') }}</p>
 </div>
 
 <!-- Donation Modal -->
@@ -29,7 +29,7 @@
                     style="border: none; border-bottom: 1px solid #9CA3AF; outline: none;">
                     <div
                         class="text-lg md:text-2xl font-bold font-['Montserrat'] text-black dark:text-white transition-colors">
-                        Приват Банк</div>
+                        {{ __('Privat Bank') }}</div>
                 </button>
             </div>
         </div>

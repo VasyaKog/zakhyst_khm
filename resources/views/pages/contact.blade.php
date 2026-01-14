@@ -38,7 +38,7 @@
                                 </h3>
                                 <p
                                     class="text-[1.25rem] lg:text-[1.5rem] font-bold font-['Montserrat'] text-black dark:text-gray-200 leading-[1.08] transition-colors">
-                                    м. Хмельницький, вул. Кам'янецька, 76
+                                    {{ __('Address City') }}, {{ __('Address Street') }}
                                 </p>
                             </div>
 

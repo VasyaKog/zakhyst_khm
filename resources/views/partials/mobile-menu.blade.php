@@ -1,7 +1,6 @@
 <div id="mobile-menu"
     class="fixed inset-0 bg-white dark:bg-zinc-900 z-[60] hidden flex flex-col h-screen transition-colors">
     <!-- Header: UA, Theme Switch, Close Button -->
-    <!-- Header: UA, Buttons, Close Button -->
     <div class="flex items-center justify-between px-5 pt-6 pb-6 relative">
         <!-- Left: Language Dropdown -->
         <div class="relative z-10">
@@ -28,7 +27,7 @@
             <!-- Accessibility Toggle (Pill Button) -->
             <button
                 class="h-[30px] min-w-[50px] px-3 flex items-center justify-center border border-black dark:border-white rounded-full transition-colors"
-                onclick="toggleMobileAccessibility()" title="Доступність">
+                onclick="toggleMobileAccessibility()" title="{{ __('Accessability') }}">
                 <x-icons.accessibility class="w-5 h-5 text-black dark:text-white transition-colors" />
             </button>
 
@@ -113,12 +112,12 @@
         {{-- Mobile Accessibility Panel (Initially Hidden) --}}
         <div id="mobile-accessibility-panel"
             class="hidden w-full bg-gray-50 dark:bg-zinc-800 rounded-2xl p-5 mb-6 space-y-4 transition-colors border border-transparent dark:border-zinc-700">
-            <h3 class="font-bold text-lg text-black dark:text-white text-center mb-4">Доступність</h3>
+            <h3 class="font-bold text-lg text-black dark:text-white text-center mb-4">{{ __('Accessability') }}</h3>
 
             {{-- Font Size --}}
             <div class="space-y-2">
                 <div class="flex justify-between items-center">
-                    <label class="font-semibold text-sm text-black dark:text-white">Розмір тексту</label>
+                    <label class="font-semibold text-sm text-black dark:text-white">{{ __('Font Size') }}</label>
                     <span id="mobile-a11y-font-value" class="text-sm font-bold text-veteran-blue">100%</span>
                 </div>
                 <input type="range" id="mobile-a11y-font-slider" min="100" max="120" value="100" step="5"
@@ -129,7 +128,7 @@
             {{-- Saturation --}}
             <div class="space-y-2">
                 <div class="flex justify-between items-center">
-                    <label class="font-semibold text-sm text-black dark:text-white">Насиченість</label>
+                    <label class="font-semibold text-sm text-black dark:text-white">{{ __('Saturation') }}</label>
                     <span id="mobile-a11y-saturation-value" class="text-sm font-bold text-veteran-blue">100%</span>
                 </div>
                 <input type="range" id="mobile-a11y-saturation-slider" min="0" max="100" value="100" step="10"
@@ -144,7 +143,7 @@
                     class="flex items-center gap-2 cursor-pointer p-2 bg-white dark:bg-zinc-700 rounded-lg border border-gray-200 dark:border-zinc-600 transition-colors hover:bg-gray-50 dark:hover:bg-zinc-600">
                     <input type="checkbox" id="mobile-a11y-motion" class="w-5 h-5 accent-veteran-blue rounded"
                         onchange="accessibility.toggleReduceMotion()">
-                    <span class="text-sm font-medium text-black dark:text-white">Без анімацій</span>
+                    <span class="text-sm font-medium text-black dark:text-white">{{ __('Disable Animations') }}</span>
                 </label>
 
                 {{-- High Contrast --}}
@@ -152,7 +151,7 @@
                     class="flex items-center gap-2 cursor-pointer p-2 bg-white dark:bg-zinc-700 rounded-lg border border-gray-200 dark:border-zinc-600 transition-colors hover:bg-gray-50 dark:hover:bg-zinc-600">
                     <input type="checkbox" id="mobile-a11y-contrast" class="w-5 h-5 accent-veteran-blue rounded"
                         onchange="accessibility.toggleHighContrast()">
-                    <span class="text-sm font-medium text-black dark:text-white">Контраст</span>
+                    <span class="text-sm font-medium text-black dark:text-white">{{ __('High Contrast') }}</span>
                 </label>
 
                 {{-- Large Cursor --}}
@@ -160,7 +159,7 @@
                     class="flex items-center gap-2 cursor-pointer p-2 bg-white dark:bg-zinc-700 rounded-lg border border-gray-200 dark:border-zinc-600 transition-colors">
                     <input type="checkbox" id="mobile-a11y-cursor" class="w-5 h-5 accent-veteran-blue"
                         onchange="accessibility.toggleLargeCursor()">
-                    <span class="text-sm font-medium text-black dark:text-white">Курсор</span>
+                    <span class="text-sm font-medium text-black dark:text-white">{{ __('Large Cursor') }}</span>
                 </label>
 
                 {{-- Highlight Links --}}
@@ -168,14 +167,14 @@
                     class="flex items-center gap-2 cursor-pointer p-2 bg-white dark:bg-zinc-700 rounded-lg border border-gray-200 dark:border-zinc-600 transition-colors">
                     <input type="checkbox" id="mobile-a11y-links" class="w-5 h-5 accent-veteran-blue"
                         onchange="accessibility.toggleHighlightLinks()">
-                    <span class="text-sm font-medium text-black dark:text-white">Посилання</span>
+                    <span class="text-sm font-medium text-black dark:text-white">{{ __('Highlight Links') }}</span>
                 </label>
             </div>
 
             {{-- Reset Button --}}
             <button onclick="accessibility.resetAccessibility(); syncMobileAccessibilityUI()"
                 class="w-full py-2 text-sm font-bold text-gray-600 dark:text-gray-300 border border-gray-300 dark:border-zinc-600 rounded-full hover:border-veteran-blue hover:text-veteran-blue transition-colors">
-                Скинути
+                {{ __('Reset') }}
             </button>
         </div>
 
@@ -183,7 +182,7 @@
             <!-- Support Button -->
             <button onclick="openDonationModal()"
                 class="w-full h-[60px] bg-veteran-blue text-white rounded-full font-bold text-lg uppercase mb-8 hover:bg-blue-700 transition-colors flex items-center justify-center">
-                ПІДТРИМАТИ ЗСУ
+                {{ __('Support ZSU') }}
             </button>
 
             <!-- Footer Icons & Phone -->

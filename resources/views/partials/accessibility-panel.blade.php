@@ -6,7 +6,7 @@
     <div class="bg-veteran-blue text-white px-5 py-4 flex items-center justify-between">
         <div class="flex items-center gap-3">
             <x-icons.accessibility class="w-6 h-6" />
-            <span class="font-bold text-lg">Доступність</span>
+            <span class="font-bold text-lg">{{__('Accessability')}}</span>
         </div>
         <button onclick="accessibility.toggleAccessibilityPanel()" class="hover:opacity-80 transition-opacity">
             <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -20,7 +20,7 @@
         {{-- Font Size --}}
         <div class="space-y-2">
             <div class="flex justify-between items-center">
-                <label class="font-semibold text-sm text-black dark:text-white">Розмір тексту</label>
+                <label class="font-semibold text-sm text-black dark:text-white">{{__('Text Size')}}</label>
                 <span id="a11y-font-value" class="text-sm font-bold text-veteran-blue">100%</span>
             </div>
             <input type="range" id="a11y-font-slider" min="100" max="120" value="100" step="5"
@@ -35,7 +35,7 @@
         {{-- Saturation --}}
         <div class="space-y-2">
             <div class="flex justify-between items-center">
-                <label class="font-semibold text-sm text-black dark:text-white">Насиченість кольорів</label>
+                <label class="font-semibold text-sm text-black dark:text-white">{{__('Saturation')}}</label>
                 <span id="a11y-saturation-value" class="text-sm font-bold text-veteran-blue">100%</span>
             </div>
             <input type="range" id="a11y-saturation-slider" min="0" max="100" value="100" step="10"
@@ -56,7 +56,7 @@
             <label class="flex items-center justify-between cursor-pointer group">
                 <span
                     class="font-semibold text-sm text-black dark:text-white group-hover:text-veteran-blue transition-colors">
-                    Вимкнути анімації
+                    {{__('Disable Animations')}}
                 </span>
                 <div class="relative">
                     <input type="checkbox" id="a11y-motion-toggle" class="sr-only peer"
@@ -74,7 +74,7 @@
             <label class="flex items-center justify-between cursor-pointer group">
                 <span
                     class="font-semibold text-sm text-black dark:text-white group-hover:text-veteran-blue transition-colors">
-                    Високий контраст
+                    {{__('High Contrast')}}
                 </span>
                 <div class="relative">
                     <input type="checkbox" id="a11y-contrast-toggle" class="sr-only peer"
@@ -92,7 +92,7 @@
             <label class="flex items-center justify-between cursor-pointer group">
                 <span
                     class="font-semibold text-sm text-black dark:text-white group-hover:text-veteran-blue transition-colors">
-                    Збільшений курсор
+                    {{__('Large Cursor')}}
                 </span>
                 <div class="relative">
                     <input type="checkbox" id="a11y-cursor-toggle" class="sr-only peer"
@@ -110,7 +110,7 @@
             <label class="flex items-center justify-between cursor-pointer group">
                 <span
                     class="font-semibold text-sm text-black dark:text-white group-hover:text-veteran-blue transition-colors">
-                    Виділити посилання
+                    {{__('Highlight Links')}}
                 </span>
                 <div class="relative">
                     <input type="checkbox" id="a11y-links-toggle" class="sr-only peer"
@@ -128,7 +128,7 @@
         {{-- Reset Button --}}
         <button onclick="accessibility.resetAccessibility()"
             class="w-full py-3 border-2 border-gray-300 dark:border-zinc-600 text-gray-700 dark:text-white font-bold text-sm rounded-full hover:border-veteran-blue hover:text-veteran-blue dark:hover:text-veteran-blue transition-colors">
-            Скинути налаштування
+            {{__('Reset')}}
         </button>
     </div>
 </div>
@@ -136,6 +136,6 @@
 {{-- Floating Trigger Button - Desktop only (>=1400px) --}}
 <button id="accessibility-trigger" onclick="accessibility.toggleAccessibilityPanel()"
     class="fixed bottom-4 left-4 z-[99] w-14 h-14 bg-veteran-blue text-white rounded-full shadow-lg hover:bg-blue-700 transition-all items-center justify-center group hidden min-[1400px]:flex"
-    title="Налаштування доступності">
+    title="{{__('Accessability')}}">
     <x-icons.accessibility class="w-7 h-7 group-hover:scale-110 transition-transform" />
 </button>

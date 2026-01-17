@@ -30,7 +30,7 @@
 
     <!-- Title -->
     <div class="flex flex-row justify-between items-center mb-8 lg:mb-24 mt-4 lg:mt-8">
-        <h1 class="text-[1.5rem] lg:text-[3rem] font-bold font-['Montserrat'] text-black dark:text-white leading-[1.2] lg:leading-[1.33] transition-colors">
+        <h1 class="text-[1.125rem] xs:text-[1.5rem] lg:text-[3rem] font-bold font-['Montserrat'] text-black dark:text-white leading-[1.2] lg:leading-[1.33] transition-colors">
                 {{ $title }}
         </h1>
 

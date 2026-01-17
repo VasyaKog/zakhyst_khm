@@ -17,6 +17,9 @@ export default {
 
     theme: {
         extend: {
+            screens: {
+                'xs': '360px',
+            },
             fontFamily: {
                 'montserrat': ['Montserrat', ...defaultTheme.fontFamily.sans],
                 'unbounded': ['Unbounded', ...defaultTheme.fontFamily.sans],

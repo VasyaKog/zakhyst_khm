@@ -7,7 +7,7 @@
         <div class="w-full lg:max-w-[869px]">
             <div class="flex justify-between items-start lg:block">
                 <h1
-                    class="text-[2.5rem] lg:text-[9.875rem] font-extrabold font-['Montserrat'] text-black dark:text-white uppercase leading-[0.92] whitespace-nowrap transition-colors">
+                    class="text-[1.75rem] xs:text-[2.5rem] lg:text-[9.875rem] font-extrabold font-['Montserrat'] text-black dark:text-white uppercase leading-[0.92] lg:whitespace-nowrap transition-colors break-words">
                     {{ __('NEWS:') }}
                 </h1>
 

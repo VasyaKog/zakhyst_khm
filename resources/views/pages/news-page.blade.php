@@ -19,7 +19,7 @@
 
     <!-- You may be interested -->
     <div class="px-4 lg:px-[50px] max-w-[1920px] mx-auto mt-12 lg:mt-24 mb-6 lg:mb-12">
-        <p class="text-[1.5rem] lg:text-[3rem] font-bold font-['Montserrat'] text-black dark:text-white leading-[1.33] transition-colors">
+        <p class="text-[1.125rem] xs:text-[1.5rem] lg:text-[3rem] font-bold font-['Montserrat'] text-black dark:text-white leading-[1.33] transition-colors">
             {{ __('You Might Be Interested') }}
         </p>
     </div>
@@ -41,7 +41,7 @@
             <div class="flex">
                 @foreach($relatedNews as $related)
                     <div class="w-full flex-shrink-0 px-4" style="scroll-snap-align: center;">
-                        <x-news-card variant="large" :show-button="true" class="!max-w-none !w-full h-full" :title="$related->title"
+                        <x-news-card variant="small" :show-button="true" class="!max-w-none !w-full h-full" :title="$related->title"
                             :summary="$related->summary" :date="$related->published_at->isoFormat('D MMMM, YYYY')"
                             :image-url="asset('storage/' . $related->image_url)" :url="route('news.show', $related)" />
                     </div>

@@ -134,7 +134,7 @@
                    target="{{ $cornerButtonTarget }}" 
                    onmouseenter="this.style.color='{{ $color }}'" 
                    onmouseleave="this.style.color='{{ $cornerButtonTextColor }}'"
-                   class="flex mx-auto lg:mx-0 items-center justify-center w-auto lg:min-w-[256px] h-[50px] lg:h-16 px-4 lg:px-10 border-2 border-white rounded-full text-[1.125rem] lg:text-[1rem] font-bold uppercase whitespace-nowrap transition-colors hover:bg-white dark:border-zinc-700 dark:hover:bg-zinc-700 dark:!text-white"  
+                   class="flex mx-auto lg:mx-0 items-center justify-center w-full max-w-[280px] lg:w-auto lg:max-w-none lg:min-w-[256px] h-[50px] lg:h-16 px-4 lg:px-10 border-2 border-white rounded-full text-[0.7rem] xs:text-[0.8rem] lg:text-[1rem] font-bold uppercase text-center leading-tight transition-colors hover:bg-white dark:border-zinc-700 dark:hover:bg-zinc-700 dark:!text-white"  
                    style="background-color: {{ $cornerButtonColor }}; color: {{ $cornerButtonTextColor }};">
                     {{ $cornerButton }}
                 </a>

@@ -71,17 +71,15 @@
         <img src="{{ asset('images/backgrounds/bg2.png') }}" alt="Family Background" class="w-full h-full object-cover">
         <div class="absolute inset-0 bg-neutral-400 opacity-20 mix-blend-multiply"></div>
 
-        <div class="absolute left-[325px] top-[200px] w-[700px] h-96 bg-blue-600"
+        <div class="absolute left-[325px] top-[200px] w-[700px] min-h-[384px] h-auto bg-blue-600 py-12 px-[90px]"
             style="border-top-left-radius: 150px; border-top-right-radius: 50px; border-bottom-left-radius: 150px; border-bottom-right-radius: 150px;">
-            <div
-                class="absolute left-[90px] top-[74px] w-[519px] h-36 text-white text-6xl font-bold font-unbounded leading-[74.08px] tracking-wide">
+            <h2 class="text-white text-5xl xl:text-6xl font-bold font-unbounded leading-[1.2] tracking-wide mb-8">
                 {{ __('Business To Veterans') }}
-            </div>
-            <div
-                class="absolute left-[90px] top-[260px] w-[519px] h-16 text-white text-2xl font-medium font-unbounded uppercase leading-9 tracking-tight">
+            </h2>
+            <p class="text-white text-xl xl:text-2xl font-medium font-unbounded uppercase leading-9 tracking-tight">
                 {{ __('Learn More Offers') }}
                 <span class="underline">{{ __('Here') }}</span>
-            </div>
+            </p>
         </div>
 
     @elseif($codedSlideId === 'slide3')

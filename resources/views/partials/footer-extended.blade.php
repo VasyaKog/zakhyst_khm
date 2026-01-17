@@ -1,7 +1,7 @@
 <!-- Hero Section Above Footer -->
-<div class="px-4 md:px-[2.6%]">
-    <!-- Desktop Layout (>=768px) -->
-    <div class="hidden md:block relative min-h-[820px] h-auto mb-8 rounded-[100px] overflow-hidden">
+<div class="px-4 lg:px-[2.6%]">
+    <!-- Desktop Layout (>=1024px) -->
+    <div class="hidden lg:block relative min-h-[820px] h-auto mb-8 rounded-[100px] overflow-hidden">
         <!-- Background Image -->
         <img src="{{ asset('images/backgrounds/footer-background.png') }}" alt="Footer Hero Background"
             class="absolute inset-0 w-full h-full object-cover">
@@ -27,8 +27,8 @@
         </div>
     </div>
 
-    <!-- Mobile Layout (<768px) -->
-    <div class="block md:hidden relative min-h-[682px] h-auto mb-8 rounded-[62px] overflow-hidden">
+    <!-- Mobile Layout (<1024px) -->
+    <div class="block lg:hidden relative min-h-[682px] h-auto mb-8 rounded-[62px] overflow-hidden">
         <!-- Background Image -->
         <img src="{{ asset('images/backgrounds/footer-background.png') }}" alt="Footer Hero Background"
             class="absolute inset-0 w-full h-full object-cover object-center">
@@ -52,8 +52,9 @@
 
             <!-- Call to Action Button -->
             <button onclick="openDonationModal()"
-                class="w-[330px] h-[70px] border-2 border-white rounded-[412px] flex items-center justify-center active:bg-white active:text-veteran-blue transition-colors">
-                <span class="text-white text-[1.25rem] font-black font-montserrat uppercase tracking-[1px]">
+                class="w-full max-w-[330px] h-14 xs:h-[70px] border-2 border-white rounded-full flex items-center justify-center active:bg-white active:text-veteran-blue transition-colors">
+                <span
+                    class="text-white text-base xs:text-[1.25rem] font-black font-montserrat uppercase tracking-[1px]">
                     {{ __('Support ZSU') }}
                 </span>
             </button>

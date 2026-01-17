@@ -15,37 +15,38 @@
             class="absolute inset-0 w-full h-full object-cover object-center">
         <div class="absolute inset-0 bg-neutral-900/30"></div>
 
-        <div class="absolute inset-0 flex flex-col pt-36">
-            <h1 class="text-white text-[2.25rem] font-bold font-unbounded mb-5 leading-[116%] tracking-normal px-12">
+        <div class="absolute inset-0 flex flex-col pt-24 xs:pt-36">
+            <h1
+                class="text-white text-[1.75rem] xs:text-[2.25rem] font-bold font-unbounded mb-5 leading-[116%] tracking-normal px-6 xs:px-12">
                 {{ __('Who We Are') }}
             </h1>
 
-            <div class="flex flex-col gap-2 mx-8">
+            <div class="flex flex-col gap-2 mx-4 xs:mx-8">
                 <div
-                    class="bg-white dark:bg-zinc-800 w-full min-h-12 rounded-full py-2.5 px-6 flex items-center gap-3 transition-colors">
+                    class="bg-white dark:bg-zinc-800 w-full min-h-10 xs:min-h-12 rounded-full py-2 xs:py-2.5 px-4 xs:px-6 flex items-center gap-3 transition-colors">
                     <span
-                        class="text-black dark:text-white text-[0.75rem] font-bold font-montserrat uppercase leading-tight transition-colors">
+                        class="text-black dark:text-white text-[0.65rem] xs:text-[0.75rem] font-bold font-montserrat uppercase leading-tight transition-colors">
                         {{ __('Veterans Family') }}
                     </span>
                 </div>
                 <div
-                    class="bg-white dark:bg-zinc-800 w-full min-h-12 rounded-full py-2.5 px-6 flex items-center gap-3 transition-colors">
+                    class="bg-white dark:bg-zinc-800 w-full min-h-10 xs:min-h-12 rounded-full py-2 xs:py-2.5 px-4 xs:px-6 flex items-center gap-3 transition-colors">
                     <span
-                        class="text-black dark:text-white text-[0.75rem] font-bold font-montserrat uppercase leading-tight transition-colors">
+                        class="text-black dark:text-white text-[0.65rem] xs:text-[0.75rem] font-bold font-montserrat uppercase leading-tight transition-colors">
                         {{ __('Fallen Family') }}
                     </span>
                 </div>
                 <div
-                    class="bg-white dark:bg-zinc-800 w-full min-h-12 rounded-full py-2.5 px-6 flex items-center gap-3 transition-colors">
+                    class="bg-white dark:bg-zinc-800 w-full min-h-10 xs:min-h-12 rounded-full py-2 xs:py-2.5 px-4 xs:px-6 flex items-center gap-3 transition-colors">
                     <span
-                        class="text-black dark:text-white text-[0.75rem] font-bold font-montserrat uppercase leading-tight transition-colors">
+                        class="text-black dark:text-white text-[0.65rem] xs:text-[0.75rem] font-bold font-montserrat uppercase leading-tight transition-colors">
                         {{ __('Military Family') }}
                     </span>
                 </div>
                 <div
-                    class="bg-white dark:bg-zinc-800 w-full min-h-12 rounded-full py-2.5 px-6 flex items-center gap-3 transition-colors">
+                    class="bg-white dark:bg-zinc-800 w-full min-h-10 xs:min-h-12 rounded-full py-2 xs:py-2.5 px-4 xs:px-6 flex items-center gap-3 transition-colors">
                     <span
-                        class="text-black dark:text-white text-[0.75rem] font-bold font-montserrat uppercase leading-tight transition-colors">
+                        class="text-black dark:text-white text-[0.65rem] xs:text-[0.75rem] font-bold font-montserrat uppercase leading-tight transition-colors">
                         {{ __('POW Family') }}
                     </span>
                 </div>
@@ -59,11 +60,11 @@
         <div class="absolute inset-0 bg-neutral-900/30"></div>
 
         <div class="absolute inset-0 flex flex-col justify-center px-4">
-            <div class="p-6">
-                <h2 class="text-white text-[2.625rem] font-bold font-unbounded leading-tight mb-4">
+            <div class="p-4 xs:p-6">
+                <h2 class="text-white text-[2rem] xs:text-[2.625rem] font-bold font-unbounded leading-tight mb-4">
                     {{ __('Business To Veterans') }}
                 </h2>
-                <p class="text-white text-lg font-medium font-unbounded uppercase">
+                <p class="text-white text-base xs:text-lg font-medium font-unbounded uppercase">
                     {{ __('Learn More Offers') }} <span class="underline">{{ __('Here') }}</span>
                 </p>
             </div>
@@ -76,14 +77,15 @@
         <div class="absolute inset-0 bg-neutral-900/30"></div>
 
         <div class="absolute inset-0 flex flex-col justify-center px-4">
-            <h2 class="text-white text-[2rem] font-bold font-unbounded leading-tight mb-4">
+            <h2 class="text-white text-[1.75rem] xs:text-[2rem] font-bold font-unbounded leading-tight mb-4">
                 {{ __('Died For Ukraine') }}
             </h2>
-            <p class="text-white text-lg font-medium font-unbounded uppercase mb-6">
+            <p class="text-white text-base xs:text-lg font-medium font-unbounded uppercase mb-6">
                 {{ __('Virtual Memorial') }}
             </p>
-            <button class="w-full max-w-[280px] h-14 border-2 border-white rounded-full flex items-center justify-center">
-                <span class="text-white text-base font-black font-montserrat uppercase tracking-wide">
+            <button
+                class="w-full max-w-[240px] xs:max-w-[280px] h-12 xs:h-14 border-2 border-white rounded-full flex items-center justify-center">
+                <span class="text-white text-sm xs:text-base font-black font-montserrat uppercase tracking-wide">
                     {{ __('Visit Memorial') }}
                 </span>
             </button>

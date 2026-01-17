@@ -2,7 +2,7 @@
 @section('title', __('Home'))
 @section('content')
     <!-- Desktop Hero & Footer Wrapper (>=768px) -->
-    <div class="hidden md:block">
+    <div class="hidden lg:block">
         <div id="hero-carousel" class="relative overflow-hidden min-h-[820px] h-auto mb-8 rounded-[100px]">
             @forelse($heroBanners as $index => $banner)
                 <x-hero-slide :banner="$banner" :isFirst="$index === 0" />
@@ -55,7 +55,7 @@
     </div>
 
     <!-- Mobile Hero Section (<768px) -->
-    <div id="mobile-hero-carousel" class="block md:hidden mb-8">
+    <div id="mobile-hero-carousel" class="block lg:hidden mb-8">
         <div class="relative min-h-[600px] h-auto rounded-[62px] overflow-hidden mb-6">
             @forelse($heroBanners as $index => $banner)
                 <x-mobile-hero-slide :banner="$banner" :isFirst="$index === 0" />
@@ -89,19 +89,22 @@
 
 
     <!-- Mobile Services Section (<768px) -->
-    <div class="block md:hidden mt-16 mb-16 relative">
-        <img src="{{ asset('images/icons/button-support.svg') }}" alt="Support"
-            class="absolute right-0 top-4 w-[70px] h-[70px] cursor-pointer hover:opacity-80 transition-opacity z-20"
-            onclick="openContactModal()">
-        <h2
-            class="text-black dark:text-white text-[2.5rem] font-extrabold font-montserrat uppercase leading-tight px-4 mb-8 transition-colors">
-            {{ __('Types of Services') }}
-        </h2>
+    <div class="block lg:hidden mt-16 mb-16 relative px-4">
+        <!-- Header with title and support icon -->
+        <div class="flex flex-col-reverse xs:flex-row xs:items-start xs:justify-between gap-4 mb-8">
+            <h2
+                class="text-black dark:text-white text-[1.75rem] xs:text-[2.5rem] font-extrabold font-montserrat uppercase leading-tight transition-colors break-words">
+                {{ __('Types of Services') }}
+            </h2>
+            <img src="{{ asset('images/icons/button-support.svg') }}" alt="Support"
+                class="w-[50px] xs:w-[70px] h-[50px] xs:h-[70px] cursor-pointer hover:opacity-80 transition-opacity shrink-0 self-end xs:self-start"
+                onclick="openContactModal()">
+        </div>
 
         <!-- Swipe Carousel Container -->
-        <div id="mobile-services-carousel" class="overflow-x-auto pb-6 [&::-webkit-scrollbar]:hidden"
+        <div id="mobile-services-carousel" class="overflow-x-auto pb-6 -mx-4 [&::-webkit-scrollbar]:hidden"
             style="scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none;">
-            <div class="flex gap-4 px-4" style="width: max-content;">
+            <div class="flex gap-4 pl-4 pr-4" style="width: max-content;">
                 @php
                     $mobileIcons = [
                         '01' => 'support.svg',
@@ -115,8 +118,8 @@
 
                 @foreach($services as $service)
                     <a href="{{ route('services') }}"
-                        class="mobile-service-card flex-shrink-0 w-[396px] h-[496px] relative cursor-pointer transition-transform duration-300 active:scale-95 rounded-xl overflow-hidden"
-                        style="scroll-snap-align: center; background-image: url('{{ asset('images/backgrounds/service-bg.svg') }}'); background-size: cover; background-repeat: no-repeat; background-position: center;"
+                        class="mobile-service-card flex-shrink-0 w-[calc(100vw-32px)] max-w-[396px] h-[496px] relative cursor-pointer transition-transform duration-300 active:scale-95 rounded-xl overflow-hidden bg-cover bg-no-repeat bg-center"
+                        style="scroll-snap-align: center; background-image: url('{{ asset('images/backgrounds/service-bg.svg') }}');"
                         data-index="{{ $loop->index }}">
                         <!-- Icon -->
                         <div class="absolute left-8 top-8 w-14 h-14 rounded-full flex items-center justify-center">
@@ -150,26 +153,26 @@
         </div>
 
         <!-- Controls Row: Dots (Left) + Button (Right) -->
-        <div class="flex justify-between items-center px-4 mt-4">
+        <div class="flex flex-wrap justify-between items-center gap-4 mt-4">
             <!-- Pagination Dots (Functional) -->
             <div class="flex gap-2" id="mobile-services-dots">
                 @foreach($services as $index => $service)
                     <button
-                        class="w-4 h-4 rounded-full transition-colors {{ $index === 0 ? 'bg-veteran-blue' : 'bg-gray-300' }}"
+                        class="w-3 xs:w-4 h-3 xs:h-4 rounded-full transition-colors {{ $index === 0 ? 'bg-veteran-blue' : 'bg-gray-300' }}"
                         onclick="scrollToService({{ $index }})"></button>
                 @endforeach
             </div>
 
             <!-- All Services Button -->
             <a href="{{ route('services') }}"
-                class="px-8 py-3 border-2 border-veteran-blue text-black dark:text-white text-sm font-black font-montserrat uppercase tracking-wide rounded-full active:bg-veteran-blue active:text-white transition-colors">
+                class="px-4 xs:px-8 py-2 xs:py-3 border-2 border-veteran-blue text-black dark:text-white text-xs xs:text-sm font-black font-montserrat uppercase tracking-wide rounded-full active:bg-veteran-blue active:text-white transition-colors">
                 {{ __('All Services') }}
             </a>
         </div>
     </div>
 
     <!-- Desktop Services Section (>=768px) -->
-    <div class="hidden md:flex justify-center mt-[152px] mb-[300px] px-4">
+    <div class="hidden lg:flex justify-center mt-[152px] mb-[300px] px-4">
         <div id="desktop-services-container"
             class="relative w-full max-w-[1215px] min-h-[765px] h-auto transition-all duration-300">
             <img src="{{ asset('images/icons/button-support.svg') }}" alt="Support"
@@ -231,7 +234,7 @@
 
                             <!-- Description -->
                             <div
-                                class="w-full text-white text-xl font-normal font-montserrat leading-7 m-0 overflow-hidden line-clamp-6 [&>ul]:list-disc [&>ul]:pl-2 [&>ul>li]:mb-7">
+                                class="w-full text-white text-xl font-normal font-montserrat leading-7 m-0 overflow-hidden line-clamp-5 [&>ul]:list-disc [&>ul]:pl-2 [&>ul>li]:mb-7">
                                 {!! $service->left_content !!}
                             </div>
                         </div>
@@ -283,7 +286,7 @@
     </script>
 
     <!-- Mobile News Section (<768px) -->
-    <div class="block md:hidden px-4 mt-12 mb-12">
+    <div class="block lg:hidden px-4 mt-12 mb-12">
         <div class="flex justify-between items-center mb-6">
             <h2
                 class="text-black dark:text-white text-[2.5rem] font-extrabold font-montserrat uppercase leading-tight transition-colors">
@@ -332,7 +335,7 @@
         </div>
     </div>
 
-    <div class="md:hidden flex justify-end">
+    <div class="lg:hidden flex justify-end">
         <a href="{{ route('news') }}"
             class="text-base font-bold text-black dark:text-white uppercase border-b border-black dark:border-white hover:text-veteran-blue dark:hover:text-veteran-blue hover:border-veteran-blue dark:hover:border-veteran-blue transition-colors">
             {{ __('More News Here') }}
@@ -340,7 +343,7 @@
     </div>
 
     <!-- Desktop News Section (>=768px) -->
-    <div class="hidden md:block w-full mb-[300px]">
+    <div class="hidden lg:block w-full mb-[300px]">
         <!-- More News Link -->
         <div class="flex justify-end mb-8">
             <a href="{{ route('news') }}"
@@ -390,18 +393,18 @@
     </div>
 
     <!-- Mobile Team Section (<768px) -->
-    <div class="block md:hidden mt-16 mb-16">
+    <div class="block lg:hidden mt-16 mb-16 px-4">
         <h2
-            class="text-black dark:text-white text-[2.5rem] font-extrabold font-montserrat uppercase leading-tight mb-8 transition-colors">
+            class="text-black dark:text-white text-[1.75rem] xs:text-[2.5rem] font-extrabold font-montserrat uppercase leading-tight mb-8 transition-colors break-words">
             {!! nl2br(__('Our Team')) !!}
         </h2>
 
         <!-- Swipe Carousel -->
-        <div id="mobile-team-carousel" class="overflow-x-auto pb-4 [&::-webkit-scrollbar]:hidden"
+        <div id="mobile-team-carousel" class="overflow-x-auto pb-4 -mx-4 [&::-webkit-scrollbar]:hidden"
             style="scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none;">
-            <div class="flex gap-4 px-1" style="width: max-content;">
+            <div class="flex gap-4 pl-4 pr-4" style="width: max-content;">
                 @foreach($team as $member)
-                    <div class="flex-shrink-0 w-[394px]" style="scroll-snap-align: center;">
+                    <div class="flex-shrink-0 w-[calc(100vw-32px)] max-w-[394px]" style="scroll-snap-align: center;">
                         <div
                             class="w-full h-[440px] bg-zinc-300 dark:bg-zinc-800 rounded-[20px] overflow-hidden transition-colors">
                             <img class="w-full h-full object-cover dark:opacity-90 transition-opacity"
@@ -422,26 +425,26 @@
         </div>
 
         <!-- Controls Row -->
-        <div class="flex justify-between items-center mt-4">
+        <div class="flex flex-wrap justify-between items-center gap-4 mt-4">
             <!-- Pagination Dots -->
             <div class="flex gap-2" id="mobile-team-dots">
                 @foreach($team as $index => $member)
                     <button
-                        class="w-4 h-4 rounded-full transition-colors {{ $index === 0 ? 'bg-veteran-blue' : 'bg-gray-300 dark:bg-zinc-600' }}"
+                        class="w-3 xs:w-4 h-3 xs:h-4 rounded-full transition-colors {{ $index === 0 ? 'bg-veteran-blue' : 'bg-gray-300 dark:bg-zinc-600' }}"
                         onclick="scrollToTeamMember({{ $index }})"></button>
                 @endforeach
             </div>
 
             <!-- Team Button -->
             <a href="{{ route('team') }}"
-                class="px-12 py-3 border-2 border-veteran-blue text-black dark:text-white text-lg font-black font-montserrat uppercase tracking-wide rounded-full active:bg-veteran-blue active:text-white transition-colors">
+                class="px-6 xs:px-12 py-2 xs:py-3 border-2 border-veteran-blue text-black dark:text-white text-base xs:text-lg font-black font-montserrat uppercase tracking-wide rounded-full active:bg-veteran-blue active:text-white transition-colors">
                 {{ __('Team') }}
             </a>
         </div>
     </div>
 
     <!-- Desktop Team Section (>=768px) -->
-    <div class="hidden md:flex justify-center mt-[152px] mb-[300px]">
+    <div class="hidden lg:flex justify-center mt-[152px] mb-[300px]">
         <div class="relative w-[1170px] h-[600px]">
             <!-- Title Section -->
             <div class="absolute left-0 top-0">
@@ -484,7 +487,7 @@
     </div>
 
     <!-- Mobile Map Section (<768px) -->
-    <div class="block md:hidden mt-12 mb-16">
+    <div class="block lg:hidden mt-12 mb-16">
         <h2
             class="text-black dark:text-white text-[2.5rem] font-extrabold font-montserrat uppercase leading-tight mb-8 transition-colors">
             {!! nl2br(__('Khmelnytskyi Grateful')) !!}
@@ -499,7 +502,7 @@
     </div>
 
     <!-- Desktop Map Section (>=768px) -->
-    <div class="hidden md:block pt-[300px]">
+    <div class="hidden lg:block pt-[300px]">
         <!-- Title in responsive container aligned with other sections -->
         <div class="px-4 lg:px-8 xl:px-4 2xl:px-0 lg:max-w-[900px] xl:max-w-[1100px] 2xl:max-w-[1170px] lg:mx-auto mb-16">
             <h2
@@ -521,7 +524,7 @@
     </div>
 
     <!-- Mobile Partners Section (<768px) -->
-    <div class="block md:hidden mt-12 mb-16">
+    <div class="block lg:hidden mt-12 mb-16">
         <h2
             class="text-black dark:text-white text-[2.5rem] font-extrabold font-montserrat uppercase leading-tight mb-8 transition-colors">
             {{ __('Our Partners') }}
@@ -545,7 +548,7 @@
     </div>
 
     <!-- Desktop Partners Section (>=768px) -->
-    <div class="hidden md:flex justify-center pt-[130px] mb-[180px]">
+    <div class="hidden lg:flex justify-center pt-[130px] mb-[180px]">
         <div class="relative w-[1170px]">
             <!-- Title Section -->
             <div class="absolute left-0 top-0">

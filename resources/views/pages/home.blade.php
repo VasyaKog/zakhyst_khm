@@ -443,41 +443,39 @@
         </div>
     </div>
 
-    <!-- Desktop Team Section (>=768px) -->
-    <div class="hidden lg:flex justify-center mt-[152px] mb-[300px]">
-        <div class="relative w-[1170px] h-[600px]">
-            <!-- Title Section -->
-            <div class="absolute left-0 top-0">
+    <!-- Desktop Team Section (>=1024px) -->
+    <div class="hidden lg:block mt-[100px] xl:mt-[152px] mb-[200px] xl:mb-[300px] px-8 xl:px-0">
+        <div class="relative w-full max-w-[1170px] mx-auto">
+            <!-- Title and Button Row -->
+            <div class="flex justify-between items-start mb-12">
                 <h2
-                    class="text-black dark:text-white text-[4.5rem] font-extrabold font-montserrat uppercase leading-[85.36px] m-0 transition-colors">
+                    class="text-black dark:text-white text-[3rem] xl:text-[4.5rem] font-extrabold font-montserrat uppercase leading-tight xl:leading-[85.36px] m-0 transition-colors">
                     {!! nl2br(__('Our Team')) !!}
                 </h2>
-            </div>
 
-            <!-- Team Button -->
-            <div class="absolute right-0 top-5">
+                <!-- Team Button -->
                 <a href="{{ route('team') }}"
-                    class="w-64 h-16 border-2 border-veteran-blue bg-white dark:bg-zinc-900 text-black dark:text-white text-xl font-black font-montserrat uppercase tracking-wide cursor-pointer transition-all duration-300 ease-in-out rounded-[412px] flex items-center justify-center hover:bg-veteran-blue hover:text-white">
+                    class="w-48 xl:w-64 h-14 xl:h-16 border-2 border-veteran-blue bg-white dark:bg-zinc-900 text-black dark:text-white text-lg xl:text-xl font-black font-montserrat uppercase tracking-wide cursor-pointer transition-all duration-300 ease-in-out rounded-[412px] flex items-center justify-center hover:bg-veteran-blue hover:text-white shrink-0">
                     {{ __('Team') }}
                 </a>
             </div>
 
             <!-- Team Members -->
-            <div class="absolute left-0 top-64 flex gap-[30px]">
+            <div class="flex flex-wrap gap-6 xl:gap-[30px] justify-center xl:justify-start">
                 @foreach($team as $member)
-                    <div class="relative">
+                    <div class="relative w-[calc(33.333%-20px)] min-w-[280px] max-w-[370px]">
                         <div
-                            class="w-[370px] h-[440px] bg-zinc-300 dark:bg-zinc-800 rounded-[20px] overflow-hidden transition-colors">
+                            class="w-full h-[350px] xl:h-[440px] bg-zinc-300 dark:bg-zinc-800 rounded-[20px] overflow-hidden transition-colors">
                             <img class="w-full h-full object-cover dark:opacity-90 transition-opacity"
                                 style="object-position: center 5%;" src="{{ asset('storage/' . $member->photo) }}"
                                 alt="{{ $member->full_name }}">
                         </div>
                         <div
-                            class="mt-10 text-black dark:text-white text-3xl font-extrabold font-montserrat leading-10 transition-colors">
+                            class="mt-6 xl:mt-10 text-black dark:text-white text-2xl xl:text-3xl font-extrabold font-montserrat leading-8 xl:leading-10 transition-colors">
                             {{ $member->full_name }}
                         </div>
                         <div
-                            class="mt-6 text-black dark:text-white text-xl font-normal font-montserrat leading-7 transition-colors">
+                            class="mt-4 xl:mt-6 text-black dark:text-white text-lg xl:text-xl font-normal font-montserrat leading-6 xl:leading-7 transition-colors">
                             {{ $member->role }}
                         </div>
                     </div>
@@ -547,8 +545,29 @@
         </div>
     </div>
 
-    <!-- Desktop Partners Section (>=768px) -->
-    <div class="hidden lg:flex justify-center pt-[130px] mb-[180px]">
+    <!-- Desktop Partners Section - Grid (lg to xl only: 1024px-1280px) -->
+    <div class="hidden lg:block xl:hidden pt-[80px] mb-[120px] px-8">
+        <div class="w-full max-w-[1170px] mx-auto">
+            <!-- Title Section -->
+            <h2
+                class="text-black dark:text-white text-[3rem] font-extrabold font-montserrat uppercase leading-tight mb-12 transition-colors">
+                {{ __('Our Partners') }}
+            </h2>
+
+            <!-- Partners Grid - Shows all logos -->
+            <div class="flex flex-wrap gap-6 justify-center">
+                @foreach($partners as $partner)
+                    <div class="w-[160px] h-24 flex items-center justify-center flex-shrink-0">
+                        <img src="{{ asset('storage/' . $partner->logo_path) }}" alt="{{ $partner->name }}"
+                            class="max-w-full max-h-full object-contain">
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </div>
+
+    <!-- Desktop Partners Section - Carousel (xl+: 1280px and above) -->
+    <div class="hidden xl:flex justify-center pt-[130px] mb-[180px]">
         <div class="relative w-[1170px]">
             <!-- Title Section -->
             <div class="absolute left-0 top-0">

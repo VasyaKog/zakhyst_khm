@@ -19,6 +19,7 @@ export default {
         extend: {
             screens: {
                 'xs': '360px',
+                '3xl': '1400px',
             },
             fontFamily: {
                 'montserrat': ['Montserrat', ...defaultTheme.fontFamily.sans],

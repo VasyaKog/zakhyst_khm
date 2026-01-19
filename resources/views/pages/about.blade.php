@@ -37,7 +37,7 @@
                 </h2>
 
                 <!-- Goal Cards -->
-                <div class="grid grid-cols-2 lg:flex gap-4 lg:gap-[34px]">
+                <div class="grid grid-cols-2 lg:grid-cols-3 3xl:flex gap-4 lg:gap-5 3xl:gap-[34px]">
                     <x-goal-card :title="__('Goal Adaptation')" icon="adaptation-icon.svg" />
                     <x-goal-card :title="__('Goal Prevention')" icon="profilactic-icon.svg" />
                     <x-goal-card :title="__('Goal Information')" icon="information-icon.svg" />

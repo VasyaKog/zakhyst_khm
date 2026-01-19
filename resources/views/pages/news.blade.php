@@ -39,7 +39,9 @@
     <div class="w-full h-px bg-black dark:bg-zinc-700 mb-10 lg:mb-32 transition-colors"></div>
 
     <!-- Desktop Grid (Hidden on Mobile) -->
-    <div class="hidden lg:grid grid-cols-[1fr_930px] gap-x-[70px] max-w-[1920px]">
+    <!-- At lg (1024-1400px): stacked layout, at 3xl (1400px+): original side-by-side -->
+    <div
+        class="hidden lg:flex lg:flex-col 3xl:grid 3xl:grid-cols-[1fr_930px] gap-y-16 3xl:gap-y-0 3xl:gap-x-[70px] max-w-[1920px]">
         <!-- First Grid: 1 column, 3 rows, large components -->
         <div class="flex flex-col gap-[77px]">
             @foreach($news->take(3) as $article)
@@ -48,19 +50,24 @@
                     :image-url="asset('storage/' . $article->image_url)" :url="route('news.show', $article)" />
             @endforeach
 
-            <!-- Pagination Desktop -->
-            <div class="w-full mt-14">
+            <!-- Pagination Desktop - 3xl only (side-by-side layout) -->
+            <div class="hidden 3xl:block w-full mt-14">
                 {{ $news->onEachSide(1)->links('vendor.pagination.custom') }}
             </div>
         </div>
 
-        <!-- Second Grid: 2 columns, 5 rows, small components -->
-        <div class="grid grid-cols-2 gap-x-[42px] gap-y-[70px] mb-32 h-min">
-            @foreach($news->skip(3) as $article)
+        <!-- Second Grid: 2 columns at lg (when stacked), 2 columns at 3xl -->
+        <div class="grid grid-cols-2 gap-x-[42px] gap-y-[50px] 3xl:gap-y-[70px] 3xl:mb-32 h-min">
+            @foreach($news->skip(3)->take(10) as $article)
                 <x-news-card variant="small" :show-button="false" class="!max-w-none" :title="$article->title"
                     :summary="$article->summary" :date="$article->published_at->isoFormat('D MMMM, YYYY')"
                     :image-url="asset('storage/' . $article->image_url)" :url="route('news.show', $article)" />
             @endforeach
+        </div>
+
+        <!-- Pagination Desktop - lg to 3xl (stacked layout) -->
+        <div class="lg:block 3xl:hidden w-full mt-8 mb-16">
+            {{ $news->onEachSide(1)->links('vendor.pagination.custom') }}
         </div>
     </div>
 

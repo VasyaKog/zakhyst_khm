@@ -126,11 +126,7 @@ button {
 .high-contrast #page-content {
     filter: contrast(1.4) !important;
 
-    img,
-    video,
-    svg {
-        filter: contrast(0.85); // Slightly reduce contrast on images to compensate
-    }
+
 }
 
 // Large Cursor

@@ -31,20 +31,24 @@
                 <x-icons.accessibility class="w-5 h-5 text-black dark:text-white transition-colors" />
             </button>
 
-            <!-- Dark Mode Toggle (Pill with Sun/Moon) - WCAG AAA Contrast -->
-            <button class="h-[36px] w-[72px] flex items-center justify-center gap-0.5 border-2 border-gray-400 dark:border-zinc-500 rounded-full transition-colors bg-white dark:bg-zinc-800"
-                onclick="accessibility.toggleTheme()">
-                <!-- Sun Icon -->
-                <div class="w-7 h-7 flex items-center justify-center rounded-full bg-gray-200 dark:bg-transparent transition-colors">
-                    <svg class="w-4 h-4 text-gray-800 dark:text-gray-500" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z" />
-                    </svg>
-                </div>
-                <!-- Moon Icon -->
-                <div class="w-7 h-7 flex items-center justify-center rounded-full bg-transparent dark:bg-gray-200 transition-colors">
-                    <svg class="w-4 h-4 text-gray-500 dark:text-gray-800" fill="currentColor" viewBox="0 0 24 24">
-                        <path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z" clip-rule="evenodd" />
-                    </svg>
+            <!-- Dark Mode Toggle - Animated Pill Toggle -->
+            <button id="dark-mode-toggle-mobile"
+                class="relative w-[70px] h-[40px] flex items-center justify-between px-[8px] rounded-full border-2 border-black dark:border-white transition-colors"
+                onclick="toggleDarkModeMobile()">
+                <!-- Sun Icon (Left) - Figma exact -->
+                <svg class="w-[20px] h-[20px] z-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="11" class="stroke-black dark:stroke-white transition-colors"
+                        stroke-width="2" />
+                </svg>
+                <!-- Moon Icon (Right) - Figma exact -->
+                <svg class="w-[18px] h-[20px] z-10" viewBox="0 0 21 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M8.22205 24.0145C11.4036 24.0111 14.4538 22.7457 16.7035 20.496C18.9532 18.2463 20.2186 15.1961 20.2221 12.0145C20.3751 3.05854 10.1911 -2.97046 2.43105 1.52354L0.87805 2.38554L2.42105 3.26554C9.12105 6.95354 8.63105 17.1355 1.62105 20.1715L4.95911e-05 20.9025L1.46705 21.9085C3.45369 23.278 5.80914 24.0124 8.22205 24.0145ZM8.22205 2.01454C10.8733 2.01745 13.4152 3.07196 15.2899 4.94669C17.1646 6.82142 18.2191 9.36327 18.2221 12.0145C18.3771 19.1315 10.4591 24.2145 4.06705 21.0965C5.56351 20.0922 6.80405 18.7515 7.68934 17.1817C8.57464 15.6119 9.08009 13.8567 9.16523 12.0565C9.25038 10.2562 8.91285 8.46111 8.17968 6.81476C7.4465 5.16841 6.33804 3.71659 4.94305 2.57554C5.99582 2.20199 7.10497 2.01222 8.22205 2.01454Z"
+                        class="fill-black dark:fill-white transition-colors" />
+                </svg>
+                <!-- Sliding Circle (covers active icon) -->
+                <div id="toggle-circle-mobile"
+                    class="absolute left-[4px] w-[28px] h-[28px] bg-black dark:bg-white rounded-full transition-[left] duration-300 ease-in-out">
                 </div>
             </button>
         </div>
@@ -128,7 +132,7 @@
             {{-- Font Size --}}
             <div class="space-y-2">
                 <div class="flex justify-between items-center">
-                    <label class="font-semibold text-sm text-black dark:text-white">{{ __('Font Size') }}</label>
+                    <label class="font-semibold text-sm text-black dark:text-white">{{ __('Text Size') }}</label>
                     <span id="mobile-a11y-font-value" class="text-sm font-bold text-veteran-blue">100%</span>
                 </div>
                 <input type="range" id="mobile-a11y-font-slider" min="100" max="120" value="100" step="5"
@@ -233,4 +237,31 @@
         const menu = document.getElementById('mobile-language-menu');
         menu.classList.toggle('hidden');
     }
+
+    function toggleDarkModeMobile() {
+        // Toggle dark mode class on html element
+        document.documentElement.classList.toggle('dark');
+
+        // Animate ALL toggle circles
+        const toggleCircles = ['toggle-circle-mobile', 'toggle-circle-main', 'toggle-circle-blue'];
+        const isDark = document.documentElement.classList.contains('dark');
+
+        toggleCircles.forEach(id => {
+            const circle = document.getElementById(id);
+            if (circle) {
+                circle.style.left = isDark ? 'calc(100% - 32px)' : '4px';
+            }
+        });
+
+        // Save preference
+        localStorage.setItem('darkMode', isDark);
+    }
+
+    // Initialize toggle position on page load for mobile
+    document.addEventListener('DOMContentLoaded', function () {
+        const toggleCircle = document.getElementById('toggle-circle-mobile');
+        if (toggleCircle && document.documentElement.classList.contains('dark')) {
+            toggleCircle.style.left = 'calc(100% - 32px)';
+        }
+    });
 </script>

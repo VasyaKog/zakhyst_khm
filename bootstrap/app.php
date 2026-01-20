@@ -25,5 +25,14 @@ return Application::configure(basePath: dirname(__DIR__))
         //
     })
     ->withExceptions(function (Exceptions $exceptions): void {
-        //
+        // Handle 404 errors to ensure proper rendering with middleware context
+        $exceptions->render(function (\Symfony\Component\HttpKernel\Exception\NotFoundHttpException $e, $request) {
+            // Set locale from session for error pages
+            $locale = session('locale', 'ua');
+            if (in_array($locale, ['ua', 'en'])) {
+                \Illuminate\Support\Facades\App::setLocale($locale);
+            }
+
+            return response()->view('errors.404', [], 404);
+        });
     })->create();

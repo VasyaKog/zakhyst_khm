@@ -29,7 +29,8 @@
                     style="border: none; border-bottom: 1px solid #9CA3AF; outline: none;">
                     <div
                         class="text-lg md:text-2xl font-bold font-['Montserrat'] text-black dark:text-white transition-colors">
-                        {{ __('Privat Bank') }}</div>
+                        {{ __('Privat Bank') }}
+                    </div>
                 </button>
             </div>
         </div>

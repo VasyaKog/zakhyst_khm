@@ -1,6 +1,6 @@
-<footer class="mt-[40px] mb-[50px] px-5 min-[1250px]:px-[50px]">
-    <!-- Desktop Layout (>=1250px) -->
-    <div class="hidden min-[1250px]:flex justify-between items-start">
+<footer class="mt-[40px] mb-[50px] px-5 lg:px-[50px]">
+    <!-- Desktop Layout (>=lg) -->
+    <div class="hidden lg:flex justify-between items-start">
         <!-- Logo -->
         <img src="{{ asset('images/logos/logo-text.svg') }}" alt="Logo" class="brightness-0 invert flex-shrink-0">
 
@@ -36,13 +36,14 @@
         </div>
     </div>
 
-    <!-- Mobile Layout (<1250px) -->
-    <div class="block min-[1250px]:hidden">
+    <!-- Mobile Layout (<lg) -->
+    <div class="block lg:hidden">
         <!-- Top Row: Logo + Socials -->
-        <div class="flex justify-between items-start mb-6">
-            <img src="{{ asset('images/logos/logo-text.svg') }}" alt="Logo" class="brightness-0 invert w-[206px]">
+        <div class="flex justify-between items-start mb-6 flex-wrap gap-4">
+            <img src="{{ asset('images/logos/logo-text.svg') }}" alt="Logo"
+                class="brightness-0 invert w-[180px] max-w-[50%]">
 
-            <div class="flex gap-4">
+            <div class="flex gap-4 flex-shrink-0">
                 <img src="{{ asset('images/icons/facebook.svg') }}" alt="Facebook" class="w-6 h-6 brightness-0 invert">
                 <img src="{{ asset('images/icons/instagram.svg') }}" alt="Instagram"
                     class="w-6 h-6 brightness-0 invert">
@@ -50,28 +51,28 @@
         </div>
 
         <!-- Middle Row: Schedule + Address -->
-        <div class="flex justify-between items-start mb-4">
+        <div class="flex justify-between items-start mb-4 flex-wrap gap-4">
             <!-- Schedule -->
-            <div class="text-white text-sm font-bold font-montserrat leading-[18px]">
+            <div class="text-white text-sm font-bold font-montserrat leading-snug">
                 {!! nl2br(__('Working Hours')) !!}
             </div>
 
             <!-- Address -->
-            <div class="text-white text-sm font-bold font-montserrat leading-[18px] text-left">
+            <div class="text-white text-sm font-bold font-montserrat leading-snug text-left">
                 {{ __('Address City') }}<br>
                 {{ __('Address Street') }}
             </div>
         </div>
 
         <!-- Bottom Row: Email + Phone -->
-        <div class="flex justify-between items-start">
+        <div class="flex justify-between items-start flex-wrap gap-4">
             <!-- Email -->
-            <div class="text-white text-sm font-bold font-montserrat leading-[18px]">
+            <div class="text-white text-sm font-bold font-montserrat leading-snug break-all">
                 veteranskiprostirkhm@gmail.com
             </div>
 
             <!-- Phone -->
-            <div class="text-white text-sm font-bold font-montserrat leading-[18px] text-right">
+            <div class="text-white text-sm font-bold font-montserrat leading-snug text-right whitespace-nowrap">
                 +38 067 563 0090
             </div>
         </div>

@@ -25,7 +25,22 @@ Route::get('/lang/{locale}', function (string $locale) {
     if (in_array($locale, ['ua', 'en'])) {
         session(['locale' => $locale]);
     }
-    return redirect()->back();
+
+    // Get the previous URL
+    $previousUrl = url()->previous();
+    $previousPath = parse_url($previousUrl, PHP_URL_PATH) ?? '/';
+
+    // Check if the previous URL was a valid route (not a 404)
+    // If we came from an invalid URL, redirect to home instead
+    try {
+        $route = app('router')->getRoutes()->match(
+            \Illuminate\Http\Request::create($previousPath)
+        );
+        return redirect()->back();
+    } catch (\Symfony\Component\HttpKernel\Exception\NotFoundHttpException $e) {
+        // Previous page was a 404, redirect to home
+        return redirect()->route('home');
+    }
 })->name('lang.switch');
 
 // require __DIR__ . '/auth.php';

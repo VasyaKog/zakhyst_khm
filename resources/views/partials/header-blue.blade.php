@@ -15,7 +15,7 @@
                 <div class="flex items-center space-x-8 whitespace-nowrap">
                     <a href="{{ route('about') }}"
                         class="text-white hover:text-blue-200 font-bold text-base uppercase leading-tight tracking-wide transition-colors whitespace-nowrap">
-                        {{ __('Who We Are') }}
+                        {{ __('About') }}
                     </a>
                     <a href="{{ route('services') }}"
                         class="text-white hover:text-blue-200 font-bold text-base uppercase leading-tight tracking-wide transition-colors whitespace-nowrap">
@@ -40,7 +40,7 @@
                     </a>
                     <a href="{{ route('path') }}"
                         class="text-white hover:text-blue-200 font-bold text-sm min-[1700px]:text-base uppercase leading-tight tracking-wide transition-colors whitespace-nowrap">
-                        {{ __('Community To Veteran') }}
+                        {{ __('Community to Veteran') }}
                     </a>
                     <a href="{{ route('indifferent') }}"
                         class="text-white hover:text-blue-200 font-bold text-sm min-[1700px]:text-base uppercase leading-tight tracking-wide transition-colors whitespace-nowrap">
@@ -54,12 +54,26 @@
             </div>
 
             <div class="flex items-center gap-8 flex-shrink-0">
-                <!-- Language toggle -->
-                <button id="language-toggle-blue" class="hidden min-[1400px]:flex items-center space-x-1 text-white">
-                    <span class="font-bold text-base">UA</span>
-                    <img class="pb-1 brightness-0 invert" src="{{ asset('images/icons/arrow-down.svg') }}"
-                        alt="Dropdown">
-                </button>
+                <!-- Language Dropdown: Hidden on mobile, Visible > 1400px -->
+                <div id="language-dropdown-blue" class="relative hidden min-[1400px]:block">
+                    <button id="language-toggle-blue" class="flex items-center space-x-1 text-white"
+                        onclick="toggleLanguageDropdownBlue()">
+                        <span class="font-bold text-base">{{ strtoupper(app()->getLocale()) }}</span>
+                        <img class="pb-1 brightness-0 invert" src="{{ asset('images/icons/arrow-down.svg') }}"
+                            alt="Dropdown">
+                    </button>
+                    <div id="language-menu-blue"
+                        class="hidden absolute top-full left-0 mt-2 bg-white shadow-lg rounded-lg overflow-hidden z-50 min-w-[80px]">
+                        <a href="{{ route('lang.switch', 'ua') }}"
+                            class="block px-4 py-2 text-sm font-bold text-black hover:bg-gray-100 {{ app()->getLocale() === 'ua' ? 'bg-gray-100' : '' }}">
+                            UA
+                        </a>
+                        <a href="{{ route('lang.switch', 'en') }}"
+                            class="block px-4 py-2 text-sm font-bold text-black hover:bg-gray-100 {{ app()->getLocale() === 'en' ? 'bg-gray-100' : '' }}">
+                            EN
+                        </a>
+                    </div>
+                </div>
 
                 <!-- Burger/Cross Button -->
                 <div class="relative w-[30px] h-[19px] max-[768px]:w-[45px] max-[768px]:h-[30px]">
@@ -81,11 +95,26 @@
                     </button>
                 </div>
 
-                <!-- Dark Mode Switch -->
-                <button class="transition-colors hidden min-[1400px]:block min-[1800px]:mr-[33px]"
+                <!-- Dark Mode Switch - Animated Pill Toggle -->
+                <button id="dark-mode-toggle-blue"
+                    class="relative w-[70px] h-[40px] hidden min-[1400px]:flex items-center justify-between px-[8px] rounded-full border-2 border-white transition-all duration-300 min-[1800px]:mr-[33px]"
                     onclick="toggleDarkMode()">
-                    <img src="{{ asset('images/icons/switch.svg') }}" alt="Dark Mode Toggle"
-                        class="brightness-0 invert h-[30px]">
+                    <!-- Sun Icon (Left) - Figma exact -->
+                    <svg class="w-[20px] h-[20px] z-10" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="11" stroke="white" stroke-width="2" />
+                    </svg>
+                    <!-- Moon Icon (Right) - Figma exact -->
+                    <svg class="w-[18px] h-[20px] z-10" viewBox="0 0 21 25" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M8.22205 24.0145C11.4036 24.0111 14.4538 22.7457 16.7035 20.496C18.9532 18.2463 20.2186 15.1961 20.2221 12.0145C20.3751 3.05854 10.1911 -2.97046 2.43105 1.52354L0.87805 2.38554L2.42105 3.26554C9.12105 6.95354 8.63105 17.1355 1.62105 20.1715L4.95911e-05 20.9025L1.46705 21.9085C3.45369 23.278 5.80914 24.0124 8.22205 24.0145ZM8.22205 2.01454C10.8733 2.01745 13.4152 3.07196 15.2899 4.94669C17.1646 6.82142 18.2191 9.36327 18.2221 12.0145C18.3771 19.1315 10.4591 24.2145 4.06705 21.0965C5.56351 20.0922 6.80405 18.7515 7.68934 17.1817C8.57464 15.6119 9.08009 13.8567 9.16523 12.0565C9.25038 10.2562 8.91285 8.46111 8.17968 6.81476C7.4465 5.16841 6.33804 3.71659 4.94305 2.57554C5.99582 2.20199 7.10497 2.01222 8.22205 2.01454Z"
+                            fill="white" />
+                    </svg>
+                    <!-- Sliding Circle (covers active icon) -->
+                    <div id="toggle-circle-blue"
+                        class="absolute left-[4px] w-[28px] h-[28px] bg-white rounded-full transition-[left] duration-300 ease-in-out">
+                    </div>
                 </button>
 
                 <button onclick="openDonationModal()"
@@ -151,4 +180,44 @@
             }
         }
     }
+
+    function toggleDarkMode() {
+        // Toggle dark mode class on html element
+        document.documentElement.classList.toggle('dark');
+
+        // Animate the toggle circle
+        const toggleCircle = document.getElementById('toggle-circle-blue');
+        if (toggleCircle) {
+            if (document.documentElement.classList.contains('dark')) {
+                toggleCircle.style.left = 'calc(100% - 32px)';
+            } else {
+                toggleCircle.style.left = '4px';
+            }
+        }
+
+        // Save preference
+        localStorage.setItem('darkMode', document.documentElement.classList.contains('dark'));
+    }
+
+    // Initialize toggle position on page load
+    document.addEventListener('DOMContentLoaded', function () {
+        const toggleCircle = document.getElementById('toggle-circle-blue');
+        if (toggleCircle && document.documentElement.classList.contains('dark')) {
+            toggleCircle.style.left = 'calc(100% - 32px)';
+        }
+    });
+
+    function toggleLanguageDropdownBlue() {
+        const menu = document.getElementById('language-menu-blue');
+        menu.classList.toggle('hidden');
+    }
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function (event) {
+        const dropdown = document.getElementById('language-dropdown-blue');
+        const menu = document.getElementById('language-menu-blue');
+        if (dropdown && menu && !dropdown.contains(event.target)) {
+            menu.classList.add('hidden');
+        }
+    });
 </script>

@@ -2,10 +2,10 @@
 @section('title', 'Небайдужим')
 @section('content')
 
-    <div class="px-5 lg:pl-[50px] xl:pl-[200px] 2xl:pl-[375px] lg:pr-0 mb-[60px] lg:mb-[120px] mt-10 lg:mt-[140px]">
-        <div class="flex flex-col-reverse xs:flex-row xs:items-start xs:justify-between gap-4 lg:gap-0 pr-0 xs:pr-12">
+    <div class="px-4 xs:px-5 lg:pl-[50px] xl:pl-[200px] 2xl:pl-[375px] lg:pr-0 mb-[60px] lg:mb-[120px] mt-10 lg:mt-[140px]">
+        <div class="flex flex-col-reverse xs:flex-row xs:items-start xs:justify-between gap-4 lg:gap-0">
             <h1
-                class="text-[1.75rem] xs:text-[2.5rem] lg:text-[5rem] font-extrabold font-['Montserrat'] text-black dark:text-white uppercase leading-[0.92] transition-colors break-words">
+                class="text-[1.5rem] xs:text-[2rem] sm:text-[2.5rem] lg:text-[5rem] font-extrabold font-['Montserrat'] text-black dark:text-white uppercase leading-[0.92] transition-colors break-words max-w-full">
                 {{ __('Indifferent Page Title') }}
             </h1>
             <img src="{{ asset('images/icons/button-support.svg') }}" alt="Support"

@@ -12,10 +12,10 @@
     @if($codedSlideId === 'slide1')
         {{-- Coded Slide 1: Grid (Who We Are) --}}
         <img src="{{ asset('images/backgrounds/bg1.png') }}" alt="Family Background" class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-neutral-400 opacity-20 mix-blend-multiply"></div>
+        <div class="absolute inset-0 bg-black opacity-20"></div>
 
-        <!-- Content: centered at all breakpoints -->
-        <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+        <!-- Content: positioned slightly left using percentage -->
+        <div class="absolute left-[45%] top-1/2 -translate-x-1/2 -translate-y-1/2">
             <h1 class="text-white text-6xl font-bold font-unbounded leading-[74px] tracking-wide mb-8">
                 {{ __('Who We Are') }}
             </h1>
@@ -25,8 +25,7 @@
                 <div
                     class="w-[300px] h-[90px] bg-white dark:bg-zinc-800 rounded-[10px] flex items-center px-4 space-x-4 transition-colors">
                     <div class="w-11 h-11 flex items-center justify-center">
-                        <img src="{{ asset('images/icons/family.svg') }}" alt="Family"
-                            class="w-11 h-11 dark:invert transition-all">
+                        <img src="{{ asset('images/icons/family.svg') }}" alt="Family" class="w-11 h-11">
                     </div>
                     <span
                         class="text-black dark:text-white text-xs font-bold font-montserrat uppercase leading-tight tracking-wide transition-colors">
@@ -36,8 +35,7 @@
                 <div
                     class="w-[300px] h-[90px] bg-white dark:bg-zinc-800 rounded-[10px] flex items-center px-4 space-x-4 transition-colors">
                     <div class="w-11 h-11 flex items-center justify-center">
-                        <img src="{{ asset('images/icons/heart.svg') }}" alt="Heart"
-                            class="w-11 h-11 dark:invert transition-all">
+                        <img src="{{ asset('images/icons/heart.svg') }}" alt="Heart" class="w-11 h-11">
                     </div>
                     <span
                         class="text-black dark:text-white text-xs font-bold font-montserrat uppercase leading-tight tracking-wide transition-colors">
@@ -47,8 +45,7 @@
                 <div
                     class="w-[300px] h-[90px] bg-white dark:bg-zinc-800 rounded-[10px] flex items-center px-4 space-x-4 transition-colors">
                     <div class="w-11 h-11 flex items-center justify-center">
-                        <img src="{{ asset('images/icons/army.svg') }}" alt="Army"
-                            class="w-11 h-11 dark:invert transition-all">
+                        <img src="{{ asset('images/icons/army.svg') }}" alt="Army" class="w-11 h-11">
                     </div>
                     <span
                         class="text-black dark:text-white text-xs font-bold font-montserrat uppercase leading-tight tracking-wide transition-colors">
@@ -58,8 +55,7 @@
                 <div
                     class="w-[300px] h-[90px] bg-white dark:bg-zinc-800 rounded-[10px] flex items-center px-4 space-x-4 transition-colors">
                     <div class="w-11 h-11 flex items-center justify-center">
-                        <img src="{{ asset('images/icons/people.svg') }}" alt="People"
-                            class="w-11 h-11 dark:invert transition-all">
+                        <img src="{{ asset('images/icons/people.svg') }}" alt="People" class="w-11 h-11 shrink-0">
                     </div>
                     <span
                         class="text-black dark:text-white text-xs font-bold font-montserrat uppercase leading-tight tracking-wide transition-colors">
@@ -72,10 +68,10 @@
     @elseif($codedSlideId === 'slide2')
         {{-- Coded Slide 2: Business (Blue Shape) --}}
         <img src="{{ asset('images/backgrounds/bg2.png') }}" alt="Family Background" class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-neutral-400 opacity-20 mix-blend-multiply"></div>
+        <div class="absolute inset-0 bg-black opacity-30"></div>
 
-        <!-- Centered at all breakpoints -->
-        <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] min-h-[384px] h-auto bg-blue-600 py-12 px-[90px]"
+        <!-- Positioned slightly left using percentage -->
+        <div class="absolute left-[35%] top-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] min-h-[384px] h-auto bg-blue-600 py-12 px-[90px]"
             style="border-top-left-radius: 150px; border-top-right-radius: 50px; border-bottom-left-radius: 150px; border-bottom-right-radius: 150px;">
             <h2 class="text-white text-6xl font-bold font-unbounded leading-[74.08px] tracking-wide mb-8">
                 {{ __('Business To Veterans') }}
@@ -89,10 +85,10 @@
     @elseif($codedSlideId === 'slide3')
         {{-- Coded Slide 3: Memorial --}}
         <img src="{{ asset('images/backgrounds/bg3.png') }}" alt="Family Background" class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-neutral-400 opacity-20 mix-blend-multiply"></div>
+        <div class="absolute inset-0 bg-black opacity-30"></div>
 
-        <!-- Centered at all breakpoints -->
-        <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[669px]">
+        <!-- Positioned slightly left using percentage -->
+        <div class="absolute left-[35%] top-1/2 -translate-x-1/2 -translate-y-1/2 w-[669px]">
             <h2 class="text-white text-6xl font-bold font-unbounded leading-[74.08px] tracking-wide mb-12">
                 {{ __('Died For Ukraine') }}
             </h2>

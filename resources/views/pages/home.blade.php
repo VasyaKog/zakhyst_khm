@@ -17,7 +17,7 @@
         <!-- Hero Footer Section (Desktop) -->
         <footer class="flex items-center justify-between py-4 pb-[124px]">
             <!-- Contact Info -->
-            <div class="flex items-center">
+            <div class="flex items-center shrink-0">
                 <img src="{{ asset('images/icons/watsapnp.svg') }}" alt="WhatsApp"
                     class="w-6 h-6 dark:invert transition-all">
                 <img src="{{ asset('images/icons/signal.svg') }}" alt="Signal"
@@ -34,7 +34,7 @@
             </div>
 
             <!-- Search Bar -->
-            <div class="flex-1 max-w-[995px] relative">
+            <div class="flex-1 max-w-[995px] relative ml-8">
                 <div
                     class="w-full h-12 rounded-[300px] border border-black flex items-center px-5 bg-white dark:bg-zinc-800 transition-colors">
                     <input type="text" id="desktop-search-input"
@@ -500,7 +500,7 @@
     </div>
 
     <!-- Desktop Map Section (>=768px) -->
-    <div class="hidden lg:block pt-[300px]">
+    <div class="hidden lg:block pt-[100px]">
         <!-- Title in responsive container aligned with other sections -->
         <div class="px-4 lg:px-8 xl:px-4 2xl:px-0 lg:max-w-[900px] xl:max-w-[1100px] 2xl:max-w-[1170px] lg:mx-auto mb-16">
             <h2
@@ -567,7 +567,7 @@
     </div>
 
     <!-- Desktop Partners Section - Carousel (xl+: 1280px and above) -->
-    <div class="hidden xl:flex justify-center pt-[130px] mb-[180px]">
+    <div class="hidden xl:flex justify-center pt-[300px] mb-[180px]">
         <div class="relative w-[1170px]">
             <!-- Title Section -->
             <div class="absolute left-0 top-0">

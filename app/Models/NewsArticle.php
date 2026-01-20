@@ -34,6 +34,8 @@ class NewsArticle extends Model
         'content',
         'image_url',
         'gallery_images',
+        'gallery_position',
+        'inline_photo_position',
         'author',
         'video_url',
         'published_at',

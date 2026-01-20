@@ -4,7 +4,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>@yield('title', 'ВЕТЕРАНСЬКИЙ ПРОСТІР')</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    {{-- SEO Meta Tags --}}
+    <x-seo-meta :title="View::getSection('seo_title', View::getSection('title', ''))"
+        :description="View::getSection('seo_description', '')" :image="View::getSection('seo_image')" />
+
     @vite(['resources/js/web.js'])
 </head>
 

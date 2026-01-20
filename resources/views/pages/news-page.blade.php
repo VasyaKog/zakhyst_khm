@@ -1,5 +1,8 @@
 @extends('layouts.web')
-@section('title', __('News Article'))
+@section('title', $newsArticle->title)
+@section('seo_title', $newsArticle->title)
+@section('seo_description', $newsArticle->summary)
+@section('seo_image', $newsArticle->image_url ? asset('storage/' . $newsArticle->image_url) : null)
 @section('content')
 
     @php
@@ -11,15 +14,20 @@
                 $images[] = asset('storage/' . $img);
             }
         }
+
+        // Set Carbon locale for localized date formatting
+        $locale = app()->getLocale() === 'ua' ? 'uk' : app()->getLocale();
+        $formattedDate = $newsArticle->published_at->locale($locale)->translatedFormat('d F Y');
     @endphp
 
-    <x-news-instance :title="$newsArticle->title" :date="$newsArticle->published_at->isoFormat('D MMMM, YYYY')"
-        :author="$newsArticle->author ?? 'Admin'" :content="strip_tags($newsArticle->content)" :imageUrls="$images"
-        :videoUrl="$newsArticle->video_url ? asset($newsArticle->video_url) : null" />
+    <x-news-instance :title="$newsArticle->title" :date="$formattedDate" :author="$newsArticle->author ?? 'Admin'"
+        :content="$newsArticle->content" :imageUrls="$images" :videoUrl="$newsArticle->video_url ? asset($newsArticle->video_url) : null" :galleryPosition="$newsArticle->gallery_position"
+        :inlinePhotoPosition="$newsArticle->inline_photo_position" />
 
     <!-- You may be interested -->
     <div class="px-4 lg:px-[50px] max-w-[1920px] mx-auto mt-12 lg:mt-24 mb-6 lg:mb-12">
-        <p class="text-[1.125rem] xs:text-[1.5rem] lg:text-[3rem] font-bold font-['Montserrat'] text-black dark:text-white leading-[1.33] transition-colors">
+        <p
+            class="text-[1.125rem] xs:text-[1.5rem] lg:text-[3rem] font-bold font-['Montserrat'] text-black dark:text-white leading-[1.33] transition-colors">
             {{ __('You Might Be Interested') }}
         </p>
     </div>
@@ -27,22 +35,24 @@
     <!-- Desktop Grid -->
     <div class="hidden lg:flex flex-row gap-12 mb-24 px-[50px] max-w-[1920px] mx-auto justify-center">
         @foreach($relatedNews as $related)
+            @php $relatedDate = $related->published_at->locale($locale)->translatedFormat('d F Y'); @endphp
             <x-news-card variant="large" :show-button="true" class="!max-w-none w-full" :title="$related->title"
-                :summary="$related->summary" :date="$related->published_at->isoFormat('D MMMM, YYYY')"
-                :image-url="asset('storage/' . $related->image_url)" :url="route('news.show', $related)" />
+                :summary="$related->summary" :date="$relatedDate" :image-url="asset('storage/' . $related->image_url)"
+                :url="route('news.show', $related)" />
         @endforeach
     </div>
 
     <!-- Mobile Slider -->
     <div class="lg:hidden w-full mb-16">
         <!-- Slider Container -->
-        <div id="related-news-slider" class="w-full overflow-x-auto pb-4 [&::-webkit-scrollbar]:hidden" 
-             style="scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none;">
+        <div id="related-news-slider" class="w-full overflow-x-auto pb-4 [&::-webkit-scrollbar]:hidden"
+            style="scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none;">
             <div class="flex">
                 @foreach($relatedNews as $related)
+                    @php $relatedDateMobile = $related->published_at->locale($locale)->translatedFormat('d F Y'); @endphp
                     <div class="w-full flex-shrink-0 px-4" style="scroll-snap-align: center;">
-                        <x-news-card variant="small" :show-button="true" class="!max-w-none !w-full h-full" :title="$related->title"
-                            :summary="$related->summary" :date="$related->published_at->isoFormat('D MMMM, YYYY')"
+                        <x-news-card variant="small" :show-button="true" class="!max-w-none !w-full h-full"
+                            :title="$related->title" :summary="$related->summary" :date="$relatedDateMobile"
                             :image-url="asset('storage/' . $related->image_url)" :url="route('news.show', $related)" />
                     </div>
                 @endforeach
@@ -58,44 +68,12 @@
         </div>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const slider = document.getElementById('related-news-slider');
-            const dots = document.querySelectorAll('#related-news-dots button');
-
-            if (slider && dots.length > 0) {
-                // Scroll to specific slide
-                window.scrollToRelatedNews = (index) => {
-                    const slideWidth = slider.offsetWidth;
-                    const scrollLeft = index * slideWidth;
-                    slider.scrollTo({
-                        left: scrollLeft,
-                        behavior: 'smooth'
-                    });
-                };
-
-                // Update active dot on scroll
-                let scrollTimeout;
-                slider.addEventListener('scroll', () => {
-                    clearTimeout(scrollTimeout);
-                    scrollTimeout = setTimeout(() => {
-                        const scrollLeft = slider.scrollLeft;
-                        const slideWidth = slider.offsetWidth;
-                        const activeIndex = Math.round(scrollLeft / slideWidth);
-
-                        dots.forEach((dot, index) => {
-                            if (index === activeIndex) {
-                                dot.classList.remove('bg-gray-300');
-                                dot.classList.add('bg-veteran-blue');
-                            } else {
-                                dot.classList.remove('bg-veteran-blue');
-                                dot.classList.add('bg-gray-300');
-                            }
-                        });
-                    }, 50); // Debounce
-                });
-            }
-        });
+    <script>     document.addEventListener('DOMContentLoaded', functio n() {
+            const slider = document.getElementById('related-news-slider'); const dots = document.querySelectorAll('#related-news-dots button');
+            if(slider && dots.length > 0) {             // Scroll to specific slide             window.scrollToRelatedNews = (index) => {                 const slideWidth = slider.offsetWidth;                 const scrollLeft = index * slideWidth;                 slider.scrollTo({                     left: scrollLeft,                     behavior: 'smooth'                 });             };
+            // Update active dot on scroll             let scrollTimeout;             slider.addEventListener('scroll', () => {                 clearTimeout(scrollTimeout);                 scrollTimeout = setTimeout(() => {                     const scrollLeft = slider.scrollLeft;                     const slideWidth = slider.offsetWidth;                     const activeIndex = Math.round(scrollLeft / slideWidth);
+            dots.forEach((dot, index) => { if (index === activeIndex) { dot.classList.remove('bg-gray-300'); dot.classList.add('bg-veteran-blue'); } else { dot.classList.remove('bg-veteran-blue'); dot.classList.add('bg-gray-300'); } });
+        }, 50); // Debounce             });         }     });
     </script>
 
 @endsection

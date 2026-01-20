@@ -1,5 +1,6 @@
 @extends('layouts.web')
 @section('title', __('News'))
+@php $locale = app()->getLocale() === 'ua' ? 'uk' : app()->getLocale(); @endphp
 @section('content')
 
     <!-- Header Section -->
@@ -46,7 +47,7 @@
         <div class="flex flex-col gap-[77px]">
             @foreach($news->take(3) as $article)
                 <x-news-card variant="large" :show-button="true" class="!max-w-none" :title="$article->title"
-                    :summary="$article->summary" :date="$article->published_at->isoFormat('D MMMM, YYYY')"
+                    :summary="$article->summary" :date="$article->published_at->locale($locale)->translatedFormat('d F Y')"
                     :image-url="asset('storage/' . $article->image_url)" :url="route('news.show', $article)" />
             @endforeach
 
@@ -60,7 +61,7 @@
         <div class="grid grid-cols-2 gap-x-[42px] gap-y-[50px] 3xl:gap-y-[70px] 3xl:mb-32 h-min">
             @foreach($news->skip(3)->take(10) as $article)
                 <x-news-card variant="small" :show-button="false" class="!max-w-none" :title="$article->title"
-                    :summary="$article->summary" :date="$article->published_at->isoFormat('D MMMM, YYYY')"
+                    :summary="$article->summary" :date="$article->published_at->locale($locale)->translatedFormat('d F Y')"
                     :image-url="asset('storage/' . $article->image_url)" :url="route('news.show', $article)" />
             @endforeach
         </div>
@@ -97,7 +98,7 @@
                         <!-- Date -->
                         <div
                             class="text-black dark:text-gray-400 text-[0.75rem] font-bold font-['Montserrat'] uppercase tracking-wide transition-colors">
-                            {{ $article->published_at->isoFormat('D MMM, YYYY') }}
+                            {{ $article->published_at->locale($locale)->translatedFormat('d M Y') }}
                         </div>
 
                         <!-- Button -->
@@ -136,7 +137,7 @@
                     <!-- Date -->
                     <div
                         class="mt-auto text-black dark:text-gray-400 text-[0.625rem] font-bold font-['Montserrat'] uppercase tracking-wide transition-colors">
-                        {{ $article->published_at->isoFormat('D MMM, YYYY') }}
+                        {{ $article->published_at->locale($locale)->translatedFormat('d M Y') }}
                     </div>
                 </a>
             @endforeach

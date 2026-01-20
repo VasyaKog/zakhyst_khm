@@ -11,7 +11,10 @@ Route::get('/about', [PageController::class, 'about'])->name('about');
 Route::get('/services', [PageController::class, 'services'])->name('services');
 Route::get('/news', [PageController::class, 'news'])->name('news');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
-Route::post('/contact', [PageController::class, 'contactSubmit'])->name('contact.submit');
+Route::post('/contact', [PageController::class, 'contactSubmit'])
+    ->middleware('throttle:contact-form')
+    ->name('contact.submit');
+
 Route::get('/team', [PageController::class, 'team'])->name('team');
 Route::get('/news/{newsArticle}', [PageController::class, 'newsPage'])->name('news.show');
 Route::get('/indifferent', [PageController::class, 'indifferent'])->name('indifferent');
@@ -41,6 +44,15 @@ Route::get('/lang/{locale}', function (string $locale) {
         // Previous page was a 404, redirect to home
         return redirect()->route('home');
     }
-})->name('lang.switch');
+})->middleware('throttle:language-switch')->name('lang.switch');
+
+// Sitemap
+Route::get('/sitemap.xml', function () {
+    $news = \App\Models\NewsArticle::published()->get();
+
+    return response()->view('sitemap', [
+        'news' => $news,
+    ])->header('Content-Type', 'text/xml');
+});
 
 // require __DIR__ . '/auth.php';

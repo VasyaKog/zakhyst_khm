@@ -1,5 +1,7 @@
 @extends('layouts.web')
 @section('title', __('Home'))
+@section('seo_title', 'Головна')
+@section('seo_description', 'Ветеранський простір у Хмельницькому - підтримка ветеранів, військових та їхніх родин. Соціальна адаптація, психологічна допомога, юридичні консультації.')
 @section('content')
     <!-- Desktop Hero & Footer Wrapper (>=768px) -->
     <div class="hidden lg:block">

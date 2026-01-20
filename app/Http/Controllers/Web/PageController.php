@@ -10,47 +10,64 @@ use App\Models\TeamMember;
 use App\Models\TimelineEvent;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Cache;
+
 class PageController extends Controller
 {
     public function home()
     {
-        $heroBanners = HeroBanner::active()->get();
-        $services = Service::active()->take(3)->get();
-        $news = NewsArticle::published()->take(3)->get();
-        $team = TeamMember::mainTeam()->take(3)->get();
-        $partners = Partner::active()->get();
+        $data = Cache::remember('home_data_' . app()->getLocale(), 900, function () {
+            return [
+                'heroBanners' => HeroBanner::active()->get(),
+                'services' => Service::active()->take(3)->get(),
+                'news' => NewsArticle::published()->take(3)->get(),
+                'team' => TeamMember::mainTeam()->take(3)->get(),
+                'partners' => Partner::active()->get(),
+            ];
+        });
 
-        return view('pages.home', compact('heroBanners', 'services', 'news', 'team', 'partners'));
+        return view('pages.home', $data);
     }
     public function about()
     {
-        $timelineEvents = TimelineEvent::active()->get();
+        $timelineEvents = Cache::remember('timeline_events_' . app()->getLocale(), 3600, function () {
+            return TimelineEvent::active()->get();
+        });
 
         return view('pages.about', compact('timelineEvents'));
     }
     public function team()
     {
-        $mainTeam = TeamMember::mainTeam()->get();
-        $partnerTeam = TeamMember::partnerTeam()->get();
-        return view('pages.team', compact('mainTeam', 'partnerTeam'));
+        $data = Cache::remember('team_data_' . app()->getLocale(), 3600, function () {
+            return [
+                'mainTeam' => TeamMember::mainTeam()->get(),
+                'partnerTeam' => TeamMember::partnerTeam()->get(),
+            ];
+        });
+        return view('pages.team', $data);
     }
     public function services()
     {
-        $services = Service::active()->get();
+        $services = Cache::remember('services_list_' . app()->getLocale(), 3600, function () {
+            return Service::active()->get();
+        });
         return view('pages.services', compact('services'));
     }
     public function news()
     {
+        // Pagination is hard to cache effectively, keeping dynamic
         // 3 large cards + 10 small cards = 13 per page
         $news = NewsArticle::published()->paginate(13);
         return view('pages.news', compact('news'));
     }
     public function newsPage(NewsArticle $newsArticle)
     {
-        $relatedNews = NewsArticle::published()
-            ->where('id', '!=', $newsArticle->id)
-            ->take(3)
-            ->get();
+        $relatedNews = Cache::remember('related_news_' . $newsArticle->id . '_' . app()->getLocale(), 1800, function () use ($newsArticle) {
+            return NewsArticle::published()
+                ->where('id', '!=', $newsArticle->id)
+                ->take(3)
+                ->get();
+        });
         return view('pages.news-page', compact('newsArticle', 'relatedNews'));
     }
     public function contact()

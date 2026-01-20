@@ -28,21 +28,12 @@ class HeroBannerResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\Section::make()
+                Forms\Components\Section::make('Налаштування банера')
                     ->schema([
                         Forms\Components\Placeholder::make('coded_slide_name')
                             ->label('Тип слайду')
                             ->content(fn($record) => $record?->coded_slide_name ?? 'Новий банер (фото + посилання)')
                             ->visible(fn($record) => $record !== null),
-
-                        Forms\Components\FileUpload::make('image_path')
-                            ->label('Зображення')
-                            ->image()
-                            ->disk('public')
-                            ->directory('hero-banners')
-                            ->visibility('public')
-                            ->visible(fn($record) => !$record?->isCodedSlide())
-                            ->required(fn($record) => !$record?->isCodedSlide()),
 
                         Forms\Components\TextInput::make('link_url')
                             ->label('Посилання (URL)')
@@ -59,6 +50,58 @@ class HeroBannerResource extends Resource
                             ->label('Активний')
                             ->default(true),
                     ]),
+
+                // Ukrainian Images Section
+                Forms\Components\Section::make('Зображення (Українська)')
+                    ->description('Основні зображення для української версії сайту')
+                    ->schema([
+                        Forms\Components\FileUpload::make('image_path')
+                            ->label('Десктоп версія')
+                            ->helperText('Основне зображення для великих екранів')
+                            ->image()
+                            ->disk('public')
+                            ->directory('hero-banners')
+                            ->visibility('public')
+                            ->visible(fn($record) => !$record?->isCodedSlide())
+                            ->required(fn($record) => !$record?->isCodedSlide()),
+
+                        Forms\Components\FileUpload::make('image_path_mobile')
+                            ->label('Мобільна версія (опційно)')
+                            ->helperText('Якщо не заповнено, буде використано десктоп версію')
+                            ->image()
+                            ->disk('public')
+                            ->directory('hero-banners')
+                            ->visibility('public')
+                            ->visible(fn($record) => !$record?->isCodedSlide()),
+                    ])
+                    ->visible(fn($record) => !$record?->isCodedSlide())
+                    ->columns(2),
+
+                // English Images Section
+                Forms\Components\Section::make('Зображення (Англійська)')
+                    ->description('Якщо не заповнено, банер НЕ показуватиметься в англійській версії')
+                    ->schema([
+                        Forms\Components\FileUpload::make('image_path_en')
+                            ->label('Десктоп версія')
+                            ->helperText('Обов\'язково для показу банера англійською')
+                            ->image()
+                            ->disk('public')
+                            ->directory('hero-banners')
+                            ->visibility('public')
+                            ->visible(fn($record) => !$record?->isCodedSlide()),
+
+                        Forms\Components\FileUpload::make('image_path_mobile_en')
+                            ->label('Мобільна версія (опційно)')
+                            ->helperText('Якщо не заповнено, буде використано десктоп версію')
+                            ->image()
+                            ->disk('public')
+                            ->directory('hero-banners')
+                            ->visibility('public')
+                            ->visible(fn($record) => !$record?->isCodedSlide()),
+                    ])
+                    ->visible(fn($record) => !$record?->isCodedSlide())
+                    ->collapsed()
+                    ->columns(2),
             ]);
     }
 

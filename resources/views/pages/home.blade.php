@@ -4,8 +4,10 @@
     <!-- Desktop Hero & Footer Wrapper (>=768px) -->
     <div class="hidden lg:block">
         <div id="hero-carousel" class="relative overflow-hidden min-h-[820px] h-auto mb-8 rounded-[100px]">
-            @forelse($heroBanners as $index => $banner)
-                <x-hero-slide :banner="$banner" :isFirst="$index === 0" />
+            @php $visibleIndex = 0; @endphp
+            @forelse($heroBanners->filter(fn($b) => $b->isVisibleInCurrentLocale()) as $banner)
+                <x-hero-slide :banner="$banner" :isFirst="$visibleIndex === 0" />
+                @php $visibleIndex++; @endphp
             @empty
                 <!-- Fallback if no banners -->
                 <div class="absolute inset-0 w-full min-h-[820px] bg-gray-200 flex items-center justify-center">
@@ -57,8 +59,10 @@
     <!-- Mobile Hero Section (<768px) -->
     <div id="mobile-hero-carousel" class="block lg:hidden mb-8">
         <div class="relative min-h-[600px] h-auto rounded-[62px] overflow-hidden mb-6">
-            @forelse($heroBanners as $index => $banner)
-                <x-mobile-hero-slide :banner="$banner" :isFirst="$index === 0" />
+            @php $mobileVisibleIndex = 0; @endphp
+            @forelse($heroBanners->filter(fn($b) => $b->isVisibleInCurrentLocale()) as $banner)
+                <x-mobile-hero-slide :banner="$banner" :isFirst="$mobileVisibleIndex === 0" />
+                @php $mobileVisibleIndex++; @endphp
             @empty
                 <!-- Fallback if no banners -->
                 <div class="absolute inset-0 w-full h-full bg-gray-200 flex items-center justify-center">

@@ -97,7 +97,7 @@
             <a href="{{ $banner->link_url }}" class="block w-full h-full">
         @endif
 
-            <img src="{{ asset('storage/' . $banner->image_path) }}" alt="Banner"
+            <img src="{{ asset('storage/' . $banner->getMobileImage()) }}" alt="Banner"
                 class="absolute inset-0 w-full h-full object-cover object-center">
             <div class="absolute inset-0 bg-neutral-900/20"></div>
 

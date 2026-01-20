@@ -108,7 +108,7 @@
             <a href="{{ $banner->link_url }}" class="block w-full h-full">
         @endif
 
-            <img src="{{ asset('storage/' . $banner->image_path) }}" alt="Banner" class="w-full h-full object-cover">
+            <img src="{{ asset('storage/' . $banner->getDesktopImage()) }}" alt="Banner" class="w-full h-full object-cover">
             <div class="absolute inset-0 bg-neutral-400 opacity-10 mix-blend-multiply"></div>
 
             @if($banner->link_url)

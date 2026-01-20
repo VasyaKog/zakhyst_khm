@@ -40,12 +40,34 @@ class ServiceResource extends Resource
                     ->label('Назва')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\Textarea::make('left_content')
+                Forms\Components\RichEditor::make('left_content')
                     ->label('Лівий контент')
                     ->required()
+                    ->toolbarButtons([
+                        'bold',
+                        'italic',
+                        'underline',
+                        'strike',
+                        'bulletList',
+                        'orderedList',
+                        'link',
+                        'redo',
+                        'undo',
+                    ])
                     ->columnSpanFull(),
-                Forms\Components\Textarea::make('right_content')
+                Forms\Components\RichEditor::make('right_content')
                     ->label('Правий контент')
+                    ->toolbarButtons([
+                        'bold',
+                        'italic',
+                        'underline',
+                        'strike',
+                        'bulletList',
+                        'orderedList',
+                        'link',
+                        'redo',
+                        'undo',
+                    ])
                     ->columnSpanFull(),
                 Forms\Components\TextInput::make('sort_order')
                     ->label('Порядок')

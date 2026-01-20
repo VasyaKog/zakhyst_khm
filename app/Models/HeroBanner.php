@@ -29,6 +29,9 @@ class HeroBanner extends Model
 
     protected $fillable = [
         'image_path',
+        'image_path_mobile',
+        'image_path_en',
+        'image_path_mobile_en',
         'link_url',
         'title',
         'text',
@@ -40,6 +43,49 @@ class HeroBanner extends Model
     protected $casts = [
         'is_active' => 'boolean',
     ];
+
+    /**
+     * Get desktop image for current locale with fallback
+     * - English: returns image_path_en, or null if not available (banner hidden)
+     * - Ukrainian: returns image_path
+     */
+    public function getDesktopImage(): ?string
+    {
+        if (app()->getLocale() === 'en') {
+            return $this->image_path_en;
+        }
+        return $this->image_path;
+    }
+
+    /**
+     * Get mobile image for current locale with fallback
+     * - English: returns image_path_mobile_en, or image_path_en, or null
+     * - Ukrainian: returns image_path_mobile, or image_path
+     */
+    public function getMobileImage(): ?string
+    {
+        if (app()->getLocale() === 'en') {
+            return $this->image_path_mobile_en ?? $this->image_path_en;
+        }
+        return $this->image_path_mobile ?? $this->image_path;
+    }
+
+    /**
+     * Check if banner should be visible in current locale
+     * Custom banners require English desktop image to show in English locale
+     */
+    public function isVisibleInCurrentLocale(): bool
+    {
+        if ($this->isCodedSlide()) {
+            return true; // Coded slides are always visible (they have hardcoded translations)
+        }
+
+        if (app()->getLocale() === 'en') {
+            return !empty($this->image_path_en);
+        }
+
+        return !empty($this->image_path);
+    }
 
     /**
      * Get all active banners (both coded and custom)

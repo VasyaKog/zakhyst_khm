@@ -103,12 +103,16 @@
                     class="relative w-[70px] h-[40px] hidden min-[1400px]:flex items-center justify-between px-[8px] rounded-full border-2 border-black dark:border-white min-[1800px]:mr-[33px]"
                     onclick="toggleDarkModeMain()">
                     <!-- Sun Icon (Left) - Figma exact -->
-                    <svg class="w-[20px] h-[20px] z-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="12" cy="12" r="11" class="stroke-black dark:stroke-white" stroke-width="2"/>
+                    <svg class="w-[20px] h-[20px] z-10" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="11" class="stroke-black dark:stroke-white" stroke-width="2" />
                     </svg>
                     <!-- Moon Icon (Right) - Figma exact -->
-                    <svg class="w-[18px] h-[20px] z-10" viewBox="0 0 21 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M8.22205 24.0145C11.4036 24.0111 14.4538 22.7457 16.7035 20.496C18.9532 18.2463 20.2186 15.1961 20.2221 12.0145C20.3751 3.05854 10.1911 -2.97046 2.43105 1.52354L0.87805 2.38554L2.42105 3.26554C9.12105 6.95354 8.63105 17.1355 1.62105 20.1715L4.95911e-05 20.9025L1.46705 21.9085C3.45369 23.278 5.80914 24.0124 8.22205 24.0145ZM8.22205 2.01454C10.8733 2.01745 13.4152 3.07196 15.2899 4.94669C17.1646 6.82142 18.2191 9.36327 18.2221 12.0145C18.3771 19.1315 10.4591 24.2145 4.06705 21.0965C5.56351 20.0922 6.80405 18.7515 7.68934 17.1817C8.57464 15.6119 9.08009 13.8567 9.16523 12.0565C9.25038 10.2562 8.91285 8.46111 8.17968 6.81476C7.4465 5.16841 6.33804 3.71659 4.94305 2.57554C5.99582 2.20199 7.10497 2.01222 8.22205 2.01454Z" class="fill-black dark:fill-white"/>
+                    <svg class="w-[18px] h-[20px] z-10" viewBox="0 0 21 25" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M8.22205 24.0145C11.4036 24.0111 14.4538 22.7457 16.7035 20.496C18.9532 18.2463 20.2186 15.1961 20.2221 12.0145C20.3751 3.05854 10.1911 -2.97046 2.43105 1.52354L0.87805 2.38554L2.42105 3.26554C9.12105 6.95354 8.63105 17.1355 1.62105 20.1715L4.95911e-05 20.9025L1.46705 21.9085C3.45369 23.278 5.80914 24.0124 8.22205 24.0145ZM8.22205 2.01454C10.8733 2.01745 13.4152 3.07196 15.2899 4.94669C17.1646 6.82142 18.2191 9.36327 18.2221 12.0145C18.3771 19.1315 10.4591 24.2145 4.06705 21.0965C5.56351 20.0922 6.80405 18.7515 7.68934 17.1817C8.57464 15.6119 9.08009 13.8567 9.16523 12.0565C9.25038 10.2562 8.91285 8.46111 8.17968 6.81476C7.4465 5.16841 6.33804 3.71659 4.94305 2.57554C5.99582 2.20199 7.10497 2.01222 8.22205 2.01454Z"
+                            class="fill-black dark:fill-white" />
                     </svg>
                     <!-- Sliding Circle (covers active icon) -->
                     <div id="toggle-circle-main"
@@ -184,8 +188,11 @@
     }
 
     function toggleDarkModeMain() {
-        // Toggle dark mode class on html element
-        document.documentElement.classList.toggle('dark');
+        if (typeof accessibility !== 'undefined') {
+            accessibility.toggleTheme();
+        } else {
+            document.documentElement.classList.toggle('dark');
+        }
 
         // Animate the toggle circle
         const toggleCircle = document.getElementById('toggle-circle-main');
@@ -195,14 +202,6 @@
             } else {
                 toggleCircle.style.left = '4px';
             }
-        }
-
-        // Save preference
-        localStorage.setItem('darkMode', document.documentElement.classList.contains('dark'));
-
-        // Also update accessibility if available
-        if (typeof accessibility !== 'undefined' && accessibility.toggleTheme) {
-            // Sync with accessibility module without re-triggering toggle
         }
     }
 

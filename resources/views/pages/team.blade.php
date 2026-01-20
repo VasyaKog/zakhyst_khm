@@ -8,25 +8,25 @@
         <div class="pt-[40px] lg:pt-[120px] pb-[60px] lg:pb-[100px]">
             <!-- Main Title Area -->
             <div
-                class="lg:px-0 lg:max-w-[1200px] lg:mx-auto md:ml-[50px] mb-[60px] lg:mb-[119px] flex justify-between items-start pt-[50px] lg:pt-0">
-                <div>
+                class="px-4 sm:px-5 lg:px-0 lg:max-w-[1200px] lg:mx-auto md:ml-[50px] mb-[60px] lg:mb-[119px] flex flex-col xs:flex-row justify-between items-start gap-4 pt-[50px] lg:pt-0">
+                <div class="max-w-full">
                     <h1
-                        class="text-[2.5rem] lg:text-[5rem] md:text-[3.75rem] font-extrabold text-black dark:text-white uppercase leading-[1.1] lg:leading-[1.02] mb-[40px] lg:mb-[77px] transition-colors">
+                        class="text-[1.75rem] xs:text-[2rem] sm:text-[2.5rem] md:text-[3.75rem] lg:text-[5rem] font-extrabold text-black dark:text-white uppercase leading-[1.1] lg:leading-[1.02] mb-[40px] lg:mb-[77px] transition-colors max-w-full">
                         {!! nl2br(__('Veteran Space Team')) !!}
                     </h1>
                     <p
-                        class="text-[1rem] lg:text-[1.25rem] md:text-[1.125rem] font-normal text-black dark:text-gray-200 text-left lg:text-justify max-w-full lg:max-w-[869px] leading-[1.43] transition-colors">
+                        class="text-sm xs:text-[1rem] lg:text-[1.25rem] md:text-[1.125rem] font-normal text-black dark:text-gray-200 text-left lg:text-justify max-w-full lg:max-w-[869px] leading-[1.43] transition-colors break-words">
                         {!! nl2br(__('Team Intro')) !!}
                     </p>
                 </div>
                 <img src="{{ asset('images/icons/button-support.svg') }}" alt="Support"
-                    class="w-[70px] h-[70px] cursor-pointer hover:opacity-80 transition-opacity ml-4 shrink-0"
+                    class="w-[50px] h-[50px] xs:w-[70px] xs:h-[70px] cursor-pointer hover:opacity-80 transition-opacity shrink-0"
                     onclick="openContactModal()">
             </div>
 
             <!-- Team Grid -->
             <div
-                class="lg:px-0 max-w-full lg:max-w-[1200px] lg:mx-auto md:ml-[50px]">
+                class="px-4 sm:px-5 lg:px-0 max-w-full lg:max-w-[1200px] lg:mx-auto md:ml-[50px]">
                 <div
                     class="grid grid-cols-1 min-[420px]:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-[22px] gap-y-[40px] lg:gap-y-[76px] mb-[80px] lg:mb-[195px]">
                     @foreach($mainTeam as $member)
@@ -50,15 +50,15 @@
 
             <!-- Partnership Section -->
             <div
-                class="lg:px-0 lg:max-w-[1200px] lg:mx-auto md:ml-[50px] mb-[50px] lg:mb-[100px]">
+                class="px-4 sm:px-5 lg:px-0 lg:max-w-[1200px] lg:mx-auto md:ml-[50px] mb-[50px] lg:mb-[100px]">
                 <h2
-                    class="text-[2.5rem] lg:text-[5rem] md:text-[3.75rem] font-extrabold text-black dark:text-white uppercase leading-[1.1] lg:leading-[1.02] mb-[50px] lg:mb-[100px] transition-colors">
+                    class="text-[1.75rem] xs:text-[2rem] sm:text-[2.5rem] md:text-[3.75rem] lg:text-[5rem] font-extrabold text-black dark:text-white uppercase leading-[1.1] lg:leading-[1.02] mb-[50px] lg:mb-[100px] transition-colors">
                     {!! nl2br(__('Partner Team')) !!}
                 </h2>
             </div>
 
             <div
-                class="lg:px-0 max-w-full lg:max-w-[1200px] lg:mx-auto md:ml-[50px]">
+                class="px-4 sm:px-5 lg:px-0 max-w-full lg:max-w-[1200px] lg:mx-auto md:ml-[50px]">
 
                 <div
                     class="grid grid-cols-1 min-[420px]:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-[30px] md:gap-[20px] sm:gap-[15px] gap-y-[40px] lg:gap-y-[76px] mb-[40px] lg:mb-[66px]">

@@ -10,7 +10,9 @@ const defaultSettings = {
     reduceMotion: false,
     highContrast: false,
     largeCursor: false,
-    highlightLinks: false
+    largeCursor: false,
+    highlightLinks: false,
+    theme: 'light'
 };
 
 // Storage key

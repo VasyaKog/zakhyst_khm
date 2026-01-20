@@ -68,12 +68,44 @@
         </div>
     </div>
 
-    <script>     document.addEventListener('DOMContentLoaded', functio n() {
-            const slider = document.getElementById('related-news-slider'); const dots = document.querySelectorAll('#related-news-dots button');
-            if(slider && dots.length > 0) {             // Scroll to specific slide             window.scrollToRelatedNews = (index) => {                 const slideWidth = slider.offsetWidth;                 const scrollLeft = index * slideWidth;                 slider.scrollTo({                     left: scrollLeft,                     behavior: 'smooth'                 });             };
-            // Update active dot on scroll             let scrollTimeout;             slider.addEventListener('scroll', () => {                 clearTimeout(scrollTimeout);                 scrollTimeout = setTimeout(() => {                     const scrollLeft = slider.scrollLeft;                     const slideWidth = slider.offsetWidth;                     const activeIndex = Math.round(scrollLeft / slideWidth);
-            dots.forEach((dot, index) => { if (index === activeIndex) { dot.classList.remove('bg-gray-300'); dot.classList.add('bg-veteran-blue'); } else { dot.classList.remove('bg-veteran-blue'); dot.classList.add('bg-gray-300'); } });
-        }, 50); // Debounce             });         }     });
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const slider = document.getElementById('related-news-slider');
+            const dots = document.querySelectorAll('#related-news-dots button');
+
+            if (slider && dots.length > 0) {
+                // Scroll to specific slide
+                window.scrollToRelatedNews = (index) => {
+                    const slideWidth = slider.offsetWidth;
+                    const scrollLeft = index * slideWidth;
+                    slider.scrollTo({
+                        left: scrollLeft,
+                        behavior: 'smooth'
+                    });
+                };
+
+                // Update active dot on scroll
+                let scrollTimeout;
+                slider.addEventListener('scroll', () => {
+                    clearTimeout(scrollTimeout);
+                    scrollTimeout = setTimeout(() => {
+                        const scrollLeft = slider.scrollLeft;
+                        const slideWidth = slider.offsetWidth;
+                        const activeIndex = Math.round(scrollLeft / slideWidth);
+
+                        dots.forEach((dot, index) => {
+                            if (index === activeIndex) {
+                                dot.classList.remove('bg-gray-300');
+                                dot.classList.add('bg-veteran-blue');
+                            } else {
+                                dot.classList.remove('bg-veteran-blue');
+                                dot.classList.add('bg-gray-300');
+                            }
+                        });
+                    }, 50); // Debounce
+                });
+            }
+        });
     </script>
 
 @endsection

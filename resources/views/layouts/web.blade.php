@@ -11,6 +11,24 @@
         :description="View::getSection('seo_description', '')" :image="View::getSection('seo_image')" />
 
     @vite(['resources/js/web.js'])
+
+    <script>
+        // Check for saved theme preference or system preference
+        try {
+            const settings = JSON.parse(localStorage.getItem('accessibility_settings'));
+            if (settings && settings.theme === 'dark') {
+                document.documentElement.classList.add('dark');
+            } else if (settings && settings.theme === 'light') {
+                document.documentElement.classList.remove('dark');
+            } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                document.documentElement.classList.add('dark');
+            }
+        } catch (e) {
+            if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                document.documentElement.classList.add('dark');
+            }
+        }
+    </script>
 </head>
 
 <body class="bg-white dark:bg-zinc-900">

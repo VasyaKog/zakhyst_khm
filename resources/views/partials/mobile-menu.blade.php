@@ -1,5 +1,5 @@
 <div id="mobile-menu"
-    class="fixed inset-0 bg-white dark:bg-zinc-900 z-[60] hidden flex flex-col h-screen transition-colors">
+    class="fixed inset-0 bg-white dark:bg-zinc-900 z-[60] hidden flex flex-col h-[100dvh] transition-colors">
     <!-- Header: UA, Theme Switch, Close Button -->
     <div class="flex items-center justify-between px-4 pt-6 pb-6 relative">
         <!-- Left: Language Dropdown -->
@@ -26,9 +26,9 @@
         <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center gap-2">
             <!-- Accessibility Toggle (Pill Button) -->
             <button
-                class="h-[36px] w-[72px] flex items-center justify-center border-2 border-gray-400 dark:border-zinc-500 rounded-full transition-colors bg-white dark:bg-zinc-800"
+                class="h-[40px] w-[70px] flex items-center justify-center border-2 border-black dark:border-white rounded-full transition-colors"
                 onclick="toggleMobileAccessibility()" title="{{ __('Accessability') }}">
-                <x-icons.accessibility class="w-5 h-5 text-black dark:text-white transition-colors" />
+                <x-icons.accessibility class="w-6 h-6 text-black dark:text-white transition-colors" />
             </button>
 
             <!-- Dark Mode Toggle - Animated Pill Toggle -->
@@ -239,8 +239,11 @@
     }
 
     function toggleDarkModeMobile() {
-        // Toggle dark mode class on html element
-        document.documentElement.classList.toggle('dark');
+        if (typeof accessibility !== 'undefined') {
+            accessibility.toggleTheme();
+        } else {
+            document.documentElement.classList.toggle('dark');
+        }
 
         // Animate ALL toggle circles
         const toggleCircles = ['toggle-circle-mobile', 'toggle-circle-main', 'toggle-circle-blue'];
@@ -252,9 +255,6 @@
                 circle.style.left = isDark ? 'calc(100% - 32px)' : '4px';
             }
         });
-
-        // Save preference
-        localStorage.setItem('darkMode', isDark);
     }
 
     // Initialize toggle position on page load for mobile

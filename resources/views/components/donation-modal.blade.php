@@ -5,9 +5,9 @@
 </div>
 
 <!-- Donation Modal -->
-<div id="donation-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center p-4">
+<div id="donation-modal" class="fixed inset-0 bg-black bg-opacity-50 z-[70] hidden items-center justify-center p-4">
     <div
-        class="bg-white dark:bg-zinc-900 w-[95%] sm:w-full sm:max-w-[776px] h-auto max-h-[90vh] overflow-y-auto rounded-[30px] relative scrollbar-hide transition-colors">
+        class="bg-white dark:bg-zinc-900 w-[95%] sm:w-full sm:max-w-[776px] h-auto max-h-[90vh] overflow-y-auto rounded-none relative scrollbar-hide transition-colors">
         <!-- Close Button -->
         <button id="close-modal"
             class="absolute top-6 right-6 z-10 w-8 h-8 flex items-center justify-center text-black dark:text-white hover:text-veteran-blue transition-colors">
@@ -39,7 +39,7 @@
         <div>
             <!-- Monobank Tab Content -->
             <div id="monobank-content" class="tab-content">
-                <div class="pt-8 md:pt-[60px] px-6 md:px-[70px] pb-8 md:pb-[50px]">
+                <div class="pt-8 md:pt-[60px] px-6 md:px-[70px] pb-8 md:pb-[50px] min-h-[500px]">
                     <!-- Title -->
                     <h2
                         class="text-2xl md:text-[2.25rem] font-bold font-['Montserrat'] text-black dark:text-white uppercase text-center leading-[1.2] mb-6 md:mb-[30px] transition-colors">
@@ -76,7 +76,7 @@
 
             <!-- Privat Bank Tab Content -->
             <div id="privat-content" class="tab-content hidden">
-                <div class="pt-8 md:pt-[60px] px-6 md:px-[70px] pb-8 md:pb-[50px]">
+                <div class="pt-8 md:pt-[60px] px-6 md:px-[70px] pb-8 md:pb-[50px] min-h-[500px]">
                     <!-- Title -->
                     <h2
                         class="text-2xl md:text-[2.25rem] font-bold font-['Montserrat'] text-black dark:text-white uppercase text-center leading-[1.2] mb-6 md:mb-[30px] transition-colors">

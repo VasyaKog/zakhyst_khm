@@ -10,6 +10,10 @@
     <x-seo-meta :title="View::getSection('seo_title', View::getSection('title', ''))"
         :description="View::getSection('seo_description', '')" :image="View::getSection('seo_image')" />
 
+
+    {{-- Favicon --}}
+    <link rel="icon" type="image/svg+xml" href="{{ asset('favicon.svg') }}">
+
     @vite(['resources/js/web.js'])
 
     <script>

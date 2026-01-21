@@ -13,45 +13,208 @@ class TeamMemberSeeder extends Seeder
     public function run(): void
     {
         // Main Team Members (11)
+        // Main Team Members (11)
         $mainTeam = [
-            ['first_name' => 'Катерина', 'last_name' => 'Луцик', 'role' => 'Директор', 'photo' => 'team-1.jpg', 'sort_order' => 1],
-            ['first_name' => 'Анастасія', 'last_name' => 'Ярова', 'role' => 'Заступник директора', 'photo' => 'team-2.jpg', 'sort_order' => 2],
-            ['first_name' => 'Ольга', 'last_name' => 'Свіжа', 'role' => 'Адміністратор', 'photo' => 'team-3.jpg', 'sort_order' => 3],
-            ['first_name' => 'Оксана', 'last_name' => 'Вітошинська', 'role' => 'Кейс-менеджерка', 'photo' => 'team-4.jpg', 'sort_order' => 4],
-            ['first_name' => 'Діана', 'last_name' => 'Черняк', 'role' => 'Кейс-менеджерка', 'photo' => 'team-5.jpg', 'sort_order' => 5],
-            ['first_name' => 'Володимир', 'last_name' => 'Захарчук', 'role' => 'Фахівець супроводу ветеранів війни та демобілізованих осіб', 'photo' => 'team-6.jpg', 'sort_order' => 6],
-            ['first_name' => 'Марина', 'last_name' => 'Чорна', 'role' => 'Фахівчиня супроводу ветеранів війни та демобілізованих осіб', 'photo' => 'team-7.jpg', 'sort_order' => 7],
-            ['first_name' => 'Дмитро', 'last_name' => 'Шуляк', 'role' => 'Фахівець супроводу ветеранів війни та демобілізованих осіб', 'photo' => 'team-8.jpg', 'sort_order' => 8],
-            ['first_name' => 'Анатолій', 'last_name' => 'Яворський', 'role' => 'Завідуючий господарською діяльністю', 'photo' => 'team-9.jpg', 'sort_order' => 9],
-            ['first_name' => 'Надія', 'last_name' => 'Захарчук', 'role' => 'Бухгалтерка', 'photo' => 'team-10.jpg', 'sort_order' => 10],
-            ['first_name' => 'Вікторія', 'last_name' => 'Ковальова', 'role' => 'Діловод', 'photo' => 'team-11.jpg', 'sort_order' => 11],
+            [
+                'first_name' => ['ua' => 'Катерина', 'en' => 'Kateryna'],
+                'last_name' => ['ua' => 'Луцик', 'en' => 'Lutsyk'],
+                'role' => ['ua' => 'Директор', 'en' => 'Director'],
+                'photo' => 'team-1.jpg',
+                'sort_order' => 1
+            ],
+            [
+                'first_name' => ['ua' => 'Анастасія', 'en' => 'Anastasiia'],
+                'last_name' => ['ua' => 'Ярова', 'en' => 'Yarova'],
+                'role' => ['ua' => 'Заступник директора', 'en' => 'Deputy Director'],
+                'photo' => 'team-2.jpg',
+                'sort_order' => 2
+            ],
+            [
+                'first_name' => ['ua' => 'Ольга', 'en' => 'Olha'],
+                'last_name' => ['ua' => 'Свіжа', 'en' => 'Svizha'],
+                'role' => ['ua' => 'Адміністратор', 'en' => 'Administrator'],
+                'photo' => 'team-3.jpg',
+                'sort_order' => 3
+            ],
+            [
+                'first_name' => ['ua' => 'Оксана', 'en' => 'Oksana'],
+                'last_name' => ['ua' => 'Вітошинська', 'en' => 'Vitoshynska'],
+                'role' => ['ua' => 'Кейс-менеджерка', 'en' => 'Case Manager'],
+                'photo' => 'team-4.jpg',
+                'sort_order' => 4
+            ],
+            [
+                'first_name' => ['ua' => 'Діана', 'en' => 'Diana'],
+                'last_name' => ['ua' => 'Черняк', 'en' => 'Cherniak'],
+                'role' => ['ua' => 'Кейс-менеджерка', 'en' => 'Case Manager'],
+                'photo' => 'team-5.jpg',
+                'sort_order' => 5
+            ],
+            [
+                'first_name' => ['ua' => 'Володимир', 'en' => 'Volodymyr'],
+                'last_name' => ['ua' => 'Захарчук', 'en' => 'Zakharchuk'],
+                'role' => [
+                    'ua' => 'Фахівець супроводу ветеранів війни та демобілізованих осіб',
+                    'en' => 'Specialist in support of war veterans and demobilized persons'
+                ],
+                'photo' => 'team-6.jpg',
+                'sort_order' => 6
+            ],
+            [
+                'first_name' => ['ua' => 'Марина', 'en' => 'Maryna'],
+                'last_name' => ['ua' => 'Чорна', 'en' => 'Chorna'],
+                'role' => [
+                    'ua' => 'Фахівчиня супроводу ветеранів війни та демобілізованих осіб',
+                    'en' => 'Specialist in support of war veterans and demobilized persons'
+                ],
+                'photo' => 'team-7.jpg',
+                'sort_order' => 7
+            ],
+            [
+                'first_name' => ['ua' => 'Дмитро', 'en' => 'Dmytro'],
+                'last_name' => ['ua' => 'Шуляк', 'en' => 'Shuliak'],
+                'role' => [
+                    'ua' => 'Фахівець супроводу ветеранів війни та демобілізованих осіб',
+                    'en' => 'Specialist in support of war veterans and demobilized persons'
+                ],
+                'photo' => 'team-8.jpg',
+                'sort_order' => 8
+            ],
+            [
+                'first_name' => ['ua' => 'Анатолій', 'en' => 'Anatolii'],
+                'last_name' => ['ua' => 'Яворський', 'en' => 'Yavorskyi'],
+                'role' => ['ua' => 'Завідуючий господарською діяльністю', 'en' => 'Head of Economic Activities'],
+                'photo' => 'team-9.jpg',
+                'sort_order' => 9
+            ],
+            [
+                'first_name' => ['ua' => 'Надія', 'en' => 'Nadiia'],
+                'last_name' => ['ua' => 'Захарчук', 'en' => 'Zakharchuk'],
+                'role' => ['ua' => 'Бухгалтерка', 'en' => 'Accountant'],
+                'photo' => 'team-10.jpg',
+                'sort_order' => 10
+            ],
+            [
+                'first_name' => ['ua' => 'Вікторія', 'en' => 'Viktoriia'],
+                'last_name' => ['ua' => 'Ковальова', 'en' => 'Kovalova'],
+                'role' => ['ua' => 'Діловод', 'en' => 'Clerk'],
+                'photo' => 'team-11.jpg',
+                'sort_order' => 11
+            ],
         ];
 
         foreach ($mainTeam as $member) {
             $member['photo'] = 'images/team/' . $member['photo'];
-            TeamMember::create(array_merge($member, ['is_partner' => false]));
+            TeamMember::updateOrCreate(
+                ['photo' => $member['photo']],
+                array_merge($member, ['is_partner' => false])
+            );
         }
 
         // Partner Team Members (13)
         $partnerTeam = [
-            ['first_name' => 'Леся', 'last_name' => 'Стебло', 'role' => 'Психологиня, тренерка, експертка з ветеранських політик', 'photo' => 'partner-1.jpg', 'sort_order' => 1],
-            ['first_name' => 'Людмила', 'last_name' => 'Бабенко', 'role' => 'Адміністраторка', 'photo' => 'partner-2.jpg', 'sort_order' => 2],
-            ['first_name' => 'Наталія', 'last_name' => 'Кошай', 'role' => 'Медійниця, тренерка', 'photo' => 'partner-3.jpg', 'sort_order' => 3],
-            ['first_name' => 'Марина', 'last_name' => 'Лукашук', 'role' => 'Психологиня', 'photo' => 'partner-4.jpg', 'sort_order' => 4],
-            ['first_name' => 'Наталія', 'last_name' => 'Чорна', 'role' => 'Психологиня', 'photo' => 'partner-5.jpg', 'sort_order' => 5],
-            ['first_name' => 'Майя', 'last_name' => 'Чернова', 'role' => 'Психологиня', 'photo' => 'partner-6.jpg', 'sort_order' => 6],
-            ['first_name' => 'Інга', 'last_name' => 'Москалюк', 'role' => 'Дитяча психологиня', 'photo' => 'partner-7.jpg', 'sort_order' => 7],
-            ['first_name' => 'Лілія', 'last_name' => 'Аршинова', 'role' => 'Арт-терапевтка', 'photo' => 'partner-8.jpg', 'sort_order' => 8],
-            ['first_name' => 'Павло', 'last_name' => 'Слободянюк', 'role' => 'Юрист', 'photo' => 'partner-9.jpg', 'sort_order' => 9],
-            ['first_name' => 'Наталія', 'last_name' => 'Дурдас', 'role' => 'Психологиня', 'photo' => 'partner-10.jpg', 'sort_order' => 10],
-            ['first_name' => 'Вікторія', 'last_name' => 'Детцель', 'role' => 'Кінезіотерапевтка', 'photo' => 'partner-11.jpg', 'sort_order' => 11],
-            ['first_name' => 'Олена', 'last_name' => 'Мельник', 'role' => 'Медична консультантка', 'photo' => 'partner-12.jpg', 'sort_order' => 12],
-            ['first_name' => 'Юрій', 'last_name' => 'Горбатюк', 'role' => 'Медичний консультант', 'photo' => 'partner-13.jpg', 'sort_order' => 13],
+            [
+                'first_name' => ['ua' => 'Леся', 'en' => 'Lesia'],
+                'last_name' => ['ua' => 'Стебло', 'en' => 'Steblo'],
+                'role' => [
+                    'ua' => 'Психологиня, тренерка, експертка з ветеранських політик',
+                    'en' => 'Psychologist, trainer, expert on veteran policies'
+                ],
+                'photo' => 'partner-1.jpg',
+                'sort_order' => 1
+            ],
+            [
+                'first_name' => ['ua' => 'Людмила', 'en' => 'Liudmyla'],
+                'last_name' => ['ua' => 'Бабенко', 'en' => 'Babenko'],
+                'role' => ['ua' => 'Адміністраторка', 'en' => 'Administrator'],
+                'photo' => 'partner-2.jpg',
+                'sort_order' => 2
+            ],
+            [
+                'first_name' => ['ua' => 'Наталія', 'en' => 'Nataliia'],
+                'last_name' => ['ua' => 'Кошай', 'en' => 'Koshai'],
+                'role' => ['ua' => 'Медійниця, тренерка', 'en' => 'Media Specialist, Trainer'],
+                'photo' => 'partner-3.jpg',
+                'sort_order' => 3
+            ],
+            [
+                'first_name' => ['ua' => 'Марина', 'en' => 'Maryna'],
+                'last_name' => ['ua' => 'Лукашук', 'en' => 'Lukashuk'],
+                'role' => ['ua' => 'Психологиня', 'en' => 'Psychologist'],
+                'photo' => 'partner-4.jpg',
+                'sort_order' => 4
+            ],
+            [
+                'first_name' => ['ua' => 'Наталія', 'en' => 'Nataliia'],
+                'last_name' => ['ua' => 'Чорна', 'en' => 'Chorna'],
+                'role' => ['ua' => 'Психологиня', 'en' => 'Psychologist'],
+                'photo' => 'partner-5.jpg',
+                'sort_order' => 5
+            ],
+            [
+                'first_name' => ['ua' => 'Майя', 'en' => 'Maia'],
+                'last_name' => ['ua' => 'Чернова', 'en' => 'Chernova'],
+                'role' => ['ua' => 'Психологиня', 'en' => 'Psychologist'],
+                'photo' => 'partner-6.jpg',
+                'sort_order' => 6
+            ],
+            [
+                'first_name' => ['ua' => 'Інга', 'en' => 'Inha'],
+                'last_name' => ['ua' => 'Москалюк', 'en' => 'Moskaliuk'],
+                'role' => ['ua' => 'Дитяча психологиня', 'en' => 'Child Psychologist'],
+                'photo' => 'partner-7.jpg',
+                'sort_order' => 7
+            ],
+            [
+                'first_name' => ['ua' => 'Лілія', 'en' => 'Liliia'],
+                'last_name' => ['ua' => 'Аршинова', 'en' => 'Arshynova'],
+                'role' => ['ua' => 'Арт-терапевтка', 'en' => 'Art Therapist'],
+                'photo' => 'partner-8.jpg',
+                'sort_order' => 8
+            ],
+            [
+                'first_name' => ['ua' => 'Павло', 'en' => 'Pavlo'],
+                'last_name' => ['ua' => 'Слободянюк', 'en' => 'Slobodianiuk'],
+                'role' => ['ua' => 'Юрист', 'en' => 'Lawyer'],
+                'photo' => 'partner-9.jpg',
+                'sort_order' => 9
+            ],
+            [
+                'first_name' => ['ua' => 'Наталія', 'en' => 'Nataliia'],
+                'last_name' => ['ua' => 'Дурдас', 'en' => 'Durdas'],
+                'role' => ['ua' => 'Психологиня', 'en' => 'Psychologist'],
+                'photo' => 'partner-10.jpg',
+                'sort_order' => 10
+            ],
+            [
+                'first_name' => ['ua' => 'Вікторія', 'en' => 'Viktoriia'],
+                'last_name' => ['ua' => 'Детцель', 'en' => 'Dettsel'],
+                'role' => ['ua' => 'Кінезіотерапевтка', 'en' => 'Kinesiotherapist'],
+                'photo' => 'partner-11.jpg',
+                'sort_order' => 11
+            ],
+            [
+                'first_name' => ['ua' => 'Олена', 'en' => 'Olena'],
+                'last_name' => ['ua' => 'Мельник', 'en' => 'Melnyk'],
+                'role' => ['ua' => 'Медична консультантка', 'en' => 'Medical Consultant'],
+                'photo' => 'partner-12.jpg',
+                'sort_order' => 12
+            ],
+            [
+                'first_name' => ['ua' => 'Юрій', 'en' => 'Yurii'],
+                'last_name' => ['ua' => 'Горбатюк', 'en' => 'Horbatiuk'],
+                'role' => ['ua' => 'Медичний консультант', 'en' => 'Medical Consultant'],
+                'photo' => 'partner-13.jpg',
+                'sort_order' => 13
+            ],
         ];
 
         foreach ($partnerTeam as $member) {
             $member['photo'] = 'images/team/' . $member['photo'];
-            TeamMember::create(array_merge($member, ['is_partner' => true]));
+            TeamMember::updateOrCreate(
+                ['photo' => $member['photo']],
+                array_merge($member, ['is_partner' => true])
+            );
         }
     }
 }

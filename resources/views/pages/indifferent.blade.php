@@ -36,7 +36,8 @@
             <div class="service-card-wrapper">
                 <x-service-card variant="compact" number="02" numberFill="#3973E2" numberStroke="#FFFFFF"
                     title="{{ __('Business Support Title') }}" color="#3971E2" textColor="#FFFFFF"
-                    cornerButton="{{ __('Khmelnytskyi Grateful') }}" maxWidth="695px" maxHeight="695px">
+                    cornerButton="{{ __('Khmelnytskyi Grateful') }}" cornerButtonUrl="https://vdiachni.khm.gov.ua/"
+                    cornerButtonTarget="_blank" maxWidth="695px" maxHeight="695px">
 
                     <x-slot:leftContent>
                         <p class="text-[1.25rem] font-normal font-['Montserrat'] leading-[1.82]">

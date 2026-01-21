@@ -7,12 +7,16 @@
 
         <!-- Socials -->
         <div class="flex py-6 gap-4">
-            <img src="{{ asset('images/icons/facebook.svg') }}" alt="Facebook"
-                class="w-7 h-7 dark:brightness-0 dark:invert transition-all duration-300"
-                style="filter: brightness(0) saturate(100%) invert(40%) sepia(98%) saturate(1678%) hue-rotate(207deg) brightness(95%) contrast(91%);">
-            <img src="{{ asset('images/icons/instagram.svg') }}" alt="Instagram"
-                class="w-7 h-7 dark:brightness-0 dark:invert transition-all duration-300"
-                style="filter: brightness(0) saturate(100%) invert(40%) sepia(98%) saturate(1678%) hue-rotate(207deg) brightness(95%) contrast(91%);">
+            <a href="https://www.facebook.com/zahystveteran" target="_blank" rel="noopener noreferrer">
+                <img src="{{ asset('images/icons/facebook.svg') }}" alt="Facebook"
+                    class="w-7 h-7 dark:brightness-0 dark:invert transition-all duration-300"
+                    style="filter: brightness(0) saturate(100%) invert(40%) sepia(98%) saturate(1678%) hue-rotate(207deg) brightness(95%) contrast(91%);">
+            </a>
+            <a href="https://www.instagram.com/veterankhm/" target="_blank" rel="noopener noreferrer">
+                <img src="{{ asset('images/icons/instagram.svg') }}" alt="Instagram"
+                    class="w-7 h-7 dark:brightness-0 dark:invert transition-all duration-300"
+                    style="filter: brightness(0) saturate(100%) invert(40%) sepia(98%) saturate(1678%) hue-rotate(207deg) brightness(95%) contrast(91%);">
+            </a>
         </div>
 
         <!-- Working Hours & Address -->
@@ -56,12 +60,16 @@
                 class="filter brightness-0 dark:invert w-[180px] max-w-[50%] transition-all duration-300">
 
             <div class="flex gap-4 flex-shrink-0">
-                <img src="{{ asset('images/icons/facebook.svg') }}" alt="Facebook"
-                    class="w-6 h-6 dark:brightness-0 dark:invert transition-all duration-300"
-                    style="filter: brightness(0) saturate(100%) invert(40%) sepia(98%) saturate(1678%) hue-rotate(207deg) brightness(95%) contrast(91%);">
-                <img src="{{ asset('images/icons/instagram.svg') }}" alt="Instagram"
-                    class="w-6 h-6 dark:brightness-0 dark:invert transition-all duration-300"
-                    style="filter: brightness(0) saturate(100%) invert(40%) sepia(98%) saturate(1678%) hue-rotate(207deg) brightness(95%) contrast(91%);">
+                <a href="https://www.facebook.com/zahystveteran" target="_blank" rel="noopener noreferrer">
+                    <img src="{{ asset('images/icons/facebook.svg') }}" alt="Facebook"
+                        class="w-6 h-6 dark:brightness-0 dark:invert transition-all duration-300"
+                        style="filter: brightness(0) saturate(100%) invert(40%) sepia(98%) saturate(1678%) hue-rotate(207deg) brightness(95%) contrast(91%);">
+                </a>
+                <a href="https://www.instagram.com/veterankhm/" target="_blank" rel="noopener noreferrer">
+                    <img src="{{ asset('images/icons/instagram.svg') }}" alt="Instagram"
+                        class="w-6 h-6 dark:brightness-0 dark:invert transition-all duration-300"
+                        style="filter: brightness(0) saturate(100%) invert(40%) sepia(98%) saturate(1678%) hue-rotate(207deg) brightness(95%) contrast(91%);">
+                </a>
             </div>
         </div>
 

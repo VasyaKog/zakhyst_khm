@@ -31,10 +31,14 @@
                 <span class="text-black dark:text-white text-base font-bold font-montserrat transition-colors"
                     style="margin-left: 20px; margin-right: 56px;">+38
                     067 563 0090</span>
-                <img src="{{ asset('images/icons/facebook.svg') }}" alt="Facebook"
-                    class="w-6 h-6 dark:invert transition-all">
-                <img src="{{ asset('images/icons/instagram.svg') }}" alt="Instagram"
-                    class="w-6 h-6 ml-2 dark:invert transition-all">
+                <a href="https://www.facebook.com/zahystveteran" target="_blank" rel="noopener noreferrer">
+                    <img src="{{ asset('images/icons/facebook.svg') }}" alt="Facebook"
+                        class="w-6 h-6 dark:invert transition-all">
+                </a>
+                <a href="https://www.instagram.com/veterankhm/" target="_blank" rel="noopener noreferrer">
+                    <img src="{{ asset('images/icons/instagram.svg') }}" alt="Instagram"
+                        class="w-6 h-6 ml-2 dark:invert transition-all">
+                </a>
             </div>
 
             <!-- Search Bar -->
@@ -499,8 +503,10 @@
 
         <div class="rounded-[30px] overflow-hidden border-2 border-black dark:border-zinc-500 transition-colors">
             <div class="relative h-[700px]">
-                <img src="{{ asset('images/backgrounds/map.png') }}" alt="Хмельницький Вдячний Map"
-                    class="w-full h-full object-cover dark:opacity-80 transition-opacity">
+                <a href="https://vdiachni.khm.gov.ua/" target="_blank" rel="noopener noreferrer">
+                    <img src="{{ asset('images/backgrounds/map.png') }}" alt="Хмельницький Вдячний Map"
+                        class="w-full h-full object-cover dark:opacity-80 transition-opacity">
+                </a>
             </div>
         </div>
     </div>
@@ -519,10 +525,10 @@
         <div class="flex justify-center">
             <div
                 class="w-[1815px] rounded-[100px] overflow-hidden border-2 border-black dark:border-zinc-500 transition-colors">
-                <div class="relative h-[750px]">
+                <a href="https://vdiachni.khm.gov.ua/" target="_blank" rel="noopener noreferrer" class="block relative h-[750px]">
                     <img src="{{ asset('images/backgrounds/map.png') }}" alt="Хмельницький Вдячний Map"
                         class="w-full h-full object-cover dark:opacity-80 transition-opacity">
-                </div>
+                </a>
             </div>
         </div>
     </div>

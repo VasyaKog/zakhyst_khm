@@ -220,12 +220,12 @@
 
                 <!-- Right Icons (Social) -->
                 <div class="flex items-center gap-2">
-                    <a href="#" class="hover:opacity-80 transition-opacity"><img
-                            src="{{ asset('images/icons/facebook.svg') }}" alt="Facebook"
-                            class="w-7 h-7 dark:invert"></a>
-                    <a href="#" class="hover:opacity-80 transition-opacity"><img
-                            src="{{ asset('images/icons/instagram.svg') }}" alt="Instagram"
-                            class="w-7 h-7 dark:invert"></a>
+                    <a href="https://www.facebook.com/zahystveteran" target="_blank" rel="noopener noreferrer"
+                        class="hover:opacity-80 transition-opacity"><img src="{{ asset('images/icons/facebook.svg') }}"
+                            alt="Facebook" class="w-7 h-7 dark:invert"></a>
+                    <a href="https://www.instagram.com/veterankhm/" target="_blank" rel="noopener noreferrer"
+                        class="hover:opacity-80 transition-opacity"><img src="{{ asset('images/icons/instagram.svg') }}"
+                            alt="Instagram" class="w-7 h-7 dark:invert"></a>
                 </div>
             </div>
         </div>

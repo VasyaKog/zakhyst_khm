@@ -6,8 +6,13 @@
 
         <!-- Socials -->
         <div class="flex py-6 gap-4">
-            <img src="{{ asset('images/icons/facebook.svg') }}" alt="Facebook" class="w-7 h-7 brightness-0 invert">
-            <img src="{{ asset('images/icons/instagram.svg') }}" alt="Instagram" class="w-7 h-7 brightness-0 invert">
+            <a href="https://www.facebook.com/zahystveteran" target="_blank" rel="noopener noreferrer">
+                <img src="{{ asset('images/icons/facebook.svg') }}" alt="Facebook" class="w-7 h-7 brightness-0 invert">
+            </a>
+            <a href="https://www.instagram.com/veterankhm/" target="_blank" rel="noopener noreferrer">
+                <img src="{{ asset('images/icons/instagram.svg') }}" alt="Instagram"
+                    class="w-7 h-7 brightness-0 invert">
+            </a>
         </div>
 
         <!-- Working Hours & Address -->
@@ -44,9 +49,14 @@
                 class="brightness-0 invert w-[180px] max-w-[50%]">
 
             <div class="flex gap-4 flex-shrink-0">
-                <img src="{{ asset('images/icons/facebook.svg') }}" alt="Facebook" class="w-6 h-6 brightness-0 invert">
-                <img src="{{ asset('images/icons/instagram.svg') }}" alt="Instagram"
-                    class="w-6 h-6 brightness-0 invert">
+                <a href="https://www.facebook.com/zahystveteran" target="_blank" rel="noopener noreferrer">
+                    <img src="{{ asset('images/icons/facebook.svg') }}" alt="Facebook"
+                        class="w-6 h-6 brightness-0 invert">
+                </a>
+                <a href="https://www.instagram.com/veterankhm/" target="_blank" rel="noopener noreferrer">
+                    <img src="{{ asset('images/icons/instagram.svg') }}" alt="Instagram"
+                        class="w-6 h-6 brightness-0 invert">
+                </a>
             </div>
         </div>
 

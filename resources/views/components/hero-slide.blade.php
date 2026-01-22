@@ -95,11 +95,14 @@
             <p class="text-white text-2xl font-medium font-unbounded uppercase leading-9 tracking-tight mb-12">
                 {{ __('Virtual Memorial') }}
             </p>
-            <div class="w-[320px] h-16 border-2 border-white flex items-center justify-center rounded-[412px]">
-                <span class="text-white text-xl font-black font-montserrat uppercase tracking-wide">
-                    {{ __('Visit Memorial') }}
-                </span>
-            </div>
+            <a href="https://www.khm.gov.ua/uk/pro-hromadu/heroi-hromady" target="_blank">
+                <div
+                    class="w-[320px] h-16 border-2 border-white text-white flex items-center justify-center rounded-[412px] hover:bg-white hover:text-black transition-colors duration-150 ease-in-out">
+                    <span class="text-xl font-black font-montserrat uppercase tracking-wide">
+                        {{ __('Visit Memorial') }}
+                    </span>
+                </div>
+            </a>
         </div>
 
     @else

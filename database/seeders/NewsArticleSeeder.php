@@ -39,7 +39,7 @@ class NewsArticleSeeder extends Seeder
                     'en' => $longContentEn
                 ],
                 'image_url' => 'images/backgrounds/news-3.jpg',
-                'gallery_images' => json_encode(['images/backgrounds/news-1.jpg', 'images/backgrounds/news-2.jpg', 'images/backgrounds/news-3.jpg', 'images/team/team-1.jpg']),
+                'gallery_images' => ['images/backgrounds/news-1.jpg', 'images/backgrounds/news-2.jpg', 'images/backgrounds/news-3.jpg', 'images/team/team-1.jpg'],
                 'video_url' => 'images/backgrounds/test-video.mp4',
                 'author' => 'Наталія Кошай',
                 'published_at' => now(),
@@ -79,7 +79,7 @@ class NewsArticleSeeder extends Seeder
                     'en' => '<p>View photos from the event.</p>' . $longContentEn
                 ],
                 'image_url' => 'images/backgrounds/news-2.jpg',
-                'gallery_images' => json_encode(['images/team/team-1.jpg', 'images/team/team-2.png', 'images/team/team-3.jpg', 'images/backgrounds/news-1.jpg', 'images/backgrounds/news-2.jpg']),
+                'gallery_images' => ['images/team/team-1.jpg', 'images/team/team-2.png', 'images/team/team-3.jpg', 'images/backgrounds/news-1.jpg', 'images/backgrounds/news-2.jpg'],
                 'video_url' => null,
                 'author' => 'Ольга Фотограф',
                 'published_at' => now()->subDays(2),
@@ -105,7 +105,7 @@ class NewsArticleSeeder extends Seeder
                     'en' => $longContentEn
                 ],
                 'image_url' => $i % 2 === 0 ? 'images/backgrounds/news-bg-1.png' : 'images/backgrounds/news-bg-2.png',
-                'gallery_images' => $hasGallery ? json_encode(['images/backgrounds/news-1.jpg', 'images/backgrounds/news-2.jpg']) : null,
+                'gallery_images' => $hasGallery ? ['images/backgrounds/news-1.jpg', 'images/backgrounds/news-2.jpg'] : null,
                 'video_url' => $hasVideo ? 'images/backgrounds/test-video.mp4' : null,
                 'author' => 'Редакція',
                 'published_at' => now()->subDays($i),

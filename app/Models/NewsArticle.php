@@ -38,6 +38,7 @@ class NewsArticle extends Model
         'inline_photo_position',
         'author',
         'video_url',
+        'video_path',
         'published_at',
     ];
 

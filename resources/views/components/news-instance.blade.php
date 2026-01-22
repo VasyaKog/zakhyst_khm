@@ -5,6 +5,7 @@
     'date',
     'imageUrls',
     'videoUrl' => null,
+    'videoPath' => null,
     'galleryPosition' => null,
     'inlinePhotoPosition' => null,
 ])
@@ -44,8 +45,12 @@
             {{ $date }}
         </span>
         <div class="flex gap-4">
-            <img src="{{ asset('images/icons/instagram.svg') }}" alt="Insta" class="w-[30px] h-[30px] cursor-pointer dark:invert transition-all"> 
-            <img src="{{ asset('images/icons/facebook.svg') }}" alt="Facebook" class="w-[30px] h-[30px] cursor-pointer dark:invert transition-all">
+            <a href="https://www.instagram.com/veterankhm/" target="_blank">
+                <img src="{{ asset('images/icons/instagram.svg') }}" alt="Insta" class="w-[30px] h-[30px] cursor-pointer dark:invert transition-all"> 
+            </a>
+            <a href="https://www.facebook.com/zahystveteran" target="_blank">
+                <img src="{{ asset('images/icons/facebook.svg') }}" alt="Facebook" class="w-[30px] h-[30px] cursor-pointer dark:invert transition-all">
+            </a>
         </div>
     </div>
 
@@ -64,18 +69,50 @@
 
         <!-- Desktop Socials -->
         <div class="hidden 3xl:block shrink-0 ml-8">
-            <img src="{{ asset('images/icons/instagram.svg') }}" alt="Insta" class="max-w-[30px] max-h-[30px] mb-4 cursor-pointer dark:invert transition-all"> 
-            <img src="{{ asset('images/icons/facebook.svg') }}" alt="Facebook" class="max-w-[30px] max-h-[30px] cursor-pointer dark:invert transition-all">
+            <a href="https://www.instagram.com/veterankhm/" target="_blank" class="block mb-4">
+                <img src="{{ asset('images/icons/instagram.svg') }}" alt="Insta" class="max-w-[30px] max-h-[30px] cursor-pointer dark:invert transition-all"> 
+            </a>
+            <a href="https://www.facebook.com/zahystveteran" target="_blank" class="block">
+                <img src="{{ asset('images/icons/facebook.svg') }}" alt="Facebook" class="max-w-[30px] max-h-[30px] cursor-pointer dark:invert transition-all">
+            </a>
         </div>
     </div>
     
     <!-- Main Media (Image or Video) -->
-    @if($videoUrl)
+    <!-- Main Media (Image or Video) -->
+    @php
+        // Helper to extract YouTube ID
+        $youtubeId = null;
+        if ($videoUrl && (str_contains($videoUrl, 'youtube.com') || str_contains($videoUrl, 'youtu.be'))) {
+            preg_match('/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/', $videoUrl, $matches);
+            $youtubeId = $matches[1] ?? null;
+        }
+    @endphp
+
+    @if($videoPath)
+        {{-- Local Uploaded Video --}}
         <div class="mb-8 3xl:mb-24 mt-4 3xl:mt-8">
             <video controls class="w-full rounded-[20px] bg-black" style="max-height: 600px;">
-                <source src="{{ $videoUrl }}" type="video/mp4">
+                <source src="{{ $videoPath }}" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
+        </div>
+    @elseif($videoUrl)
+        {{-- External URL (YouTube or Direct File) --}}
+        <div class="mb-8 3xl:mb-24 mt-4 3xl:mt-8">
+            @if($youtubeId)
+                <iframe class="w-full rounded-[20px] aspect-video" 
+                    src="https://www.youtube.com/embed/{{ $youtubeId }}" 
+                    title="YouTube video player" frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen>
+                </iframe>
+            @else
+                <video controls class="w-full rounded-[20px] bg-black" style="max-height: 600px;">
+                    <source src="{{ $videoUrl }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            @endif
         </div>
     @elseif($mainImage)
         <div class="mb-8 3xl:mb-24 mt-4 3xl:mt-8">

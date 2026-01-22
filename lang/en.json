@@ -54,7 +54,7 @@
     "Learn More Offers": "Learn more about valuable offers",
     "Here": "here",
     "Died For Ukraine": "They Died for Ukraine!",
-    "Virtual Memorial": "Virtual memorial to fallen defenders",
+    "Virtual Memorial": "Heroes of the community: memorial to fallen defenders",
     "Visit Memorial": "visit memorial",
     "Services Page Title": "Services - VETERAN SPACE",
     "Services Title": "Services",
@@ -119,5 +119,7 @@
     "High Contrast": "High contrast",
     "Large Cursor": "Large cursor",
     "Highlight Links": "Highlight links",
-    "Reset": "Reset"
+    "Reset": "Reset",
+    "Database Empty": "Database filling in progress!",
+    "Sorry Inconvenience": "We apologize for the inconvenience."
 }

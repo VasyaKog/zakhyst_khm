@@ -21,7 +21,7 @@
     @endphp
 
     <x-news-instance :title="$newsArticle->title" :date="$formattedDate" :author="$newsArticle->author ?? 'Admin'"
-        :content="$newsArticle->content" :imageUrls="$images" :videoUrl="$newsArticle->video_url ? asset($newsArticle->video_url) : null" :galleryPosition="$newsArticle->gallery_position"
+        :content="$newsArticle->content" :imageUrls="$images" :videoUrl="$newsArticle->video_url ? asset($newsArticle->video_url) : null" :videoPath="$newsArticle->video_path ? asset('storage/' . $newsArticle->video_path) : null" :galleryPosition="$newsArticle->gallery_position"
         :inlinePhotoPosition="$newsArticle->inline_photo_position" />
 
     <!-- You may be interested -->

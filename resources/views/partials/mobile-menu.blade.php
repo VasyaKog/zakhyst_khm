@@ -33,7 +33,7 @@
 
             <!-- Dark Mode Toggle - Animated Pill Toggle -->
             <button id="dark-mode-toggle-mobile"
-                class="relative w-[70px] h-[40px] flex items-center justify-between px-[8px] rounded-full border-2 border-black dark:border-white transition-colors"
+                class="relative w-[70px] h-[40px] flex items-center justify-between px-[8px] rounded-full border-2 border-black dark:border-white transition-colors bg-transparent"
                 onclick="toggleDarkModeMobile()">
                 <!-- Sun Icon (Left) - Figma exact -->
                 <svg class="w-[20px] h-[20px] z-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

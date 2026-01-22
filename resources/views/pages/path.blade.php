@@ -12,12 +12,12 @@
 
                 <span
                     class="block text-[1.25rem] xs:text-[1.75rem] lg:text-[2.5rem] font-['Montserrat'] text-black dark:text-white uppercase transition-colors break-words">
-                    База даних в процесі наповнення!
+                    {{ __('Database Empty') }}
                 </span>
 
                 <span
                     class="block text-[1.25rem] xs:text-[1.75rem] lg:text-[2.5rem] font-['Montserrat'] text-black dark:text-white mt-4 mb-24 lg:mb-[500px] transition-colors">
-                    Просимо вибачення за незручності.
+                    {{ __('Sorry Inconvenience') }}
                 </span>
             </div>
             <img src="{{ asset('images/icons/button-support.svg') }}" alt="Support"

@@ -21,7 +21,7 @@
             <!-- Services Container -->
             <div class="px-4 lg:px-8 xl:px-4 2xl:px-0 lg:max-w-[900px] xl:max-w-[1100px] 2xl:max-w-[1170px] lg:mx-auto">
 
-                @foreach($services as $service)
+                @forelse($services as $service)
                     <x-service-card :number="$service->number" :title="$service->title">
                         <x-slot:leftContent>
                             {!! $service->left_content !!}
@@ -32,7 +32,18 @@
                             </x-slot:rightContent>
                         @endif
                     </x-service-card>
-                @endforeach
+                @empty
+                    <div class="w-full">
+                        <span
+                            class="block text-[1.25rem] xs:text-[1.75rem] lg:text-[2.5rem] font-['Montserrat'] text-black dark:text-white uppercase transition-colors break-words">
+                            {{ __('Database Empty') }}
+                        </span>
+                        <span
+                            class="block text-[1.25rem] xs:text-[1.75rem] lg:text-[2.5rem] font-['Montserrat'] text-black dark:text-white mt-4 mb-24 lg:mb-[300px] transition-colors">
+                            {{ __('Sorry Inconvenience') }}
+                        </span>
+                    </div>
+                @endforelse
 
             </div>
         </div>

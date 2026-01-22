@@ -66,8 +66,16 @@ class NewsArticleResource extends Resource
                             ->directory('images/backgrounds')
                             ->visibility('public'),
                         Forms\Components\TextInput::make('video_url')
-                            ->label('Посилання на відео')
+                            ->label('Посилання на відео (YouTube або інше)')
+                            ->helperText('Вставте посилання з YouTube або пряме посилання на відеофайл')
                             ->maxLength(255),
+                        Forms\Components\FileUpload::make('video_path')
+                            ->label('Завантажити відео')
+                            ->disk('public')
+                            ->directory('videos')
+                            ->visibility('public')
+                            ->maxSize(51200) // 50MB
+                            ->acceptedFileTypes(['video/mp4', 'video/quicktime', 'video/webm']),
                     ]),
 
                 Forms\Components\Section::make('Галерея фото')

@@ -10,8 +10,9 @@ php artisan route:cache
 php artisan view:cache
 php artisan event:cache
 
-echo "Running migrations..."
-php artisan migrate --force
+echo "Seeding database..."
+php artisan db:seed --force
+
 
 echo "Copying seed images to storage..."
 mkdir -p /var/www/html/storage/app/public/images

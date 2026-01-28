@@ -1,5 +1,5 @@
 @extends('layouts.web')
-@section('title', 'Шлях ветерана')
+@section('title', __('Veteran Path Page Title'))
 @section('content')
 
     <div class="px-5 lg:ml-[50px] xl:ml-[200px] 2xl:ml-[375px] mb-16 lg:mb-[120px] mt-10 lg:mt-[140px]">

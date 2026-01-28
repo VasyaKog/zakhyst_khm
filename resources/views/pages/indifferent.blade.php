@@ -1,5 +1,5 @@
 @extends('layouts.web')
-@section('title', 'Небайдужим')
+@section('title', __('Indifferent Page Title'))
 @section('content')
 
     <div class="px-4 xs:px-5 lg:pl-[50px] xl:pl-[200px] 2xl:pl-[375px] lg:pr-0 mb-[60px] lg:mb-[120px] mt-10 lg:mt-[140px]">

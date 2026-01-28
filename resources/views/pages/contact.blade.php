@@ -1,5 +1,5 @@
 @extends('layouts.web')
-@section('title', 'Контакти - ВЕТЕРАНСЬКИЙ ПРОСТІР')
+@section('title', __('Contact Page Title'))
 @section('content')
     <!-- Main Content -->
     <div class="bg-white dark:bg-zinc-900 transition-colors duration-300">

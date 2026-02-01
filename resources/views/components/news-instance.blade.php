@@ -41,7 +41,7 @@
     
     <!-- Mobile Header Meta Row  -->
     <div class="flex 3xl:hidden justify-between items-center mb-6">
-        <span class="text-[0.75rem] font-bold font-['Montserrat'] text-black dark:text-gray-300 uppercase leading-[1.43] tracking-wider transition-colors">
+        <span class="text-[0.75rem] font-bold font-montserrat text-black dark:text-gray-300 uppercase leading-[1.43] tracking-wider transition-colors">
             {{ $date }}
         </span>
         <div class="flex gap-4">
@@ -56,14 +56,14 @@
 
     <!-- Desktop Date -->
     <div class="hidden 3xl:block">
-        <span class="text-[0.875rem] font-bold font-['Montserrat'] text-black dark:text-gray-300 leading-[1.43] transition-colors">
+        <span class="text-[0.875rem] font-bold font-montserrat text-black dark:text-gray-300 leading-[1.43] transition-colors">
                 {{ $date }}
         </span>
     </div>
 
     <!-- Title -->
     <div class="flex flex-row justify-between items-center mb-8 3xl:mb-24 mt-4 3xl:mt-8">
-        <h1 class="text-[1.125rem] xs:text-[1.5rem] 3xl:text-[3rem] font-bold font-['Montserrat'] text-black dark:text-white leading-[1.2] 3xl:leading-[1.33] transition-colors">
+        <h1 class="text-[1.125rem] xs:text-[1.5rem] 3xl:text-[3rem] font-bold font-montserrat text-black dark:text-white leading-[1.2] 3xl:leading-[1.33] transition-colors">
                 {{ $title }}
         </h1>
 
@@ -92,7 +92,7 @@
     @if($videoPath)
         {{-- Local Uploaded Video --}}
         <div class="mb-8 3xl:mb-24 mt-4 3xl:mt-8">
-            <video controls class="w-full rounded-[20px] bg-black" style="max-height: 600px;">
+            <video controls class="w-full rounded-[20px] bg-black video-max-h">
                 <source src="{{ $videoPath }}" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
@@ -108,7 +108,7 @@
                     allowfullscreen>
                 </iframe>
             @else
-                <video controls class="w-full rounded-[20px] bg-black" style="max-height: 600px;">
+                <video controls class="w-full rounded-[20px] bg-black video-max-h">
                     <source src="{{ $videoUrl }}" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
@@ -122,14 +122,14 @@
 
     <!-- Author -->
     <div class="mb-8 3xl:mb-12">
-        <span class="text-[0.625rem] 3xl:text-[1.125rem] font-bold font-['Montserrat'] text-black dark:text-gray-300 leading-[1.43] uppercase transition-colors">
+        <span class="text-[0.625rem] 3xl:text-[1.125rem] font-bold font-montserrat text-black dark:text-gray-300 leading-[1.43] uppercase transition-colors">
                 {{ __('Author') }}: {{ $author }}
         </span>
     </div>
 
     <!-- Content with Photos -->
     <div class="news-content my-10 3xl:my-48 
-        [&_p]:text-[1rem] [&_p]:3xl:text-[1.25rem] [&_p]:font-normal [&_p]:font-['Montserrat'] [&_p]:text-black [&_p]:dark:text-gray-200 [&_p]:leading-[1.6] [&_p]:mb-6 [&_p]:transition-colors
+        [&_p]:text-[1rem] [&_p]:3xl:text-[1.25rem] [&_p]:font-normal [&_p]:font-montserrat [&_p]:text-black [&_p]:dark:text-gray-200 [&_p]:leading-[1.6] [&_p]:mb-6 [&_p]:transition-colors
         [&_strong]:font-bold [&_b]:font-bold
         [&_em]:italic [&_i]:italic
         [&_u]:underline

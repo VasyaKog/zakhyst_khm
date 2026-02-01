@@ -27,7 +27,7 @@
     <!-- You may be interested -->
     <div class="px-4 lg:px-[50px] max-w-[1920px] mx-auto mt-12 lg:mt-24 mb-6 lg:mb-12">
         <p
-            class="text-[1.125rem] xs:text-[1.5rem] lg:text-[3rem] font-bold font-['Montserrat'] text-black dark:text-white leading-[1.33] transition-colors">
+            class="text-[1.125rem] xs:text-[1.5rem] lg:text-[3rem] font-bold font-montserrat text-black dark:text-white leading-[1.33] transition-colors">
             {{ __('You Might Be Interested') }}
         </p>
     </div>
@@ -45,12 +45,11 @@
     <!-- Mobile Slider -->
     <div class="lg:hidden w-full mb-16">
         <!-- Slider Container -->
-        <div id="related-news-slider" class="w-full overflow-x-auto pb-4 [&::-webkit-scrollbar]:hidden"
-            style="scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none;">
+        <div id="related-news-slider" class="w-full overflow-x-auto pb-4 scroll-snap-x">
             <div class="flex">
                 @foreach($relatedNews as $related)
                     @php $relatedDateMobile = $related->published_at->locale($locale)->translatedFormat('d F Y'); @endphp
-                    <div class="w-full flex-shrink-0 px-4" style="scroll-snap-align: center;">
+                    <div class="w-full flex-shrink-0 px-4 snap-center">
                         <x-news-card variant="small" :show-button="true" class="!max-w-none !w-full h-full"
                             :title="$related->title" :summary="$related->summary" :date="$relatedDateMobile"
                             :image-url="asset('storage/' . $related->image_url)" :url="route('news.show', $related)" />

@@ -19,12 +19,10 @@
             @endforeach
         </div>
         {{-- Mobile: Slider --}}
-        <div class="3xl:hidden w-full overflow-x-auto pb-4 [&::-webkit-scrollbar]:hidden"
-            style="scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none;">
+        <div class="3xl:hidden w-full overflow-x-auto pb-4 scroll-snap-x">
             <div class="flex gap-4 w-max px-1">
                 @foreach($galleryImages as $photo)
-                    <div class="w-[280px] h-[200px] flex-shrink-0 rounded-[20px] overflow-hidden"
-                        style="scroll-snap-align: center;">
+                    <div class="w-[280px] h-[200px] flex-shrink-0 rounded-[20px] overflow-hidden snap-center">
                         <img src="{{ $photo }}" alt="Gallery Photo" class="w-full h-full object-cover">
                     </div>
                 @endforeach
@@ -40,12 +38,10 @@
             @endforeach
         </div>
         {{-- Mobile: Slider --}}
-        <div class="3xl:hidden w-full overflow-x-auto pb-4 [&::-webkit-scrollbar]:hidden"
-            style="scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none;">
+        <div class="3xl:hidden w-full overflow-x-auto pb-4 scroll-snap-x">
             <div class="flex gap-4 w-max px-1">
                 @foreach($galleryImages as $photo)
-                    <div class="w-[280px] h-[200px] flex-shrink-0 rounded-[20px] overflow-hidden"
-                        style="scroll-snap-align: center;">
+                    <div class="w-[280px] h-[200px] flex-shrink-0 rounded-[20px] overflow-hidden snap-center">
                         <img src="{{ $photo }}" alt="Gallery Photo" class="w-full h-full object-cover">
                     </div>
                 @endforeach

@@ -1,7 +1,7 @@
 <!-- Toast Notification -->
 <div id="copy-toast"
-    class="fixed bottom-8 left-1/2 -translate-x-1/2 bg-veteran-blue text-white px-6 py-3 rounded-lg shadow-lg z-[60] opacity-0 transition-opacity duration-300 pointer-events-none">
-    <p class="text-base font-bold font-['Montserrat'] m-0">{{ __('IBAN copied') }}</p>
+    class="fixed bottom-8 left-1/2 -translate-x-1/2 bg-veteran-blue text-white px-6 py-3 rounded-lg shadow-lg z-[80] opacity-0 transition-opacity duration-300 pointer-events-none">
+    <p class="text-base font-bold font-montserrat m-0">{{ __('IBAN copied') }}</p>
 </div>
 
 <!-- Donation Modal -->
@@ -22,13 +22,13 @@
                 <button id="monobank-tab" class="flex-1 pb-4 pl-4 md:pl-[25px] text-left bg-transparent relative"
                     style="border: none; border-bottom: 4px solid #3971E2; outline: none;">
                     <div
-                        class="text-lg md:text-2xl font-bold font-['Montserrat'] text-black dark:text-white transition-colors">
+                        class="text-lg md:text-2xl font-bold font-montserrat text-black dark:text-white transition-colors">
                         monobank</div>
                 </button>
                 <button id="privat-tab" class="flex-1 pb-4 pl-4 md:pl-[25px] text-left bg-transparent relative"
                     style="border: none; border-bottom: 1px solid #9CA3AF; outline: none;">
                     <div
-                        class="text-lg md:text-2xl font-bold font-['Montserrat'] text-black dark:text-white transition-colors">
+                        class="text-lg md:text-2xl font-bold font-montserrat text-black dark:text-white transition-colors">
                         {{ __('Privat Bank') }}
                     </div>
                 </button>
@@ -42,13 +42,13 @@
                 <div class="pt-8 md:pt-[60px] px-6 md:px-[70px] pb-8 md:pb-[50px] min-h-[500px]">
                     <!-- Title -->
                     <h2
-                        class="text-2xl md:text-[2.25rem] font-bold font-['Montserrat'] text-black dark:text-white uppercase text-center leading-[1.2] mb-6 md:mb-[30px] transition-colors">
+                        class="text-2xl md:text-[2.25rem] font-bold font-montserrat text-black dark:text-white uppercase text-center leading-[1.2] mb-6 md:mb-[30px] transition-colors">
                         {!! nl2br(__('Support Joint Initiatives')) !!}
                     </h2>
 
                     <!-- Description -->
                     <p
-                        class="text-base md:text-[1.25rem] font-bold font-['Montserrat'] text-black dark:text-white text-center leading-[1.33] mb-6 md:mb-[20px] transition-colors">
+                        class="text-base md:text-[1.25rem] font-bold font-montserrat text-black dark:text-white text-center leading-[1.33] mb-6 md:mb-[20px] transition-colors">
                         {{ __('Veteran Space Organization') }}
                     </p>
 
@@ -61,14 +61,14 @@
                     <!-- Donate Button -->
                     <div class="flex justify-center mb-8 md:mb-[35px]">
                         <button
-                            class="h-[50px] px-6 md:px-10 border-2 border-veteran-blue bg-transparent text-black dark:text-white text-sm md:text-[1.125rem] font-black font-['Montserrat'] uppercase rounded-full hover:bg-veteran-blue hover:text-white transition-all duration-300 flex items-center justify-center">
+                            class="h-[50px] px-6 md:px-10 border-2 border-veteran-blue bg-transparent text-black dark:text-white text-sm md:text-[1.125rem] font-black font-montserrat uppercase rounded-full hover:bg-veteran-blue hover:text-white transition-all duration-300 flex items-center justify-center">
                             {{ __('Donate via Link') }}
                         </button>
                     </div>
 
                     <!-- Thank You Message -->
                     <p
-                        class="text-center text-base md:text-[1.25rem] font-bold font-['Montserrat'] text-black dark:text-white leading-relaxed transition-colors">
+                        class="text-center text-base md:text-[1.25rem] font-bold font-montserrat text-black dark:text-white leading-relaxed transition-colors">
                         {{ __('Thank You Support') }}
                     </p>
                 </div>
@@ -79,13 +79,13 @@
                 <div class="pt-8 md:pt-[60px] px-6 md:px-[70px] pb-8 md:pb-[50px] min-h-[500px]">
                     <!-- Title -->
                     <h2
-                        class="text-2xl md:text-[2.25rem] font-bold font-['Montserrat'] text-black dark:text-white uppercase text-center leading-[1.2] mb-6 md:mb-[30px] transition-colors">
+                        class="text-2xl md:text-[2.25rem] font-bold font-montserrat text-black dark:text-white uppercase text-center leading-[1.2] mb-6 md:mb-[30px] transition-colors">
                         {!! nl2br(__('Support Joint Initiatives')) !!}
                     </h2>
 
                     <!-- Description -->
                     <p
-                        class="text-base md:text-[1.25rem] font-bold font-['Montserrat'] text-black dark:text-white text-center leading-[1.33] mb-8 md:mb-[50px] transition-colors">
+                        class="text-base md:text-[1.25rem] font-bold font-montserrat text-black dark:text-white text-center leading-[1.33] mb-8 md:mb-[50px] transition-colors">
                         {{ __('Veteran Space Organization') }}
                     </p>
 
@@ -98,7 +98,7 @@
                     <!-- IBAN Section -->
                     <div class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 mb-8 md:mb-[35px]">
                         <span
-                            class="text-sm md:text-[1.125rem] font-bold font-['Montserrat'] text-black dark:text-white tracking-wide text-center break-all transition-colors">IBAN
+                            class="text-sm md:text-[1.125rem] font-bold font-montserrat text-black dark:text-white tracking-wide text-center break-all transition-colors">IBAN
                             UA69305299000002600902600282</span>
                         <button onclick="copyIBAN('UA69305299000002600902600282')"
                             class="w-6 h-6 flex items-center justify-center hover:opacity-70 transition-opacity text-black dark:text-white">
@@ -112,7 +112,7 @@
 
                     <!-- Thank You Message -->
                     <p
-                        class="text-center text-base md:text-[1.25rem] font-bold font-['Montserrat'] text-black dark:text-white leading-relaxed transition-colors">
+                        class="text-center text-base md:text-[1.25rem] font-bold font-montserrat text-black dark:text-white leading-relaxed transition-colors">
                         {{ __('Thank You Support') }}
                     </p>
                 </div>
@@ -144,7 +144,6 @@
             }
         });
 
-        // Tab switching
         monobankTab.addEventListener('click', function () {
             // Update monobank tab to active state (thick blue underline)
             monobankTab.style.borderBottom = '4px solid #3971E2';

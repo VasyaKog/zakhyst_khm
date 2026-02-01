@@ -1,7 +1,7 @@
 @props(['cards' => []])
 
-<div class="relative w-full" style="perspective: 1000px;">
-    <div class="service-cards-container relative w-full" style="overflow: visible;">
+<div class="relative w-full perspective-1000">
+    <div class="service-cards-container relative w-full overflow-visible">
         {{ $slot }}
     </div>
 </div>

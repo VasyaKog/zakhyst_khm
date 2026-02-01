@@ -9,12 +9,12 @@
                 <!-- Page Title -->
                 <div class="mb-8 lg:mb-16">
                     <h1
-                        class="text-[2.5rem] lg:text-[9.875rem] font-extrabold font-['Montserrat'] text-black dark:text-white uppercase leading-[0.92] mb-6 lg:mb-8 transition-colors">
+                        class="text-[2.5rem] lg:text-[9.875rem] font-extrabold font-montserrat text-black dark:text-white uppercase leading-[0.92] mb-6 lg:mb-8 transition-colors">
                         {{ __('Contacts:') }}
                     </h1>
 
                     <div
-                        class="max-w-full lg:max-w-[869px] text-[1rem] lg:text-[1.25rem] font-normal font-['Montserrat'] text-black dark:text-gray-200 leading-[1.43] mb-8 lg:mb-16 transition-colors">
+                        class="max-w-full lg:max-w-[869px] text-[1rem] lg:text-[1.25rem] font-normal font-montserrat text-black dark:text-gray-200 leading-[1.43] mb-8 lg:mb-16 transition-colors">
                         <p class="mb-0">{{ __('Contact Intro Next Level') }}</p>
                         <p>{{ __('Contact Intro Write Call') }}</p>
                     </div>
@@ -33,11 +33,11 @@
                             <!-- Location -->
                             <div>
                                 <h3
-                                    class="text-[1rem] lg:text-[1.25rem] font-light font-['Montserrat'] text-black dark:text-white uppercase tracking-[1px] mb-2 lg:mb-4 transition-colors">
+                                    class="text-[1rem] lg:text-[1.25rem] font-light font-montserrat text-black dark:text-white uppercase tracking-[1px] mb-2 lg:mb-4 transition-colors">
                                     {{ __('Space Location') }}
                                 </h3>
                                 <p
-                                    class="text-[1.25rem] lg:text-[1.5rem] font-bold font-['Montserrat'] text-black dark:text-gray-200 leading-[1.08] transition-colors">
+                                    class="text-[1.25rem] lg:text-[1.5rem] font-bold font-montserrat text-black dark:text-gray-200 leading-[1.08] transition-colors">
                                     {{ __('Address City') }}, {{ __('Address Street') }}
                                 </p>
                             </div>
@@ -45,11 +45,11 @@
                             <!-- Schedule -->
                             <div>
                                 <h3
-                                    class="text-[1rem] lg:text-[1.25rem] font-light font-['Montserrat'] text-black dark:text-white uppercase tracking-[1px] mb-2 lg:mb-4 transition-colors">
+                                    class="text-[1rem] lg:text-[1.25rem] font-light font-montserrat text-black dark:text-white uppercase tracking-[1px] mb-2 lg:mb-4 transition-colors">
                                     {{ __('Schedule') }}
                                 </h3>
                                 <div
-                                    class="text-[1.25rem] lg:text-[1.5rem] font-bold font-['Montserrat'] text-black dark:text-gray-200 leading-[1.63] transition-colors">
+                                    class="text-[1.25rem] lg:text-[1.5rem] font-bold font-montserrat text-black dark:text-gray-200 leading-[1.63] transition-colors">
                                     <p class="mb-0">{{ __('Mon-Fri') }} 09:00 - 17:30</p>
                                     <p>{{ __('Sat-Sun') }} {{ __('By Appointment') }}</p>
                                 </div>
@@ -61,11 +61,11 @@
                             <!-- Phone -->
                             <div>
                                 <h3
-                                    class="text-[1rem] lg:text-[1.25rem] font-light font-['Montserrat'] text-black dark:text-white uppercase tracking-[1px] mb-2 lg:mb-4 transition-colors">
+                                    class="text-[1rem] lg:text-[1.25rem] font-light font-montserrat text-black dark:text-white uppercase tracking-[1px] mb-2 lg:mb-4 transition-colors">
                                     {{ __('Phone') }}
                                 </h3>
                                 <p
-                                    class="text-[1.25rem] lg:text-[1.5rem] font-bold font-['Montserrat'] text-black dark:text-gray-200 leading-[1.08] transition-colors">
+                                    class="text-[1.25rem] lg:text-[1.5rem] font-bold font-montserrat text-black dark:text-gray-200 leading-[1.08] transition-colors">
                                     +38 067 563 0090
                                 </p>
                             </div>
@@ -73,11 +73,11 @@
                             <!-- Email -->
                             <div>
                                 <h3
-                                    class="text-[1rem] lg:text-[1.25rem] font-light font-['Montserrat'] text-black dark:text-white uppercase tracking-[1px] mb-2 lg:mb-4 transition-colors">
+                                    class="text-[1rem] lg:text-[1.25rem] font-light font-montserrat text-black dark:text-white uppercase tracking-[1px] mb-2 lg:mb-4 transition-colors">
                                     {{ __('E-mail') }}
                                 </h3>
                                 <p
-                                    class="text-[1.25rem] lg:text-[1.5rem] font-bold font-['Montserrat'] text-black dark:text-gray-200 leading-[1.5] break-words transition-colors">
+                                    class="text-[1.25rem] lg:text-[1.5rem] font-bold font-montserrat text-black dark:text-gray-200 leading-[1.5] break-words transition-colors">
                                     veteranskiprostirkhm.gmail.com
                                 </p>
                             </div>

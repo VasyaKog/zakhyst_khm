@@ -71,8 +71,8 @@
         <div class="absolute inset-0 bg-black opacity-30"></div>
 
         <!-- Positioned slightly left using percentage -->
-        <div class="absolute left-[35%] top-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] min-h-[384px] h-auto bg-blue-600 py-12 px-[90px]"
-            style="border-top-left-radius: 150px; border-top-right-radius: 50px; border-bottom-left-radius: 150px; border-bottom-right-radius: 150px;">
+        <div
+            class="absolute left-[35%] top-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] min-h-[384px] h-auto bg-blue-600 py-12 px-[90px] rounded-tl-[150px] rounded-tr-[50px] rounded-bl-[150px] rounded-br-[150px]">
             <h2 class="text-white text-6xl font-bold font-unbounded leading-[74.08px] tracking-wide mb-8">
                 {{ __('Business To Veterans') }}
             </h2>

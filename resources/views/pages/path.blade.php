@@ -6,17 +6,17 @@
         <div class="flex flex-col-reverse xs:flex-row xs:items-start xs:justify-between gap-4 lg:gap-0 pr-0 xs:pr-12">
             <div>
                 <h1
-                    class="text-[1.75rem] xs:text-[2.5rem] lg:text-[5rem] font-extrabold font-['Montserrat'] text-black dark:text-white uppercase leading-[0.92] mb-12 lg:mb-24 transition-colors break-words">
+                    class="text-[1.75rem] xs:text-[2.5rem] lg:text-[5rem] font-extrabold font-montserrat text-black dark:text-white uppercase leading-[0.92] mb-12 lg:mb-24 transition-colors break-words">
                     {{ __('Veteran Path') }}
                 </h1>
 
                 <span
-                    class="block text-[1.25rem] xs:text-[1.75rem] lg:text-[2.5rem] font-['Montserrat'] text-black dark:text-white uppercase transition-colors break-words">
+                    class="block text-[1.25rem] xs:text-[1.75rem] lg:text-[2.5rem] font-montserrat text-black dark:text-white uppercase transition-colors break-words">
                     {{ __('Database Empty') }}
                 </span>
 
                 <span
-                    class="block text-[1.25rem] xs:text-[1.75rem] lg:text-[2.5rem] font-['Montserrat'] text-black dark:text-white mt-4 mb-24 lg:mb-[500px] transition-colors">
+                    class="block text-[1.25rem] xs:text-[1.75rem] lg:text-[2.5rem] font-montserrat text-black dark:text-white mt-4 mb-24 lg:mb-[500px] transition-colors">
                     {{ __('Sorry Inconvenience') }}
                 </span>
             </div>

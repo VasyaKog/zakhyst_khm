@@ -9,13 +9,11 @@
         <div class="flex py-6 gap-4">
             <a href="https://www.facebook.com/zahystveteran" target="_blank" rel="noopener noreferrer">
                 <img src="{{ asset('images/icons/facebook.svg') }}" alt="Facebook"
-                    class="w-7 h-7 dark:brightness-0 dark:invert transition-all duration-300"
-                    style="filter: brightness(0) saturate(100%) invert(40%) sepia(98%) saturate(1678%) hue-rotate(207deg) brightness(95%) contrast(91%);">
+                    class="w-7 h-7 icon-veteran-blue dark:brightness-0 dark:invert transition-all duration-300">
             </a>
             <a href="https://www.instagram.com/veterankhm/" target="_blank" rel="noopener noreferrer">
                 <img src="{{ asset('images/icons/instagram.svg') }}" alt="Instagram"
-                    class="w-7 h-7 dark:brightness-0 dark:invert transition-all duration-300"
-                    style="filter: brightness(0) saturate(100%) invert(40%) sepia(98%) saturate(1678%) hue-rotate(207deg) brightness(95%) contrast(91%);">
+                    class="w-7 h-7 icon-veteran-blue dark:brightness-0 dark:invert transition-all duration-300">
             </a>
         </div>
 
@@ -38,14 +36,11 @@
             </div>
             <div class="flex items-center">
                 <img src="{{ asset('images/icons/watsapnp.svg') }}" alt="WhatsApp"
-                    class="w-6 h-6 mr-2 dark:brightness-0 dark:invert transition-all duration-300"
-                    style="filter: brightness(0) saturate(100%) invert(40%) sepia(98%) saturate(1678%) hue-rotate(207deg) brightness(95%) contrast(91%);">
+                    class="w-6 h-6 mr-2 icon-veteran-blue dark:brightness-0 dark:invert transition-all duration-300">
                 <img src="{{ asset('images/icons/signal.svg') }}" alt="Signal"
-                    class="w-6 h-6 mr-2 dark:brightness-0 dark:invert transition-all duration-300"
-                    style="filter: brightness(0) saturate(100%) invert(40%) sepia(98%) saturate(1678%) hue-rotate(207deg) brightness(95%) contrast(91%);">
+                    class="w-6 h-6 mr-2 icon-veteran-blue dark:brightness-0 dark:invert transition-all duration-300">
                 <img src="{{ asset('images/icons/viber.svg') }}" alt="Viber"
-                    class="w-6 h-6 mr-5 dark:brightness-0 dark:invert transition-all duration-300"
-                    style="filter: brightness(0) saturate(100%) invert(40%) sepia(98%) saturate(1678%) hue-rotate(207deg) brightness(95%) contrast(91%);">
+                    class="w-6 h-6 mr-5 icon-veteran-blue dark:brightness-0 dark:invert transition-all duration-300">
                 <span class="text-black dark:text-white text-base font-bold whitespace-nowrap transition-colors">+38 067
                     563 0090</span>
             </div>
@@ -62,13 +57,11 @@
             <div class="flex gap-4 flex-shrink-0">
                 <a href="https://www.facebook.com/zahystveteran" target="_blank" rel="noopener noreferrer">
                     <img src="{{ asset('images/icons/facebook.svg') }}" alt="Facebook"
-                        class="w-6 h-6 dark:brightness-0 dark:invert transition-all duration-300"
-                        style="filter: brightness(0) saturate(100%) invert(40%) sepia(98%) saturate(1678%) hue-rotate(207deg) brightness(95%) contrast(91%);">
+                        class="w-6 h-6 icon-veteran-blue dark:brightness-0 dark:invert transition-all duration-300">
                 </a>
                 <a href="https://www.instagram.com/veterankhm/" target="_blank" rel="noopener noreferrer">
                     <img src="{{ asset('images/icons/instagram.svg') }}" alt="Instagram"
-                        class="w-6 h-6 dark:brightness-0 dark:invert transition-all duration-300"
-                        style="filter: brightness(0) saturate(100%) invert(40%) sepia(98%) saturate(1678%) hue-rotate(207deg) brightness(95%) contrast(91%);">
+                        class="w-6 h-6 icon-veteran-blue dark:brightness-0 dark:invert transition-all duration-300">
                 </a>
             </div>
         </div>

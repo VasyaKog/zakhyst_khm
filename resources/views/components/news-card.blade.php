@@ -63,16 +63,16 @@ $bottomContainerMarginClass = [
     <a href="{{ $url }}" class="group h-full flex flex-col">
         <img src="{{ $imageUrl }}" alt="News Preview" class="rounded-[20px] w-full object-cover {{ $imageHeightClasses }} {{ $imageMarginClasses }}">
         
-        <h2 class="{{ $titleSizeClasses }} font-bold font-['Montserrat'] text-black dark:text-white leading-[1.43] {{ $titleMarginClasses }} transition-colors">
+        <h2 class="{{ $titleSizeClasses }} font-bold font-montserrat text-black dark:text-white leading-[1.43] {{ $titleMarginClasses }} transition-colors">
             {{ $title }}
         </h2>
         
-        <p class="{{ $summarySizeClasses }} font-normal font-['Montserrat'] text-black dark:text-gray-300 leading-[1.43] {{ $summaryMarginClasses }} flex-grow transition-colors">
+        <p class="{{ $summarySizeClasses }} font-normal font-montserrat text-black dark:text-gray-300 leading-[1.43] {{ $summaryMarginClasses }} flex-grow transition-colors">
             {{ $summary }}
         </p>
 
         <div class="w-full flex justify-between items-center mt-auto @if($showButton) {{ $bottomContainerMarginClass }} @endif">
-            <span class="text-[0.875rem] font-bold font-['Montserrat'] text-black dark:text-gray-400 leading-[1.43] transition-colors">
+            <span class="text-[0.875rem] font-bold font-montserrat text-black dark:text-gray-400 leading-[1.43] transition-colors">
                 {{ $date }}
             </span>
             

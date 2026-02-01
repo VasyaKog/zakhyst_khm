@@ -1,3 +1,36 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+
+    /* Scroll snap utilities for carousels */
+    .scroll-snap-x {
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .scroll-snap-x::-webkit-scrollbar {
+        display: none;
+    }
+
+    .snap-center {
+        scroll-snap-align: center;
+    }
+
+    /* Footer social icons blue filter */
+    .icon-veteran-blue {
+        filter: brightness(0) saturate(100%) invert(40%) sepia(98%) saturate(1678%) hue-rotate(207deg) brightness(95%) contrast(91%);
+    }
+
+    /* Video container max-height */
+    .video-max-h {
+        max-height: 600px;
+    }
+
+    /* Service cards stack perspective */
+    .perspective-1000 {
+        perspective: 1000px;
+    }
+}

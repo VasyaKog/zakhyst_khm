@@ -23,13 +23,13 @@
         <div class="w-full lg:min-w-[200px] lg:w-auto flex-shrink-0 mb-[20px] lg:mb-0">
             <!-- Date (small text) -->
             <p
-                class="text-[0.875rem] lg:text-[1.25rem] font-extrabold font-['Montserrat'] text-black dark:text-white tracking-[3px] lg:tracking-[4.8px] uppercase leading-[0.92] mb-[10px] lg:mb-[18px] transition-colors">
+                class="text-[0.875rem] lg:text-[1.25rem] font-extrabold font-montserrat text-black dark:text-white tracking-[3px] lg:tracking-[4.8px] uppercase leading-[0.92] mb-[10px] lg:mb-[18px] transition-colors">
                 {{ $date }}
             </p>
 
             <!-- Year (large text) -->
             <p
-                class="text-[3rem] lg:text-[5rem] font-extrabold font-['Montserrat'] text-black dark:text-white uppercase leading-[0.92] mb-[15px] lg:mb-[28px] whitespace-nowrap transition-colors">
+                class="text-[3rem] lg:text-[5rem] font-extrabold font-montserrat text-black dark:text-white uppercase leading-[0.92] mb-[15px] lg:mb-[28px] whitespace-nowrap transition-colors">
                 {{ $year }}
             </p>
 
@@ -42,7 +42,7 @@
         <!-- Description -->
         <div class="lg:ml-[50px] flex-1 pt-0 lg:pt-[38px]">
             <p
-                class="text-[1.125rem] lg:text-[2rem] font-normal font-['Montserrat'] text-black dark:text-gray-200 leading-[1.35] lg:leading-[1.25] transition-colors">
+                class="text-[1.125rem] lg:text-[2rem] font-normal font-montserrat text-black dark:text-gray-200 leading-[1.35] lg:leading-[1.25] transition-colors">
                 {{ $description }}
             </p>
         </div>

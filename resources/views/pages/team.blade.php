@@ -84,13 +84,6 @@
 
 
     </div>
-
-    <script>
-        function openDonationModal() {
-            document.getElementById('donation-modal').classList.remove('hidden');
-            document.getElementById('donation-modal').classList.add('flex');
-        }
-    </script>
 @endsection
 
 @section('footer')

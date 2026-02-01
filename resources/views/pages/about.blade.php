@@ -10,7 +10,7 @@
             <div
                 class="px-4 lg:px-8 xl:px-4 2xl:px-0 lg:max-w-[900px] xl:max-w-[1100px] 2xl:max-w-[1200px] lg:mx-auto mb-[40px] lg:mb-[80px] flex justify-between items-start">
                 <h1
-                    class="text-[2.5rem] lg:text-[9.875rem] font-extrabold font-['Montserrat'] text-black dark:text-white uppercase leading-[0.92] transition-colors">
+                    class="text-[2.5rem] lg:text-[9.875rem] font-extrabold font-montserrat text-black dark:text-white uppercase leading-[0.92] transition-colors">
                     {{ __('About Us') }}
                 </h1>
                 <img src="{{ asset('images/icons/button-support.svg') }}" alt="Support"
@@ -22,7 +22,7 @@
             <div
                 class="px-4 lg:px-8 xl:px-4 2xl:px-0 lg:max-w-[900px] xl:max-w-[1100px] 2xl:max-w-[1200px] lg:mx-auto mb-[60px] lg:mb-[120px]">
                 <div
-                    class="max-w-full lg:max-w-[869px] text-[1rem] lg:text-[1.25rem] font-normal font-['Montserrat'] text-black dark:text-gray-200 text-left lg:text-justify leading-[1.43] space-y-2 transition-colors">
+                    class="max-w-full lg:max-w-[869px] text-[1rem] lg:text-[1.25rem] font-normal font-montserrat text-black dark:text-gray-200 text-left lg:text-justify leading-[1.43] space-y-2 transition-colors">
                     <p>{{ __('About Hello') }}</p>
                     <p>{{ __('About Description') }}</p>
                 </div>
@@ -32,7 +32,7 @@
             <div
                 class="px-4 lg:px-8 xl:px-4 2xl:px-0 lg:max-w-[900px] xl:max-w-[1100px] 2xl:max-w-[1200px] lg:mx-auto mb-[60px] lg:mb-[100px]">
                 <h2
-                    class="text-[1.5rem] lg:text-[3rem] font-extrabold font-['Montserrat'] text-black dark:text-white leading-[1.1] lg:leading-[0.93] mb-[30px] lg:mb-[60px] max-w-[870px] transition-colors">
+                    class="text-[1.5rem] lg:text-[3rem] font-extrabold font-montserrat text-black dark:text-white leading-[1.1] lg:leading-[0.93] mb-[30px] lg:mb-[60px] max-w-[870px] transition-colors">
                     {{ __('Goal Title') }}
                 </h2>
 
@@ -49,11 +49,11 @@
             <!-- Task Section -->
             <div class="px-4 lg:px-0 lg:max-w-[1200px] lg:mx-auto mb-[60px] lg:mb-[100px]">
                 <h2
-                    class="text-[1.5rem] lg:text-[3rem] font-extrabold font-['Montserrat'] text-black dark:text-white leading-[1.1] lg:leading-[0.92] mb-[20px] lg:mb-[30px] transition-colors">
+                    class="text-[1.5rem] lg:text-[3rem] font-extrabold font-montserrat text-black dark:text-white leading-[1.1] lg:leading-[0.92] mb-[20px] lg:mb-[30px] transition-colors">
                     {{ __('Tasks Title') }}
                 </h2>
                 <div
-                    class="max-w-[873px] text-[1rem] lg:text-[1.25rem] font-normal font-['Montserrat'] text-black dark:text-gray-200 leading-[1.43] transition-colors">
+                    class="max-w-[873px] text-[1rem] lg:text-[1.25rem] font-normal font-montserrat text-black dark:text-gray-200 leading-[1.43] transition-colors">
                     <p>{{ __('Task Description') }}</p>
                 </div>
             </div>

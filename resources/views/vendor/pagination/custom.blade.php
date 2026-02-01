@@ -20,7 +20,7 @@
                 {{-- "Three Dots" Separator --}}
                 @if (is_string($element))
                     <span
-                        class="text-[1.25rem] font-normal font-['Montserrat'] text-black dark:text-white transition-colors">{{ $element }}</span>
+                        class="text-[1.25rem] font-normal font-montserrat text-black dark:text-white transition-colors">{{ $element }}</span>
                 @endif
 
                 {{-- Array Of Links --}}
@@ -28,10 +28,10 @@
                     @foreach ($element as $page => $url)
                         @if ($page == $paginator->currentPage())
                             <span
-                                class="text-[1.25rem] font-bold font-['Montserrat'] text-black dark:text-white border-b-2 border-black dark:border-white pb-1 transition-colors">{{ $page }}</span>
+                                class="text-[1.25rem] font-bold font-montserrat text-black dark:text-white border-b-2 border-black dark:border-white pb-1 transition-colors">{{ $page }}</span>
                         @else
                             <a href="{{ $url }}"
-                                class="text-[1.25rem] font-normal font-['Montserrat'] text-black dark:text-white hover:font-bold transition-all">{{ $page }}</a>
+                                class="text-[1.25rem] font-normal font-montserrat text-black dark:text-white hover:font-bold transition-all">{{ $page }}</a>
                         @endif
                     @endforeach
                 @endif

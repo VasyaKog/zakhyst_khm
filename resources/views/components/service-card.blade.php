@@ -97,20 +97,20 @@
         @endif
 
         <!-- Title -->
-        <h2 class="text-[1.5rem] xs:text-[2rem] lg:text-[3rem] font-extrabold font-['Montserrat'] leading-[0.92] lg:leading-[1.03] {{ $variant === 'default' ? 'mt-[90px]' : 'mt-0' }} mb-[30px] lg:mt-0 lg:mb-[50px] max-w-[150px] min-[428px]:max-w-[225px] lg:max-w-[460px] break-normal whitespace-normal relative z-20 transition-colors dark:!text-white" style="color: {{ $textColor }};">
+        <h2 class="text-[1.5rem] xs:text-[2rem] lg:text-[3rem] font-extrabold font-montserrat leading-[0.92] lg:leading-[1.03] {{ $variant === 'default' ? 'mt-[90px]' : 'mt-0' }} mb-[30px] lg:mt-0 lg:mb-[50px] max-w-[150px] min-[428px]:max-w-[225px] lg:max-w-[460px] break-normal whitespace-normal relative z-20 transition-colors dark:!text-white" style="color: {{ $textColor }};">
             {{ $title }}
         </h2>
         
         <!-- Two Column Content -->
         <div class="flex flex-col lg:flex-row gap-[30px] lg:gap-[70px] mb-[30px] lg:mb-0 relative z-20">
             <!-- Left Column -->
-            <div class="flex-1 text-[1.25rem] lg:text-[1.25rem] font-normal font-['Montserrat'] leading-[1.66] lg:leading-[2.5] [&_ul]:list-disc [&_ul]:pl-5 [&_li::marker]:text-[0.625rem] [&_li]:pl-2 transition-colors dark:!text-gray-200" style="color: {{ $textColor }}">
+            <div class="flex-1 text-[1.25rem] lg:text-[1.25rem] font-normal font-montserrat leading-[1.66] lg:leading-[2.5] [&_ul]:list-disc [&_ul]:pl-5 [&_li::marker]:text-[0.625rem] [&_li]:pl-2 transition-colors dark:!text-gray-200" style="color: {{ $textColor }}">
                 {!! $leftContent !!}
             </div>
             
             <!-- Right Column -->
             @if($rightContent)
-            <div class="flex-1 text-[1.25rem] lg:text-[1.25rem] font-normal font-['Montserrat'] leading-[1.66] lg:leading-[2.5] [&_ul]:list-disc [&_ul]:pl-5 [&_li::marker]:text-[0.625rem] [&_li]:pl-2 transition-colors dark:!text-gray-200" style="color: {{ $textColor }}">
+            <div class="flex-1 text-[1.25rem] lg:text-[1.25rem] font-normal font-montserrat leading-[1.66] lg:leading-[2.5] [&_ul]:list-disc [&_ul]:pl-5 [&_li::marker]:text-[0.625rem] [&_li]:pl-2 transition-colors dark:!text-gray-200" style="color: {{ $textColor }}">
                 {!! $rightContent !!}
             </div>
             @endif

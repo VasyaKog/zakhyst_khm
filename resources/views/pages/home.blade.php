@@ -283,8 +283,6 @@
                 cards.forEach(card => {
                     card.style.height = `${maxContentHeight}px`;
                 });
-
-                // Note: Container height is handled by CSS (h-auto)
             }
 
             adjustServiceCards();

@@ -78,7 +78,6 @@
                 </div>
 
                 <!-- Burger/Cross Button: Visible on Mobile (<1400), Hidden on Desktop (>1400) UNLESS extended nav is open -->
-                <!-- Note: Logic handled by JS, but base class setup here -->
                 <div class="relative w-[30px] h-[19px] max-[768px]:w-[45px] max-[768px]:h-[30px]">
                     <button type="button" id="menu-toggle"
                         class="text-black hover:text-veteran-blue focus:outline-none focus:text-gray-900 transition-colors"

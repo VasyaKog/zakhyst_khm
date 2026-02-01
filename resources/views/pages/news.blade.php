@@ -8,7 +8,7 @@
         <div class="w-full lg:max-w-[869px]">
             <div class="flex justify-between items-start lg:block">
                 <h1
-                    class="text-[1.75rem] xs:text-[2.5rem] lg:text-[9.875rem] font-extrabold font-['Montserrat'] text-black dark:text-white uppercase leading-[0.92] lg:whitespace-nowrap transition-colors break-words">
+                    class="text-[1.75rem] xs:text-[2.5rem] lg:text-[9.875rem] font-extrabold font-montserrat text-black dark:text-white uppercase leading-[0.92] lg:whitespace-nowrap transition-colors break-words">
                     {{ __('NEWS:') }}
                 </h1>
 
@@ -22,7 +22,7 @@
             </div>
 
             <div
-                class="text-[1rem] lg:text-[1.25rem] font-normal font-['Montserrat'] text-black dark:text-gray-300 leading-[1.43] mb-8 lg:mb-16 mt-6 lg:mt-20 transition-colors">
+                class="text-[1rem] lg:text-[1.25rem] font-normal font-montserrat text-black dark:text-gray-300 leading-[1.43] mb-8 lg:mb-16 mt-6 lg:mt-20 transition-colors">
                 <p class="mb-0">{{ __('Latest News Description') }}</p>
             </div>
         </div>
@@ -84,13 +84,13 @@
 
                         <!-- Title -->
                         <div
-                            class="w-full mt-4 text-black dark:text-white text-[1.25rem] font-bold font-['Montserrat'] leading-tight line-clamp-2 transition-colors">
+                            class="w-full mt-4 text-black dark:text-white text-[1.25rem] font-bold font-montserrat leading-tight line-clamp-2 transition-colors">
                             {{ $article->title }}
                         </div>
 
                         <!-- Description -->
                         <div
-                            class="w-full mt-3 text-black dark:text-gray-300 text-[0.875rem] font-normal font-['Montserrat'] leading-snug line-clamp-5 transition-colors">
+                            class="w-full mt-3 text-black dark:text-gray-300 text-[0.875rem] font-normal font-montserrat leading-snug line-clamp-5 transition-colors">
                             {{ $article->summary }}
                         </div>
 
@@ -98,7 +98,7 @@
                         <div class="w-full mt-4 flex justify-between items-center">
                             <!-- Date -->
                             <div
-                                class="text-black dark:text-gray-400 text-[0.75rem] font-bold font-['Montserrat'] uppercase tracking-wide transition-colors">
+                                class="text-black dark:text-gray-400 text-[0.75rem] font-bold font-montserrat uppercase tracking-wide transition-colors">
                                 {{ $article->published_at->locale($locale)->translatedFormat('d M Y') }}
                             </div>
 
@@ -106,7 +106,7 @@
                             <div
                                 class="w-32 h-10 rounded-full border-2 border-veteran-blue flex items-center justify-center group-active:bg-veteran-blue transition-colors">
                                 <span
-                                    class="text-black dark:text-white group-active:text-white text-[0.625rem] font-bold font-['Montserrat'] uppercase tracking-wide transition-colors">
+                                    class="text-black dark:text-white group-active:text-white text-[0.625rem] font-bold font-montserrat uppercase tracking-wide transition-colors">
                                     ЧИТАТИ ДАЛІ
                                 </span>
                             </div>
@@ -125,19 +125,19 @@
 
                         <!-- Title -->
                         <div
-                            class="w-full text-black dark:text-white text-[0.875rem] font-bold font-['Montserrat'] leading-tight line-clamp-3 mb-2 transition-colors">
+                            class="w-full text-black dark:text-white text-[0.875rem] font-bold font-montserrat leading-tight line-clamp-3 mb-2 transition-colors">
                             {{ $article->title }}
                         </div>
 
                         <!-- Description -->
                         <div
-                            class="w-full text-black dark:text-gray-300 text-[0.75rem] font-normal font-['Montserrat'] leading-snug line-clamp-4 mb-3 transition-colors">
+                            class="w-full text-black dark:text-gray-300 text-[0.75rem] font-normal font-montserrat leading-snug line-clamp-4 mb-3 transition-colors">
                             {{ $article->summary }}
                         </div>
 
                         <!-- Date -->
                         <div
-                            class="mt-auto text-black dark:text-gray-400 text-[0.625rem] font-bold font-['Montserrat'] uppercase tracking-wide transition-colors">
+                            class="mt-auto text-black dark:text-gray-400 text-[0.625rem] font-bold font-montserrat uppercase tracking-wide transition-colors">
                             {{ $article->published_at->locale($locale)->translatedFormat('d M Y') }}
                         </div>
                     </a>
@@ -152,11 +152,11 @@
     @else
         <div class="w-full">
             <span
-                class="block text-[1.25rem] xs:text-[1.75rem] lg:text-[2.5rem] font-['Montserrat'] text-black dark:text-white uppercase transition-colors break-words">
+                class="block text-[1.25rem] xs:text-[1.75rem] lg:text-[2.5rem] font-montserrat text-black dark:text-white uppercase transition-colors break-words">
                 {{ __('Database Empty') }}
             </span>
             <span
-                class="block text-[1.25rem] xs:text-[1.75rem] lg:text-[2.5rem] font-['Montserrat'] text-black dark:text-white mt-4 mb-24 lg:mb-[300px] transition-colors">
+                class="block text-[1.25rem] xs:text-[1.75rem] lg:text-[2.5rem] font-montserrat text-black dark:text-white mt-4 mb-24 lg:mb-[300px] transition-colors">
                 {{ __('Sorry Inconvenience') }}
             </span>
         </div>

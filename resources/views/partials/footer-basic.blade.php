@@ -34,7 +34,7 @@
         <!-- Contacts -->
         <div class="flex flex-col items-end">
             <div class="text-black dark:text-white text-base font-bold mb-5 text-right transition-colors">
-                veteranskiprostirkhm.gmail.com
+                veteranskiprostirkhm@gmail.com
             </div>
             <div class="flex items-center">
                 <img src="{{ asset('images/icons/watsapnp.svg') }}" alt="WhatsApp"
@@ -104,4 +104,5 @@
             </div>
         </div>
     </div>
+
 </footer>

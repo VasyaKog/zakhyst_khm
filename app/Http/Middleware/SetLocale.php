@@ -16,8 +16,8 @@ class SetLocale
      */
     public function handle(Request $request, Closure $next): Response
     {
-        // Get locale from session, default to Ukrainian
-        $locale = session('locale', 'ua');
+        // Get locale from cookie or session, default to Ukrainian
+        $locale = $request->cookie('user_locale', session('locale', 'ua'));
 
         // Validate locale
         if (!in_array($locale, ['ua', 'en'])) {

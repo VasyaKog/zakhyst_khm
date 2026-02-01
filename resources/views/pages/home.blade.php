@@ -1,6 +1,6 @@
 @extends('layouts.web')
 @section('title', __('Home'))
-@section('seo_title', 'Головна')
+@section('seo_title', __('Home'))
 @section('seo_description', 'Ветеранський простір у Хмельницькому - підтримка ветеранів, військових та їхніх родин. Соціальна адаптація, психологічна допомога, юридичні консультації.')
 @section('content')
     <!-- Desktop Hero & Footer Wrapper (>=768px) -->
@@ -525,7 +525,8 @@
         <div class="flex justify-center">
             <div
                 class="w-[1815px] rounded-[100px] overflow-hidden border-2 border-black dark:border-zinc-500 transition-colors">
-                <a href="https://vdiachni.khm.gov.ua/" target="_blank" rel="noopener noreferrer" class="block relative h-[750px]">
+                <a href="https://vdiachni.khm.gov.ua/" target="_blank" rel="noopener noreferrer"
+                    class="block relative h-[750px]">
                     <img src="{{ asset('images/backgrounds/map.png') }}" alt="Хмельницький Вдячний Map"
                         class="w-full h-full object-cover dark:opacity-80 transition-opacity">
                 </a>

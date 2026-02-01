@@ -12,6 +12,7 @@ php artisan event:cache
 
 echo "Seeding database..."
 php artisan db:seed --force
+php artisan cache:clear
 
 
 echo "Copying seed images to storage..."

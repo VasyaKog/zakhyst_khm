@@ -24,7 +24,7 @@ class SeoMeta extends Component
         string $type = 'website',
         ?string $locale = null
     ) {
-        $siteName = 'Ветеранський Простір';
+        $siteName = __('Page Title Suffix');
 
         $this->title = $title ? "{$title} | {$siteName}" : $siteName;
         $this->description = $description ?: 'Ветеранський простір Хмельницького - підтримка ветеранів, військових та їхніх родин. Послуги, адаптація, консультування.';

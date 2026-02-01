@@ -7,7 +7,7 @@
             <div>
                 <h1
                     class="text-[1.75rem] xs:text-[2.5rem] lg:text-[5rem] font-extrabold font-['Montserrat'] text-black dark:text-white uppercase leading-[0.92] mb-12 lg:mb-24 transition-colors break-words">
-                    Шлях ветерана
+                    {{ __('Veteran Path') }}
                 </h1>
 
                 <span

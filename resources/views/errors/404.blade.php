@@ -1,5 +1,5 @@
 @extends('layouts.web-blue')
-@section('title', '404 - Сторінку не знайдено')
+@section('title', __('404 Page Title'))
 @section('content')
     <div class="flex-grow flex flex-col items-center justify-center w-full px-4 lg:px-0 py-12 lg:py-0">
         <!-- 404 SVG -->
@@ -15,17 +15,17 @@
         <!-- Error Message -->
         <div class="text-center mb-8 lg:mb-12 px-2">
             <p class="text-white text-base xs:text-lg lg:text-xl font-bold uppercase tracking-wide mb-2">
-                ЙОЙ! ЩОСЬ ПІШЛО НЕ ТАК.
+                {{ __('404 Error Title') }}
             </p>
             <p class="text-white text-base xs:text-lg lg:text-xl font-bold uppercase tracking-wide">
-                НАТИСНИ КНОПКУ НИЖЧЕ І ЗРОБИ ВІДКАТ НАЗАД
+                {{ __('404 Error Action') }}
             </p>
         </div>
 
         <!-- Back to Home Button -->
         <a href="{{ route('home') }}"
             class="px-8 xs:px-10 lg:px-12 py-3 lg:py-4 border-2 border-white text-white text-base xs:text-lg lg:text-xl font-black uppercase rounded-full hover:bg-white hover:text-veteran-blue transition-all duration-300 text-center">
-            НА ГОЛОВНУ
+            {{ __('Back to Home') }}
         </a>
     </div>
 @endsection

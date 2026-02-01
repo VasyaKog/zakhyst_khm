@@ -97,7 +97,7 @@
         @endif
 
         <!-- Title -->
-        <h2 class="text-[1.5rem] xs:text-[2rem] lg:text-[3rem] font-extrabold font-['Montserrat'] leading-[0.92] lg:leading-[1.03] {{ $variant === 'default' ? 'mt-[90px]' : 'mt-0' }} mb-[30px] lg:mt-0 lg:mb-[50px] max-w-[200px] xs:max-w-[225px] lg:max-w-[460px] break-normal relative z-20 transition-colors dark:!text-white" style="color: {{ $textColor }}">
+        <h2 class="text-[1.5rem] xs:text-[2rem] lg:text-[3rem] font-extrabold font-['Montserrat'] leading-[0.92] lg:leading-[1.03] {{ $variant === 'default' ? 'mt-[90px]' : 'mt-0' }} mb-[30px] lg:mt-0 lg:mb-[50px] max-w-[150px] min-[428px]:max-w-[225px] lg:max-w-[460px] break-normal whitespace-normal relative z-20 transition-colors dark:!text-white" style="color: {{ $textColor }};">
             {{ $title }}
         </h2>
         

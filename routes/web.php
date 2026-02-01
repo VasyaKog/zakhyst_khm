@@ -27,6 +27,7 @@ Route::get('/api/search', [\App\Http\Controllers\Web\SearchController::class, 's
 Route::get('/lang/{locale}', function (string $locale) {
     if (in_array($locale, ['ua', 'en'])) {
         session(['locale' => $locale]);
+        \Illuminate\Support\Facades\Cookie::queue('user_locale', $locale, 60 * 24 * 365); // 1 year
     }
 
     // Get the previous URL

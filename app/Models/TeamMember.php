@@ -5,12 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 use Spatie\Translatable\HasTranslations;
+use App\Traits\InvalidatesCache;
 
 class TeamMember extends Model
 {
     use HasTranslations {
         getAttributeValue as traitGetAttributeValue;
     }
+    use InvalidatesCache;
 
     public function getAttributeValue($key)
     {

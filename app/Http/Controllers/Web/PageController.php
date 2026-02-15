@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use App\Models\HeroBanner;
 use App\Models\NewsArticle;
 use App\Models\Partner;
+use App\Models\PathDocument;
 use App\Models\Service;
 use App\Models\TeamMember;
 use App\Models\TimelineEvent;
@@ -80,7 +81,11 @@ class PageController extends Controller
     }
     public function path()
     {
-        return view('pages.path');
+        $documents = Cache::remember('path_documents_' . app()->getLocale(), 3600, function () {
+            return PathDocument::active()->get();
+        });
+
+        return view('pages.path', compact('documents'));
     }
     public function notFound()
     {

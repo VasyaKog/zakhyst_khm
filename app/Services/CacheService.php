@@ -5,6 +5,7 @@ namespace App\Services;
 use App\Models\HeroBanner;
 use App\Models\NewsArticle;
 use App\Models\Partner;
+use App\Models\PathDocument;
 use App\Models\Service;
 use App\Models\TeamMember;
 use App\Models\TimelineEvent;
@@ -22,6 +23,7 @@ class CacheService
         TeamMember::class => ['home_data', 'team_data'],
         Partner::class => ['home_data'],
         TimelineEvent::class => ['timeline_events'],
+        PathDocument::class => ['path_documents'],
     ];
 
     protected static array $locales = ['uk', 'en'];

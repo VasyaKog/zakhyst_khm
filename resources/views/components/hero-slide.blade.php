@@ -14,7 +14,7 @@
         <img src="{{ asset('images/backgrounds/bg1.png') }}" alt="Family Background" class="w-full h-full object-cover">
         <div class="absolute inset-0 bg-black opacity-20"></div>
 
-        <!-- Content: positioned slightly left using percentage -->
+        <!-- Content -->
         <div class="absolute left-[45%] top-1/2 -translate-x-1/2 -translate-y-1/2">
             <h1 class="text-white text-6xl font-bold font-unbounded leading-[74px] tracking-wide mb-8">
                 {{ __('Who We Are') }}
@@ -66,28 +66,28 @@
         </div>
 
     @elseif($codedSlideId === 'slide2')
-        {{-- Coded Slide 2: Business (Blue Shape) --}}
-        <img src="{{ asset('images/backgrounds/bg2.png') }}" alt="Family Background" class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-black opacity-30"></div>
+        {{-- Coded Slide 2: Business --}}
+        <a href="https://vdiachni.khm.gov.ua/" target="_blank" rel="noopener noreferrer">
+            <img src="{{ asset('images/backgrounds/bg2.png') }}" alt="Family Background" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black opacity-30"></div>
 
-        <!-- Positioned slightly left using percentage -->
-        <div
-            class="absolute left-[35%] top-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] min-h-[384px] h-auto bg-blue-600 py-12 px-[90px] rounded-tl-[150px] rounded-tr-[50px] rounded-bl-[150px] rounded-br-[150px]">
-            <h2 class="text-white text-6xl font-bold font-unbounded leading-[74.08px] tracking-wide mb-8">
-                {{ __('Business To Veterans') }}
-            </h2>
-            <p class="text-white text-2xl font-medium font-unbounded uppercase leading-9 tracking-tight">
-                {{ __('Learn More Offers') }}
-                <span class="underline">{{ __('Here') }}</span>
-            </p>
-        </div>
+            <div
+                class="absolute left-[35%] top-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] min-h-[384px] h-auto bg-blue-600 py-12 px-[90px] rounded-tl-[150px] rounded-tr-[50px] rounded-bl-[150px] rounded-br-[150px]">
+                <h2 class="text-white text-6xl font-bold font-unbounded leading-[74.08px] tracking-wide mb-8">
+                    {{ __('Business To Veterans') }}
+                </h2>
+                <p class="text-white text-2xl font-medium font-unbounded uppercase leading-9 tracking-tight">
+                    {{ __('Learn More Offers') }}
+                    <span class="underline">{{ __('Here') }}</span>
+                </p>
+            </div>
+        </a>
 
     @elseif($codedSlideId === 'slide3')
         {{-- Coded Slide 3: Memorial --}}
         <img src="{{ asset('images/backgrounds/bg3.png') }}" alt="Family Background" class="w-full h-full object-cover">
         <div class="absolute inset-0 bg-black opacity-30"></div>
 
-        <!-- Positioned slightly left using percentage -->
         <div class="absolute left-[35%] top-1/2 -translate-x-1/2 -translate-y-1/2 w-[669px]">
             <h2 class="text-white text-6xl font-bold font-unbounded leading-[74.08px] tracking-wide mb-12">
                 {{ __('Died For Ukraine') }}
@@ -106,7 +106,7 @@
         </div>
 
     @else
-        {{-- Custom Banner: Just photo + optional link --}}
+        {{-- Custom Banner: Photo + optional link --}}
         @if($banner->link_url)
             <a href="{{ $banner->link_url }}" class="block w-full h-full">
         @endif

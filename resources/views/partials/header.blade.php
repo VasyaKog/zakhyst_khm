@@ -31,7 +31,8 @@
 
             <div id="mobile-nav" class="hidden min-[1400px]:flex-1 justify-center min-w-0 mx-5">
                 <div class="flex items-center justify-center gap-3 xl:gap-5 min-[1700px]:gap-8 flex-wrap">
-                    <a href="#"
+                    <a href="https://www.khm.gov.ua/uk/pro-hromadu/heroi-hromady" target="_blank"
+                        rel="noopener noreferrer"
                         class="text-black dark:text-white hover:text-veteran-blue font-bold text-sm min-[1700px]:text-base uppercase leading-tight tracking-wide transition-colors whitespace-nowrap">
                         {{ __('We Remember') }}
                     </a>
@@ -46,10 +47,6 @@
                     <a href="{{ route('indifferent') }}"
                         class="text-black dark:text-white hover:text-veteran-blue font-bold text-sm min-[1700px]:text-base uppercase leading-tight tracking-wide transition-colors whitespace-nowrap">
                         {{ __('To Indifferent') }}
-                    </a>
-                    <a href="#"
-                        class="text-black dark:text-white hover:text-veteran-blue font-bold text-sm min-[1700px]:text-base uppercase leading-tight tracking-wide transition-colors whitespace-nowrap">
-                        {{ __('Reviews') }}
                     </a>
                 </div>
             </div>
@@ -85,7 +82,7 @@
                         <!-- Burger Icon -->
                         <img id="burger-icon" src="{{ asset('images/icons/burger.svg') }}"
                             class="max-[768px]:w-[45px] max-[768px]:h-[30px] dark:invert transition-all" alt="Menu">
-                        <!-- Cross Icon (Hidden by default) -->
+                        <!-- Cross Icon -->
                         <div id="cross-icon" class="w-6 h-6 hidden">
                             <div
                                 class="w-full h-[3px] bg-black dark:bg-white transform rotate-45 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-colors">
@@ -97,23 +94,23 @@
                     </button>
                 </div>
 
-                <!-- Dark Mode Switch - Animated Pill Toggle -->
+                <!-- Dark Mode Switch -->
                 <button id="dark-mode-toggle-main"
                     class="relative w-[70px] h-[40px] hidden min-[1400px]:flex items-center justify-between px-[8px] rounded-full border-2 border-black dark:border-white min-[1800px]:mr-[33px]"
                     onclick="toggleDarkModeMain()">
-                    <!-- Sun Icon (Left) - Figma exact -->
+                    <!-- Sun Icon -->
                     <svg class="w-[20px] h-[20px] z-10" viewBox="0 0 24 24" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <circle cx="12" cy="12" r="11" class="stroke-black dark:stroke-white" stroke-width="2" />
                     </svg>
-                    <!-- Moon Icon (Right) - Figma exact -->
+                    <!-- Moon Icon -->
                     <svg class="w-[18px] h-[20px] z-10" viewBox="0 0 21 25" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M8.22205 24.0145C11.4036 24.0111 14.4538 22.7457 16.7035 20.496C18.9532 18.2463 20.2186 15.1961 20.2221 12.0145C20.3751 3.05854 10.1911 -2.97046 2.43105 1.52354L0.87805 2.38554L2.42105 3.26554C9.12105 6.95354 8.63105 17.1355 1.62105 20.1715L4.95911e-05 20.9025L1.46705 21.9085C3.45369 23.278 5.80914 24.0124 8.22205 24.0145ZM8.22205 2.01454C10.8733 2.01745 13.4152 3.07196 15.2899 4.94669C17.1646 6.82142 18.2191 9.36327 18.2221 12.0145C18.3771 19.1315 10.4591 24.2145 4.06705 21.0965C5.56351 20.0922 6.80405 18.7515 7.68934 17.1817C8.57464 15.6119 9.08009 13.8567 9.16523 12.0565C9.25038 10.2562 8.91285 8.46111 8.17968 6.81476C7.4465 5.16841 6.33804 3.71659 4.94305 2.57554C5.99582 2.20199 7.10497 2.01222 8.22205 2.01454Z"
                             class="fill-black dark:fill-white" />
                     </svg>
-                    <!-- Sliding Circle (covers active icon) -->
+                    <!-- Sliding Circle -->
                     <div id="toggle-circle-main"
                         class="absolute left-[4px] w-[28px] h-[28px] z-[100] bg-black dark:bg-white rounded-full transition-[left] duration-300 ease-in-out">
                     </div>
@@ -137,50 +134,36 @@
         const mobileMenu = document.getElementById('mobile-menu'); // Full screen overlay
         const burgerIcon = document.getElementById('burger-icon');
         const crossIcon = document.getElementById('cross-icon');
-        const languageDropdown = document.getElementById('language-dropdown'); // Wrapper div
+        const languageDropdown = document.getElementById('language-dropdown');
 
         const isDesktop = window.innerWidth >= 1400;
 
         if (isDesktop) {
-            // Desktop Logic: Toggle Extended Nav
-            // Default state: desktopNav visible, mobileNav hidden.
-
             const isExtendedOpen = desktopNav.style.display === 'none';
 
             if (isExtendedOpen) {
-                // CLOSE Extended Nav -> SHOW Desktop Nav
-                desktopNav.style.display = ''; // Reset to default (block/absolute)
-                mobileNav.style.display = 'none';  // Force hide
+                desktopNav.style.display = '';
+                mobileNav.style.display = 'none';
 
-                // Button State
                 burgerIcon.classList.remove('hidden');
                 crossIcon.classList.add('hidden');
 
-                // Language Dropdown - show in default nav
                 if (languageDropdown) languageDropdown.style.display = '';
             } else {
-                // OPEN Extended Nav -> HIDE Desktop Nav
-                desktopNav.style.display = 'none'; // Force hide
-                mobileNav.style.display = 'flex';  // Force flex
+                desktopNav.style.display = 'none';
+                mobileNav.style.display = 'flex';
 
-                // Button State
                 burgerIcon.classList.add('hidden');
                 crossIcon.classList.remove('hidden');
 
-                // Language Dropdown - hide in extended nav (use style to override Tailwind)
                 if (languageDropdown) languageDropdown.style.display = 'none';
             }
         } else {
-            // Mobile Logic: Toggle Full Screen Menu
             if (mobileMenu.classList.contains('hidden')) {
-                // Open Menu
                 mobileMenu.classList.remove('hidden');
-                // Lock body scroll
                 document.body.style.overflow = 'hidden';
             } else {
-                // Close Menu
                 mobileMenu.classList.add('hidden');
-                // Unlock body scroll
                 document.body.style.overflow = 'auto';
             }
         }

@@ -55,41 +55,45 @@
 
     @elseif($codedSlideId === 'slide2')
         {{-- Coded Slide 2: Business --}}
-        <img src="{{ asset('images/backgrounds/bg2.png') }}" alt="Business Background"
-            class="absolute inset-0 w-full h-full object-cover object-center">
-        <div class="absolute inset-0 bg-neutral-900/30"></div>
+        <a href="https://vdiachni.khm.gov.ua/" target="_blank" rel="noopener noreferrer">
+            <img src="{{ asset('images/backgrounds/bg2.png') }}" alt="Business Background"
+                class="absolute inset-0 w-full h-full object-cover object-center">
+            <div class="absolute inset-0 bg-neutral-900/30"></div>
 
-        <div class="absolute inset-0 flex flex-col justify-center px-4">
-            <div class="p-4 xs:p-6">
-                <h2 class="text-white text-[2rem] xs:text-[2.625rem] font-bold font-unbounded leading-tight mb-4">
-                    {{ __('Business To Veterans') }}
-                </h2>
-                <p class="text-white text-base xs:text-lg font-medium font-unbounded uppercase">
-                    {{ __('Learn More Offers') }} <span class="underline">{{ __('Here') }}</span>
-                </p>
+            <div class="absolute inset-0 flex flex-col justify-center px-4">
+                <div class="p-4 xs:p-6">
+                    <h2 class="text-white text-[2rem] xs:text-[2.625rem] font-bold font-unbounded leading-tight mb-4">
+                        {{ __('Business To Veterans') }}
+                    </h2>
+                    <p class="text-white text-base xs:text-lg font-medium font-unbounded uppercase">
+                        {{ __('Learn More Offers') }} <span class="underline">{{ __('Here') }}</span>
+                    </p>
+                </div>
             </div>
-        </div>
+        </a>
 
     @elseif($codedSlideId === 'slide3')
         {{-- Coded Slide 3: Memorial --}}
-        <img src="{{ asset('images/backgrounds/bg3.png') }}" alt="Memorial Background"
-            class="absolute inset-0 w-full h-full object-cover object-center">
-        <div class="absolute inset-0 bg-neutral-900/30"></div>
+        <a href="https://www.khm.gov.ua/uk/pro-hromadu/heroi-hromady" target="_blank" rel="noopener noreferrer">
+            <img src="{{ asset('images/backgrounds/bg3.png') }}" alt="Memorial Background"
+                class="absolute inset-0 w-full h-full object-cover object-center">
+            <div class="absolute inset-0 bg-neutral-900/30"></div>
 
-        <div class="absolute inset-0 flex flex-col justify-center px-4">
-            <h2 class="text-white text-[1.75rem] xs:text-[2rem] font-bold font-unbounded leading-tight mb-4">
-                {{ __('Died For Ukraine') }}
-            </h2>
-            <p class="text-white text-base xs:text-lg font-medium font-unbounded uppercase mb-6">
-                {{ __('Virtual Memorial') }}
-            </p>
-            <button
-                class="w-full max-w-[240px] xs:max-w-[280px] h-12 xs:h-14 border-2 border-white rounded-full flex items-center justify-center">
-                <span class="text-white text-sm xs:text-base font-black font-montserrat uppercase tracking-wide">
-                    {{ __('Visit Memorial') }}
-                </span>
-            </button>
-        </div>
+            <div class="absolute inset-0 flex flex-col justify-center px-4">
+                <h2 class="text-white text-[1.75rem] xs:text-[2rem] font-bold font-unbounded leading-tight mb-4">
+                    {{ __('Died For Ukraine') }}
+                </h2>
+                <p class="text-white text-base xs:text-lg font-medium font-unbounded uppercase mb-6">
+                    {{ __('Virtual Memorial') }}
+                </p>
+                <button
+                    class="w-full max-w-[240px] xs:max-w-[280px] h-12 xs:h-14 border-2 border-white rounded-full flex items-center justify-center">
+                    <span class="text-white text-sm xs:text-base font-black font-montserrat uppercase tracking-wide">
+                        {{ __('Visit Memorial') }}
+                    </span>
+                </button>
+            </div>
+        </a>
 
     @else
         {{-- Custom Banner: Just photo + optional link --}}

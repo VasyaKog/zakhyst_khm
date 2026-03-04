@@ -8,14 +8,11 @@
         <div class="pt-[40px] lg:pt-[120px] pb-[60px] lg:pb-[100px] overflow-hidden">
             <!-- Page Title -->
             <div
-                class="px-4 lg:px-8 xl:px-4 2xl:px-0 lg:max-w-[900px] xl:max-w-[1100px] 2xl:max-w-[1200px] lg:mx-auto mb-[40px] lg:mb-[80px] flex justify-between items-start">
+                class="px-4 lg:px-8 xl:px-4 2xl:px-0 lg:max-w-[900px] xl:max-w-[1100px] 2xl:max-w-[1200px] lg:mx-auto mb-[40px] lg:mb-[80px]">
                 <h1
                     class="text-[2.5rem] lg:text-[9.875rem] font-extrabold font-montserrat text-black dark:text-white uppercase leading-[0.92] transition-colors">
                     {{ __('About Us') }}
                 </h1>
-                <img src="{{ asset('images/icons/button-support.svg') }}" alt="Support"
-                    class="w-[70px] h-[70px] cursor-pointer hover:opacity-80 transition-opacity ml-4 shrink-0"
-                    onclick="openContactModal()">
             </div>
 
             <!-- Description -->

@@ -135,7 +135,7 @@
 
 {{-- Floating Trigger Button - Desktop only (>=1400px) --}}
 <button id="accessibility-trigger" onclick="accessibility.toggleAccessibilityPanel()"
-    class="fixed bottom-4 left-4 z-[99] w-14 h-14 bg-veteran-blue text-white rounded-full shadow-lg hover:bg-blue-700 transition-all items-center justify-center group hidden min-[1400px]:flex"
+    class="fixed bottom-4 left-4 lg:bottom-6 lg:left-6 z-[99] w-14 h-14 bg-veteran-blue text-white rounded-full shadow-lg hover:bg-blue-700 transition-all items-center justify-center group hidden min-[1400px]:flex"
     title="{{__('Accessability')}}">
     <x-icons.accessibility class="w-7 h-7 group-hover:scale-110 transition-transform" />
 </button>

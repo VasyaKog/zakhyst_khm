@@ -38,7 +38,7 @@
                                 </h3>
                                 <p
                                     class="text-[1.25rem] lg:text-[1.5rem] font-bold font-montserrat text-black dark:text-gray-200 leading-[1.08] transition-colors">
-                                    {{ __('Address City') }}, {{ __('Address Street') }}
+                                    {{ __('City Khmelnytskyi') }}, {{ __('Address Street') }}
                                 </p>
                             </div>
 
@@ -78,7 +78,7 @@
                                 </h3>
                                 <p
                                     class="text-[1.25rem] lg:text-[1.5rem] font-bold font-montserrat text-black dark:text-gray-200 leading-[1.5] break-words transition-colors">
-                                    veteranskiprostirkhm.gmail.com
+                                    veteranskiprostirkhm@gmail.com
                                 </p>
                             </div>
                         </div>

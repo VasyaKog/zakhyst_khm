@@ -53,6 +53,11 @@
         @endif
     </div>
 
+    <!-- Fixed Support/Contact Button -->
+    <img src="{{ asset('images/icons/button-support.svg') }}" alt="Support"
+        class="fixed bottom-4 right-4 lg:bottom-6 lg:right-6 w-20 h-20 pt-3 cursor-pointer hover:scale-110 transition-all duration-200 z-50"
+        onclick="openContactModal()">
+
     <!-- Fixed elements outside page-content (not affected by saturation filter) -->
     <!-- Donation Modal -->
     @include('components.donation-modal')

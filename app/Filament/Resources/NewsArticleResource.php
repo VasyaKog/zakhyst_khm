@@ -37,11 +37,19 @@ class NewsArticleResource extends Resource
                         Forms\Components\TextInput::make('title')
                             ->label('Заголовок')
                             ->required()
-                            ->maxLength(255),
+                            ->maxLength(255)
+                            ->live(onBlur: true)
+                            ->afterStateUpdated(function (Forms\Set $set, ?string $state) {
+                                if ($state) {
+                                    $set('slug', NewsArticle::generateSlug($state));
+                                }
+                            }),
                         Forms\Components\TextInput::make('slug')
                             ->label('URL-адреса (slug)')
                             ->required()
-                            ->maxLength(255),
+                            ->unique(ignoreRecord: true)
+                            ->maxLength(255)
+                            ->helperText('Генерується автоматично із заголовка. Можна редагувати вручну.'),
                         Forms\Components\Textarea::make('summary')
                             ->label('Короткий опис')
                             ->required()

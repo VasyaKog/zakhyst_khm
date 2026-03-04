@@ -3,15 +3,10 @@
 @section('content')
 
     <div class="px-4 xs:px-5 lg:pl-[50px] xl:pl-[200px] 2xl:pl-[375px] lg:pr-0 mb-[60px] lg:mb-[120px] mt-10 lg:mt-[140px]">
-        <div class="flex flex-col-reverse xs:flex-row xs:items-start xs:justify-between gap-4 lg:gap-0">
-            <h1
-                class="text-[1.5rem] xs:text-[2rem] sm:text-[2.5rem] lg:text-[5rem] font-extrabold font-montserrat text-black dark:text-white uppercase leading-[0.92] transition-colors break-words max-w-full">
-                {{ __('Indifferent Page Title') }}
-            </h1>
-            <img src="{{ asset('images/icons/button-support.svg') }}" alt="Support"
-                class="w-[50px] xs:w-[70px] h-[50px] xs:h-[70px] cursor-pointer hover:opacity-80 transition-opacity shrink-0 self-end xs:self-start"
-                onclick="openContactModal()">
-        </div>
+        <h1
+            class="text-[1.5rem] xs:text-[2rem] sm:text-[2.5rem] lg:text-[5rem] font-extrabold font-montserrat text-black dark:text-white uppercase leading-[0.92] transition-colors break-words max-w-full">
+            {{ __('Indifferent Page Title') }}
+        </h1>
     </div>
 
     <div class="pb-[160px] lg:pb-48 px-4 lg:px-0">

@@ -101,14 +101,11 @@
     <!-- Mobile Services Section (<768px) -->
     <div class="block lg:hidden mt-16 mb-16 relative px-4">
         <!-- Header with title and support icon -->
-        <div class="flex flex-col-reverse xs:flex-row xs:items-start xs:justify-between gap-4 mb-8">
+        <div class="mb-8">
             <h2
                 class="text-black dark:text-white text-[1.75rem] xs:text-[2.5rem] font-extrabold font-montserrat uppercase leading-tight transition-colors break-words">
                 {{ __('Types of Services') }}
             </h2>
-            <img src="{{ asset('images/icons/button-support.svg') }}" alt="Support"
-                class="w-[50px] xs:w-[70px] h-[50px] xs:h-[70px] cursor-pointer hover:opacity-80 transition-opacity shrink-0 self-end xs:self-start"
-                onclick="openContactModal()">
         </div>
 
         <!-- Swipe Carousel Container -->
@@ -185,9 +182,7 @@
     <div class="hidden lg:flex justify-center mt-[152px] mb-[300px] px-4">
         <div id="desktop-services-container"
             class="relative w-full max-w-[1215px] min-h-[765px] h-auto transition-all duration-300">
-            <img src="{{ asset('images/icons/button-support.svg') }}" alt="Support"
-                class="absolute right-0 top-0 w-[70px] h-[70px] cursor-pointer hover:opacity-80 transition-opacity z-20"
-                onclick="openContactModal()">
+
             <!-- Title Section -->
             <div class="absolute left-0 top-0">
                 <h2
@@ -197,7 +192,7 @@
             </div>
 
             <!-- All Services Button -->
-            <div class="absolute right-0 top-[90px]">
+            <div class="absolute right-0 top-[10px]">
                 <a href="{{ route('services') }}"
                     class="w-64 h-16 border-2 border-veteran-blue bg-white dark:bg-zinc-900 text-black dark:text-white text-xl font-black font-montserrat uppercase tracking-wide cursor-pointer transition-all duration-300 ease-in-out rounded-[412px] flex items-center justify-center hover:bg-veteran-blue hover:text-white">
                     {{ __('All Services') }}

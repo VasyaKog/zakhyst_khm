@@ -27,6 +27,10 @@ class SetLocale
         // Set application locale
         App::setLocale($locale);
 
+        // Sync Carbon locale (Carbon uses ISO 639-1: 'uk' for Ukrainian, not 'ua')
+        $carbonLocaleMap = ['ua' => 'uk', 'en' => 'en'];
+        \Carbon\Carbon::setLocale($carbonLocaleMap[$locale] ?? 'uk');
+
         return $next($request);
     }
 }

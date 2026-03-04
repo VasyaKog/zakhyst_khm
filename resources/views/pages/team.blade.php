@@ -8,7 +8,7 @@
         <div class="pt-[40px] lg:pt-[120px] pb-[60px] lg:pb-[100px]">
             <!-- Main Title Area -->
             <div
-                class="px-4 sm:px-5 lg:px-0 lg:max-w-[1200px] lg:mx-auto md:ml-[50px] mb-[60px] lg:mb-[119px] flex flex-col xs:flex-row justify-between items-start gap-4 pt-[50px] lg:pt-0">
+                class="px-4 sm:px-5 lg:px-0 lg:max-w-[1200px] lg:mx-auto md:ml-[50px] mb-[60px] lg:mb-[119px] pt-[50px] lg:pt-0">
                 <div class="max-w-full">
                     <h1
                         class="text-[1.75rem] xs:text-[2rem] sm:text-[2.5rem] md:text-[3.75rem] lg:text-[5rem] font-extrabold text-black dark:text-white uppercase leading-[1.1] lg:leading-[1.02] mb-[40px] lg:mb-[77px] transition-colors max-w-full">
@@ -19,9 +19,6 @@
                         {!! nl2br(__('Team Intro')) !!}
                     </p>
                 </div>
-                <img src="{{ asset('images/icons/button-support.svg') }}" alt="Support"
-                    class="w-[50px] h-[50px] xs:w-[70px] xs:h-[70px] cursor-pointer hover:opacity-80 transition-opacity shrink-0"
-                    onclick="openContactModal()">
             </div>
 
             <!-- Team Grid -->
@@ -32,9 +29,9 @@
                     @foreach($mainTeam as $member)
                         <div class="w-full max-w-[270px] mx-auto sm:mx-0">
                             <div
-                                class="w-full h-[225px] lg:h-[325px] mb-[20px] lg:mb-[30px] rounded-[20px] overflow-hidden bg-gray-100 dark:bg-zinc-800 transition-colors">
+                                class="w-full h-[225px] lg:h-[325px] max-w-[200px] lg:max-w-full mb-[20px] lg:mb-[30px] rounded-[20px] overflow-hidden bg-gray-100 dark:bg-zinc-800 transition-colors">
                                 <img src="{{ asset('storage/' . $member->photo) }}" alt="{{ $member->full_name }}"
-                                    class="w-full h-full object-cover dark:opacity-90 transition-opacity">
+                                    class="w-full h-full max-w-[200px] lg:max-w-full object-cover dark:opacity-90 transition-opacity">
                             </div>
                             <h3
                                 class="text-[1.5rem] lg:text-[2rem] font-extrabold text-black dark:text-white leading-[1.25] mb-[15px] lg:mb-[35px] text-left transition-colors">

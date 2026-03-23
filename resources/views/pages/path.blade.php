@@ -28,7 +28,7 @@
                                 {{ $document->description }}
                             </p>
                         @endif
-                        <a href="{{ $document->getFileUrl() }}" target="_blank" rel="noopener noreferrer"
+                        <a href="{{ $document->getPreviewUrl() }}" target="_blank" rel="noopener noreferrer"
                             class="inline-block mt-3 px-6 py-2 bg-[#4361ee] hover:bg-[#3651d4] text-white text-sm font-montserrat font-medium rounded-full transition-colors">
                             {{ __('View Document') }}
                         </a>

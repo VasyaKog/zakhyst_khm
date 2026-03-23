@@ -64,4 +64,24 @@ class PathDocument extends Model
     {
         return Storage::disk('public')->url($this->file_path);
     }
+
+    /**
+     * Get a browser-friendly preview URL for the document
+     */
+    public function getPreviewUrl(): string
+    {
+        $url = $this->getFileUrl();
+        $extension = $this->getFileExtension();
+        
+        // Browsers can natively preview these file types
+        $nativePreview = ['pdf', 'jpg', 'jpeg', 'png', 'gif', 'svg', 'webp', 'txt'];
+        
+        if (in_array($extension, $nativePreview)) {
+            return $url;
+        }
+        
+        // For Office documents (.docx, .xlsx, .pptx) use Google Docs Viewer
+        // Note: Google's servers must be able to reach $url, meaning this only works on public live domains.
+        return 'https://docs.google.com/viewer?url=' . urlencode($url);
+    }
 }

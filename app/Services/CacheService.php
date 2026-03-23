@@ -26,7 +26,7 @@ class CacheService
         PathDocument::class => ['path_documents'],
     ];
 
-    protected static array $locales = ['uk', 'en'];
+    protected static array $locales = ['uk', 'en', 'ua'];
 
     /**
      * Clear all cache keys associated with a given model.

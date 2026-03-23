@@ -30,7 +30,7 @@ class AdminPanelProvider extends PanelProvider
             ->login()
             ->favicon(asset('favicon.svg'))
             ->colors([
-                'primary' => Color::Amber,
+                'primary' => '#3971E2',
             ])
             ->plugin(
                 SpatieLaravelTranslatablePlugin::make()

@@ -60,9 +60,11 @@ class NewsArticleResource extends Resource
                             ->columnSpanFull(),
                         Forms\Components\TextInput::make('author')
                             ->label('Автор')
-                            ->maxLength(255),
+                            ->maxLength(255)
+                            ->required(),
                         Forms\Components\DateTimePicker::make('published_at')
-                            ->label('Дата публікації'),
+                            ->label('Дата публікації')
+                            ->required(),
                     ]),
 
                 Forms\Components\Section::make('Медіа')
@@ -72,7 +74,8 @@ class NewsArticleResource extends Resource
                             ->image()
                             ->disk('public')
                             ->directory('images/backgrounds')
-                            ->visibility('public'),
+                            ->visibility('public')
+                            ->required(),
                         Forms\Components\TextInput::make('video_url')
                             ->label('Посилання на відео (YouTube або інше)')
                             ->helperText('Вставте посилання з YouTube або пряме посилання на відеофайл')

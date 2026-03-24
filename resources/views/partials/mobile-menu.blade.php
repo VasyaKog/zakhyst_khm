@@ -1,5 +1,5 @@
 <div id="mobile-menu"
-    class="fixed inset-0 bg-white dark:bg-zinc-900 z-[60] hidden flex flex-col h-[100dvh] transition-colors">
+    class="fixed top-0 left-0 w-full h-[100dvh] bg-white dark:bg-zinc-900 z-[60] hidden flex flex-col transition-colors">
     <!-- Header: UA, Theme Switch, Close Button -->
     <div class="flex items-center justify-between px-4 pt-6 pb-6 relative">
         <!-- Left: Language Dropdown -->
@@ -69,15 +69,15 @@
         <nav class="flex flex-col w-full mt-8">
             <!-- Group 1 -->
             <div class="flex flex-col gap-[30px] mb-[70px]">
-                <a href="{{ route('services') }}" class="flex items-center justify-between group w-full">
-                    <span
-                        class="text-black dark:text-white font-bold text-[20px] uppercase tracking-[1.4px] leading-[115.753%] group-hover:text-veteran-blue transition-colors">{{ __('Services') }}</span>
-                    <span
-                        class="text-black dark:text-white font-light text-2xl group-hover:text-veteran-blue transition-colors">&gt;</span>
-                </a>
                 <a href="{{ route('about') }}" class="flex items-center justify-between group w-full">
                     <span
                         class="text-black dark:text-white font-bold text-[20px] uppercase tracking-[1.4px] leading-[115.753%] group-hover:text-veteran-blue transition-colors">{{ __('About') }}</span>
+                    <span
+                        class="text-black dark:text-white font-light text-2xl group-hover:text-veteran-blue transition-colors">&gt;</span>
+                </a>
+                <a href="{{ route('services') }}" class="flex items-center justify-between group w-full">
+                    <span
+                        class="text-black dark:text-white font-bold text-[20px] uppercase tracking-[1.4px] leading-[115.753%] group-hover:text-veteran-blue transition-colors">{{ __('Services') }}</span>
                     <span
                         class="text-black dark:text-white font-light text-2xl group-hover:text-veteran-blue transition-colors">&gt;</span>
                 </a>
@@ -91,15 +91,9 @@
 
             <!-- Group 2 -->
             <div class="flex flex-col gap-[30px]">
-                <a href="{{ route('indifferent') }}" class="flex items-center justify-between group w-full">
+                <a href="https://www.khm.gov.ua/uk/pro-hromadu/heroi-hromady" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between group w-full">
                     <span
-                        class="text-black dark:text-white font-bold text-[20px] uppercase tracking-[1.4px] leading-[115.753%] group-hover:text-veteran-blue transition-colors">{{ __('To Indifferent') }}</span>
-                    <span
-                        class="text-black dark:text-white font-light text-2xl group-hover:text-veteran-blue transition-colors">&gt;</span>
-                </a>
-                <a href="{{ route('path') }}" class="flex items-center justify-between group w-full">
-                    <span
-                        class="text-black dark:text-white font-bold text-[20px] uppercase tracking-[1.4px] leading-[115.753%] group-hover:text-veteran-blue transition-colors">{{ __('Community to Veteran') }}</span>
+                        class="text-black dark:text-white font-bold text-[20px] uppercase tracking-[1.4px] leading-[115.753%] group-hover:text-veteran-blue transition-colors">{{ __('We Remember') }}</span>
                     <span
                         class="text-black dark:text-white font-light text-2xl group-hover:text-veteran-blue transition-colors">&gt;</span>
                 </a>
@@ -109,15 +103,15 @@
                     <span
                         class="text-black dark:text-white font-light text-2xl group-hover:text-veteran-blue transition-colors">&gt;</span>
                 </a>
-                <a href="#" class="flex items-center justify-between group w-full">
+                <a href="{{ route('path') }}" class="flex items-center justify-between group w-full">
                     <span
-                        class="text-black dark:text-white font-bold text-[20px] uppercase tracking-[1.4px] leading-[115.753%] group-hover:text-veteran-blue transition-colors">{{ __('We Remember') }}</span>
+                        class="text-black dark:text-white font-bold text-[20px] uppercase tracking-[1.4px] leading-[115.753%] group-hover:text-veteran-blue transition-colors">{{ __('Community to Veteran') }}</span>
                     <span
                         class="text-black dark:text-white font-light text-2xl group-hover:text-veteran-blue transition-colors">&gt;</span>
                 </a>
-                <a href="#" class="flex items-center justify-between group w-full">
+                <a href="{{ route('indifferent') }}" class="flex items-center justify-between group w-full">
                     <span
-                        class="text-black dark:text-white font-bold text-[20px] uppercase tracking-[1.4px] leading-[115.753%] group-hover:text-veteran-blue transition-colors">{{ __('Reviews') }}</span>
+                        class="text-black dark:text-white font-bold text-[20px] uppercase tracking-[1.4px] leading-[115.753%] group-hover:text-veteran-blue transition-colors">{{ __('To Indifferent') }}</span>
                     <span
                         class="text-black dark:text-white font-light text-2xl group-hover:text-veteran-blue transition-colors">&gt;</span>
                 </a>
@@ -193,7 +187,7 @@
             </button>
         </div>
 
-        <div class="mt-auto pb-8 w-full">
+        <div class="mt-auto pt-8 pb-[max(2rem,env(safe-area-inset-bottom))] w-full shrink-0">
             <!-- Support Button -->
             <button onclick="openDonationModal()"
                 class="w-full h-[70px] bg-veteran-blue text-white rounded-full font-black text-xl uppercase tracking-[1px] mb-6 hover:bg-blue-700 transition-colors flex items-center justify-center">

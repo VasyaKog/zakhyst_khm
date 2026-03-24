@@ -289,6 +289,7 @@
     });
 </script>
 
+@if($news->count() > 0)
 <!-- Mobile News Section (<768px) -->
 <div class="block lg:hidden px-4 mt-12 mb-12">
     <div class="flex justify-between items-center mb-6">
@@ -400,6 +401,7 @@
         @endforeach
     </div>
 </div>
+@endif
 
 <!-- Mobile Team Section (<768px) -->
 <div class="block lg:hidden mt-16 mb-16 px-4">
